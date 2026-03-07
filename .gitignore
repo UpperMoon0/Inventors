@@ -1,0 +1,40 @@
+# Minecraft runtime files
+.curseclient
+minecraftinstance.json
+user-prefs.json
+options.txt
+servers.dat
+servers.dat_old
+
+# Logs and crash reports
+logs/
+crash-reports/
+
+# Save files
+saves/
+
+# Download cache
+downloads/
+
+# User-specific data
+screenshots/
+resourcepacks/
+shaderpacks/
+schematics/
+
+# JEI world data
+config/jei/world/
+
+# Blueprint scans (user-created)
+blueprints/*/scans/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
