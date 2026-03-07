@@ -5,6 +5,8 @@ user-prefs.json
 options.txt
 servers.dat
 servers.dat_old
+usercache.json
+usernamecache.json
 
 # Logs and crash reports
 logs/
@@ -27,6 +29,15 @@ config/jei/world/
 
 # Blueprint scans (user-created)
 blueprints/*/scans/
+
+# Mod caches
+simply_screens_cache/
+
+# Local/per-world data (overrides defaultconfigs)
+local/
+
+# Backups
+backups/
 
 # OS files
 .DS_Store
