@@ -36,6 +36,8 @@ simply_screens_cache/
 # Local/per-world data (overrides defaultconfigs)
 local/
 
+tacz_backup/
+
 # Backups
 backups/
 
