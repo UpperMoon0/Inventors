@@ -27,6 +27,9 @@ schematics/
 # JEI world data
 config/jei/world/
 
+# Oculus shader settings (user-specific)
+config/oculus.properties
+
 # Blueprint scans (user-created)
 blueprints/*/scans/
 
