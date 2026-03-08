@@ -60,12 +60,12 @@ ServerEvents.recipes(event => {
 
     // Raw Cobalt Milling (Creating Space)
     // Input: 1 creatingspace:raw_cobalt
-    // Output: 1 create:crushed_raw_cobalt (100%), 
-    //         50% chance create:crushed_raw_cobalt, 
+    // Output: 1 creatingspace:crushed_cobalt_ore (100%), 
+    //         50% chance creatingspace:crushed_cobalt_ore, 
     //         50% chance create:experience_nugget
     event.recipes.create.milling([
-        'create:crushed_raw_cobalt',
-        Item.of('create:crushed_raw_cobalt').withChance(0.5),
+        'creatingspace:crushed_cobalt_ore',
+        Item.of('creatingspace:crushed_cobalt_ore').withChance(0.5),
         Item.of('create:experience_nugget').withChance(0.5)
     ], 'creatingspace:raw_cobalt')
 
