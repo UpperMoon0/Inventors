@@ -9,6 +9,10 @@ ServerEvents.recipes(event => {
     event.remove({ output: 'crusty_chunks:lead_ingot', type: 'minecraft:smelting' })
     event.remove({ output: 'crusty_chunks:lead_ingot', type: 'minecraft:blasting' })
     
+    // Remove existing smelting recipes that output ftbmaterials:lead_ingot
+    event.remove({ id: 'ftbmaterials:lead_ingot_from_smelting_lead_raw_ore' })
+    event.remove({ id: 'ftbmaterials:lead_ingot_from_blasting_lead_raw_ore' })
+
     // ========================================
     // Crushed Ore Smelting
     // ========================================
@@ -40,6 +44,13 @@ ServerEvents.recipes(event => {
     // XP: 1.0 (same as raw iron)
     event.smelting(global.ITEMS.lead_ingot, global.ITEMS.raw_lead).xp(1.0)
     event.blasting(global.ITEMS.lead_ingot, global.ITEMS.raw_lead).xp(0.7)
+    
+    // Raw Nickel -> Nickel Ingot (FTB Materials)
+    // Input: 1 #forge:raw_materials/nickel
+    // Output: 1 ftbmaterials:nickel_ingot
+    // XP: 1.0 (same as raw iron)
+    event.smelting(global.ITEMS.nickel_ingot, global.ITEMS.raw_nickel).xp(1.0)
+    event.blasting(global.ITEMS.nickel_ingot, global.ITEMS.raw_nickel).xp(0.7)
     
     // ========================================
     // Dust Smelting
