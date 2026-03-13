@@ -1,5 +1,6 @@
 // Item ID Variables - change these in one place to update all recipes
 // This file loads first (underscore prefix) and makes ITEMS available to all scripts
+// Only add items that are used in multiple places or have variants
 
 global.ITEMS = {
     // Vanilla ores (keep as specific items)
@@ -31,10 +32,13 @@ global.ITEMS = {
     iron_ingot: 'minecraft:iron_ingot',
     nickel_ingot: 'ftbmaterials:nickel_ingot',
     silver_ingot: 'ftbmaterials:silver_ingot',
+    invar_ingot: 'ftbmaterials:invar_ingot',
+    lead_ingot: 'ftbmaterials:lead_ingot',
     
     // Dusts - FTB Materials
     iron_dust: 'ftbmaterials:iron_dust',
     nickel_dust: 'ftbmaterials:nickel_dust',
+    invar_dust: 'ftbmaterials:invar_dust',
     
     // Other
     experience_nugget: 'create:experience_nugget'
