@@ -11,7 +11,6 @@ ServerEvents.recipes(event => {
     event.remove({ id: 'create:crushing/raw_nickel' })
     event.remove({ id: 'create:crushing/raw_lead' })
     event.remove({ id: 'create:crushing/nickel_ore' })
-    event.remove({ id: 'creatingspace:ressources/crushed_cobalt_ore' })
     event.remove({ id: 'create:crushing/aluminum_ore' })
     
     // Raw Iron Crushing
@@ -71,25 +70,14 @@ ServerEvents.recipes(event => {
 
     // Raw Nickel Crushing (Creating Space)
     // Input: 1 raw_nickel
-    // Output: 2 crushed_nickel (100%), 
-    //         10% chance crushed_cobalt (byproduct - nickel-cobalt laterite)
+    // Output: 2 crushed_nickel (100%),
+    //         10% chance crushed_iron (byproduct - nickel-iron sulfide deposits)
     //         75% chance experience_nugget
     event.recipes.create.crushing([
         Item.of(`2x ${global.ITEMS.crushed_nickel}`),
-        Item.of(global.ITEMS.crushed_cobalt).withChance(0.1),
+        Item.of(global.ITEMS.crushed_iron).withChance(0.1),
         Item.of(global.ITEMS.experience_nugget).withChance(0.75)
     ], global.ITEMS.raw_nickel)
-
-    // Raw Cobalt Crushing (Creating Space)
-    // Input: 1 raw_cobalt
-    // Output: 2 crushed_cobalt (100%), 
-    //         10% chance crushed_nickel (byproduct - cobalt-nickel deposits)
-    //         75% chance experience_nugget
-    event.recipes.create.crushing([
-        Item.of(`2x ${global.ITEMS.crushed_cobalt}`),
-        Item.of(global.ITEMS.crushed_nickel).withChance(0.1),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
-    ], global.ITEMS.raw_cobalt)
 
     // Raw Aluminum Crushing (Creating Space)
     // Input: 1 raw_aluminum

@@ -11,7 +11,6 @@ global.ITEMS = {
     // Create/modded ores - use tags for compatibility
     raw_zinc: '#forge:raw_materials/zinc',
     raw_nickel: '#forge:raw_materials/nickel',
-    raw_cobalt: '#forge:raw_materials/cobalt',
     raw_aluminum: '#forge:raw_materials/aluminum',
     raw_lead: '#forge:raw_materials/lead',
     
@@ -24,9 +23,6 @@ global.ITEMS = {
     crushed_aluminum: 'create:crushed_raw_aluminum',
     crushed_lead: 'create:crushed_raw_lead',
     crushed_silver: 'create:crushed_raw_silver',
-    
-    // Creating Space crushed ores (different mod)
-    crushed_cobalt: 'creatingspace:crushed_cobalt_ore',
     
     // Ingots - FTB Materials
     iron_ingot: 'minecraft:iron_ingot',

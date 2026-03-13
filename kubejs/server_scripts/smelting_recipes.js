@@ -1,10 +1,6 @@
 // Smelting recipes for crushed ores and dusts
 
 ServerEvents.recipes(event => {
-    // Remove existing smelting recipes that output creatingspace:nickel_ingot
-    event.remove({ output: 'creatingspace:nickel_ingot', type: 'minecraft:smelting' })
-    event.remove({ output: 'creatingspace:nickel_ingot', type: 'minecraft:blasting' })
-    
     // Remove existing smelting recipes that output crusty_chunks:lead_ingot
     event.remove({ output: 'crusty_chunks:lead_ingot', type: 'minecraft:smelting' })
     event.remove({ output: 'crusty_chunks:lead_ingot', type: 'minecraft:blasting' })

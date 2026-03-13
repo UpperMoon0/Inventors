@@ -58,17 +58,6 @@ ServerEvents.recipes(event => {
         Item.of(global.ITEMS.experience_nugget).withChance(0.5)
     ], global.ITEMS.raw_nickel)
 
-    // Raw Cobalt Milling (Creating Space)
-    // Input: 1 raw_cobalt
-    // Output: 1 crushed_cobalt (100%), 
-    //         50% chance crushed_cobalt, 
-    //         50% chance experience_nugget
-    event.recipes.create.milling([
-        global.ITEMS.crushed_cobalt,
-        Item.of(global.ITEMS.crushed_cobalt).withChance(0.5),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.5)
-    ], global.ITEMS.raw_cobalt)
-
     // Raw Aluminum Milling (Creating Space)
     // Input: 1 raw_aluminum
     // Output: 1 crushed_aluminum (100%), 
