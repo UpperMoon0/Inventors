@@ -22,7 +22,7 @@ ServerEvents.recipes(event => {
         ' III '
     ], {
         I: global.ITEMS.invar_ingot,
-        L: global.ITEMS.lead_ingot,
-        S: '#forge:stone'
+        L: global.ITEMS.bronze_ingot,
+        S: 'ftbmaterials:lead_block'
     })
 })

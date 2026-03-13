@@ -107,4 +107,48 @@ ServerEvents.recipes(event => {
     event.recipes.create.crushing([
         global.ITEMS.nickel_dust
     ], global.ITEMS.nickel_ingot)
+
+    // ========================================
+    // Silver Ore Processing
+    // ========================================
+
+    // Raw Silver Crushing
+    // Input: 1 raw_silver
+    // Output: 2 crushed_silver (100%), 
+    //         10% chance crushed_gold (byproduct - silver-gold veins)
+    //         75% chance experience_nugget
+    event.recipes.create.crushing([
+        Item.of(`2x ${global.ITEMS.crushed_silver}`),
+        Item.of(global.ITEMS.crushed_gold).withChance(0.1),
+        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+    ], global.ITEMS.raw_silver)
+
+    // Silver Ingot -> Silver Dust
+    // Input: 1 silver_ingot
+    // Output: 1 silver_dust (100%)
+    event.recipes.create.crushing([
+        global.ITEMS.silver_dust
+    ], global.ITEMS.silver_ingot)
+
+    // ========================================
+    // Uranium Ore Processing
+    // ========================================
+
+    // Raw Uranium Crushing
+    // Input: 1 raw_uranium
+    // Output: 2 crushed_uranium (100%), 
+    //         10% chance crushed_lead (byproduct - uranium-lead deposits)
+    //         75% chance experience_nugget
+    event.recipes.create.crushing([
+        Item.of(`2x ${global.ITEMS.crushed_uranium}`),
+        Item.of(global.ITEMS.crushed_lead).withChance(0.1),
+        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+    ], global.ITEMS.raw_uranium)
+
+    // Uranium Ingot -> Uranium Dust
+    // Input: 1 uranium_ingot
+    // Output: 1 uranium_dust (100%)
+    event.recipes.create.crushing([
+        global.ITEMS.uranium_dust
+    ], global.ITEMS.uranium_ingot)
 })

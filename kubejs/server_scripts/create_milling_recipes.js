@@ -97,4 +97,48 @@ ServerEvents.recipes(event => {
     event.recipes.create.milling([
         global.ITEMS.nickel_dust
     ], global.ITEMS.nickel_ingot)
+
+    // ========================================
+    // Silver Ore Processing
+    // ========================================
+
+    // Raw Silver Milling
+    // Input: 1 raw_silver
+    // Output: 1 crushed_silver (100%), 
+    //         50% chance crushed_silver, 
+    //         50% chance experience_nugget
+    event.recipes.create.milling([
+        global.ITEMS.crushed_silver,
+        Item.of(global.ITEMS.crushed_silver).withChance(0.5),
+        Item.of(global.ITEMS.experience_nugget).withChance(0.5)
+    ], global.ITEMS.raw_silver)
+
+    // Silver Ingot -> Silver Dust
+    // Input: 1 silver_ingot
+    // Output: 1 silver_dust (100%)
+    event.recipes.create.milling([
+        global.ITEMS.silver_dust
+    ], global.ITEMS.silver_ingot)
+
+    // ========================================
+    // Uranium Ore Processing
+    // ========================================
+
+    // Raw Uranium Milling
+    // Input: 1 raw_uranium
+    // Output: 1 crushed_uranium (100%), 
+    //         50% chance crushed_uranium, 
+    //         50% chance experience_nugget
+    event.recipes.create.milling([
+        global.ITEMS.crushed_uranium,
+        Item.of(global.ITEMS.crushed_uranium).withChance(0.5),
+        Item.of(global.ITEMS.experience_nugget).withChance(0.5)
+    ], global.ITEMS.raw_uranium)
+
+    // Uranium Ingot -> Uranium Dust
+    // Input: 1 uranium_ingot
+    // Output: 1 uranium_dust (100%)
+    event.recipes.create.milling([
+        global.ITEMS.uranium_dust
+    ], global.ITEMS.uranium_ingot)
 })

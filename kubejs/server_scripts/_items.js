@@ -13,6 +13,8 @@ global.ITEMS = {
     raw_nickel: '#forge:raw_materials/nickel',
     raw_aluminum: '#forge:raw_materials/aluminum',
     raw_lead: '#forge:raw_materials/lead',
+    raw_silver: '#forge:raw_materials/silver',
+    raw_uranium: '#forge:raw_materials/uranium',
     
     // Crushed ores (outputs) - all from Create mod
     crushed_iron: 'create:crushed_raw_iron',
@@ -23,6 +25,7 @@ global.ITEMS = {
     crushed_aluminum: 'create:crushed_raw_aluminum',
     crushed_lead: 'create:crushed_raw_lead',
     crushed_silver: 'create:crushed_raw_silver',
+    crushed_uranium: 'create:crushed_raw_uranium',
     
     // Ingots - FTB Materials
     iron_ingot: 'minecraft:iron_ingot',
@@ -30,11 +33,19 @@ global.ITEMS = {
     silver_ingot: 'ftbmaterials:silver_ingot',
     invar_ingot: 'ftbmaterials:invar_ingot',
     lead_ingot: 'ftbmaterials:lead_ingot',
+    uranium_ingot: 'ftbmaterials:uranium_ingot',
+    bronze_ingot: 'ftbmaterials:bronze_ingot',
     
     // Dusts - FTB Materials
     iron_dust: 'ftbmaterials:iron_dust',
     nickel_dust: 'ftbmaterials:nickel_dust',
     invar_dust: 'ftbmaterials:invar_dust',
+    silver_dust: 'ftbmaterials:silver_dust',
+    uranium_dust: 'ftbmaterials:uranium_dust',
+    copper_dust: 'ftbmaterials:copper_dust',
+    tin_dust: 'ftbmaterials:tin_dust',
+    bronze_dust: 'ftbmaterials:bronze_dust',
+    graphite_dust: 'ftbmaterials:graphite_dust',
     
     // Other
     experience_nugget: 'create:experience_nugget'
