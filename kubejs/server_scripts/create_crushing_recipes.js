@@ -8,82 +8,119 @@ ServerEvents.recipes(event => {
     event.remove({ id: 'create:crushing/raw_copper' })
     event.remove({ id: 'create:crushing/raw_gold' })
     event.remove({ id: 'create:crushing/raw_zinc' })
+    event.remove({ id: 'create:crushing/raw_nickel' })
+    event.remove({ id: 'create:crushing/raw_lead' })
     event.remove({ id: 'create:crushing/nickel_ore' })
     event.remove({ id: 'creatingspace:ressources/crushed_cobalt_ore' })
     event.remove({ id: 'create:crushing/aluminum_ore' })
     
     // Raw Iron Crushing
-    // Input: 1 minecraft:raw_iron
-    // Output: 2 create:crushed_raw_iron (100%), 
-    //         10% chance create:crushed_raw_nickel (byproduct - iron-nickel deposits)
-    //         75% chance create:experience_nugget
+    // Input: 1 raw_iron
+    // Output: 2 crushed_iron (100%), 
+    //         10% chance crushed_nickel (byproduct - iron-nickel deposits)
+    //         75% chance experience_nugget
     event.recipes.create.crushing([
-        Item.of('2x create:crushed_raw_iron'),
-        Item.of('create:crushed_raw_nickel').withChance(0.1),
-        Item.of('create:experience_nugget').withChance(0.75)
-    ], 'minecraft:raw_iron')
+        Item.of(`2x ${global.ITEMS.crushed_iron}`),
+        Item.of(global.ITEMS.crushed_nickel).withChance(0.1),
+        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+    ], global.ITEMS.raw_iron)
 
     // Raw Copper Crushing
-    // Input: 1 minecraft:raw_copper
-    // Output: 2 create:crushed_raw_copper (100%), 
-    //         10% chance create:crushed_raw_gold (byproduct - copper-gold porphyry)
-    //         75% chance create:experience_nugget
+    // Input: 1 raw_copper
+    // Output: 2 crushed_copper (100%), 
+    //         10% chance crushed_gold (byproduct - copper-gold porphyry)
+    //         75% chance experience_nugget
     event.recipes.create.crushing([
-        Item.of('2x create:crushed_raw_copper'),
-        Item.of('create:crushed_raw_gold').withChance(0.1),
-        Item.of('create:experience_nugget').withChance(0.75)
-    ], 'minecraft:raw_copper')
+        Item.of(`2x ${global.ITEMS.crushed_copper}`),
+        Item.of(global.ITEMS.crushed_gold).withChance(0.1),
+        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+    ], global.ITEMS.raw_copper)
 
     // Raw Gold Crushing
-    // Input: 1 minecraft:raw_gold
-    // Output: 2 create:crushed_raw_gold (100%), 
-    //         75% chance create:experience_nugget
-    // No byproduct - silver/lead not available in modpack
+    // Input: 1 raw_gold
+    // Output: 2 crushed_gold (100%), 
+    //         10% chance crushed_silver (byproduct - gold-silver electrum veins)
+    //         75% chance experience_nugget
     event.recipes.create.crushing([
-        Item.of('2x create:crushed_raw_gold'),
-        Item.of('create:experience_nugget').withChance(0.75)
-    ], 'minecraft:raw_gold')
+        Item.of(`2x ${global.ITEMS.crushed_gold}`),
+        Item.of(global.ITEMS.crushed_silver).withChance(0.1),
+        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+    ], global.ITEMS.raw_gold)
 
     // Raw Zinc Crushing
-    // Input: 1 create:raw_zinc
-    // Output: 2 create:crushed_raw_zinc (100%), 
-    //         75% chance create:experience_nugget
-    // No byproduct - lead not available in modpack
+    // Input: 1 raw_zinc
+    // Output: 2 crushed_zinc (100%), 
+    //         10% chance crushed_lead (byproduct - zinc-lead sulfide deposits)
+    //         75% chance experience_nugget
     event.recipes.create.crushing([
-        Item.of('2x create:crushed_raw_zinc'),
-        Item.of('create:experience_nugget').withChance(0.75)
-    ], 'create:raw_zinc')
+        Item.of(`2x ${global.ITEMS.crushed_zinc}`),
+        Item.of(global.ITEMS.crushed_lead).withChance(0.1),
+        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+    ], global.ITEMS.raw_zinc)
+
+    // Raw Lead Crushing
+    // Input: 1 raw_lead
+    // Output: 2 crushed_lead (100%), 
+    //         10% chance crushed_zinc (byproduct - lead-zinc sulfide deposits)
+    //         75% chance experience_nugget
+    event.recipes.create.crushing([
+        Item.of(`2x ${global.ITEMS.crushed_lead}`),
+        Item.of(global.ITEMS.crushed_zinc).withChance(0.1),
+        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+    ], global.ITEMS.raw_lead)
 
     // Raw Nickel Crushing (Creating Space)
-    // Input: 1 creatingspace:raw_nickel
-    // Output: 2 create:crushed_raw_nickel (100%), 
-    //         10% chance creatingspace:crushed_cobalt_ore (byproduct - nickel-cobalt laterite)
-    //         75% chance create:experience_nugget
+    // Input: 1 raw_nickel
+    // Output: 2 crushed_nickel (100%), 
+    //         10% chance crushed_cobalt (byproduct - nickel-cobalt laterite)
+    //         75% chance experience_nugget
     event.recipes.create.crushing([
-        Item.of('2x create:crushed_raw_nickel'),
-        Item.of('creatingspace:crushed_cobalt_ore').withChance(0.1),
-        Item.of('create:experience_nugget').withChance(0.75)
-    ], 'creatingspace:raw_nickel')
+        Item.of(`2x ${global.ITEMS.crushed_nickel}`),
+        Item.of(global.ITEMS.crushed_cobalt).withChance(0.1),
+        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+    ], global.ITEMS.raw_nickel)
 
     // Raw Cobalt Crushing (Creating Space)
-    // Input: 1 creatingspace:raw_cobalt
-    // Output: 2 creatingspace:crushed_cobalt_ore (100%), 
-    //         10% chance create:crushed_raw_nickel (byproduct - cobalt-nickel deposits)
-    //         75% chance create:experience_nugget
+    // Input: 1 raw_cobalt
+    // Output: 2 crushed_cobalt (100%), 
+    //         10% chance crushed_nickel (byproduct - cobalt-nickel deposits)
+    //         75% chance experience_nugget
     event.recipes.create.crushing([
-        Item.of('2x creatingspace:crushed_cobalt_ore'),
-        Item.of('create:crushed_raw_nickel').withChance(0.1),
-        Item.of('create:experience_nugget').withChance(0.75)
-    ], 'creatingspace:raw_cobalt')
+        Item.of(`2x ${global.ITEMS.crushed_cobalt}`),
+        Item.of(global.ITEMS.crushed_nickel).withChance(0.1),
+        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+    ], global.ITEMS.raw_cobalt)
 
     // Raw Aluminum Crushing (Creating Space)
-    // Input: 1 creatingspace:raw_aluminum
-    // Output: 2 create:crushed_raw_aluminum (100%), 
-    //         10% chance create:crushed_raw_iron (byproduct - bauxite contains iron)
-    //         75% chance create:experience_nugget
+    // Input: 1 raw_aluminum
+    // Output: 2 crushed_aluminum (100%), 
+    //         10% chance crushed_iron (byproduct - bauxite contains iron)
+    //         75% chance experience_nugget
     event.recipes.create.crushing([
-        Item.of('2x create:crushed_raw_aluminum'),
-        Item.of('create:crushed_raw_iron').withChance(0.1),
-        Item.of('create:experience_nugget').withChance(0.75)
-    ], 'creatingspace:raw_aluminum')
+        Item.of(`2x ${global.ITEMS.crushed_aluminum}`),
+        Item.of(global.ITEMS.crushed_iron).withChance(0.1),
+        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+    ], global.ITEMS.raw_aluminum)
+
+    // ========================================
+    // Ingot to Dust Crushing Recipes
+    // ========================================
+
+    // Iron Ingot -> Iron Dust
+    // Input: 1 iron_ingot
+    // Output: 1 iron_dust (100%)
+    //         50% chance iron_dust (bonus)
+    event.recipes.create.crushing([
+        global.ITEMS.iron_dust,
+        Item.of(global.ITEMS.iron_dust).withChance(0.5)
+    ], global.ITEMS.iron_ingot)
+
+    // Nickel Ingot -> Nickel Dust
+    // Input: 1 nickel_ingot
+    // Output: 1 nickel_dust (100%)
+    //         50% chance nickel_dust (bonus)
+    event.recipes.create.crushing([
+        global.ITEMS.nickel_dust,
+        Item.of(global.ITEMS.nickel_dust).withChance(0.5)
+    ], global.ITEMS.nickel_ingot)
 })
