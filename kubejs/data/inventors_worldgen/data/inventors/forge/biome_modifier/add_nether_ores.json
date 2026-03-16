@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": [
+    "inventors:silver_nether_ore",
+    "inventors:lead_nether_ore",
+    "inventors:nickel_nether_ore",
+    "inventors:uranium_nether_ore"
+  ],
+  "step": "underground_ores"
+}
