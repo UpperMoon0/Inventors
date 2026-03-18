@@ -98,6 +98,20 @@ ServerEvents.recipes(event => {
         global.ITEMS.nickel_dust
     ], global.ITEMS.nickel_ingot)
 
+    // Copper Ingot -> Copper Dust
+    // Input: 1 copper_ingot
+    // Output: 1 copper_dust (100%)
+    event.recipes.create.milling([
+        global.ITEMS.copper_dust
+    ], global.ITEMS.copper_ingot)
+
+    // Tin Ingot -> Tin Dust
+    // Input: 1 tin_ingot
+    // Output: 1 tin_dust (100%)
+    event.recipes.create.milling([
+        global.ITEMS.tin_dust
+    ], global.ITEMS.tin_ingot)
+
     // ========================================
     // Silver Ore Processing
     // ========================================

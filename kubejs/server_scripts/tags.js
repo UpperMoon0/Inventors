@@ -24,4 +24,20 @@ ServerEvents.tags('item', event => {
     // Create unified tag for coal/charcoal (carbon source for ore processing)
     event.add('kubejs:carbon_source', 'minecraft:coal')
     event.add('kubejs:carbon_source', 'minecraft:charcoal')
+
+    // ========== CREATE TIERS TAGS ==========
+    // All cogwheels across all tiers (including default Create)
+    event.add('kubejs:cogwheel', 'createtiers:cogwheel_crude')
+    event.add('kubejs:cogwheel', 'createtiers:cogwheel_basic')
+    event.add('kubejs:cogwheel', 'createtiers:cogwheel_refined')
+
+    // All shafts across all tiers (including default Create)
+    event.add('kubejs:shaft', 'createtiers:shaft_crude')
+    event.add('kubejs:shaft', 'createtiers:shaft_basic')
+    event.add('kubejs:shaft', 'createtiers:shaft_refined')
+
+    // All large cogwheels across all tiers (including default Create)
+    event.add('kubejs:large_cogwheel', 'createtiers:large_cogwheel_crude')
+    event.add('kubejs:large_cogwheel', 'createtiers:large_cogwheel_basic')
+    event.add('kubejs:large_cogwheel', 'createtiers:large_cogwheel_refined')
 })
