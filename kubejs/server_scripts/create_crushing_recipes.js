@@ -90,6 +90,17 @@ ServerEvents.recipes(event => {
         Item.of(global.ITEMS.experience_nugget).withChance(0.75)
     ], global.ITEMS.raw_aluminum)
 
+    // Raw Tin Crushing
+    // Input: 1 raw_tin
+    // Output: 2 crushed_tin (100%), 
+    //         10% chance crushed_lead (byproduct - tin-lead deposits)
+    //         75% chance experience_nugget
+    event.recipes.create.crushing([
+        Item.of(`2x ${global.ITEMS.crushed_tin}`),
+        Item.of(global.ITEMS.crushed_lead).withChance(0.1),
+        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+    ], global.ITEMS.raw_tin)
+
     // ========================================
     // Ingot to Dust Crushing Recipes
     // ========================================

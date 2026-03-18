@@ -80,6 +80,17 @@ ServerEvents.recipes(event => {
         Item.of(global.ITEMS.experience_nugget).withChance(0.5)
     ], global.ITEMS.raw_lead)
 
+    // Raw Tin Milling
+    // Input: 1 raw_tin
+    // Output: 1 crushed_tin (100%), 
+    //         50% chance crushed_tin, 
+    //         50% chance experience_nugget
+    event.recipes.create.milling([
+        global.ITEMS.crushed_tin,
+        Item.of(global.ITEMS.crushed_tin).withChance(0.5),
+        Item.of(global.ITEMS.experience_nugget).withChance(0.5)
+    ], global.ITEMS.raw_tin)
+
     // ========================================
     // Ingot to Dust Milling Recipes
     // ========================================

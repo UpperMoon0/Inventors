@@ -15,6 +15,7 @@ global.ITEMS = {
     raw_lead: '#forge:raw_materials/lead',
     raw_silver: '#forge:raw_materials/silver',
     raw_uranium: '#forge:raw_materials/uranium',
+    raw_tin: '#forge:raw_materials/tin',
     
     // Crushed ores (outputs) - all from Create mod
     crushed_iron: 'create:crushed_raw_iron',
@@ -26,6 +27,7 @@ global.ITEMS = {
     crushed_lead: 'create:crushed_raw_lead',
     crushed_silver: 'create:crushed_raw_silver',
     crushed_uranium: 'create:crushed_raw_uranium',
+    crushed_tin: 'create:crushed_raw_tin',
     
     // Ingots - FTB Materials
     iron_ingot: 'minecraft:iron_ingot',
