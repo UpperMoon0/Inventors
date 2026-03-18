@@ -1,5 +1,5 @@
 {
-  "feature": "inventors:lead_nether_ore",
+  "feature": "inventors:silver_nether_ore",
   "placement": [
     {
       "type": "minecraft:count",
@@ -9,16 +9,16 @@
       "type": "minecraft:in_square"
     },
     {
-      "type": "minecraft:height_range",
       "height": {
-        "type": "minecraft:uniform",
         "min_inclusive": {
           "absolute": 0
         },
         "max_inclusive": {
           "absolute": 128
-        }
-      }
+        },
+        "type": "minecraft:uniform"
+      },
+      "type": "minecraft:height_range"
     },
     {
       "type": "minecraft:biome"

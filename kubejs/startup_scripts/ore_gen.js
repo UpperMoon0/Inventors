@@ -1,4 +1,4 @@
-// Disable crusty_chunks ore generation
+// Disable crusty_chunks ore generation and add AllTheOres worldgen
 
 WorldgenEvents.remove(event => {
     event.removeOres(ores => {
