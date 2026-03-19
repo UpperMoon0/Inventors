@@ -42,5 +42,29 @@
   "looseMovementCheck": false,
   "chunkPacketDebug": false,
   "enableImmPtlChunkLoading": true,
-  "disabledWarnings": []
+  "disabledWarnings": [],
+  "dimStackPreset": {
+    "loop": false,
+    "gravityTransform": false,
+    "entries": [
+      {
+        "dimensionIdStr": "minecraft:overworld",
+        "scale": 1.0,
+        "flipped": false,
+        "horizontalRotation": 0.0,
+        "bedrockReplacementStr": "minecraft:deepslate",
+        "connectsPrevious": false,
+        "connectsNext": true
+      },
+      {
+        "dimensionIdStr": "minecraft:the_nether",
+        "scale": 1.0,
+        "flipped": false,
+        "horizontalRotation": 0.0,
+        "bedrockReplacementStr": "minecraft:netherrack",
+        "connectsPrevious": true,
+        "connectsNext": false
+      }
+    ]
+  }
 }

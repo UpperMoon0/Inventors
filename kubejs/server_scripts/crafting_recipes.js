@@ -59,12 +59,17 @@ ServerEvents.recipes(event => {
         '#minecraft:planks'
     ])
 
-    // Cogwheel Crude + Planks -> Large Cogwheel Crude (Shaped)
+    // Large Cogwheel Crude
+    event.shapeless('createtiers:large_cogwheel_crude', [
+        'createtiers:cogwheel_crude',
+        '#minecraft:planks'
+    ])
+
     event.shaped('createtiers:large_cogwheel_crude', [
-        'CP',
+        'SP',
         'P '
     ], {
-        C: 'createtiers:cogwheel_crude',
+        S: 'createtiers:shaft_crude',
         P: '#minecraft:planks'
     })
 
