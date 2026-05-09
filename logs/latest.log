@@ -1,0 +1,193 @@
+[19:01:22] [main/INFO]: ModLauncher running: args [--username, NsTut, --version, neoforge-21.1.228, --gameDir, C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1), --assetsDir, C:\Users\NsTut\curseforge\minecraft\Install\assets, --assetIndex, 17, --uuid, a2f1e3fa89d442b995a5f97188fcb077, --accessToken, ❄❄❄❄❄❄❄❄, --clientId, NmI0Zjc2OTctZWVkNi00YmMwLTg2NmMtYTlmOTRhOGU5NTcy, --xuid, 2535428099712877, --userType, msa, --versionType, release, --width, 1920, --height, 1080, --fml.neoForgeVersion, 21.1.228, --fml.fmlVersion, 4.0.42, --fml.mcVersion, 1.21.1, --fml.neoFormVersion, 20240808.144430, --launchTarget, forgeclient]
+[19:01:22] [main/INFO]: JVM identified as Microsoft OpenJDK 64-Bit Server VM 21.0.7+6-LTS
+[19:01:22] [main/INFO]: ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.7 by Microsoft; OS Windows 10 arch amd64 version 10.0
+[19:01:22] [main/INFO]: Loading ImmediateWindowProvider fmlearlywindow
+[19:01:23] [main/INFO]: Trying GL version 4.6
+[19:01:23] [main/INFO]: Requested GL version 4.6 got version 4.6
+[19:01:23] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/C:/Users/NsTut/curseforge/minecraft/Install/libraries/net/fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/sponge-mixin-0.15.2+mixin.0.8.7.jar%23121!/ Service=ModLauncher Env=CLIENT
+[19:01:25] [main/INFO]: Found mod file "client-1.21.1-20240808.144430-srg.jar" [locator: production client provider +net.neoforged:neoforge:21.1.228:client]
+[19:01:25] [main/INFO]: Found mod file "neoforge-21.1.228-universal.jar" [locator: PathBasedLocator[name=neoforge, paths=[C:\Users\NsTut\curseforge\minecraft\Install\libraries\net\neoforged\neoforge\21.1.228\neoforge-21.1.228-universal.jar]], reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "appleskin-neoforge-mc1.21-3.0.9.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "Aquaculture-1.21.1-2.7.21.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "aquaculturedelight-1.2.0-neoforge-1.21.1.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "architectury-13.0.8-neoforge.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "biolith-neoforge-3.0.11.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "bookshelf-neoforge-1.21.1-21.1.81.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "cloth-config-15.0.140-neoforge.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "comforts-neoforge-9.0.5+1.21.1.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "create-1.21.1-6.0.10.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "create-aeronautics-bundled-1.21.1-1.2.1.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "create-tiers-neoforge-1.21.1-0.2.2.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "DistantHorizons-3.0.3-b-1.21.1-fabric-neoforge.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "enchdesc-neoforge-1.21.1-21.1.9.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "FarmersDelight-1.21.1-1.3.1.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "ftb-chunks-neoforge-2101.1.14.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "ftb-library-neoforge-2101.1.31.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "ftb-materials-neoforge-21.1.3.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "ftb-teams-neoforge-2101.1.10.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "ftb-ultimine-neoforge-2101.1.13.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "ftbbackups2-neoforge-1.21-1.0.28.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "gravestone-neoforge-1.21.1-1.0.37.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "immersive_portals-6.0.7-all.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "iris-flywheel-compat-NeoForge-2.4.0.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "iris-neoforge-1.8.12+mc1.21.1.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "Jade-1.21.1-NeoForge-15.10.5.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "jei-1.21.1-neoforge-19.27.0.336.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "kubejs-neoforge-2101.7.2-build.363.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "lithostitched-1.7.3-neoforge-21.1.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "polylib-2100.1.0-build.183-neoforge.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "prickle-neoforge-1.21.1-21.1.11.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "regions-unexplored-0.6+beta4-neoforge-21.1.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "rhino-2101.2.7-build.81.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "sable-neoforge-1.21.1-1.2.2.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "simply_screens-neoforge_mc1.21.1-0.7.7.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "simplyspeakers-neoforge-1.21.1-0.6.0.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "sodium-neoforge-0.6.13+mc1.21.1.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "sophisticatedbackpacks-1.21.1-3.25.44.1736.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "sophisticatedcore-1.21.1-1.4.38.1847.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "sophisticatedstorage-1.21.1-1.5.46.1717.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "sophisticatedstoragecreateintegration-1.21.1-0.1.17.132.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "tectonic-3.0.22-neoforge-21.1.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:25] [main/INFO]: Found mod file "Terralith_1.21.x_v2.5.8.jar" [locator: {mods folder locator at C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods}, reader: mod manifest]
+[19:01:27] [main/WARN]: Attempted to select two dependency jars from JarJar which have the same identification: Nested Mod File  in Mod File: C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods\create-1.21.1-6.0.10.jar and Nested Mod File  in Mod File: C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods\iris-flywheel-compat-NeoForge-2.4.0.jar. Using Nested Mod File  in Mod File: C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1)\mods\create-1.21.1-6.0.10.jar
+[19:01:27] [main/INFO]: Found 23 dependencies adding them to mods collection
+[19:01:27] [main/INFO]: Found gamelibrary file "mixinextras-neoforge-0.5.3.jar" [parent: neoforge-21.1.228-universal.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found mod file "fabric-renderer-api-v1-3.4.0+acb05a3919.jar" [parent: iris-neoforge-1.8.12+mc1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found mod file "fabric-api-base-0.4.42+d1308ded19.jar" [parent: sodium-neoforge-0.6.13+mc1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found mod file "veil-neoforge-1.21.1-4.0.0.jar" [parent: sable-neoforge-1.21.1-1.2.2.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found library file "net.caffeinemc.sodium-neoforge-0.6.13+mc1.21.1-service.jar" [parent: sodium-neoforge-0.6.13+mc1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found mod file "dev.simulated_team.simulated.simulated-neoforge-1.21.1-1.2.1.jar" [parent: create-aeronautics-bundled-1.21.1-1.2.1.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found mod file "better-advanced-tooltips-2101.1.0-build.1.jar" [parent: kubejs-neoforge-2101.7.2-build.363.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found library file "glsl-processor-0.2.3.jar" [parent: veil-neoforge-1.21.1-4.0.0.jar, locator: jarinjar]
+[19:01:27] [main/INFO]: Found mod file "ponder-neoforge-1.0.82+mc1.21.1.jar" [parent: create-1.21.1-6.0.10.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found library file "net.neoforged.neoforge-coremods-21.1.228.jar" [parent: neoforge-21.1.228-universal.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found mod file "spectrelib-neoforge-0.17.2+1.21.jar" [parent: comforts-neoforge-9.0.5+1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found mod file "fabric-rendering-data-attachment-v1-0.3.48+73761d2e19.jar" [parent: sodium-neoforge-0.6.13+mc1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found library file "molang-compiler-3.1.1.19.jar" [parent: veil-neoforge-1.21.1-4.0.0.jar, locator: jarinjar]
+[19:01:27] [main/INFO]: Found mod file "dev.eriksonn.aeronautics.aeronautics-neoforge-1.21.1-1.2.1.jar" [parent: create-aeronautics-bundled-1.21.1-1.2.1.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found library file "jcpp-1.4.14.jar" [parent: iris-neoforge-1.8.12+mc1.21.1.jar, locator: jarinjar]
+[19:01:27] [main/INFO]: Found library file "animated-gif-lib-for-java-animated-gif-lib-1.7.jar" [parent: kubejs-neoforge-2101.7.2-build.363.jar, locator: jarinjar]
+[19:01:27] [main/INFO]: Found gamelibrary file "Registrate-MC1.21-1.3.0+67.jar" [parent: create-1.21.1-6.0.10.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found mod file "sable-companion-common-1.21.1-1.6.0.jar" [parent: sable-neoforge-1.21.1-1.2.2.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found mod file "flywheel-neoforge-1.21.1-1.0.6.jar" [parent: create-1.21.1-6.0.10.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found library file "tiny-java-server-1.0.0-build.33.jar" [parent: kubejs-neoforge-2101.7.2-build.363.jar, locator: jarinjar]
+[19:01:27] [main/INFO]: Found mod file "dev.ryanhcode.offroad.offroad-neoforge-1.21.1-1.2.1.jar" [parent: create-aeronautics-bundled-1.21.1-1.2.1.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: Found library file "glsl-transformer-2.0.1.jar" [parent: iris-neoforge-1.8.12+mc1.21.1.jar, locator: jarinjar]
+[19:01:27] [main/INFO]: Found mod file "fabric-block-view-api-v2-1.0.10+9afaaf8c19.jar" [parent: sodium-neoforge-0.6.13+mc1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[19:01:27] [main/INFO]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		AppleSkin 3.0.9+mc1.21 (appleskin)
+		Aquaculture 2 2.7.21 (aquaculture)
+		Aquaculture Delight 1.2.0 (aquaculturedelight)
+		Architectury 13.0.8 (architectury)
+		Better Advanced Tooltips 2101.1.0-build.1 (betteradvancedtooltips)
+		Biolith 3.0.11 (biolith)
+		Bookshelf 21.1.81 (bookshelf)
+		Cloth Config v15 API 15.0.140 (cloth_config)
+		Comforts 9.0.5+1.21.1 (comforts)
+		Create 6.0.10 (create)
+		Create Aeronautics 1.2.1 (aeronautics)
+		Create Aeronautics 1.2.1 (aeronautics_bundled)
+		Create Offroad 1.2.1 (offroad)
+		Create Simulated 1.2.1 (simulated)
+		Create Tiers 0.2.2 (createtiers)
+		Distant Horizons 3.0.3-b (distanthorizons)
+		EnchantmentDescriptions 21.1.9 (enchdesc)
+		Farmer's Delight 1.3.1 (farmersdelight)
+		Flywheel 1.0.6 (flywheel)
+		Forgified Fabric API Base 0.4.42+d1308ded19 (fabric_api_base)
+		Forgified Fabric BlockView API (v2) 1.0.10+9afaaf8c19 (fabric_block_view_api_v2)
+		Forgified Fabric Renderer API (v1) 3.4.0+acb05a3919 (fabric_renderer_api_v1)
+		Forgified Fabric Rendering Data Attachment (v1) 0.3.48+73761d2e19 (fabric_rendering_data_attachment_v1)
+		FTB Backups 2 1.0.28 (ftbbackups2)
+		FTB Chunks 2101.1.14 (ftbchunks)
+		FTB Library 2101.1.31 (ftblibrary)
+		FTB Materials 21.1.3 (ftbmaterials)
+		FTB Teams 2101.1.10 (ftbteams)
+		FTB Ultimine 2101.1.13 (ftbultimine)
+		Gravestone Mod 1.21.1-1.0.37 (gravestone)
+		Immersive Portals 6.0.7 (immersive_portals_core)
+		Iris 1.8.12-snapshot+mc1.21.1-local (iris)
+		Iris Flywheel Compat 2.4.0 (irisflw)
+		Jade 15.10.5+neoforge (jade)
+		Just Enough Items 19.27.0.336 (jei)
+		KubeJS 2101.7.2-build.363 (kubejs)
+		Lithostitched 1.7.3 (lithostitched)
+		Minecraft 1.21.1 (minecraft)
+		NeoForge 21.1.228 (neoforge)
+		PolyLib 2100.1.0-build.183 (polylib)
+		Ponder 1.0.82+mc1.21.1 (ponder)
+		PrickleMC 21.1.11 (prickle)
+		Regions Unexplored 0.6+beta4 (regions_unexplored)
+		Rhino 2101.2.7-build.81 (rhino)
+		Sable 1.2.2 (sable)
+		Sable Companion 1.6.0 (sablecompanion)
+		Simply Screens 0.7.7 (simply_screens)
+		Simply Speakers 0.6.0 (simplyspeakers)
+		Sodium 0.6.13+mc1.21.1 (sodium)
+		Sophisticated Backpacks 3.25.44 (sophisticatedbackpacks)
+		Sophisticated Core 1.4.38 (sophisticatedcore)
+		Sophisticated Storage 1.5.46 (sophisticatedstorage)
+		Sophisticated Storage Create Integration 0.1.17 (sophisticatedstoragecreateintegration)
+		SpectreLib 0.17.2+1.21 (spectrelib)
+		Tectonic 3.0.22 (tectonic)
+		Terralith 2.5.8 (terralith)
+		Veil 4.0.0 (veil)
+[19:01:27] [main/ERROR]: Access transformer file accesstransformer.cfg provided by mod irisflw does not exist!
+[19:01:28] [main/INFO]: Compatibility level set to JAVA_21
+[19:01:29] [main/INFO]: Launching target 'forgeclient' with arguments [--version, neoforge-21.1.228, --gameDir, C:\Users\NsTut\curseforge\minecraft\Instances\Inventors (1), --assetsDir, C:\Users\NsTut\curseforge\minecraft\Install\assets, --uuid, a2f1e3fa89d442b995a5f97188fcb077, --username, NsTut, --assetIndex, 17, --accessToken, ❄❄❄❄❄❄❄❄, --clientId, NmI0Zjc2OTctZWVkNi00YmMwLTg2NmMtYTlmOTRhOGU5NTcy, --xuid, 2535428099712877, --userType, msa, --versionType, release, --width, 1920, --height, 1080]
+[19:01:30] [main/WARN]: Reference map 'aeronautics.refmap.json' for aeronautics.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'comforts.refmap.json' for comforts.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'iris.refmap.json' for mixins.iris.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'iris.refmap.json' for mixins.iris.fantastic.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'iris.refmap.json' for mixins.iris.vertexformat.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'iris.refmap.json' for iris-batched-entity-rendering.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'iris.refmap.json' for mixins.iris.compat.sodium.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'bookshelf.refmap.json' for bookshelf.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.command.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.debug.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.dynamicbuffer.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.fix.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.framebuffer.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.necromancer.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.network.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.performance.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.perspective.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.pipeline.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.quasar.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.registry.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.rendertype.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.resource.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.scheduler.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.shader.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'veil.refmap.json' for veil.neoforge.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'simulated.refmap.json' for simulated.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'prickle.refmap.json' for prickle.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/INFO]: Loaded configuration file for Sodium: 43 options available, 1 override(s) found
+[19:01:30] [main/WARN]: Reference map 'offroad.refmap.json' for offroad.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map 'enchdesc.refmap.json' for enchdesc.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map '${mod_id}.refmap.json' for regions_unexplored.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:30] [main/WARN]: Reference map '${mod_id}.refmap.json' for regions_unexplored.neoforge.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:31] [main/WARN]: Reference map 'ponder.refmap.json' for ponder-common.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:31] [main/INFO]: Using Sodium renderer mixins
+[19:01:31] [main/INFO]: Using Sodium renderer mixins
+[19:01:31] [main/WARN]: Reference map 'createtiers-refmap.json' for createtiers.mixins.json could not be read. If this is a development environment you can ignore this message
+[19:01:37] [main/WARN]: Error loading class: com/portingdeadmods/cable_facades/events/GameClientEvents$2 (java.lang.ClassNotFoundException: com.portingdeadmods.cable_facades.events.GameClientEvents$2)
+[19:01:37] [main/WARN]: Error loading class: com/direwolf20/justdirethings/client/renderers/OurRenderTypes (java.lang.ClassNotFoundException: com.direwolf20.justdirethings.client.renderers.OurRenderTypes)
+[19:01:37] [main/WARN]: Error loading class: mekanism/client/render/entity/RenderFlame (java.lang.ClassNotFoundException: mekanism.client.render.entity.RenderFlame)
+[19:01:37] [main/WARN]: Error loading class: mekanism/client/render/armor/MekaSuitArmor (java.lang.ClassNotFoundException: mekanism.client.render.armor.MekaSuitArmor)
+[19:01:37] [main/WARN]: Error loading class: mekanism/client/render/lib/effect/BillboardingEffectRenderer (java.lang.ClassNotFoundException: mekanism.client.render.lib.effect.BillboardingEffectRenderer)
+[19:01:37] [main/WARN]: Error loading class: blusunrize/immersiveengineering/client/utils/IEGLShaders (java.lang.ClassNotFoundException: blusunrize.immersiveengineering.client.utils.IEGLShaders)
+[19:01:38] [main/WARN]: Force-disabling mixin 'features.render.world.sky.FogRendererMixin' as rule 'mixin.features.render.world.sky' (added by mods [iris]) disables it and children
+[19:01:38] [main/WARN]: Force-disabling mixin 'features.render.world.sky.ClientLevelMixin' as rule 'mixin.features.render.world.sky' (added by mods [iris]) disables it and children
+[19:01:38] [main/WARN]: Force-disabling mixin 'features.render.world.sky.LevelRendererMixin' as rule 'mixin.features.render.world.sky' (added by mods [iris]) disables it and children
+[19:01:40] [main/WARN]: Error loading class: com/jozufozu/flywheel/core/crumbling/CrumblingRenderer (java.lang.ClassNotFoundException: com.jozufozu.flywheel.core.crumbling.CrumblingRenderer)
+[19:01:40] [main/WARN]: Error loading class: com/jozufozu/flywheel/core/compile/ProgramCompiler (java.lang.ClassNotFoundException: com.jozufozu.flywheel.core.compile.ProgramCompiler)
+[19:01:40] [main/WARN]: Error loading class: com/jozufozu/flywheel/core/QuadConverter (java.lang.ClassNotFoundException: com.jozufozu.flywheel.core.QuadConverter)
+[19:01:41] [main/WARN]: Error loading class: org/jetbrains/annotations/ApiStatus$ScheduledForRemoval (java.lang.ClassNotFoundException: org.jetbrains.annotations.ApiStatus$ScheduledForRemoval)
+[19:01:42] [main/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.3).
+[09May2026 19:01:50.612] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 581.15, NVIDIA Corporation
+[09May2026 19:01:57.187] [pool-7-thread-1/WARN] [mixin/]: @Redirect conflict. Skipping imm_ptl.mixins.json:common.collision.MixinEntity from mod immersive_portals_core->@Redirect::redirectHandleCollisions(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/world/phys/Vec3; with priority 1000, already redirected by sable.mixins.json:entity.entity_sublevel_collision.EntityMixin from mod sable->@Redirect::sable$collideRedirect(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/world/phys/Vec3; with priority 1100
+[09May2026 19:01:58.402] [main/WARN] [mixin/]: @Redirect conflict. Skipping imm_ptl.mixins.json:common.collision.MixinEntity from mod immersive_portals_core->@Redirect::redirectHandleCollisions(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/world/phys/Vec3; with priority 1000, already redirected by sable.mixins.json:entity.entity_sublevel_collision.EntityMixin from mod sable->@Redirect::sable$collideRedirect(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/world/phys/Vec3; with priority 1100

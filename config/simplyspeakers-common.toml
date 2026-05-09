@@ -1,11 +1,12 @@
 #The max range of the speaker block
-#Range: 1 ~ 512
+# Default: 64
+# Range: 1 ~ 512
 speakerRange = 64
 #Whether to disable audio uploads
 disableUpload = false
 #The maximum upload size in bytes
-#Range: 1024 ~ 104857600
+# Default: 5242880
+# Range: 1024 ~ 104857600
 maxUploadSize = 5242880
 #Enable debug logging for troubleshooting audio/settings issues
 debugLogging = false
-

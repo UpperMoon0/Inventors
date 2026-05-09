@@ -1,0 +1,14 @@
+#The view distance of the screen
+# Default: 64
+# Range: 1 ~ 512
+viewDistance = 64
+#The tick rate of the screen
+# Default: 100
+# Range: 1 ~ 200
+screenTickRate = 100
+#Whether to disable image uploads
+disableUpload = false
+#The maximum upload size in bytes
+# Default: 5242880
+# Range: 1024 ~ 104857600
+maxUploadSize = 5242880
