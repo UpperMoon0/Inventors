@@ -1,10 +1,6 @@
 // Smelting recipes for crushed ores and dusts
 
 ServerEvents.recipes(event => {
-    // Remove existing smelting recipes that output crusty_chunks:lead_ingot
-    event.remove({ output: 'crusty_chunks:lead_ingot', type: 'minecraft:smelting' })
-    event.remove({ output: 'crusty_chunks:lead_ingot', type: 'minecraft:blasting' })
-    
     // Remove existing smelting recipes that output ftbmaterials:lead_ingot
     event.remove({ id: 'ftbmaterials:lead_ingot_from_smelting_lead_raw_ore' })
     event.remove({ id: 'ftbmaterials:lead_ingot_from_blasting_lead_raw_ore' })
