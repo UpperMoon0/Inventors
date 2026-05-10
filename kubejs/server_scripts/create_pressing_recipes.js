@@ -7,6 +7,6 @@ ServerEvents.recipes(event => {
     // Output: 1 silver_plate
     event.recipes.create.pressing(
         'ftbmaterials:silver_plate',
-        '#forge:ingots/silver'
+        'ftbmaterials:silver_ingot'
     )
 })
