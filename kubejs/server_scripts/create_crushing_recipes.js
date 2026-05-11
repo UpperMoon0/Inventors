@@ -12,93 +12,61 @@ ServerEvents.recipes(event => {
     event.remove({ id: 'create:crushing/raw_lead' })
     event.remove({ id: 'create:crushing/nickel_ore' })
     event.remove({ id: 'create:crushing/aluminum_ore' })
-    
+
     // Raw Iron Crushing
-    // Input: 1 raw_iron
-    // Output: 2 crushed_iron (100%), 
-    //         10% chance crushed_nickel (byproduct - iron-nickel deposits)
-    //         75% chance experience_nugget
     event.recipes.create.crushing([
         Item.of(`2x ${global.ITEMS.crushed_iron}`),
-        Item.of(global.ITEMS.crushed_nickel).withChance(0.1),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+        CreateItem.of(global.ITEMS.crushed_nickel, 0.1),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.75)
     ], global.ITEMS.raw_iron)
 
     // Raw Copper Crushing
-    // Input: 1 raw_copper
-    // Output: 2 crushed_copper (100%), 
-    //         10% chance crushed_gold (byproduct - copper-gold porphyry)
-    //         75% chance experience_nugget
     event.recipes.create.crushing([
         Item.of(`2x ${global.ITEMS.crushed_copper}`),
-        Item.of(global.ITEMS.crushed_gold).withChance(0.1),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+        CreateItem.of(global.ITEMS.crushed_gold, 0.1),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.75)
     ], global.ITEMS.raw_copper)
 
     // Raw Gold Crushing
-    // Input: 1 raw_gold
-    // Output: 2 crushed_gold (100%), 
-    //         10% chance crushed_silver (byproduct - gold-silver electrum veins)
-    //         75% chance experience_nugget
     event.recipes.create.crushing([
         Item.of(`2x ${global.ITEMS.crushed_gold}`),
-        Item.of(global.ITEMS.crushed_silver).withChance(0.1),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+        CreateItem.of(global.ITEMS.crushed_silver, 0.1),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.75)
     ], global.ITEMS.raw_gold)
 
     // Raw Zinc Crushing
-    // Input: 1 raw_zinc
-    // Output: 2 crushed_zinc (100%), 
-    //         10% chance crushed_lead (byproduct - zinc-lead sulfide deposits)
-    //         75% chance experience_nugget
     event.recipes.create.crushing([
         Item.of(`2x ${global.ITEMS.crushed_zinc}`),
-        Item.of(global.ITEMS.crushed_lead).withChance(0.1),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+        CreateItem.of(global.ITEMS.crushed_lead, 0.1),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.75)
     ], global.ITEMS.raw_zinc)
 
-    // Raw Lead Crushing
-    // Input: 1 raw_lead
-    // Output: 2 crushed_lead (100%), 
-    //         10% chance crushed_zinc (byproduct - lead-zinc sulfide deposits)
-    //         75% chance experience_nugget
+    // Raw Lead Crushing - using item ID, not tag
     event.recipes.create.crushing([
         Item.of(`2x ${global.ITEMS.crushed_lead}`),
-        Item.of(global.ITEMS.crushed_zinc).withChance(0.1),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+        CreateItem.of(global.ITEMS.crushed_zinc, 0.1),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.75)
     ], global.ITEMS.raw_lead)
 
-    // Raw Nickel Crushing (Creating Space)
-    // Input: 1 raw_nickel
-    // Output: 2 crushed_nickel (100%),
-    //         10% chance crushed_iron (byproduct - nickel-iron sulfide deposits)
-    //         75% chance experience_nugget
+    // Raw Nickel Crushing - using item ID, not tag
     event.recipes.create.crushing([
         Item.of(`2x ${global.ITEMS.crushed_nickel}`),
-        Item.of(global.ITEMS.crushed_iron).withChance(0.1),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+        CreateItem.of(global.ITEMS.crushed_iron, 0.1),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.75)
     ], global.ITEMS.raw_nickel)
 
-    // Raw Aluminum Crushing (Creating Space)
-    // Input: 1 raw_aluminum
-    // Output: 2 crushed_aluminum (100%), 
-    //         10% chance crushed_iron (byproduct - bauxite contains iron)
-    //         75% chance experience_nugget
+    // Raw Aluminum Crushing
     event.recipes.create.crushing([
         Item.of(`2x ${global.ITEMS.crushed_aluminum}`),
-        Item.of(global.ITEMS.crushed_iron).withChance(0.1),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+        CreateItem.of(global.ITEMS.crushed_iron, 0.1),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.75)
     ], global.ITEMS.raw_aluminum)
 
-    // Raw Tin Crushing
-    // Input: 1 raw_tin
-    // Output: 2 crushed_tin (100%), 
-    //         10% chance crushed_lead (byproduct - tin-lead deposits)
-    //         75% chance experience_nugget
+    // Raw Tin Crushing - using item ID, not tag
     event.recipes.create.crushing([
         Item.of(`2x ${global.ITEMS.crushed_tin}`),
-        Item.of(global.ITEMS.crushed_lead).withChance(0.1),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+        CreateItem.of(global.ITEMS.crushed_lead, 0.1),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.75)
     ], global.ITEMS.raw_tin)
 
     // ========================================
@@ -133,19 +101,33 @@ ServerEvents.recipes(event => {
         global.ITEMS.tin_dust
     ], global.ITEMS.tin_ingot)
 
+    // Lead Ingot -> Lead Dust
+    // Input: 1 lead_ingot
+    // Output: 1 lead_dust (100%)
+    event.recipes.create.crushing([
+        global.ITEMS.lead_dust
+    ], global.ITEMS.lead_ingot)
+
+    // Zinc Ingot -> Zinc Dust
+    // Input: 1 zinc_ingot
+    // Output: 1 zinc_dust (100%)
+    event.recipes.create.crushing([
+        global.ITEMS.zinc_dust
+    ], global.ITEMS.zinc_ingot)
+
     // ========================================
     // Silver Ore Processing
     // ========================================
 
     // Raw Silver Crushing
     // Input: 1 raw_silver
-    // Output: 2 crushed_silver (100%), 
+    // Output: 2 crushed_silver (100%),
     //         10% chance crushed_gold (byproduct - silver-gold veins)
     //         75% chance experience_nugget
     event.recipes.create.crushing([
         Item.of(`2x ${global.ITEMS.crushed_silver}`),
-        Item.of(global.ITEMS.crushed_gold).withChance(0.1),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+        CreateItem.of(global.ITEMS.crushed_gold, 0.1),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.75)
     ], global.ITEMS.raw_silver)
 
     // Silver Ingot -> Silver Dust
@@ -161,13 +143,13 @@ ServerEvents.recipes(event => {
 
     // Raw Uranium Crushing
     // Input: 1 raw_uranium
-    // Output: 2 crushed_uranium (100%), 
+    // Output: 2 crushed_uranium (100%),
     //         10% chance crushed_lead (byproduct - uranium-lead deposits)
     //         75% chance experience_nugget
     event.recipes.create.crushing([
         Item.of(`2x ${global.ITEMS.crushed_uranium}`),
-        Item.of(global.ITEMS.crushed_lead).withChance(0.1),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.75)
+        CreateItem.of(global.ITEMS.crushed_lead, 0.1),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.75)
     ], global.ITEMS.raw_uranium)
 
     // Uranium Ingot -> Uranium Dust

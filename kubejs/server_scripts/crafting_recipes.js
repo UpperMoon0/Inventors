@@ -31,9 +31,9 @@ ServerEvents.recipes(event => {
         'NS',
         'SN'
     ], {
-        N: '#kubejs:andesite_nugget',
-        S: '#forge:stone'
-    })
+        N: '#kubejs:andesite_alloy_nugget_ingredients',
+        S: '#c:stones'
+    }).id('create:crafting/materials/andesite_alloy')
 
     // Remove original Electron Tube crafting recipe and replace with new one using Silver Plates
     event.remove({ id: 'create:crafting/materials/electron_tube' })

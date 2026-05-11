@@ -5,90 +5,62 @@
 ServerEvents.recipes(event => {
     // Raw Iron Milling
     // Input: 1 raw_iron
-    // Output: 1 crushed_iron (100%), 
-    //         50% chance crushed_iron, 
+    // Output: 1 crushed_iron (100%),
+    //         50% chance crushed_iron,
     //         50% chance experience_nugget
     event.recipes.create.milling([
         global.ITEMS.crushed_iron,
-        Item.of(global.ITEMS.crushed_iron).withChance(0.5),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.5)
+        CreateItem.of(global.ITEMS.crushed_iron, 0.5),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.5)
     ], global.ITEMS.raw_iron)
 
     // Raw Copper Milling
-    // Input: 1 raw_copper
-    // Output: 1 crushed_copper (100%), 
-    //         50% chance crushed_copper, 
-    //         50% chance experience_nugget
     event.recipes.create.milling([
         global.ITEMS.crushed_copper,
-        Item.of(global.ITEMS.crushed_copper).withChance(0.5),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.5)
+        CreateItem.of(global.ITEMS.crushed_copper, 0.5),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.5)
     ], global.ITEMS.raw_copper)
 
     // Raw Gold Milling
-    // Input: 1 raw_gold
-    // Output: 1 crushed_gold (100%), 
-    //         50% chance crushed_gold, 
-    //         50% chance experience_nugget
     event.recipes.create.milling([
         global.ITEMS.crushed_gold,
-        Item.of(global.ITEMS.crushed_gold).withChance(0.5),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.5)
+        CreateItem.of(global.ITEMS.crushed_gold, 0.5),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.5)
     ], global.ITEMS.raw_gold)
 
     // Raw Zinc Milling
-    // Input: 1 raw_zinc
-    // Output: 1 crushed_zinc (100%), 
-    //         50% chance crushed_zinc, 
-    //         50% chance experience_nugget
     event.recipes.create.milling([
         global.ITEMS.crushed_zinc,
-        Item.of(global.ITEMS.crushed_zinc).withChance(0.5),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.5)
+        CreateItem.of(global.ITEMS.crushed_zinc, 0.5),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.5)
     ], global.ITEMS.raw_zinc)
 
-    // Raw Nickel Milling (Creating Space)
-    // Input: 1 raw_nickel
-    // Output: 1 crushed_nickel (100%), 
-    //         50% chance crushed_nickel, 
-    //         50% chance experience_nugget
+    // Raw Nickel Milling
     event.recipes.create.milling([
         global.ITEMS.crushed_nickel,
-        Item.of(global.ITEMS.crushed_nickel).withChance(0.5),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.5)
+        CreateItem.of(global.ITEMS.crushed_nickel, 0.5),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.5)
     ], global.ITEMS.raw_nickel)
 
-    // Raw Aluminum Milling (Creating Space)
-    // Input: 1 raw_aluminum
-    // Output: 1 crushed_aluminum (100%), 
-    //         50% chance crushed_aluminum, 
-    //         50% chance experience_nugget
+    // Raw Aluminum Milling
     event.recipes.create.milling([
         global.ITEMS.crushed_aluminum,
-        Item.of(global.ITEMS.crushed_aluminum).withChance(0.5),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.5)
+        CreateItem.of(global.ITEMS.crushed_aluminum, 0.5),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.5)
     ], global.ITEMS.raw_aluminum)
 
     // Raw Lead Milling
-    // Input: 1 raw_lead
-    // Output: 1 crushed_lead (100%), 
-    //         50% chance crushed_lead, 
-    //         50% chance experience_nugget
     event.recipes.create.milling([
         global.ITEMS.crushed_lead,
-        Item.of(global.ITEMS.crushed_lead).withChance(0.5),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.5)
+        CreateItem.of(global.ITEMS.crushed_lead, 0.5),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.5)
     ], global.ITEMS.raw_lead)
 
     // Raw Tin Milling
-    // Input: 1 raw_tin
-    // Output: 1 crushed_tin (100%), 
-    //         50% chance crushed_tin, 
-    //         50% chance experience_nugget
     event.recipes.create.milling([
         global.ITEMS.crushed_tin,
-        Item.of(global.ITEMS.crushed_tin).withChance(0.5),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.5)
+        CreateItem.of(global.ITEMS.crushed_tin, 0.5),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.5)
     ], global.ITEMS.raw_tin)
 
     // ========================================
@@ -123,19 +95,33 @@ ServerEvents.recipes(event => {
         global.ITEMS.tin_dust
     ], global.ITEMS.tin_ingot)
 
+    // Lead Ingot -> Lead Dust
+    // Input: 1 lead_ingot
+    // Output: 1 lead_dust (100%)
+    event.recipes.create.milling([
+        global.ITEMS.lead_dust
+    ], global.ITEMS.lead_ingot)
+
+    // Zinc Ingot -> Zinc Dust
+    // Input: 1 zinc_ingot
+    // Output: 1 zinc_dust (100%)
+    event.recipes.create.milling([
+        global.ITEMS.zinc_dust
+    ], global.ITEMS.zinc_ingot)
+
     // ========================================
     // Silver Ore Processing
     // ========================================
 
     // Raw Silver Milling
     // Input: 1 raw_silver
-    // Output: 1 crushed_silver (100%), 
-    //         50% chance crushed_silver, 
+    // Output: 1 crushed_silver (100%),
+    //         50% chance crushed_silver,
     //         50% chance experience_nugget
     event.recipes.create.milling([
         global.ITEMS.crushed_silver,
-        Item.of(global.ITEMS.crushed_silver).withChance(0.5),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.5)
+        CreateItem.of(global.ITEMS.crushed_silver, 0.5),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.5)
     ], global.ITEMS.raw_silver)
 
     // Silver Ingot -> Silver Dust
@@ -151,13 +137,13 @@ ServerEvents.recipes(event => {
 
     // Raw Uranium Milling
     // Input: 1 raw_uranium
-    // Output: 1 crushed_uranium (100%), 
-    //         50% chance crushed_uranium, 
+    // Output: 1 crushed_uranium (100%),
+    //         50% chance crushed_uranium,
     //         50% chance experience_nugget
     event.recipes.create.milling([
         global.ITEMS.crushed_uranium,
-        Item.of(global.ITEMS.crushed_uranium).withChance(0.5),
-        Item.of(global.ITEMS.experience_nugget).withChance(0.5)
+        CreateItem.of(global.ITEMS.crushed_uranium, 0.5),
+        CreateItem.of(global.ITEMS.experience_nugget, 0.5)
     ], global.ITEMS.raw_uranium)
 
     // Uranium Ingot -> Uranium Dust

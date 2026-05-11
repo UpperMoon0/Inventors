@@ -63,3 +63,4 @@ usercache.json
 # Flywheel mixin output
 .mixin.out/
 options.txt
+command_history.txt

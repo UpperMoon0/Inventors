@@ -13,7 +13,7 @@ ServerEvents.recipes(event => {
     //  III
     // I: invar_ingot
     // L: lead_ingot
-    // S: #forge:stone
+    // S: c:stones
     event.recipes.create.mechanical_crafting('create:crushing_wheel', [
         ' III ',
         'IILII',

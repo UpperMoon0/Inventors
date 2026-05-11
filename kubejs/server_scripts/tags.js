@@ -2,24 +2,24 @@
 
 ServerEvents.tags('item', event => {
     // Create unified tags for iron (dust or ingot)
-    event.add('kubejs:iron_material', '#forge:ingots/iron')
-    event.add('kubejs:iron_material', '#forge:dusts/iron')
-    
+    event.add('kubejs:iron_material', 'ftbmaterials:iron_dust')
+    event.add('kubejs:iron_material', 'minecraft:iron_ingot')
+
     // Create unified tags for nickel (dust or ingot)
-    event.add('kubejs:nickel_material', '#forge:ingots/nickel')
-    event.add('kubejs:nickel_material', '#forge:dusts/nickel')
-    
+    event.add('kubejs:nickel_material', 'ftbmaterials:nickel_ingot')
+    event.add('kubejs:nickel_material', 'ftbmaterials:nickel_dust')
+
     // Create unified tags for copper (dust or ingot)
-    event.add('kubejs:copper_material', '#forge:ingots/copper')
-    event.add('kubejs:copper_material', '#forge:dusts/copper')
-    
+    event.add('kubejs:copper_material', 'minecraft:copper_ingot')
+    event.add('kubejs:copper_material', 'ftbmaterials:copper_dust')
+
     // Create unified tags for tin (dust or ingot)
-    event.add('kubejs:tin_material', '#forge:ingots/tin')
-    event.add('kubejs:tin_material', '#forge:dusts/tin')
-    
+    event.add('kubejs:tin_material', 'ftbmaterials:tin_ingot')
+    event.add('kubejs:tin_material', 'ftbmaterials:tin_dust')
+
     // Create unified tag for nuggets used in Andesite Alloy (iron or zinc)
-    event.add('kubejs:andesite_nugget', '#forge:nuggets/iron')
-    event.add('kubejs:andesite_nugget', '#forge:nuggets/zinc')
+    event.add('kubejs:andesite_alloy_nugget_ingredients', 'minecraft:iron_nugget')
+    event.add('kubejs:andesite_alloy_nugget_ingredients', 'create:zinc_nugget')
 
     // Create unified tag for coal/charcoal (carbon source for ore processing)
     event.add('kubejs:carbon_source', 'minecraft:coal')

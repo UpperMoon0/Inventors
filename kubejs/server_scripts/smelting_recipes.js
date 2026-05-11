@@ -30,20 +30,6 @@ ServerEvents.recipes(event => {
     event.smelting(global.ITEMS.lead_ingot, global.ITEMS.crushed_lead).xp(0.7)
     event.blasting(global.ITEMS.lead_ingot, global.ITEMS.crushed_lead).xp(0.5)
     
-    // Raw Lead -> Lead Ingot (FTB Materials)
-    // Input: 1 #forge:raw_materials/lead
-    // Output: 1 ftbmaterials:lead_ingot
-    // XP: 1.0 (same as raw iron)
-    event.smelting(global.ITEMS.lead_ingot, global.ITEMS.raw_lead).xp(1.0)
-    event.blasting(global.ITEMS.lead_ingot, global.ITEMS.raw_lead).xp(0.7)
-    
-    // Raw Nickel -> Nickel Ingot (FTB Materials)
-    // Input: 1 #forge:raw_materials/nickel
-    // Output: 1 ftbmaterials:nickel_ingot
-    // XP: 1.0 (same as raw iron)
-    event.smelting(global.ITEMS.nickel_ingot, global.ITEMS.raw_nickel).xp(1.0)
-    event.blasting(global.ITEMS.nickel_ingot, global.ITEMS.raw_nickel).xp(0.7)
-    
     // ========================================
     // Dust Smelting
     // ========================================
