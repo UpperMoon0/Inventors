@@ -138,9 +138,19 @@ ServerEvents.recipes(event => {
         global.ITEMS.silver_dust
     ], global.ITEMS.silver_ingot)
 
-    // ========================================
-    // Uranium Ore Processing
-    // ========================================
+// Coal/Charcoal -> Coal Dust / Charcoal Dust
+event.recipes.create.crushing([
+    global.ITEMS.coal_dust
+], '#minecraft:coals')
+
+// Milling for alternative dust production
+event.recipes.create.milling([
+    global.ITEMS.coal_dust
+], '#minecraft:coals')
+
+// ========================================
+// Uranium Ore Processing
+// ========================================
 
     // Raw Uranium Crushing
     // Input: 1 raw_uranium
