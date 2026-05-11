@@ -10,8 +10,9 @@ ServerEvents.recipes(event => {
     event.remove({ id: 'create:crushing/raw_zinc' })
     event.remove({ id: 'create:crushing/raw_nickel' })
     event.remove({ id: 'create:crushing/raw_lead' })
-    event.remove({ id: 'create:crushing/nickel_ore' })
-    event.remove({ id: 'create:crushing/aluminum_ore' })
+    event.remove({ id: 'create:crushing/raw_silver' })
+    event.remove({ id: 'create:crushing/raw_tin' })
+    event.remove({ id: 'create:crushing/raw_aluminum' })
 
     // Raw Iron Crushing
     event.recipes.create.crushing([
