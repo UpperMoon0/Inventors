@@ -152,4 +152,13 @@ ServerEvents.recipes(event => {
     event.recipes.create.milling([
         global.ITEMS.uranium_dust
     ], global.ITEMS.uranium_ingot)
+
+    // Coal/Charcoal -> Coal Dust / Charcoal Dust
+    event.recipes.create.milling([
+        'ftbmaterials:coal_dust'
+    ], Ingredient.of('minecraft:coal'))
+
+    event.recipes.create.milling([
+        'ftbmaterials:charcoal_dust'
+    ], Ingredient.of('minecraft:charcoal'))
 })

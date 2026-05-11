@@ -45,6 +45,7 @@ global.ITEMS = {
     bronze_dust: 'ftbmaterials:bronze_dust',
     graphite_dust: 'ftbmaterials:graphite_dust',
     coal_dust: 'ftbmaterials:coal_dust',
+    charcoal_dust: 'ftbmaterials:charcoal_dust',
     iron_nugget: 'ftbmaterials:iron_nugget',
     steel_nugget: 'ftbmaterials:steel_nugget',
     experience_nugget: 'create:experience_nugget'

@@ -25,6 +25,10 @@ ServerEvents.tags('item', event => {
     event.add('kubejs:carbon_source', 'minecraft:coal')
     event.add('kubejs:carbon_source', 'minecraft:charcoal')
 
+    // Coal dusts tag for steel production
+    event.add('kubejs:coal_dusts', 'ftbmaterials:coal_dust')
+    event.add('kubejs:coal_dusts', 'ftbmaterials:charcoal_dust')
+
     // ========== CREATE TIERS TAGS ==========
     // All cogwheels across all tiers (including default Create)
     event.add('kubejs:cogwheel', 'createtiers:cogwheel_crude')

@@ -80,24 +80,24 @@ ServerEvents.recipes(event => {
     // ========================================
 
 // Iron Carbon Reduction (Heated)
-// Input: 3 crushed_iron + 2 coal/charcoal
+// Input: 3 crushed_iron + 2 coal
 // Output: 4 iron_dust (100%), graphite_dust (20% chance)
 // Requires heat - carbon acts as reducing agent
 event.recipes.create.mixing([
-        Item.of(`4x ${global.ITEMS.iron_dust}`),
-        CreateItem.of(global.ITEMS.graphite_dust, 0.2)
+        '4x ftbmaterials:iron_dust',
+        CreateItem.of('ftbmaterials:graphite_dust', 0.2)
     ], [
-        Item.of(`3x ${global.ITEMS.crushed_iron}`),
-        Item.of(`2x #minecraft:coals`)
+        '3x create:crushed_raw_iron',
+        Ingredient.of('#kubejs:coal_dusts', 2)
     ]).heated()
 
-    // Steel Nugget Production (Heated)
-    // Input: 24 iron_nugget + 1 coal/charcoal dust
-    // Output: 9 steel_nugget
-    event.recipes.create.mixing([
-        Item.of(`9x ${global.ITEMS.steel_nugget}`)
+// Steel Nugget Production (Heated)
+// Input: 24 iron_nugget + 1 coal/charcoal dust
+// Output: 9 steel_nugget
+event.recipes.create.mixing([
+        '9x ftbmaterials:steel_nugget'
     ], [
-        Item.of(`24x ${global.ITEMS.iron_nugget}`),
-        '#ftbmaterials:coal_dusts'
+        '24x minecraft:iron_nugget',
+        Ingredient.of('#kubejs:coal_dusts')
     ]).heated()
 })
