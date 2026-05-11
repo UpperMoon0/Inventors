@@ -116,6 +116,13 @@ ServerEvents.recipes(event => {
         global.ITEMS.zinc_dust
     ], global.ITEMS.zinc_ingot)
 
+    // Iron Ingot -> Iron Dust
+    // Input: 1 iron_ingot
+    // Output: 1 iron_dust (100%)
+    event.recipes.create.crushing([
+        global.ITEMS.iron_dust
+    ], global.ITEMS.iron_ingot)
+
     // ========================================
     // Silver Ore Processing
     // ========================================

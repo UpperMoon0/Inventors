@@ -35,9 +35,38 @@ ServerEvents.recipes(event => {
     // ========================================
     
     // Invar Dust -> Invar Ingot
-    // Input: 1 ftbmaterials:invar_dust
-    // Output: 1 ftbmaterials:invar_ingot
-    // XP: 0.7 (same as iron)
     event.smelting(global.ITEMS.invar_ingot, global.ITEMS.invar_dust).xp(0.7)
     event.blasting(global.ITEMS.invar_ingot, global.ITEMS.invar_dust).xp(0.5)
+
+    // Copper Dust -> Copper Ingot
+    event.smelting(global.ITEMS.copper_ingot, global.ITEMS.copper_dust).xp(0.7)
+    event.blasting(global.ITEMS.copper_ingot, global.ITEMS.copper_dust).xp(0.5)
+
+    // Tin Dust -> Tin Ingot
+    event.smelting(global.ITEMS.tin_ingot, global.ITEMS.tin_dust).xp(0.7)
+    event.blasting(global.ITEMS.tin_ingot, global.ITEMS.tin_dust).xp(0.5)
+
+    // Nickel Dust -> Nickel Ingot
+    event.smelting(global.ITEMS.nickel_ingot, global.ITEMS.nickel_dust).xp(0.7)
+    event.blasting(global.ITEMS.nickel_ingot, global.ITEMS.nickel_dust).xp(0.5)
+
+    // Iron Dust -> Iron Ingot
+    event.smelting(global.ITEMS.iron_ingot, global.ITEMS.iron_dust).xp(0.7)
+    event.blasting(global.ITEMS.iron_ingot, global.ITEMS.iron_dust).xp(0.5)
+
+    // Bronze Dust -> Bronze Ingot
+    event.smelting(global.ITEMS.bronze_ingot, global.ITEMS.bronze_dust).xp(0.7)
+    event.blasting(global.ITEMS.bronze_ingot, global.ITEMS.bronze_dust).xp(0.5)
+
+    // Invar Dust -> Invar Ingot
+    event.smelting(global.ITEMS.invar_ingot, global.ITEMS.invar_dust).xp(0.7)
+    event.blasting(global.ITEMS.invar_ingot, global.ITEMS.invar_dust).xp(0.5)
+
+    // Brass Dust -> Brass Ingot
+    event.smelting(global.ITEMS.brass_ingot, global.ITEMS.brass_dust).xp(0.7)
+    event.blasting(global.ITEMS.brass_ingot, global.ITEMS.brass_dust).xp(0.5)
+
+    // Zinc Dust -> Zinc Ingot
+    event.smelting(global.ITEMS.zinc_ingot, global.ITEMS.zinc_dust).xp(0.7)
+    event.blasting(global.ITEMS.zinc_ingot, global.ITEMS.zinc_dust).xp(0.5)
 })

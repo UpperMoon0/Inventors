@@ -2,8 +2,8 @@
 
 ServerEvents.recipes(event => {
     // Remove original Andesite Alloy mixing recipes
-    event.remove({ id: 'create:mixing/materials/andesite_alloy' })
-    event.remove({ id: 'create:mixing/materials/andesite_alloy_from_zinc' })
+    event.remove({ id: 'create:mixing/andesite_alloy' })
+    event.remove({ id: 'create:mixing/andesite_alloy_from_zinc' })
 
     // Andesite Alloy Mixing
     // Input: 1 stone + 1 invar nugget
@@ -11,7 +11,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.mixing(
         'create:andesite_alloy',
         [
-            '#c:stones',
+            Ingredient.of('#c:stones'),
             global.ITEMS.invar_nugget
         ]
     )
@@ -28,19 +28,10 @@ ServerEvents.recipes(event => {
         ]
     )
 
-    // Note: Invar Ingot Mixing requires 3 ingredients (2 iron + 1 nickel)
-    // which exceeds the 2 fluid input limit in 1.21.1 for mixing recipes.
-    // Use Pressing recipes instead for invar ingots.
-
-    event.remove({ id: 'createbigcannons:mixing/alloy_bronze_brass' })
-    event.remove({ id: 'createbigcannons:mixing/alloy_bronze_tin' })
-    event.remove({ id: 'createbigcannons:mixing/alloy_bronze_tinless' })
-
     // Bronze Dust Mixing
     // Input: 3 copper_dust + 1 tin_dust
     // Output: 4 bronze_dust
     // No heat required (cold mixing)
-    // Note: This uses items, not tags, so should work
     event.recipes.create.mixing(
         Item.of(`4x ${global.ITEMS.bronze_dust}`),
         [
@@ -49,9 +40,17 @@ ServerEvents.recipes(event => {
         ]
     )
 
-    // Note: Bronze Ingot Mixing requires 4 ingredients (3 copper + 1 tin)
-    // which exceeds the 2 fluid input limit in 1.21.1 for mixing recipes.
-    // Use Pressing recipes instead for bronze ingots.
+    // Brass Dust Mixing
+    // Input: 1 copper_dust + 1 zinc_dust
+    // Output: 2 brass_dust
+    // No heat required (cold mixing)
+    event.recipes.create.mixing(
+        Item.of(`2x ${global.ITEMS.brass_dust}`),
+        [
+            Item.of(global.ITEMS.copper_dust),
+            Item.of(global.ITEMS.zinc_dust)
+        ]
+    )
 
     // Invar Ingot Mixing
     // Input: 2 iron_ingots + 1 nickel_ingot
@@ -59,10 +58,10 @@ ServerEvents.recipes(event => {
     event.recipes.create.mixing(
         Item.of(`1x ${global.ITEMS.invar_ingot}`),
         [
-            Item.of(`2x ${global.ITEMS.iron_ingot}`),
-            Item.of(global.ITEMS.nickel_ingot)
+            Ingredient.of('#kubejs:iron_material', 2),
+            Ingredient.of('#kubejs:nickel_material')
         ]
-    )
+    ).heated()
 
     // Bronze Ingot Mixing
     // Input: 3 copper_ingots + 1 tin_ingot
@@ -70,10 +69,11 @@ ServerEvents.recipes(event => {
     event.recipes.create.mixing(
         Item.of(`1x ${global.ITEMS.bronze_ingot}`),
         [
-            Item.of(`3x ${global.ITEMS.copper_ingot}`),
-            Item.of(global.ITEMS.tin_ingot)
+            Ingredient.of('#kubejs:copper_material', 3),
+            Ingredient.of('#kubejs:tin_material')
         ]
-    )
+    ).heated()
+
 
     // ========================================
     // Tier 3: Carbon Reduction Processing
