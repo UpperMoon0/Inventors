@@ -64,3 +64,21 @@ usercache.json
 .mixin.out/
 options.txt
 command_history.txt
+
+# Mod JARs (launcher-managed, binary blobs)
+mods/
+
+# Runtime cache
+data/
+
+# Session debug logs
+debug/
+
+# Sinytra Connector / Fabric loader log
+fabricloader.log
+
+# Sable native physics engine DLLs
+.sable/
+
+# Config backup files
+config/*.bak
