@@ -2,7 +2,10 @@
 # Default: 512.0
 # Range: -2048.0 ~ 100000.0
 ascendThreshold = 256.0
-
+#Y clearance from the opposite transit boundary after dimension transfer
+# Default: 16.0
+# Range: 0.0 ~ 100000.0
+transitionOffset = 16.0
 #Whether to log the dirt block on common setup
 logDirtBlock = true
 #A magic number
