@@ -57,21 +57,13 @@
     "gravityTransform": false,
     "entries": [
       {
-        "dimensionIdStr": "stellaris:earth_orbit",
-        "scale": 1.0,
-        "flipped": false,
-        "horizontalRotation": 0.0,
-        "connectsPrevious": false,
-        "connectsNext": true
-      },
-      {
         "dimensionIdStr": "minecraft:overworld",
         "scale": 1.0,
         "flipped": false,
         "horizontalRotation": 0.0,
         "topY": 256,
         "bedrockReplacementStr": "minecraft:deepslate",
-        "connectsPrevious": true,
+        "connectsPrevious": false,
         "connectsNext": true
       },
       {

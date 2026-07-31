@@ -60,7 +60,7 @@ command_history.txt
 mods/
 
 # Runtime cache
-data/
+/data/
 
 # Session debug logs
 debug/
