@@ -3,7 +3,6 @@
 	default_quest_shape: ""
 	filename: "06_nether_industry"
 	group: "7100000000000001"
-	icon: "createtiers:cogwheel_basic"
 	id: "7100000000000060"
 	images: [ ]
 	order_index: 5
@@ -12,7 +11,11 @@
 		{
 			dependencies: ["7100000000000139"]
 			id: "7100000000000200"
-			rewards: [{ id: "7130000000000200", table_id: 4177L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000200"
+				table_id: 4177L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000020200"
 				item: { count: 1, id: "create:blaze_burner" }
@@ -24,7 +27,11 @@
 		{
 			dependencies: ["7100000000000200"]
 			id: "7100000000000140"
-			rewards: [{ id: "7130000000000140", table_id: 4177L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000140"
+				table_id: 4177L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000010149"
@@ -37,7 +44,11 @@
 		{
 			dependencies: ["7100000000000140"]
 			id: "7100000000000201"
-			rewards: [{ id: "7130000000000201", table_id: 4178L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000201"
+				table_id: 4178L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000020201"
@@ -50,7 +61,11 @@
 		{
 			dependencies: ["7100000000000200"]
 			id: "7100000000000202"
-			rewards: [{ id: "7130000000000202", table_id: 4178L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000202"
+				table_id: 4178L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000020202"
@@ -66,7 +81,11 @@
 				"7100000000000202"
 			]
 			id: "7100000000000203"
-			rewards: [{ id: "7130000000000203", table_id: 4178L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000203"
+				table_id: 4178L
+				type: "choice"
+			}]
 			tasks: [
 				{
 					count: 8L
@@ -86,15 +105,19 @@
 		{
 			dependencies: ["7100000000000203"]
 			id: "7100000000000141"
-			rewards: [{ id: "7130000000000141", table_id: 4178L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000141"
+				table_id: 4178L
+				type: "choice"
+			}]
 			tasks: [
 				{
-					id: "7100000000010150"
+					id: "3E103B07A0038CE3"
 					item: { count: 1, id: "create:brass_funnel" }
 					type: "item"
 				}
 				{
-					id: "7100000000010151"
+					id: "54D18578F069DC6F"
 					item: { count: 1, id: "create:brass_tunnel" }
 					type: "item"
 				}
@@ -105,9 +128,13 @@
 		{
 			dependencies: ["7100000000000203"]
 			id: "7100000000000142"
-			rewards: [{ id: "7130000000000142", table_id: 4178L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000142"
+				table_id: 4178L
+				type: "choice"
+			}]
 			tasks: [{
-				id: "7100000000010152"
+				id: "467543899D8D56C7"
 				item: { count: 1, id: "create:mechanical_arm" }
 				type: "item"
 			}]
@@ -120,7 +147,11 @@
 				"7100000000000142"
 			]
 			id: "7100000000000204"
-			rewards: [{ id: "7130000000000204", table_id: 4178L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000204"
+				table_id: 4178L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000020204"

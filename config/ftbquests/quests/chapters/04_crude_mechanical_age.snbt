@@ -3,7 +3,6 @@
 	default_quest_shape: ""
 	filename: "04_crude_mechanical_age"
 	group: "7100000000000001"
-	icon: "createtiers:cogwheel_crude"
 	id: "7100000000000040"
 	images: [ ]
 	order_index: 3
@@ -12,7 +11,11 @@
 		{
 			dependencies: ["7100000000000123"]
 			id: "7100000000000107"
-			rewards: [{ id: "7130000000000107", table_id: 4145L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000107"
+				table_id: 4145L
+				type: "choice"
+			}]
 			tasks: [
 				{
 					count: 8L
@@ -32,7 +35,11 @@
 		{
 			dependencies: ["7100000000000107"]
 			id: "7100000000000124"
-			rewards: [{ id: "7130000000000124", table_id: 4146L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000124"
+				table_id: 4146L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000010130"
 				item: { count: 1, id: "create:water_wheel" }
@@ -44,7 +51,11 @@
 		{
 			dependencies: ["7100000000000124"]
 			id: "7100000000000125"
-			rewards: [{ id: "7130000000000125", table_id: 4146L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000125"
+				table_id: 4146L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000010131"
 				item: { count: 1, id: "create:millstone" }
@@ -56,7 +67,11 @@
 		{
 			dependencies: ["7100000000000124"]
 			id: "7100000000000126"
-			rewards: [{ id: "7130000000000126", table_id: 4145L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000126"
+				table_id: 4145L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000010132"
 				item: { count: 1, id: "create:mechanical_press" }
@@ -68,7 +83,11 @@
 		{
 			dependencies: ["7100000000000124"]
 			id: "7100000000000127"
-			rewards: [{ id: "7130000000000127", table_id: 4146L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000127"
+				table_id: 4146L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000010133"
 				item: { count: 1, id: "create:mechanical_mixer" }
@@ -80,7 +99,11 @@
 		{
 			dependencies: ["7100000000000124"]
 			id: "7100000000000128"
-			rewards: [{ id: "7130000000000128", table_id: 4146L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000128"
+				table_id: 4146L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000010134"
 				item: { count: 1, id: "create:mechanical_saw" }
@@ -96,7 +119,11 @@
 				"7100000000000127"
 			]
 			id: "7100000000000129"
-			rewards: [{ id: "7130000000000129", table_id: 4145L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000129"
+				table_id: 4145L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 2L
 				id: "7100000000010135"
@@ -109,7 +136,11 @@
 		{
 			dependencies: ["7100000000000128"]
 			id: "7100000000000130"
-			rewards: [{ id: "7130000000000130", table_id: 4146L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000130"
+				table_id: 4146L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000010136"
 				item: { count: 1, id: "create:mechanical_harvester" }
@@ -124,7 +155,11 @@
 				"7100000000000130"
 			]
 			id: "7100000000000131"
-			rewards: [{ id: "7130000000000131", table_id: 4145L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000131"
+				table_id: 4145L
+				type: "choice"
+			}]
 			tasks: [
 				{
 					count: 64L

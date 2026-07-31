@@ -3,7 +3,6 @@
 	default_quest_shape: ""
 	filename: "02_copper_age"
 	group: "7100000000000001"
-	icon: "productivemetalworks:black_foundry_controller"
 	id: "7100000000000020"
 	images: [ ]
 	order_index: 1
@@ -12,7 +11,11 @@
 		{
 			dependencies: ["7100000000000114"]
 			id: "7100000000000102"
-			rewards: [{ id: "7130000000000102", table_id: 4113L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000102"
+				table_id: 4113L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000010102"
@@ -25,7 +28,11 @@
 		{
 			dependencies: ["7100000000000102"]
 			id: "7100000000000115"
-			rewards: [{ id: "7130000000000115", table_id: 4113L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000115"
+				table_id: 4113L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000010118"
@@ -38,7 +45,11 @@
 		{
 			dependencies: ["7100000000000115"]
 			id: "7100000000000103"
-			rewards: [{ id: "7130000000000103", table_id: 4114L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000103"
+				table_id: 4114L
+				type: "choice"
+			}]
 			tasks: [
 				{
 					id: "7100000000010103"
@@ -62,7 +73,11 @@
 		{
 			dependencies: ["7100000000000103"]
 			id: "7100000000000116"
-			rewards: [{ id: "7130000000000116", table_id: 4114L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000116"
+				table_id: 4114L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000010119"
 				item: { count: 1, id: "productivemetalworks:ingot_cast" }
@@ -74,7 +89,11 @@
 		{
 			dependencies: ["7100000000000103"]
 			id: "7100000000000104"
-			rewards: [{ id: "7130000000000104", table_id: 4114L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000104"
+				table_id: 4114L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000010106"
@@ -90,7 +109,11 @@
 				"7100000000000104"
 			]
 			id: "7100000000000105"
-			rewards: [{ id: "7130000000000105", table_id: 4114L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000105"
+				table_id: 4114L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000010107"
 				item: { count: 1, id: "silentgear:pickaxe" }
@@ -102,7 +125,11 @@
 		{
 			dependencies: ["7100000000000105"]
 			id: "7100000000000117"
-			rewards: [{ id: "7130000000000117", table_id: 4114L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000117"
+				table_id: 4114L
+				type: "choice"
+			}]
 			tasks: [
 				{
 					id: "7100000000010120"

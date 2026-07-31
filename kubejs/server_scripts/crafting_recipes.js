@@ -36,7 +36,7 @@ ServerEvents.recipes(event => {
         'PF',
         'TP'
     ], {
-        P: 'primitivestart:improvised_planks',
+        P: '#kubejs:primitive_planks',
         F: 'minecraft:flint',
         T: '#c:strings'
     }).id('kubejs:primitive/crafting_table')
@@ -46,7 +46,7 @@ ServerEvents.recipes(event => {
         'PTP',
         'PPP'
     ], {
-        P: 'primitivestart:improvised_planks',
+        P: '#kubejs:primitive_planks',
         T: '#c:strings'
     }).id('kubejs:primitive/bound_chest')
 
@@ -64,6 +64,64 @@ ServerEvents.recipes(event => {
         F: 'minecraft:campfire'
     }).id('kubejs:primitive/masonry_furnace')
 
+    // Primitive pottery is shaped by hand and fired over a campfire. The
+    // decorated pot is functional one-stack storage before bound chests.
+    event.shaped('kubejs:unfired_basin', [
+        'C C',
+        'CCC'
+    ], {
+        C: 'minecraft:clay_ball'
+    }).id('kubejs:primitive/unfired_basin')
+
+    event.campfireCooking('kubejs:ceramic_basin', 'kubejs:unfired_basin', 0.1, 600)
+        .id('kubejs:primitive/fire_ceramic_basin')
+
+    event.shaped('kubejs:unfired_storage_pot', [
+        'C C',
+        'C C',
+        'CCC'
+    ], {
+        C: 'minecraft:clay_ball'
+    }).id('kubejs:primitive/unfired_storage_pot')
+
+    event.campfireCooking('minecraft:decorated_pot', 'kubejs:unfired_storage_pot', 0.1, 800)
+        .id('kubejs:primitive/fire_storage_pot')
+
+    // A frame is consumed after drying a batch, representing worn cordage and
+    // keeping preserved food useful without making it free.
+    event.shaped('kubejs:drying_frame', [
+        'STS',
+        'T T',
+        'STS'
+    ], {
+        S: 'minecraft:stick',
+        T: '#c:strings'
+    }).id('kubejs:primitive/drying_frame')
+
+    event.shapeless(Item.of('kubejs:dried_meat', 4), [
+        'kubejs:drying_frame',
+        '#c:foods/raw_meat',
+        '#c:foods/raw_meat',
+        '#c:foods/raw_meat',
+        '#c:foods/raw_meat'
+    ]).id('kubejs:primitive/dry_meat')
+
+    event.shapeless(Item.of('kubejs:dried_fish', 4), [
+        'kubejs:drying_frame',
+        '#c:foods/raw_fish',
+        '#c:foods/raw_fish',
+        '#c:foods/raw_fish',
+        '#c:foods/raw_fish'
+    ]).id('kubejs:primitive/dry_fish')
+
+    event.shapeless(Item.of('kubejs:dried_berries', 4), [
+        'kubejs:drying_frame',
+        'minecraft:sweet_berries',
+        'minecraft:sweet_berries',
+        'minecraft:sweet_berries',
+        'minecraft:sweet_berries'
+    ]).id('kubejs:primitive/dry_berries')
+
     // Bark supplies tannins. Each stage is intentionally visible in JEI so
     // leather is a small survival craft rather than an immediate mob drop.
     event.shapeless(Item.of('kubejs:tree_bark', 2), [
@@ -73,7 +131,7 @@ ServerEvents.recipes(event => {
 
     event.shapeless('kubejs:soaked_hide', [
         '#kubejs:raw_hides',
-        'minecraft:water_bucket'
+        'kubejs:ceramic_basin'
     ]).id('kubejs:primitive/soak_raw_hide')
 
     event.shapeless('kubejs:scraped_hide', [
@@ -85,7 +143,7 @@ ServerEvents.recipes(event => {
         'kubejs:scraped_hide',
         'kubejs:tree_bark',
         'kubejs:tree_bark',
-        'minecraft:water_bucket'
+        'kubejs:ceramic_basin'
     ]).id('kubejs:primitive/tannin_soak_hide')
 
     event.campfireCooking('kubejs:tanned_leather', 'kubejs:tannin_soaked_hide', 0.1, 600)

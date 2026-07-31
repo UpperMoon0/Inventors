@@ -3,7 +3,6 @@
 	default_quest_shape: ""
 	filename: "07_end_refinement"
 	group: "7100000000000001"
-	icon: "createtiers:cogwheel_refined"
 	id: "7100000000000070"
 	images: [ ]
 	order_index: 6
@@ -12,10 +11,14 @@
 		{
 			dependencies: ["7100000000000204"]
 			id: "7100000000000143"
-			rewards: [{ id: "7130000000000143", table_id: 4193L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000143"
+				table_id: 4193L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 12L
-				id: "7100000000010153"
+				id: "048AD6D1B85364DE"
 				item: { count: 1, id: "minecraft:ender_eye" }
 				type: "item"
 			}]
@@ -25,9 +28,13 @@
 		{
 			dependencies: ["7100000000000143"]
 			id: "7100000000000144"
-			rewards: [{ id: "7130000000000144", table_id: 4193L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000144"
+				table_id: 4193L
+				type: "choice"
+			}]
 			tasks: [{
-				id: "7100000000010154"
+				id: "79AF973DCA8663F4"
 				item: { count: 1, id: "minecraft:dragon_breath" }
 				type: "item"
 			}]
@@ -37,7 +44,11 @@
 		{
 			dependencies: ["7100000000000144"]
 			id: "7100000000000205"
-			rewards: [{ id: "7130000000000205", table_id: 4194L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000205"
+				table_id: 4194L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000020205"
@@ -50,10 +61,14 @@
 		{
 			dependencies: ["7100000000000144"]
 			id: "7100000000000145"
-			rewards: [{ id: "7130000000000145", table_id: 4194L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000145"
+				table_id: 4194L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 16L
-				id: "7100000000010155"
+				id: "61FA3286F03EED1E"
 				item: { count: 1, id: "ftbmaterials:steel_ingot" }
 				type: "item"
 			}]
@@ -63,10 +78,14 @@
 		{
 			dependencies: ["7100000000000205"]
 			id: "7100000000000146"
-			rewards: [{ id: "7130000000000146", table_id: 4194L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000146"
+				table_id: 4194L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 16L
-				id: "7100000000010156"
+				id: "2B8D6D76D9AAB9C1"
 				item: { count: 1, id: "ftbmaterials:titanium_plate" }
 				type: "item"
 			}]
@@ -76,7 +95,11 @@
 		{
 			dependencies: ["7100000000000145"]
 			id: "7100000000000147"
-			rewards: [{ id: "7130000000000147", table_id: 4194L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000147"
+				table_id: 4194L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 8L
 				id: "7100000000010157"
@@ -92,7 +115,11 @@
 				"7100000000000147"
 			]
 			id: "7100000000000206"
-			rewards: [{ id: "7130000000000206", table_id: 4194L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000206"
+				table_id: 4194L
+				type: "choice"
+			}]
 			tasks: [
 				{
 					count: 8L

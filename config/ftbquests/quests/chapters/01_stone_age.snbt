@@ -3,7 +3,6 @@
 	default_quest_shape: ""
 	filename: "01_stone_age"
 	group: "7100000000000001"
-	icon: "primitivestart:bone_pickaxe"
 	id: "7100000000000010"
 	images: [ ]
 	order_index: 0
@@ -11,7 +10,11 @@
 	quests: [
 		{
 			id: "7100000000000100"
-			rewards: [{ id: "7130000000000100", table_id: 4097L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000100"
+				table_id: 4097L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000010100"
 				item: { count: 1, id: "primitivestart:improvised_planks" }
@@ -23,7 +26,11 @@
 		{
 			dependencies: ["7100000000000100"]
 			id: "7100000000000101"
-			rewards: [{ id: "7130000000000101", table_id: 4097L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000101"
+				table_id: 4097L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000010101"
 				item: { count: 1, id: "primitivestart:bone_pickaxe" }
@@ -35,7 +42,11 @@
 		{
 			dependencies: ["7100000000000101"]
 			id: "7100000000000110"
-			rewards: [{ id: "7130000000000110", table_id: 4098L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000110"
+				table_id: 4098L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000010111"
 				item: { count: 1, id: "minecraft:campfire" }
@@ -47,7 +58,11 @@
 		{
 			dependencies: ["7100000000000101"]
 			id: "7100000000000111"
-			rewards: [{ id: "7130000000000111", table_id: 4097L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000111"
+				table_id: 4097L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000010112"
 				item: { count: 1, id: "minecraft:crafting_table" }
@@ -59,7 +74,11 @@
 		{
 			dependencies: ["7100000000000110"]
 			id: "7100000000000112"
-			rewards: [{ id: "7130000000000112", table_id: 4097L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000112"
+				table_id: 4097L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000010113"
@@ -72,7 +91,11 @@
 		{
 			dependencies: ["7100000000000111"]
 			id: "7100000000000113"
-			rewards: [{ id: "7130000000000113", table_id: 4097L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000113"
+				table_id: 4097L
+				type: "choice"
+			}]
 			tasks: [
 				{
 					id: "7100000000010114"
@@ -91,7 +114,11 @@
 		{
 			dependencies: ["7100000000000110"]
 			id: "7100000000000150"
-			rewards: [{ id: "7130000000000150", table_id: 4098L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000150"
+				table_id: 4098L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 2L
 				id: "7100000000010150"
@@ -107,7 +134,11 @@
 				"7100000000000111"
 			]
 			id: "7100000000000151"
-			rewards: [{ id: "7130000000000151", table_id: 4097L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000151"
+				table_id: 4097L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000010151"
 				item: { count: 1, id: "kubejs:soaked_hide" }
@@ -119,7 +150,11 @@
 		{
 			dependencies: ["7100000000000151"]
 			id: "7100000000000152"
-			rewards: [{ id: "7130000000000152", table_id: 4097L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000152"
+				table_id: 4097L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000010152"
 				item: { count: 1, id: "kubejs:scraped_hide" }
@@ -131,7 +166,11 @@
 		{
 			dependencies: ["7100000000000111"]
 			id: "7100000000000153"
-			rewards: [{ id: "7130000000000153", table_id: 4097L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000153"
+				table_id: 4097L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 4L
 				id: "7100000000010153"
@@ -147,7 +186,11 @@
 				"7100000000000153"
 			]
 			id: "7100000000000154"
-			rewards: [{ id: "7130000000000154", table_id: 4097L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000154"
+				table_id: 4097L
+				type: "choice"
+			}]
 			tasks: [
 				{
 					id: "7100000000010154"
@@ -167,7 +210,11 @@
 		{
 			dependencies: ["7100000000000154"]
 			id: "7100000000000155"
-			rewards: [{ id: "7130000000000155", table_id: 4098L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000155"
+				table_id: 4098L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000010156"
 				item: { count: 1, id: "minecraft:white_bed" }
@@ -183,7 +230,11 @@
 				"7100000000000155"
 			]
 			id: "7100000000000114"
-			rewards: [{ id: "7130000000000114", table_id: 4097L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000114"
+				table_id: 4097L
+				type: "choice"
+			}]
 			tasks: [
 				{
 					count: 16L

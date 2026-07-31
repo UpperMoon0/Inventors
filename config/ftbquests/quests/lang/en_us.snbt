@@ -34,6 +34,12 @@
 	quest.7100000000000154.quest_desc: ["Soak the scraped hide with bark, then dry it slowly over a campfire to produce durable leather."]
 	quest.7100000000000155.title: "A Safe Night's Rest"
 	quest.7100000000000155.quest_desc: ["Combine wool, finished leather, and wooden boards to make a bed worthy of a permanent shelter."]
+	quest.7100000000000156.title: "Earth and Fire"
+	quest.7100000000000156.quest_desc: ["Shape wet clay by hand, then fire it slowly over a campfire. A ceramic basin opens the way to tanning, while bricks make stronger hearths possible."]
+	quest.7100000000000157.title: "Storage from Clay"
+	quest.7100000000000157.quest_desc: ["Fire a large clay vessel into a storage pot. It holds only one kind of supply, but keeps a young settlement organized before wooden chests become practical."]
+	quest.7100000000000158.title: "Food for Lean Days"
+	quest.7100000000000158.quest_desc: ["Lash together a disposable drying frame and preserve a batch of berries. Meat and fish can be dried in the same way when available."]
 
 	quest.7100000000000102.title: "Refractory Thinking"
 	quest.7100000000000102.quest_desc: ["Combine clay and sand into fire clay, a material that survives temperatures ordinary stonework cannot withstand."]
