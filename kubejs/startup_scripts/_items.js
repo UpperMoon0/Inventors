@@ -13,6 +13,8 @@ global.ITEMS = {
     raw_uranium: 'ftbmaterials:uranium_raw_ore',
     raw_tin: 'ftbmaterials:tin_raw_ore',
     raw_titanium: 'ftbmaterials:titanium_raw_ore',
+    tungsten_dirty_dust: 'ftbmaterials:tungsten_dirty_dust',
+    tungsten_dust: 'ftbmaterials:tungsten_dust',
     crushed_iron: 'create:crushed_raw_iron',
     crushed_copper: 'create:crushed_raw_copper',
     crushed_gold: 'create:crushed_raw_gold',
@@ -35,9 +37,20 @@ global.ITEMS = {
     uranium_ingot: 'ftbmaterials:uranium_ingot',
     titanium_ingot: 'ftbmaterials:titanium_ingot',
     titanium_plate: 'ftbmaterials:titanium_plate',
+    tungsten_ingot: 'ftbmaterials:tungsten_ingot',
     bronze_ingot: 'ftbmaterials:bronze_ingot',
     brass_ingot: 'create:brass_ingot',
     iron_dust: 'ftbmaterials:iron_dust',
+    iron_concentrate: 'kubejs:iron_concentrate',
+    bloomery_charge: 'kubejs:bloomery_charge',
+    iron_bloom: 'kubejs:iron_bloom',
+    worked_iron_bloom: 'kubejs:worked_iron_bloom',
+    wrought_iron_billet: 'kubejs:wrought_iron_billet',
+    sealed_coke_charge: 'kubejs:sealed_coke_charge',
+    metallurgical_coke: 'kubejs:metallurgical_coke',
+    green_biocoke: 'kubejs:green_biocoke',
+    dense_biocoke: 'kubejs:dense_biocoke',
+    titanium_catalyst_mesh: 'kubejs:titanium_catalyst_mesh',
     nickel_dust: 'ftbmaterials:nickel_dust',
     invar_dust: 'ftbmaterials:invar_dust',
     silver_dust: 'ftbmaterials:silver_dust',
@@ -56,9 +69,47 @@ global.ITEMS = {
     experience_nugget: 'create:experience_nugget'
 }
 
+ItemEvents.toolTierRegistry(event => {
+    event.addBasedOnExisting('bone', 'stone', tier => {
+        tier.uses = 160
+        tier.speed = 3.0
+        tier.attackDamageBonus = 0.25
+        tier.enchantmentValue = 8
+        tier.repairIngredient = 'minecraft:bone'
+    })
+
+    event.addBasedOnExisting('flint', 'stone', tier => {
+        tier.uses = 72
+        tier.speed = 5.5
+        tier.attackDamageBonus = 1.25
+        tier.enchantmentValue = 5
+        tier.repairIngredient = 'minecraft:flint'
+    })
+})
+
 // Primitive tanning materials. Vanilla leather drops are treated as raw hide;
 // these items represent the processing stages required for usable leather.
 StartupEvents.registry('item', event => {
+    event.create('bone_pickaxe', 'pickaxe').displayName('Bone Pickaxe').tier('bone')
+    event.create('bone_axe', 'axe').displayName('Bone Axe').tier('bone')
+    event.create('bone_shovel', 'shovel').displayName('Bone Shovel').tier('bone')
+    event.create('bone_hoe', 'hoe').displayName('Bone Hoe').tier('bone')
+    event.create('bone_sword', 'sword').displayName('Bone Sword').tier('bone')
+    event.create('flint_pickaxe', 'pickaxe').displayName('Flint Pickaxe').tier('flint').texture('minecraft:item/stone_pickaxe')
+    event.create('flint_axe', 'axe').displayName('Flint Axe').tier('flint').texture('minecraft:item/stone_axe')
+    event.create('flint_shovel', 'shovel').displayName('Flint Shovel').tier('flint').texture('minecraft:item/stone_shovel')
+    event.create('flint_hoe', 'hoe').displayName('Flint Hoe').tier('flint').texture('minecraft:item/stone_hoe')
+    event.create('flint_sword', 'sword').displayName('Flint Sword').tier('flint').texture('minecraft:item/stone_sword')
+    event.create('iron_concentrate').displayName('Washed Iron Concentrate').texture('create:item/crushed_raw_iron')
+    event.create('bloomery_charge').displayName('Bloomery Charge').texture('minecraft:item/charcoal')
+    event.create('iron_bloom').displayName('Iron Bloom').texture('minecraft:item/raw_iron')
+    event.create('worked_iron_bloom').displayName('Worked Iron Bloom').texture('minecraft:item/raw_iron')
+    event.create('wrought_iron_billet').displayName('Wrought Iron Billet').texture('minecraft:item/iron_ingot')
+    event.create('sealed_coke_charge').displayName('Sealed Coke Charge').texture('minecraft:item/clay_ball')
+    event.create('metallurgical_coke').displayName('Metallurgical Coke').texture('minecraft:item/coal')
+    event.create('green_biocoke').displayName('Green Biocoke Briquette').texture('minecraft:item/charcoal')
+    event.create('dense_biocoke').displayName('Dense Biocoke').texture('minecraft:item/coal')
+    event.create('titanium_catalyst_mesh').displayName('Titanium Catalyst Mesh').texture('minecraft:block/iron_bars')
     event.create('tree_bark').displayName('Tree Bark')
     event.create('soaked_hide').displayName('Soaked Hide')
     event.create('scraped_hide').displayName('Scraped Hide')

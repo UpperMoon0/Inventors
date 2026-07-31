@@ -9,7 +9,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["7100000000000204"]
+			dependencies: ["7100000000000147"]
 			id: "7100000000000143"
 			rewards: [{
 				id: "7130000000000143"
@@ -59,23 +59,6 @@
 			y: -1.5d
 		}
 		{
-			dependencies: ["7100000000000144"]
-			id: "7100000000000145"
-			rewards: [{
-				id: "7130000000000145"
-				table_id: 4194L
-				type: "choice"
-			}]
-			tasks: [{
-				count: 16L
-				id: "61FA3286F03EED1E"
-				item: { count: 1, id: "ftbmaterials:steel_ingot" }
-				type: "item"
-			}]
-			x: 4.0d
-			y: 1.5d
-		}
-		{
 			dependencies: ["7100000000000205"]
 			id: "7100000000000146"
 			rewards: [{
@@ -91,23 +74,6 @@
 			}]
 			x: 6.0d
 			y: -1.5d
-		}
-		{
-			dependencies: ["7100000000000145"]
-			id: "7100000000000147"
-			rewards: [{
-				id: "7130000000000147"
-				table_id: 4194L
-				type: "choice"
-			}]
-			tasks: [{
-				count: 8L
-				id: "7100000000010157"
-				item: { count: 1, id: "ftbmaterials:steel_gear" }
-				type: "item"
-			}]
-			x: 6.0d
-			y: 1.5d
 		}
 		{
 			dependencies: [
@@ -135,6 +101,99 @@
 			]
 			x: 8.0d
 			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000205"]
+			id: "7100000000000212"
+			rewards: [{ id: "7130000000000212", table_id: 4194L, type: "choice" }]
+			tasks: [{
+				count: 8L
+				id: "7100000000020212"
+				item: { count: 1, id: "minecraft:ancient_debris" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7100000000000212"]
+			id: "7100000000000213"
+			rewards: [{ id: "7130000000000213", table_id: 4194L, type: "choice" }]
+			tasks: [{
+				count: 16L
+				id: "7100000000020213"
+				item: { count: 1, id: "ftbmaterials:tungsten_dust" }
+				type: "item"
+			}]
+			x: 8.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7100000000000213"]
+			id: "7100000000000214"
+			rewards: [{ id: "7130000000000214", table_id: 4194L, type: "choice" }]
+			tasks: [{
+				count: 16L
+				id: "7100000000020214"
+				item: { count: 1, id: "ftbmaterials:tungsten_ingot" }
+				type: "item"
+			}]
+			x: 10.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"7100000000000214"
+				"7100000000000146"
+			]
+			id: "7100000000000215"
+			rewards: [{ id: "7130000000000215", table_id: 4194L, type: "choice" }]
+			tasks: [{
+				count: 8L
+				id: "7100000000020215"
+				item: { count: 1, id: "minecraft:netherite_ingot" }
+				type: "item"
+			}]
+			x: 12.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7100000000000146"]
+			id: "7100000000000216"
+			rewards: [{ id: "7130000000000216", table_id: 4194L, type: "choice" }]
+			tasks: [{
+				id: "7100000000020216"
+				item: { count: 1, id: "kubejs:titanium_catalyst_mesh" }
+				type: "item"
+			}]
+			x: 8.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["7100000000000216"]
+			id: "7100000000000217"
+			rewards: [{ id: "7130000000000217", table_id: 4194L, type: "choice" }]
+			tasks: [{
+				count: 8L
+				id: "7100000000020217"
+				item: { count: 1, id: "kubejs:green_biocoke" }
+				type: "item"
+			}]
+			x: 10.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["7100000000000217"]
+			id: "7100000000000218"
+			rewards: [{ id: "7130000000000218", table_id: 4194L, type: "choice" }]
+			tasks: [{
+				count: 8L
+				id: "7100000000020218"
+				item: { count: 1, id: "kubejs:dense_biocoke" }
+				type: "item"
+			}]
+			x: 12.0d
+			y: 3.0d
 		}
 	]
 }

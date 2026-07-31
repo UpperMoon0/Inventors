@@ -8,10 +8,12 @@
 	chapter.7100000000000060.title: "VI - Nether Industry"
 	chapter.7100000000000070.title: "VII - End Refinement"
 
-	quest.7100000000000100.title: "A Rough Beginning"
-	quest.7100000000000100.quest_desc: ["Lash loose sticks into rough panels. They are crude, but sturdy enough for your first shelter and workbench."]
-	quest.7100000000000101.title: "Tools Before Metal"
-	quest.7100000000000101.quest_desc: ["Bind shaped bone to a wooden handle and make a pickaxe sturdy enough to break stone."]
+	quest.7100000000000100.title: "Fibres of Survival"
+	quest.7100000000000100.quest_desc: ["Gather wild flax and separate its fibres. Cordage will bind your first tools, containers, and work surfaces together."]
+	quest.7100000000000101.title: "The Patient Path — Bone Tools"
+	quest.7100000000000101.quest_desc: ["Build a complete set of bound bone tools. They work deliberately, but endure far longer than their flint counterparts."]
+	quest.7100000000000159.title: "The Sharp Path — Flint Tools"
+	quest.7100000000000159.quest_desc: ["Knock and bind a complete set of flint tools. Their keen edges work quickly and strike hard, but brittle heads wear out fast."]
 	quest.7100000000000110.title: "Controlled Fire"
 	quest.7100000000000110.quest_desc: ["Build a campfire to cook food and bring dependable warmth to your growing settlement."]
 	quest.7100000000000111.title: "A Place to Work"
@@ -87,8 +89,17 @@
 	quest.7100000000000129.quest_desc: ["Turn a matched pair of Crushing Wheels against one another. Feed ore between them to prepare it for more efficient melting."]
 	quest.7100000000000130.title: "The First Mechanical Farm"
 	quest.7100000000000130.quest_desc: ["Mount Mechanical Harvesters on a moving contraption to gather mature crops while leaving the field ready to grow again."]
-	quest.7100000000000131.title: "Prove Sustained Production"
-	quest.7100000000000131.quest_desc: ["Put the workshop through a full production run: crush a stack of raw iron and press thirty-two iron sheets."]
+	quest.7100000000000131.title: "Prepare for the Ironworks"
+	quest.7100000000000131.quest_desc: ["Stockpile crushed iron, charcoal, and calcite. Iron cannot simply be poured into a cast; it must be cleaned, reduced, and worked while hot."]
+
+	quest.7100000000000160.title: "Wash Away the Stone"
+	quest.7100000000000160.quest_desc: ["Wash crushed iron until the loose stone and dirt are carried away, leaving a rich concentrate ready for reduction."]
+	quest.7100000000000161.title: "Build the Bloomery Charge"
+	quest.7100000000000161.quest_desc: ["Blend iron concentrate with charcoal dust and calcite. Carbon draws oxygen from the ore while the flux gathers unwanted material."]
+	quest.7100000000000162.title: "The First Iron Bloom"
+	quest.7100000000000162.quest_desc: ["Fire the prepared charge into a spongy iron bloom, then press it while hot to drive out trapped slag and close the metal together."]
+	quest.7100000000000163.title: "Iron Under the Hammer"
+	quest.7100000000000163.quest_desc: ["Press the worked bloom into a wrought-iron billet. Forge it into three ingots, or remelt the billet into enough iron for a three-ingot tool head. Only properly worked iron can survive this final melting cleanly."]
 
 	quest.7100000000000132.title: "Greater Water Power"
 	quest.7100000000000132.quest_desc: ["Build a Large Water Wheel to draw more power from the same river and support several machines from one source."]
@@ -123,6 +134,10 @@
 	quest.7100000000000142.quest_desc: ["Program a Mechanical Arm to move selected items between machines, depots and burners where belts cannot reach cleanly."]
 	quest.7100000000000204.title: "Repeatable Precision"
 	quest.7100000000000204.quest_desc: ["Build a sequenced assembly line and produce sixteen Precision Mechanisms without assembling each one by hand."]
+	quest.7100000000000210.title: "Seal the Coal"
+	quest.7100000000000210.quest_desc: ["Pack coal dust into ceramic basins and seal it away from open air. The vessel lets heat drive off smoke and impurities without burning away the carbon."]
+	quest.7100000000000211.title: "Fire Without Flame"
+	quest.7100000000000211.quest_desc: ["Superheat the sealed charges until dense metallurgical coke remains. This clean carbon can endure the foundry temperatures needed for steelmaking."]
 
 	quest.7100000000000143.title: "Open the Stronghold"
 	quest.7100000000000143.quest_desc: ["Prepare enough Eyes of Ender to locate a stronghold and restore its ancient portal."]
@@ -130,12 +145,26 @@
 	quest.7100000000000144.quest_desc: ["Face the Ender Dragon and collect its lingering breath. Beyond the central island, valuable new resources await."]
 	quest.7100000000000205.title: "Metal From the End"
 	quest.7100000000000205.quest_desc: ["Mine titanium from the End stone, melt the ore in your foundry and cast sixteen bright, resilient ingots."]
-	quest.7100000000000145.title: "Industrial Steel"
-	quest.7100000000000145.quest_desc: ["Produce steel in quantity. Titanium may be exotic, but strong machinery still depends on a dependable supply of hardened iron."]
+	quest.7100000000000212.title: "The Weight Within"
+	quest.7100000000000212.quest_desc: ["Return to the Nether for Ancient Debris. Beneath its scorched shell lies a dense tungsten-bearing material that ordinary furnaces cannot separate."]
+	quest.7100000000000213.title: "Wash the Heavy Dust"
+	quest.7100000000000213.quest_desc: ["Crush Ancient Debris, then wash the dark residue until clean tungsten dust remains. Its extraordinary heat resistance demands the hottest foundry you can build."]
+	quest.7100000000000214.title: "The Refractory Metal"
+	quest.7100000000000214.quest_desc: ["Melt purified tungsten at the limit of a lava-fired foundry and cast it into dense ingots. This metal will form the backbone of your strongest alloy yet."]
+	quest.7100000000000215.title: "Netherite Reforged"
+	quest.7100000000000215.quest_desc: ["Alloy two parts tungsten with one part titanium and one part gold. Cast the molten metal into Netherite: resilient enough for the most demanding tools, armour and machines."]
+	quest.7100000000000216.title: "A Mesh That Endures"
+	quest.7100000000000216.quest_desc: ["Build a rigid mesh from titanium plates and steel rods. It will withstand repeated superheated compression and can be recovered after every batch."]
+	quest.7100000000000217.title: "Bind the Charcoal"
+	quest.7100000000000217.quest_desc: ["Distil bark in a sealed ceramic vessel to capture wood tar, then blend the tar with charcoal dust. The sticky mixture forms soft green biocoke briquettes."]
+	quest.7100000000000218.title: "A Forest-Fed Steelworks"
+	quest.7100000000000218.quest_desc: ["Compress green briquettes through the titanium mesh under superheat. Dense biocoke can replace coal coke in the foundry, allowing automated tree farms to sustain steel production."]
+	quest.7100000000000145.title: "Carbon Into Iron"
+	quest.7100000000000145.quest_desc: ["Melt wrought-iron billets and metallurgical coke in the foundry. Carefully alloy their molten iron and carbon, then cast the resulting steel into ingots."]
 	quest.7100000000000146.title: "Titanium Forming"
 	quest.7100000000000146.quest_desc: ["Form titanium into plates ready for light, strong machine frames and the harsh conditions beyond the Overworld."]
-	quest.7100000000000147.title: "Steel Transmission"
-	quest.7100000000000147.quest_desc: ["Manufacture a set of steel gears capable of transmitting greater forces without wearing away under load."]
+	quest.7100000000000147.title: "The Steelworks"
+	quest.7100000000000147.quest_desc: ["Cast steel gears for machinery that must survive greater forces. With steel and precision mechanisms mastered, you can construct stable Eyes and seek the End portal."]
 	quest.7100000000000206.title: "The Refined Drivetrain"
 	quest.7100000000000206.quest_desc: ["Combine titanium, steel and Precision Mechanisms with your Basic drivetrain. Refined components reach 512 RPM and carry 8192 SU, providing the power needed for aerospace engineering."]
 }

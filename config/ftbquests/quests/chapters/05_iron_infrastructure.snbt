@@ -10,6 +10,54 @@
 	quests: [
 		{
 			dependencies: ["7100000000000131"]
+			id: "7100000000000160"
+			rewards: [{ id: "7130000000000160", table_id: 4162L, type: "choice" }]
+			tasks: [{
+				count: 16L
+				id: "7100000000010321"
+				item: { count: 1, id: "kubejs:iron_concentrate" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000160"]
+			id: "7100000000000161"
+			rewards: [{ id: "7130000000000161", table_id: 4162L, type: "choice" }]
+			tasks: [{
+				count: 4L
+				id: "7100000000010322"
+				item: { count: 1, id: "kubejs:bloomery_charge" }
+				type: "item"
+			}]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000161"]
+			id: "7100000000000162"
+			rewards: [{ id: "7130000000000162", table_id: 4162L, type: "choice" }]
+			tasks: [
+				{ id: "7100000000010323", item: { count: 1, id: "kubejs:iron_bloom" }, type: "item" }
+				{ id: "7100000000010324", item: { count: 1, id: "kubejs:worked_iron_bloom" }, type: "item" }
+			]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000162"]
+			id: "7100000000000163"
+			rewards: [{ id: "7130000000000163", table_id: 4162L, type: "choice" }]
+			tasks: [
+				{ id: "7100000000010325", item: { count: 1, id: "kubejs:wrought_iron_billet" }, type: "item" }
+				{ count: 12L, id: "7100000000010326", item: { count: 1, id: "minecraft:iron_ingot" }, type: "item" }
+			]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000163"]
 			id: "7100000000000132"
 			rewards: [{
 				id: "7130000000000132"
@@ -21,7 +69,7 @@
 				item: { count: 1, id: "create:large_water_wheel" }
 				type: "item"
 			}]
-			x: 0.0d
+			x: 8.0d
 			y: 0.0d
 		}
 		{
@@ -37,7 +85,7 @@
 				item: { count: 1, id: "create:windmill_bearing" }
 				type: "item"
 			}]
-			x: 2.0d
+			x: 10.0d
 			y: -1.5d
 		}
 		{
@@ -53,7 +101,7 @@
 				item: { count: 1, id: "create:mechanical_drill" }
 				type: "item"
 			}]
-			x: 2.0d
+			x: 10.0d
 			y: 1.5d
 		}
 		{
@@ -70,7 +118,7 @@
 				item: { count: 1, id: "create:portable_storage_interface" }
 				type: "item"
 			}]
-			x: 4.0d
+			x: 12.0d
 			y: -1.5d
 		}
 		{
@@ -86,7 +134,7 @@
 				item: { count: 1, id: "create:item_vault" }
 				type: "item"
 			}]
-			x: 4.0d
+			x: 12.0d
 			y: 1.5d
 		}
 		{
@@ -105,7 +153,7 @@
 				item: { count: 1, id: "sophisticatedstorage:copper_chest" }
 				type: "item"
 			}]
-			x: 6.0d
+			x: 14.0d
 			y: -1.5d
 		}
 		{
@@ -121,7 +169,7 @@
 				item: { count: 1, id: "sophisticatedstorage:storage_tool" }
 				type: "item"
 			}]
-			x: 6.0d
+			x: 14.0d
 			y: 1.5d
 		}
 		{
@@ -152,7 +200,7 @@
 					type: "item"
 				}
 			]
-			x: 8.0d
+			x: 16.0d
 			y: 0.0d
 		}
 	]

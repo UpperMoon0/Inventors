@@ -18,12 +18,21 @@ ServerEvents.recipes(event => {
         'ftbmaterials:steel_ingot',
         'ftbmaterials:tin_ingot',
         'ftbmaterials:titanium_ingot',
+        'ftbmaterials:tungsten_ingot',
         'ftbmaterials:uranium_ingot',
-        'ftbmaterials:zinc_ingot'
+        'ftbmaterials:zinc_ingot',
+        'minecraft:netherite_ingot'
     ]
 
     progressionIngots.forEach(ingot => {
         event.remove({ type: 'minecraft:smelting', output: ingot })
         event.remove({ type: 'minecraft:blasting', output: ingot })
     })
+
+    // The masonry furnace reduces a prepared bloomery charge, but does not
+    // smelt ore directly into usable metal.
+    event.smelting('kubejs:iron_bloom', 'kubejs:bloomery_charge')
+        .xp(0.7)
+        .cookingTime(600)
+        .id('kubejs:iron/reduce_bloomery_charge')
 })

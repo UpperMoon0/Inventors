@@ -1,0 +1,73 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": ["metal", "intermediate", "casting"],
+    "gear_type_blacklist": [],
+    "ingredient": { "tag": "c:ingots/iron" },
+    "part_substitutes": {
+      "silentgear:rod": { "tag": "c:rods/iron" }
+    }
+  },
+  "display": {
+    "color": "#FFFFFFFF",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": { "translate": "material.silentgear.iron" },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 16.0,
+      "armor/boots": 2.0,
+      "armor/chestplate": 6.0,
+      "armor/helmet": 3.0,
+      "armor/leggings": 5.0,
+      "armor_durability": 17.0,
+      "armor_toughness": 1.0,
+      "attack_damage": 3.25,
+      "attack_speed": 0.1,
+      "attack_speed/axe": -0.1,
+      "charging_value": 0.8,
+      "draw_speed": 0.1,
+      "durability": 450.0,
+      "enchantment_value": 10.0,
+      "harvest_speed": 7.0,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "silentgear:incorrect_for_iron_tools",
+        "level_hint": "2",
+        "name": "iron"
+      },
+      "magic_armor": 6.0,
+      "magic_damage": 1.0,
+      "projectile_accuracy": 1.1,
+      "projectile_speed": 1.0,
+      "ranged_damage": 1.25,
+      "rarity": 20.0,
+      "traits": [
+        { "conditions": [], "level": 3, "trait": "silentgear:malleable" }
+      ]
+    },
+    "silentgear:rod": {
+      "traits": [
+        { "conditions": [], "level": 2, "trait": "silentgear:flexible" }
+      ]
+    },
+    "silentgear:tip": {
+      "armor_durability": { "operation": "ADD", "value": 5.0 },
+      "attack_damage": { "operation": "ADD", "value": 1.25 },
+      "draw_speed": { "operation": "ADD", "value": 0.2 },
+      "durability": { "operation": "ADD", "value": 160.0 },
+      "harvest_speed": { "operation": "ADD", "value": 1.25 },
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "silentgear:incorrect_for_iron_tools",
+        "level_hint": "2",
+        "name": "iron"
+      },
+      "rarity": { "operation": "ADD", "value": 9.0 },
+      "traits": [
+        { "conditions": [], "level": 3, "trait": "silentgear:malleable" }
+      ]
+    }
+  }
+}

@@ -17,20 +17,10 @@ ServerEvents.recipes(event => {
         event.remove({ id: `minecraft:${color}_bed` })
     })
 
-    // Primitive Start 21.1.0 ships its recipes in the obsolete "recipes"
-    // datapack directory, so Minecraft 1.21.1 never loads them. Restore the
-    // intended hand-crafting path here so it is also visible in JEI.
     // Remove every competing recipe first; these blocks are progression gates.
     event.remove({ output: 'minecraft:crafting_table' })
     event.remove({ output: 'minecraft:chest' })
     event.remove({ output: 'minecraft:furnace' })
-
-    event.shaped('primitivestart:improvised_planks', [
-        'SS',
-        'SS'
-    ], {
-        S: 'minecraft:stick'
-    }).id('kubejs:primitive/improvised_planks')
 
     event.shaped('minecraft:crafting_table', [
         'PF',
@@ -159,7 +149,7 @@ ServerEvents.recipes(event => {
         P: '#minecraft:planks'
     }).id('kubejs:primitive/leather_bound_bed')
 
-    event.shaped('primitivestart:bone_pickaxe', [
+    event.shaped('kubejs:bone_pickaxe', [
         'BBB',
         ' T ',
         ' S '
@@ -169,7 +159,7 @@ ServerEvents.recipes(event => {
         S: 'minecraft:stick'
     }).id('kubejs:primitive/bone_pickaxe')
 
-    event.shaped('primitivestart:bone_axe', [
+    event.shaped('kubejs:bone_axe', [
         'BB',
         'BS',
         ' T'
@@ -179,7 +169,7 @@ ServerEvents.recipes(event => {
         S: 'minecraft:stick'
     }).id('kubejs:primitive/bone_axe')
 
-    event.shaped('primitivestart:bone_shovel', [
+    event.shaped('kubejs:bone_shovel', [
         'B',
         'T',
         'S'
@@ -189,7 +179,7 @@ ServerEvents.recipes(event => {
         S: 'minecraft:stick'
     }).id('kubejs:primitive/bone_shovel')
 
-    event.shaped('primitivestart:bone_sword', [
+    event.shaped('kubejs:bone_sword', [
         'B ',
         'BT',
         'S '
@@ -199,7 +189,7 @@ ServerEvents.recipes(event => {
         S: 'minecraft:stick'
     }).id('kubejs:primitive/bone_sword')
 
-    event.shaped('primitivestart:bone_hoe', [
+    event.shaped('kubejs:bone_hoe', [
         'BB',
         ' T',
         ' S'
@@ -209,9 +199,64 @@ ServerEvents.recipes(event => {
         S: 'minecraft:stick'
     }).id('kubejs:primitive/bone_hoe')
 
-    // Stone tools bypass the primitive bone/flint stage too quickly. Remove
-    // their recipes while keeping the items registered for loot and mod compat.
-    const disabledStoneTools = [
+    event.shaped('kubejs:flint_pickaxe', [
+        'FFF',
+        ' T ',
+        ' S '
+    ], {
+        F: 'minecraft:flint',
+        T: '#c:strings',
+        S: 'minecraft:stick'
+    }).id('kubejs:primitive/flint_pickaxe')
+
+    event.shaped('kubejs:flint_axe', [
+        'FF',
+        'FS',
+        ' T'
+    ], {
+        F: 'minecraft:flint',
+        T: '#c:strings',
+        S: 'minecraft:stick'
+    }).id('kubejs:primitive/flint_axe')
+
+    event.shaped('kubejs:flint_shovel', [
+        'F',
+        'T',
+        'S'
+    ], {
+        F: 'minecraft:flint',
+        T: '#c:strings',
+        S: 'minecraft:stick'
+    }).id('kubejs:primitive/flint_shovel')
+
+    event.shaped('kubejs:flint_sword', [
+        'F ',
+        'FT',
+        'S '
+    ], {
+        F: 'minecraft:flint',
+        T: '#c:strings',
+        S: 'minecraft:stick'
+    }).id('kubejs:primitive/flint_sword')
+
+    event.shaped('kubejs:flint_hoe', [
+        'FF',
+        ' T',
+        ' S'
+    ], {
+        F: 'minecraft:flint',
+        T: '#c:strings',
+        S: 'minecraft:stick'
+    }).id('kubejs:primitive/flint_hoe')
+
+    // Vanilla wood and stone tools bypass the parallel bone/flint tool lines.
+    // Keep the items registered for loot and compatibility, but remove recipes.
+    const disabledVanillaTools = [
+        'minecraft:wooden_sword',
+        'minecraft:wooden_pickaxe',
+        'minecraft:wooden_axe',
+        'minecraft:wooden_shovel',
+        'minecraft:wooden_hoe',
         'minecraft:stone_sword',
         'minecraft:stone_pickaxe',
         'minecraft:stone_axe',
@@ -219,7 +264,7 @@ ServerEvents.recipes(event => {
         'minecraft:stone_hoe'
     ]
 
-    disabledStoneTools.forEach(tool => {
+    disabledVanillaTools.forEach(tool => {
         event.remove({ output: tool })
     })
 
@@ -256,6 +301,29 @@ ServerEvents.recipes(event => {
         N: 'ftbmaterials:bronze_nugget',
         S: '#c:stones'
     }).id('create:crafting/materials/andesite_alloy')
+
+    // Pack coal dust into a reusable ceramic retort. The sealed charge must be
+    // superheated before its volatile material is driven off as metallurgical coke.
+    event.shaped('kubejs:sealed_coke_charge', [
+        'DDD',
+        'DBD',
+        'DDD'
+    ], {
+        D: 'ftbmaterials:coal_dust',
+        B: 'kubejs:ceramic_basin'
+    }).id('kubejs:steel/pack_coke_charge')
+
+    // A titanium mesh survives repeated high-temperature biocoke compression.
+    // It is deliberately expensive once, then acts as a reusable catalyst.
+    event.shaped('kubejs:titanium_catalyst_mesh', [
+        'TRT',
+        'RPR',
+        'TRT'
+    ], {
+        T: 'ftbmaterials:titanium_plate',
+        R: 'ftbmaterials:steel_rod',
+        P: 'create:precision_mechanism'
+    }).id('kubejs:biocoke/titanium_catalyst_mesh')
 
     // Remove original Electron Tube crafting recipe and replace with new one using Silver Plates
     event.remove({ id: 'create:crafting/materials/electron_tube' })

@@ -1,0 +1,10 @@
+{
+  "type": "productivemetalworks:fluid_alloying",
+  "fluids": [
+    { "amount": 180, "tag": "c:molten_tungsten" },
+    { "amount": 90, "tag": "c:molten_titanium" },
+    { "amount": 90, "tag": "c:molten_gold" }
+  ],
+  "result": { "amount": 90, "id": "productivemetalworks:molten_netherite" },
+  "speed": 2
+}

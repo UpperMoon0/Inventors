@@ -14,6 +14,20 @@ ServerEvents.recipes(event => {
     event.remove({ id: 'create:crushing/raw_tin' })
     event.remove({ id: 'create:crushing/raw_aluminum' })
 
+    // Ancient Debris is a refractory tungsten-bearing material. Crushing frees
+    // the heavy mineral from its Nether matrix before it can be washed clean.
+    event.recipes.create.crushing([
+        '2x ftbmaterials:tungsten_dirty_dust',
+        CreateItem.of('minecraft:gold_nugget', 0.25)
+    ], 'minecraft:ancient_debris').id('kubejs:tungsten/crush_ancient_debris')
+
+    // Bastion and legacy scrap is treated as a small piece of the same
+    // tungsten-bearing material instead of an obsolete Netherite ingredient.
+    event.recipes.create.crushing(
+        'ftbmaterials:tungsten_dust',
+        'minecraft:netherite_scrap'
+    ).id('kubejs:tungsten/recover_legacy_scrap')
+
     // Raw Iron Crushing
     event.recipes.create.crushing([
         Item.of(`2x ${global.ITEMS.crushed_iron}`),

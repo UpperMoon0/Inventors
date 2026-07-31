@@ -162,15 +162,21 @@
 			}]
 			tasks: [
 				{
-					count: 64L
+					count: 32L
 					id: "7100000000010137"
 					item: { count: 1, id: "create:crushed_raw_iron" }
 					type: "item"
 				}
 				{
-					count: 32L
+					count: 16L
 					id: "7100000000010138"
-					item: { count: 1, id: "create:iron_sheet" }
+					item: { count: 1, id: "minecraft:calcite" }
+					type: "item"
+				}
+				{
+					count: 32L
+					id: "7100000000010327"
+					item: { count: 1, id: "minecraft:charcoal" }
 					type: "item"
 				}
 			]

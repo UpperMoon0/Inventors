@@ -161,5 +161,57 @@
 			x: 10.0d
 			y: 0.0d
 		}
+		{
+			dependencies: ["7100000000000204"]
+			id: "7100000000000210"
+			rewards: [{ id: "7130000000000210", table_id: 4178L, type: "choice" }]
+			tasks: [{
+				count: 4L
+				id: "7100000000020210"
+				item: { count: 1, id: "kubejs:sealed_coke_charge" }
+				type: "item"
+			}]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000210"]
+			id: "7100000000000211"
+			rewards: [{ id: "7130000000000211", table_id: 4178L, type: "choice" }]
+			tasks: [{
+				count: 32L
+				id: "7100000000020211"
+				item: { count: 1, id: "kubejs:metallurgical_coke" }
+				type: "item"
+			}]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000211"]
+			id: "7100000000000145"
+			rewards: [{ id: "7130000000000145", table_id: 4178L, type: "choice" }]
+			tasks: [{
+				count: 16L
+				id: "61FA3286F03EED1E"
+				item: { count: 1, id: "ftbmaterials:steel_ingot" }
+				type: "item"
+			}]
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000145"]
+			id: "7100000000000147"
+			rewards: [{ id: "7130000000000147", table_id: 4178L, type: "choice" }]
+			tasks: [{
+				count: 8L
+				id: "7100000000010157"
+				item: { count: 1, id: "ftbmaterials:steel_gear" }
+				type: "item"
+			}]
+			x: 18.0d
+			y: 0.0d
+		}
 	]
 }

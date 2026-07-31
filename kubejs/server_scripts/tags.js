@@ -9,10 +9,8 @@ ServerEvents.tags('item', event => {
     event.add('kubejs:dried_foods', 'kubejs:dried_fish')
     event.add('kubejs:dried_foods', 'kubejs:dried_berries')
 
-    // Early wooden structures accept either rough improvised panels or any
-    // conventional plank supplied by vanilla or another mod.
+    // Early wooden structures accept any conventional vanilla or modded plank.
     event.add('kubejs:primitive_planks', '#minecraft:planks')
-    event.add('kubejs:primitive_planks', 'primitivestart:improvised_planks')
 
     // Create unified tags for iron (dust or ingot)
     event.add('kubejs:iron_material', 'ftbmaterials:iron_dust')

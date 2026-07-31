@@ -16,8 +16,9 @@
 				type: "choice"
 			}]
 			tasks: [{
+				count: 4L
 				id: "7100000000010100"
-				item: { count: 1, id: "primitivestart:improvised_planks" }
+				item: { count: 1, id: "silentgear:flax_fiber" }
 				type: "item"
 			}]
 			x: 0.0d
@@ -31,16 +32,40 @@
 				table_id: 4097L
 				type: "choice"
 			}]
-			tasks: [{
-				id: "7100000000010101"
-				item: { count: 1, id: "primitivestart:bone_pickaxe" }
-				type: "item"
-			}]
+			tasks: [
+				{ id: "7100000000010101", item: { count: 1, id: "kubejs:bone_pickaxe" }, type: "item" }
+				{ id: "7100000000010313", item: { count: 1, id: "kubejs:bone_axe" }, type: "item" }
+				{ id: "7100000000010314", item: { count: 1, id: "kubejs:bone_shovel" }, type: "item" }
+				{ id: "7100000000010315", item: { count: 1, id: "kubejs:bone_hoe" }, type: "item" }
+				{ id: "7100000000010316", item: { count: 1, id: "kubejs:bone_sword" }, type: "item" }
+			]
 			x: 2.0d
-			y: 0.0d
+			y: -1.5d
 		}
 		{
-			dependencies: ["7100000000000101"]
+			dependencies: ["7100000000000100"]
+			id: "7100000000000159"
+			rewards: [{
+				id: "7130000000000159"
+				table_id: 4097L
+				type: "choice"
+			}]
+			tasks: [
+				{ id: "7100000000010312", item: { count: 1, id: "kubejs:flint_pickaxe" }, type: "item" }
+				{ id: "7100000000010317", item: { count: 1, id: "kubejs:flint_axe" }, type: "item" }
+				{ id: "7100000000010318", item: { count: 1, id: "kubejs:flint_shovel" }, type: "item" }
+				{ id: "7100000000010319", item: { count: 1, id: "kubejs:flint_hoe" }, type: "item" }
+				{ id: "7100000000010320", item: { count: 1, id: "kubejs:flint_sword" }, type: "item" }
+			]
+			x: 2.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"7100000000000101"
+				"7100000000000159"
+			]
+			dependency_requirement: "one_completed"
 			id: "7100000000000110"
 			rewards: [{
 				id: "7130000000000110"
@@ -56,7 +81,11 @@
 			y: -1.5d
 		}
 		{
-			dependencies: ["7100000000000101"]
+			dependencies: [
+				"7100000000000101"
+				"7100000000000159"
+			]
+			dependency_requirement: "one_completed"
 			id: "7100000000000111"
 			rewards: [{
 				id: "7130000000000111"
@@ -113,6 +142,61 @@
 		}
 		{
 			dependencies: ["7100000000000110"]
+			id: "7100000000000156"
+			rewards: [{ id: "7130000000000156", table_id: 4097L, type: "choice" }]
+			tasks: [
+				{
+					id: "7100000000010307"
+					item: { count: 1, id: "kubejs:ceramic_basin" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "7100000000010308"
+					item: { count: 1, id: "minecraft:brick" }
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["7100000000000156"]
+			id: "7100000000000157"
+			rewards: [{ id: "7130000000000157", table_id: 4097L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010309"
+				item: { count: 1, id: "minecraft:decorated_pot" }
+				type: "item"
+			}]
+			x: 8.0d
+			y: -4.5d
+		}
+		{
+			dependencies: [
+				"7100000000000110"
+				"7100000000000111"
+			]
+			id: "7100000000000158"
+			rewards: [{ id: "7130000000000158", table_id: 4098L, type: "choice" }]
+			tasks: [
+				{
+					id: "7100000000010310"
+					item: { count: 1, id: "kubejs:drying_frame" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "7100000000010311"
+					item: { count: 1, id: "kubejs:dried_berries" }
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: -6.5d
+		}
+		{
+			dependencies: ["7100000000000110"]
 			id: "7100000000000150"
 			rewards: [{
 				id: "7130000000000150"
@@ -132,6 +216,7 @@
 			dependencies: [
 				"7100000000000150"
 				"7100000000000111"
+				"7100000000000156"
 			]
 			id: "7100000000000151"
 			rewards: [{
@@ -228,6 +313,8 @@
 				"7100000000000112"
 				"7100000000000113"
 				"7100000000000155"
+				"7100000000000157"
+				"7100000000000158"
 			]
 			id: "7100000000000114"
 			rewards: [{

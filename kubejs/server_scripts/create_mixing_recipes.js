@@ -49,29 +49,54 @@ ServerEvents.recipes(event => {
     // then later automates transport and preparation around the foundry.
 
 
-    // ========================================
-    // Tier 3: Carbon Reduction Processing
-    // ========================================
+    // Iron is the first reduced and forged metal. Calcite acts as flux while
+    // charcoal supplies carbon and removes oxygen from the concentrated ore.
+    event.recipes.create.mixing('kubejs:bloomery_charge', [
+        '3x kubejs:iron_concentrate',
+        Ingredient.of('#kubejs:coal_dusts', 2),
+        'minecraft:calcite'
+    ]).id('kubejs:iron/prepare_bloomery_charge')
 
-// Iron Carbon Reduction (Heated)
-// Input: 3 crushed_iron + 2 coal
-// Output: 4 iron_dust (100%), graphite_dust (20% chance)
-// Requires heat - carbon acts as reducing agent
-event.recipes.create.mixing([
-        '4x ftbmaterials:iron_dust',
-        CreateItem.of('ftbmaterials:graphite_dust', 0.2)
-    ], [
-        '3x create:crushed_raw_iron',
-        Ingredient.of('#kubejs:coal_dusts', 2)
-    ]).heated()
+    // Coke production is the superheated capstone of Nether processing. The
+    // ceramic basin is returned after the sealed charge has finished coking.
+    event.recipes.create.compacting([
+        '8x kubejs:metallurgical_coke',
+        'kubejs:ceramic_basin'
+    ], 'kubejs:sealed_coke_charge')
+        .superheated()
+        .id('kubejs:steel/coke_sealed_charge')
 
-// Steel Nugget Production (Heated)
-// Input: 24 iron_nugget + 1 coal/charcoal dust
-// Output: 9 steel_nugget
-event.recipes.create.mixing([
-        '9x ftbmaterials:steel_nugget'
+    // Later industry captures tar from bark rather than wasting the volatile
+    // binder. The ceramic vessel is returned after destructive distillation.
+    event.recipes.create.compacting([
+        Fluid.of('kubejs:wood_tar', 250),
+        '2x minecraft:charcoal',
+        'kubejs:ceramic_basin'
     ], [
-        '24x minecraft:iron_nugget',
-        Ingredient.of('#kubejs:coal_dusts')
-    ]).heated()
+        '8x kubejs:tree_bark',
+        'kubejs:ceramic_basin'
+    ])
+        .superheated()
+        .id('kubejs:biocoke/distill_wood_tar')
+
+    // Four charcoal are consumed for each renewable coke equivalent. This is
+    // deliberately less efficient than mined coal coke, but fully automatable.
+    event.recipes.create.mixing('kubejs:green_biocoke', [
+        '4x ftbmaterials:charcoal_dust',
+        Fluid.of('kubejs:wood_tar', 250)
+    ])
+        .heated()
+        .id('kubejs:biocoke/bind_green_briquette')
+
+    // The titanium mesh is a reusable compression catalyst and provides the
+    // hard post-titanium gate for renewable steel production.
+    event.recipes.create.compacting([
+        'kubejs:dense_biocoke',
+        'kubejs:titanium_catalyst_mesh'
+    ], [
+        'kubejs:green_biocoke',
+        'kubejs:titanium_catalyst_mesh'
+    ])
+        .superheated()
+        .id('kubejs:biocoke/densify_with_titanium_mesh')
 })
