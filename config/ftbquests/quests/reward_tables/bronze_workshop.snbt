@@ -1,0 +1,31 @@
+{
+	id: "0000000000001021"
+	loot_size: 1
+	order_index: 1
+	rewards: [
+		{
+			count: 2
+			id: "7300000000001041"
+			item: {
+				count: 1
+				id: "ftbmaterials:bronze_ingot"
+			}
+		}
+		{
+			count: 4
+			id: "7300000000001042"
+			item: {
+				count: 1
+				id: "minecraft:copper_ingot"
+			}
+		}
+		{
+			count: 8
+			id: "7300000000001043"
+			item: {
+				count: 1
+				id: "minecraft:coal"
+			}
+		}
+	]
+}

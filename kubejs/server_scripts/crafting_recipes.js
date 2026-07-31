@@ -2,6 +2,169 @@
 // For shaped/shapeless crafting recipes (not Create mod machines)
 
 ServerEvents.recipes(event => {
+    // Vanilla leather is raw hide in this pack. Existing equipment and utility
+    // recipes must use finished leather instead of fresh animal drops.
+    event.replaceInput({}, 'minecraft:leather', 'kubejs:tanned_leather')
+
+    const bedColors = [
+        'white', 'orange', 'magenta', 'light_blue', 'yellow', 'lime', 'pink',
+        'gray', 'light_gray', 'cyan', 'purple', 'blue', 'brown', 'green',
+        'red', 'black'
+    ]
+
+    bedColors.forEach(color => {
+        // Remove the three-wool/three-plank recipe, but preserve bed-dyeing.
+        event.remove({ id: `minecraft:${color}_bed` })
+    })
+
+    // Primitive Start 21.1.0 ships its recipes in the obsolete "recipes"
+    // datapack directory, so Minecraft 1.21.1 never loads them. Restore the
+    // intended hand-crafting path here so it is also visible in JEI.
+    // Remove every competing recipe first; these blocks are progression gates.
+    event.remove({ output: 'minecraft:crafting_table' })
+    event.remove({ output: 'minecraft:chest' })
+    event.remove({ output: 'minecraft:furnace' })
+
+    event.shaped('primitivestart:improvised_planks', [
+        'SS',
+        'SS'
+    ], {
+        S: 'minecraft:stick'
+    }).id('kubejs:primitive/improvised_planks')
+
+    event.shaped('minecraft:crafting_table', [
+        'PF',
+        'TP'
+    ], {
+        P: 'primitivestart:improvised_planks',
+        F: 'minecraft:flint',
+        T: '#c:strings'
+    }).id('kubejs:primitive/crafting_table')
+
+    event.shaped('minecraft:chest', [
+        'PPP',
+        'PTP',
+        'PPP'
+    ], {
+        P: 'primitivestart:improvised_planks',
+        T: '#c:strings'
+    }).id('kubejs:primitive/bound_chest')
+
+    // Clay can be fired at the campfire before the player owns a furnace.
+    event.campfireCooking('minecraft:brick', 'minecraft:clay_ball', 0.1, 600)
+        .id('kubejs:primitive/campfire_fired_brick')
+
+    event.shaped('minecraft:furnace', [
+        'CBC',
+        'BFB',
+        'CBC'
+    ], {
+        C: '#c:cobblestones',
+        B: 'minecraft:brick',
+        F: 'minecraft:campfire'
+    }).id('kubejs:primitive/masonry_furnace')
+
+    // Bark supplies tannins. Each stage is intentionally visible in JEI so
+    // leather is a small survival craft rather than an immediate mob drop.
+    event.shapeless(Item.of('kubejs:tree_bark', 2), [
+        '#minecraft:logs',
+        'minecraft:flint'
+    ]).id('kubejs:primitive/strip_tree_bark')
+
+    event.shapeless('kubejs:soaked_hide', [
+        '#kubejs:raw_hides',
+        'minecraft:water_bucket'
+    ]).id('kubejs:primitive/soak_raw_hide')
+
+    event.shapeless('kubejs:scraped_hide', [
+        'kubejs:soaked_hide',
+        'minecraft:flint'
+    ]).id('kubejs:primitive/scrape_hide')
+
+    event.shapeless('kubejs:tannin_soaked_hide', [
+        'kubejs:scraped_hide',
+        'kubejs:tree_bark',
+        'kubejs:tree_bark',
+        'minecraft:water_bucket'
+    ]).id('kubejs:primitive/tannin_soak_hide')
+
+    event.campfireCooking('kubejs:tanned_leather', 'kubejs:tannin_soaked_hide', 0.1, 600)
+        .id('kubejs:primitive/dry_tanned_leather')
+
+    event.shaped('minecraft:white_bed', [
+        'WWW',
+        'LLL',
+        'PPP'
+    ], {
+        W: 'minecraft:white_wool',
+        L: 'kubejs:tanned_leather',
+        P: '#minecraft:planks'
+    }).id('kubejs:primitive/leather_bound_bed')
+
+    event.shaped('primitivestart:bone_pickaxe', [
+        'BBB',
+        ' T ',
+        ' S '
+    ], {
+        B: 'minecraft:bone',
+        T: '#c:strings',
+        S: 'minecraft:stick'
+    }).id('kubejs:primitive/bone_pickaxe')
+
+    event.shaped('primitivestart:bone_axe', [
+        'BB',
+        'BS',
+        ' T'
+    ], {
+        B: 'minecraft:bone',
+        T: '#c:strings',
+        S: 'minecraft:stick'
+    }).id('kubejs:primitive/bone_axe')
+
+    event.shaped('primitivestart:bone_shovel', [
+        'B',
+        'T',
+        'S'
+    ], {
+        B: 'minecraft:bone',
+        T: '#c:strings',
+        S: 'minecraft:stick'
+    }).id('kubejs:primitive/bone_shovel')
+
+    event.shaped('primitivestart:bone_sword', [
+        'B ',
+        'BT',
+        'S '
+    ], {
+        B: 'minecraft:bone',
+        T: '#c:strings',
+        S: 'minecraft:stick'
+    }).id('kubejs:primitive/bone_sword')
+
+    event.shaped('primitivestart:bone_hoe', [
+        'BB',
+        ' T',
+        ' S'
+    ], {
+        B: 'minecraft:bone',
+        T: '#c:strings',
+        S: 'minecraft:stick'
+    }).id('kubejs:primitive/bone_hoe')
+
+    // Stone tools bypass the primitive bone/flint stage too quickly. Remove
+    // their recipes while keeping the items registered for loot and mod compat.
+    const disabledStoneTools = [
+        'minecraft:stone_sword',
+        'minecraft:stone_pickaxe',
+        'minecraft:stone_axe',
+        'minecraft:stone_shovel',
+        'minecraft:stone_hoe'
+    ]
+
+    disabledStoneTools.forEach(tool => {
+        event.remove({ output: tool })
+    })
+
     // Disable default Create shaft, cogwheel, and large_cogwheel recipes
     event.remove({ output: 'create:shaft' })
     event.remove({ output: 'create:cogwheel' })
@@ -24,14 +187,15 @@ ServerEvents.recipes(event => {
         '#kubejs:large_cogwheel'
     )
 
-    // Remove original Andesite Alloy crafting recipes and replace with new one using Invar and Stone
+    // Andesite alloy marks the transition from cast bronze into Crude Create.
+    // Keeping this as a hand recipe avoids a circular dependency on Create machines.
     event.remove({ id: 'create:crafting/materials/andesite_alloy' })
     event.remove({ id: 'create:crafting/materials/andesite_alloy_from_zinc' })
     event.shaped('create:andesite_alloy', [
         'NS',
         'SN'
     ], {
-        N: '#kubejs:andesite_alloy_nugget_ingredients',
+        N: 'ftbmaterials:bronze_nugget',
         S: '#c:stones'
     }).id('create:crafting/materials/andesite_alloy')
 
@@ -74,65 +238,75 @@ ServerEvents.recipes(event => {
     })
 
     // ========== BASIC TIER RECIPES ==========
-    // Shaft Basic: Previous shaft + Bronze-Invar (Shaped) -> 8
-    event.shaped(Item.of('createtiers:shaft_basic', 8), [
-        'SSS',
-        'SMS',
-        'SSS'
+    // Basic is the Nether metallurgy tier. Invar proves Nether nickel
+    // processing, while brass proves access to blaze-heated alloying.
+    event.shaped(Item.of('createtiers:shaft_basic', 4), [
+        'SBS',
+        'BIB',
+        'SBS'
     ], {
         S: 'createtiers:shaft_crude',
-        M: 'ftbmaterials:bronze_ingot'
+        B: 'create:brass_ingot',
+        I: 'ftbmaterials:invar_ingot'
     })
 
-    // Cogwheel Basic: Previous cogwheel + Invar + Bronze nugget (Shaped)
+    // Cogwheel Basic: previous cogwheel + both Nether-era alloys.
     event.shaped('createtiers:cogwheel_basic', [
         'CR',
         'N '
     ], {
         C: 'createtiers:cogwheel_crude',
         N: 'ftbmaterials:invar_ingot',
-        R: 'ftbmaterials:bronze_nugget'
+        R: 'create:brass_ingot'
     })
 
-    // Large Cogwheel Basic: Previous large cogwheel + Invar + Bronze nugget (Shaped)
+    // Large Cogwheel Basic: previous large cogwheel + both Nether-era alloys.
     event.shaped('createtiers:large_cogwheel_basic', [
         'LN',
         'NR'
     ], {
         L: 'createtiers:large_cogwheel_crude',
         N: 'ftbmaterials:invar_ingot',
-        R: 'ftbmaterials:bronze_nugget'
+        R: 'create:brass_ingot'
     })
 
     // ========== REFINED TIER RECIPES ==========
-    // Shaft Refined: Previous shaft + Steel-Diamond (Shaped) -> 8
-    event.shaped(Item.of('createtiers:shaft_refined', 8), [
-        'SSS',
-        'SMS',
-        'SSS'
+    // Refined is the End/aerospace tier. Titanium makes reaching and mining
+    // the End a hard gate; steel and precision mechanisms prove automation.
+
+    // Four upgraded shafts per batch: no free duplication from the prior tier.
+    event.shaped(Item.of('createtiers:shaft_refined', 4), [
+        'PSP',
+        'STS',
+        'PSP'
     ], {
         S: 'createtiers:shaft_basic',
-        M: 'ftbmaterials:steel_ingot'
+        P: 'ftbmaterials:steel_plate',
+        T: 'ftbmaterials:titanium_plate'
     })
 
-    // Cogwheel Refined: Previous cogwheel + Diamond + Steel nugget (Shaped)
+    // Refined cogwheels require precision assembly as well as End metallurgy.
     event.shaped('createtiers:cogwheel_refined', [
-        'CR',
-        'N '
+        ' T ',
+        'GCG',
+        ' P '
     ], {
         C: 'createtiers:cogwheel_basic',
-        N: 'minecraft:diamond',
-        R: 'ftbmaterials:steel_nugget'
+        G: 'ftbmaterials:steel_gear',
+        T: 'ftbmaterials:titanium_plate',
+        P: 'create:precision_mechanism'
     })
 
-    // Large Cogwheel Refined: Previous large cogwheel + Diamond + Steel nugget (Shaped)
+    // Large refined gearing consumes more titanium and steel throughput.
     event.shaped('createtiers:large_cogwheel_refined', [
-        'LN',
-        'NR'
+        'TGT',
+        'GLG',
+        ' P '
     ], {
         L: 'createtiers:large_cogwheel_basic',
-        N: 'minecraft:diamond',
-        R: 'ftbmaterials:steel_nugget'
+        G: 'ftbmaterials:steel_gear',
+        T: 'ftbmaterials:titanium_plate',
+        P: 'create:precision_mechanism'
     })
 
     // ========== SMALL TO LARGE COGWHEEL RECIPES (SHAPELESS) ==========
@@ -142,9 +316,10 @@ ServerEvents.recipes(event => {
         'ftbmaterials:invar_ingot'
     ])
 
-    // Large Cogwheel Refined: Small cogwheel + Diamond (Shapeless)
+    // Large Cogwheel Refined: preserve the shortcut, but keep its End gate.
     event.shapeless('createtiers:large_cogwheel_refined', [
         'createtiers:cogwheel_refined',
-        'minecraft:diamond'
+        'ftbmaterials:titanium_plate',
+        'ftbmaterials:steel_gear'
     ])
 })

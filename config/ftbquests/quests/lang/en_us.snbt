@@ -1,0 +1,135 @@
+{
+	chapter_group.7100000000000001.title: "Inventors Progression"
+	chapter.7100000000000010.title: "I - Stone Age"
+	chapter.7100000000000020.title: "II - Copper Age"
+	chapter.7100000000000030.title: "III - Bronze Age"
+	chapter.7100000000000040.title: "IV - Crude Mechanical Age"
+	chapter.7100000000000050.title: "V - Iron Infrastructure"
+	chapter.7100000000000060.title: "VI - Nether Industry"
+	chapter.7100000000000070.title: "VII - End Refinement"
+
+	quest.7100000000000100.title: "A Rough Beginning"
+	quest.7100000000000100.quest_desc: ["Lash loose sticks into rough panels. They are crude, but sturdy enough for your first shelter and workbench."]
+	quest.7100000000000101.title: "Tools Before Metal"
+	quest.7100000000000101.quest_desc: ["Bind shaped bone to a wooden handle and make a pickaxe sturdy enough to break stone."]
+	quest.7100000000000110.title: "Controlled Fire"
+	quest.7100000000000110.quest_desc: ["Build a campfire to cook food and bring dependable warmth to your growing settlement."]
+	quest.7100000000000111.title: "A Place to Work"
+	quest.7100000000000111.quest_desc: ["Use flint and cordage to assemble a firm work surface where more demanding crafts can begin."]
+	quest.7100000000000112.title: "Stored Heat"
+	quest.7100000000000112.quest_desc: ["Turn wood into charcoal and store a healthy reserve. Hotter fires and heavier work will consume fuel quickly."]
+	quest.7100000000000113.title: "The First Workshop"
+	quest.7100000000000113.quest_desc: ["Bind together a storage chest, then fire clay bricks over a campfire and build a proper masonry furnace."]
+	quest.7100000000000114.title: "Gather the Refractory Materials"
+	quest.7100000000000114.quest_desc: ["Gather clay and sand. Together they can form a refractory material capable of containing molten metal."]
+	quest.7100000000000150.title: "Hide and Sinew"
+	quest.7100000000000150.quest_desc: ["Hunt carefully and recover raw hides. Fresh hide will rot and cannot yet serve as leather."]
+	quest.7100000000000151.title: "The First Soak"
+	quest.7100000000000151.quest_desc: ["Wash a raw hide thoroughly in water to loosen dirt, blood, and unwanted tissue."]
+	quest.7100000000000152.title: "Scrape It Clean"
+	quest.7100000000000152.quest_desc: ["Use a sharp piece of flint to scrape the soaked hide clean and prepare its surface for tanning."]
+	quest.7100000000000153.title: "Tannins from the Forest"
+	quest.7100000000000153.quest_desc: ["Strip bark from a log. The tannins held within the bark can preserve prepared hide."]
+	quest.7100000000000154.title: "From Hide to Leather"
+	quest.7100000000000154.quest_desc: ["Soak the scraped hide with bark, then dry it slowly over a campfire to produce durable leather."]
+	quest.7100000000000155.title: "A Safe Night's Rest"
+	quest.7100000000000155.quest_desc: ["Combine wool, finished leather, and wooden boards to make a bed worthy of a permanent shelter."]
+
+	quest.7100000000000102.title: "Refractory Thinking"
+	quest.7100000000000102.quest_desc: ["Combine clay and sand into fire clay, a material that survives temperatures ordinary stonework cannot withstand."]
+	quest.7100000000000115.title: "Fire-Brick Masonry"
+	quest.7100000000000115.quest_desc: ["Bake the fire clay into black fire bricks. You will need enough to surround and contain the foundry's heat."]
+	quest.7100000000000103.title: "The First Foundry"
+	quest.7100000000000103.quest_desc: ["Assemble a controller, fuel tank, drain and fire-brick shell, then place a tap and casting table by the drain. Consult the Metalworks guide for the complete structure."]
+	quest.7100000000000116.title: "Shape From Nothing"
+	quest.7100000000000116.quest_desc: ["Create an ingot cast. Pouring molten metal into a precise shape allows it to cool into something you can store and use."]
+	quest.7100000000000104.title: "The First Copper Batch"
+	quest.7100000000000104.quest_desc: ["Feed raw copper into the foundry and pour sixteen ingots. Your first metal stockpile opens the way to stronger tools and useful vessels."]
+	quest.7100000000000105.title: "Cast, Then Assemble"
+	quest.7100000000000105.quest_desc: ["Use a pickaxe cast to form a metal head, then assemble it with a suitable rod and binding. Your new tool can be repaired and improved as you discover better materials."]
+	quest.7100000000000117.title: "Copper Utilities"
+	quest.7100000000000117.quest_desc: ["Craft a bucket and shears. Carrying fluids and gathering wool will make farming, construction and animal care much easier."]
+
+	quest.7100000000000118.title: "Search for Tin"
+	quest.7100000000000118.quest_desc: ["Search the Overworld for tin. It is less common than copper, but the two metals can be combined into a far stronger alloy."]
+	quest.7100000000000106.title: "The First Alloy"
+	quest.7100000000000106.quest_desc: ["Melt three parts copper with one part tin to create bronze. Keep the mixture balanced or valuable metal will be left unused in the foundry."]
+	quest.7100000000000119.title: "A Library of Casts"
+	quest.7100000000000119.quest_desc: ["Prepare casts for gears, plates and rods. Once these molds are ready, each new batch of metal can be shaped quickly and consistently."]
+	quest.7100000000000120.title: "Heavy Hand Tools"
+	quest.7100000000000120.quest_desc: ["Cast and assemble a heavy hammer. Its broad head can clear stone faster when opening rooms, tunnels and foundations."]
+	quest.7100000000000121.title: "A Proper Kitchen"
+	quest.7100000000000121.quest_desc: ["Build a Cooking Pot and combine your harvests into nourishing meals that keep hunger away during long days in the workshop."]
+	quest.7100000000000122.title: "Carry the Workshop"
+	quest.7100000000000122.quest_desc: ["Craft a backpack so tools, food and gathered resources no longer compete for every space in your pockets."]
+	quest.7100000000000123.title: "Mechanical Material"
+	quest.7100000000000123.quest_desc: ["Work bronze nuggets into stone to create andesite alloy, a rugged composite suitable for your first moving machines."]
+
+	quest.7100000000000107.title: "The Crude Drivetrain"
+	quest.7100000000000107.quest_desc: ["Craft Crude shafts and cogwheels. These rough components tolerate up to 128 RPM and carry 512 SU before overstressing, so begin with compact machines."]
+	quest.7100000000000124.title: "Renewable Rotation"
+	quest.7100000000000124.quest_desc: ["Place a Water Wheel in a strong current to produce continuous rotational force without exhausting yourself at a hand crank."]
+	quest.7100000000000125.title: "Mechanized Grinding"
+	quest.7100000000000125.quest_desc: ["Put rotational power to work in a Millstone and grind grain, minerals and other ingredients continuously."]
+	quest.7100000000000126.title: "Mechanized Forming"
+	quest.7100000000000126.quest_desc: ["Build a Mechanical Press to flatten ingots into sheets and compact loose materials with the force of your drivetrain."]
+	quest.7100000000000127.title: "Mechanized Mixing"
+	quest.7100000000000127.quest_desc: ["Suspend a Mechanical Mixer above a Basin to blend powders and prepare recipes without stirring every batch by hand."]
+	quest.7100000000000128.title: "Mechanized Woodworking"
+	quest.7100000000000128.quest_desc: ["Power a Mechanical Saw to cut timber rapidly. It can process logs at the workshop or become the cutting edge of a mobile tree harvester."]
+	quest.7100000000000129.title: "Ore Preparation Line"
+	quest.7100000000000129.quest_desc: ["Turn a matched pair of Crushing Wheels against one another. Feed ore between them to prepare it for more efficient melting."]
+	quest.7100000000000130.title: "The First Mechanical Farm"
+	quest.7100000000000130.quest_desc: ["Mount Mechanical Harvesters on a moving contraption to gather mature crops while leaving the field ready to grow again."]
+	quest.7100000000000131.title: "Prove Sustained Production"
+	quest.7100000000000131.quest_desc: ["Put the workshop through a full production run: crush a stack of raw iron and press thirty-two iron sheets."]
+
+	quest.7100000000000132.title: "Greater Water Power"
+	quest.7100000000000132.quest_desc: ["Build a Large Water Wheel to draw more power from the same river and support several machines from one source."]
+	quest.7100000000000133.title: "Power From the Wind"
+	quest.7100000000000133.quest_desc: ["Raise sails around a Windmill Bearing and let the open sky power a larger, centralized workshop."]
+	quest.7100000000000134.title: "Mining Beyond the Pickaxe"
+	quest.7100000000000134.quest_desc: ["Mount Mechanical Drills where stone must be removed continuously. They are ideal for tunnels, quarries and moving excavation rigs."]
+	quest.7100000000000135.title: "Moving Contraption Cargo"
+	quest.7100000000000135.quest_desc: ["Pair two Portable Storage Interfaces so a returning contraption can unload its cargo without being dismantled."]
+	quest.7100000000000136.title: "Bulk Storage"
+	quest.7100000000000136.quest_desc: ["Build an Item Vault to hold large buffers directly inside a production line or aboard a moving contraption."]
+	quest.7100000000000137.title: "Organized Storage"
+	quest.7100000000000137.quest_desc: ["Upgrade a chest with copper to hold more supplies in one place and make room for useful storage upgrades."]
+	quest.7100000000000138.title: "Manage the Warehouse"
+	quest.7100000000000138.quest_desc: ["Use the Storage Tool to configure your containers and bring order to the materials flowing through the workshop."]
+	quest.7100000000000139.title: "The Expedition Stockpile"
+	quest.7100000000000139.quest_desc: ["Prepare charcoal, bronze and iron before crossing into the Nether. A well-supplied expedition has a much better chance of returning home."]
+
+	quest.7100000000000200.title: "Beyond Charcoal Heat"
+	quest.7100000000000200.quest_desc: ["Enter the Nether, find a fortress and capture a blaze in an empty burner. Its heat can drive reactions no ordinary flame can sustain."]
+	quest.7100000000000140.title: "Nether Nickel"
+	quest.7100000000000140.quest_desc: ["Search the Nether for nickel deposits and bring a full batch home. This metal is essential for heat-stable machinery."]
+	quest.7100000000000201.title: "Stable Under Heat"
+	quest.7100000000000201.quest_desc: ["Alloy two parts iron with one part nickel to produce Invar, a stable metal that resists expansion when machinery grows hot."]
+	quest.7100000000000202.title: "Precision Alloy"
+	quest.7100000000000202.quest_desc: ["Heat copper and zinc together to produce brass. Its fine working properties make precise mechanisms and controlled logistics possible."]
+	quest.7100000000000203.title: "The Basic Drivetrain"
+	quest.7100000000000203.quest_desc: ["Rebuild the drivetrain with Invar and brass. Basic components tolerate 256 RPM and carry 2048 SU, enough for larger connected factories."]
+	quest.7100000000000141.title: "Filtered Logistics"
+	quest.7100000000000141.quest_desc: ["Use brass funnels and tunnels to filter, split and distribute items exactly where each production line needs them."]
+	quest.7100000000000142.title: "Mechanical Handling"
+	quest.7100000000000142.quest_desc: ["Program a Mechanical Arm to move selected items between machines, depots and burners where belts cannot reach cleanly."]
+	quest.7100000000000204.title: "Repeatable Precision"
+	quest.7100000000000204.quest_desc: ["Build a sequenced assembly line and produce sixteen Precision Mechanisms without assembling each one by hand."]
+
+	quest.7100000000000143.title: "Open the Stronghold"
+	quest.7100000000000143.quest_desc: ["Prepare enough Eyes of Ender to locate a stronghold and restore its ancient portal."]
+	quest.7100000000000144.title: "Master the End"
+	quest.7100000000000144.quest_desc: ["Face the Ender Dragon and collect its lingering breath. Beyond the central island, valuable new resources await."]
+	quest.7100000000000205.title: "Metal From the End"
+	quest.7100000000000205.quest_desc: ["Mine titanium from the End stone, melt the ore in your foundry and cast sixteen bright, resilient ingots."]
+	quest.7100000000000145.title: "Industrial Steel"
+	quest.7100000000000145.quest_desc: ["Produce steel in quantity. Titanium may be exotic, but strong machinery still depends on a dependable supply of hardened iron."]
+	quest.7100000000000146.title: "Titanium Forming"
+	quest.7100000000000146.quest_desc: ["Form titanium into plates ready for light, strong machine frames and the harsh conditions beyond the Overworld."]
+	quest.7100000000000147.title: "Steel Transmission"
+	quest.7100000000000147.quest_desc: ["Manufacture a set of steel gears capable of transmitting greater forces without wearing away under load."]
+	quest.7100000000000206.title: "The Refined Drivetrain"
+	quest.7100000000000206.quest_desc: ["Combine titanium, steel and Precision Mechanisms with your Basic drivetrain. Refined components reach 512 RPM and carry 8192 SU, providing the power needed for aerospace engineering."]
+}

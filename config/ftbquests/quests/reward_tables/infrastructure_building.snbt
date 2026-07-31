@@ -1,0 +1,31 @@
+{
+	id: "0000000000001042"
+	loot_size: 1
+	order_index: 8
+	rewards: [
+		{
+			count: 16
+			id: "7300000000001091"
+			item: {
+				count: 1
+				id: "minecraft:stone_bricks"
+			}
+		}
+		{
+			count: 16
+			id: "7300000000001092"
+			item: {
+				count: 1
+				id: "minecraft:andesite"
+			}
+		}
+		{
+			count: 8
+			id: "7300000000001093"
+			item: {
+				count: 1
+				id: "minecraft:glass"
+			}
+		}
+	]
+}

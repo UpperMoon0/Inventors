@@ -1,0 +1,122 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "02_copper_age"
+	group: "7100000000000001"
+	icon: "productivemetalworks:black_foundry_controller"
+	id: "7100000000000020"
+	images: [ ]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["7100000000000114"]
+			id: "7100000000000102"
+			rewards: [{ id: "7130000000000102", table_id: 4113L, type: "choice" }]
+			tasks: [{
+				count: 16L
+				id: "7100000000010102"
+				item: { count: 1, id: "productivemetalworks:fire_clay" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000102"]
+			id: "7100000000000115"
+			rewards: [{ id: "7130000000000115", table_id: 4113L, type: "choice" }]
+			tasks: [{
+				count: 16L
+				id: "7100000000010118"
+				item: { count: 1, id: "productivemetalworks:black_fire_bricks" }
+				type: "item"
+			}]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000115"]
+			id: "7100000000000103"
+			rewards: [{ id: "7130000000000103", table_id: 4114L, type: "choice" }]
+			tasks: [
+				{
+					id: "7100000000010103"
+					item: { count: 1, id: "productivemetalworks:black_foundry_controller" }
+					type: "item"
+				}
+				{
+					id: "7100000000010104"
+					item: { count: 1, id: "productivemetalworks:casting_table" }
+					type: "item"
+				}
+				{
+					id: "7100000000010105"
+					item: { count: 1, id: "productivemetalworks:foundry_tap" }
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000103"]
+			id: "7100000000000116"
+			rewards: [{ id: "7130000000000116", table_id: 4114L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010119"
+				item: { count: 1, id: "productivemetalworks:ingot_cast" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["7100000000000103"]
+			id: "7100000000000104"
+			rewards: [{ id: "7130000000000104", table_id: 4114L, type: "choice" }]
+			tasks: [{
+				count: 16L
+				id: "7100000000010106"
+				item: { count: 1, id: "minecraft:copper_ingot" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"7100000000000116"
+				"7100000000000104"
+			]
+			id: "7100000000000105"
+			rewards: [{ id: "7130000000000105", table_id: 4114L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010107"
+				item: { count: 1, id: "silentgear:pickaxe" }
+				type: "item"
+			}]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000105"]
+			id: "7100000000000117"
+			rewards: [{ id: "7130000000000117", table_id: 4114L, type: "choice" }]
+			tasks: [
+				{
+					id: "7100000000010120"
+					item: { count: 1, id: "minecraft:bucket" }
+					type: "item"
+				}
+				{
+					id: "7100000000010121"
+					item: { count: 1, id: "minecraft:shears" }
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: 0.0d
+		}
+	]
+}

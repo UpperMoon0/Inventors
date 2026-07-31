@@ -1,0 +1,31 @@
+{
+	id: "0000000000001052"
+	loot_size: 1
+	order_index: 11
+	rewards: [
+		{
+			count: 2
+			id: "7300000000001111"
+			item: {
+				count: 1
+				id: "create:brass_ingot"
+			}
+		}
+		{
+			count: 2
+			id: "7300000000001112"
+			item: {
+				count: 1
+				id: "ftbmaterials:invar_ingot"
+			}
+		}
+		{
+			count: 8
+			id: "7300000000001113"
+			item: {
+				count: 1
+				id: "minecraft:redstone"
+			}
+		}
+	]
+}

@@ -1,0 +1,31 @@
+{
+	id: "0000000000001002"
+	loot_size: 1
+	order_index: 13
+	rewards: [
+		{
+			count: 4
+			id: "7300000000001011"
+			item: {
+				count: 1
+				id: "minecraft:bread"
+			}
+		}
+		{
+			count: 4
+			id: "7300000000001012"
+			item: {
+				count: 1
+				id: "minecraft:baked_potato"
+			}
+		}
+		{
+			count: 4
+			id: "7300000000001013"
+			item: {
+				count: 1
+				id: "minecraft:cooked_cod"
+			}
+		}
+	]
+}

@@ -1,0 +1,113 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "07_end_refinement"
+	group: "7100000000000001"
+	icon: "createtiers:cogwheel_refined"
+	id: "7100000000000070"
+	images: [ ]
+	order_index: 6
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["7100000000000204"]
+			id: "7100000000000143"
+			rewards: [{ id: "7130000000000143", table_id: 4193L, type: "choice" }]
+			tasks: [{
+				count: 12L
+				id: "7100000000010153"
+				item: { count: 1, id: "minecraft:ender_eye" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000143"]
+			id: "7100000000000144"
+			rewards: [{ id: "7130000000000144", table_id: 4193L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010154"
+				item: { count: 1, id: "minecraft:dragon_breath" }
+				type: "item"
+			}]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000144"]
+			id: "7100000000000205"
+			rewards: [{ id: "7130000000000205", table_id: 4194L, type: "choice" }]
+			tasks: [{
+				count: 16L
+				id: "7100000000020205"
+				item: { count: 1, id: "ftbmaterials:titanium_ingot" }
+				type: "item"
+			}]
+			x: 4.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["7100000000000144"]
+			id: "7100000000000145"
+			rewards: [{ id: "7130000000000145", table_id: 4194L, type: "choice" }]
+			tasks: [{
+				count: 16L
+				id: "7100000000010155"
+				item: { count: 1, id: "ftbmaterials:steel_ingot" }
+				type: "item"
+			}]
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7100000000000205"]
+			id: "7100000000000146"
+			rewards: [{ id: "7130000000000146", table_id: 4194L, type: "choice" }]
+			tasks: [{
+				count: 16L
+				id: "7100000000010156"
+				item: { count: 1, id: "ftbmaterials:titanium_plate" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["7100000000000145"]
+			id: "7100000000000147"
+			rewards: [{ id: "7130000000000147", table_id: 4194L, type: "choice" }]
+			tasks: [{
+				count: 8L
+				id: "7100000000010157"
+				item: { count: 1, id: "ftbmaterials:steel_gear" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"7100000000000146"
+				"7100000000000147"
+			]
+			id: "7100000000000206"
+			rewards: [{ id: "7130000000000206", table_id: 4194L, type: "choice" }]
+			tasks: [
+				{
+					count: 8L
+					id: "7100000000020206"
+					item: { count: 1, id: "createtiers:shaft_refined" }
+					type: "item"
+				}
+				{
+					id: "7100000000020207"
+					item: { count: 1, id: "createtiers:cogwheel_refined" }
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+}

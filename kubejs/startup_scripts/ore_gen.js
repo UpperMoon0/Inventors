@@ -2,6 +2,7 @@
 //
 // Overworld: tin
 // Nether: lead, nickel, silver, uranium
+// End: titanium
 //
 // Create: Cosmonautics titanium generation is disabled by overriding
 // rocketnautics:neoforge/biome_modifier/add_titanium_ore with neoforge:none.

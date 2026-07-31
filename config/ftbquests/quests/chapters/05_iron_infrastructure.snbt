@@ -1,0 +1,128 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "05_iron_infrastructure"
+	group: "7100000000000001"
+	icon: "create:windmill_bearing"
+	id: "7100000000000050"
+	images: [ ]
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["7100000000000131"]
+			id: "7100000000000132"
+			rewards: [{ id: "7130000000000132", table_id: 4162L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010139"
+				item: { count: 1, id: "create:large_water_wheel" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000132"]
+			id: "7100000000000133"
+			rewards: [{ id: "7130000000000133", table_id: 4162L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010140"
+				item: { count: 1, id: "create:windmill_bearing" }
+				type: "item"
+			}]
+			x: 2.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["7100000000000132"]
+			id: "7100000000000134"
+			rewards: [{ id: "7130000000000134", table_id: 4161L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010141"
+				item: { count: 1, id: "create:mechanical_drill" }
+				type: "item"
+			}]
+			x: 2.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7100000000000133"]
+			id: "7100000000000135"
+			rewards: [{ id: "7130000000000135", table_id: 4161L, type: "choice" }]
+			tasks: [{
+				count: 2L
+				id: "7100000000010142"
+				item: { count: 1, id: "create:portable_storage_interface" }
+				type: "item"
+			}]
+			x: 4.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["7100000000000134"]
+			id: "7100000000000136"
+			rewards: [{ id: "7130000000000136", table_id: 4161L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010143"
+				item: { count: 1, id: "create:item_vault" }
+				type: "item"
+			}]
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"7100000000000135"
+				"7100000000000136"
+			]
+			id: "7100000000000137"
+			rewards: [{ id: "7130000000000137", table_id: 4161L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010144"
+				item: { count: 1, id: "sophisticatedstorage:copper_chest" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["7100000000000137"]
+			id: "7100000000000138"
+			rewards: [{ id: "7130000000000138", table_id: 4161L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010145"
+				item: { count: 1, id: "sophisticatedstorage:storage_tool" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7100000000000138"]
+			id: "7100000000000139"
+			rewards: [{ id: "7130000000000139", table_id: 4162L, type: "choice" }]
+			tasks: [
+				{
+					count: 64L
+					id: "7100000000010146"
+					item: { count: 1, id: "minecraft:charcoal" }
+					type: "item"
+				}
+				{
+					count: 32L
+					id: "7100000000010147"
+					item: { count: 1, id: "ftbmaterials:bronze_ingot" }
+					type: "item"
+				}
+				{
+					count: 32L
+					id: "7100000000010148"
+					item: { count: 1, id: "minecraft:iron_ingot" }
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+}

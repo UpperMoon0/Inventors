@@ -1,4 +1,5 @@
 {
+  "balm:jade": null,
   "gravestone:grave": null,
   "jade:block_face": null,
   "jade:block_properties": null,
@@ -59,5 +60,6 @@
   "minecraft:total_enchantment_power": null,
   "minecraft:villager_profession": null,
   "minecraft:waxed": null,
-  "minecraft:zombie_villager": null
+  "minecraft:zombie_villager": null,
+  "productivemetalworks:casting": null
 }

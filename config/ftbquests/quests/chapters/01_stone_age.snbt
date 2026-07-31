@@ -1,0 +1,205 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "01_stone_age"
+	group: "7100000000000001"
+	icon: "primitivestart:bone_pickaxe"
+	id: "7100000000000010"
+	images: [ ]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "7100000000000100"
+			rewards: [{ id: "7130000000000100", table_id: 4097L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010100"
+				item: { count: 1, id: "primitivestart:improvised_planks" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000100"]
+			id: "7100000000000101"
+			rewards: [{ id: "7130000000000101", table_id: 4097L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010101"
+				item: { count: 1, id: "primitivestart:bone_pickaxe" }
+				type: "item"
+			}]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000101"]
+			id: "7100000000000110"
+			rewards: [{ id: "7130000000000110", table_id: 4098L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010111"
+				item: { count: 1, id: "minecraft:campfire" }
+				type: "item"
+			}]
+			x: 4.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["7100000000000101"]
+			id: "7100000000000111"
+			rewards: [{ id: "7130000000000111", table_id: 4097L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010112"
+				item: { count: 1, id: "minecraft:crafting_table" }
+				type: "item"
+			}]
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7100000000000110"]
+			id: "7100000000000112"
+			rewards: [{ id: "7130000000000112", table_id: 4097L, type: "choice" }]
+			tasks: [{
+				count: 16L
+				id: "7100000000010113"
+				item: { count: 1, id: "minecraft:charcoal" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["7100000000000111"]
+			id: "7100000000000113"
+			rewards: [{ id: "7130000000000113", table_id: 4097L, type: "choice" }]
+			tasks: [
+				{
+					id: "7100000000010114"
+					item: { count: 1, id: "minecraft:chest" }
+					type: "item"
+				}
+				{
+					id: "7100000000010115"
+					item: { count: 1, id: "minecraft:furnace" }
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7100000000000110"]
+			id: "7100000000000150"
+			rewards: [{ id: "7130000000000150", table_id: 4098L, type: "choice" }]
+			tasks: [{
+				count: 2L
+				id: "7100000000010150"
+				item: { count: 1, id: "minecraft:leather" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"7100000000000150"
+				"7100000000000111"
+			]
+			id: "7100000000000151"
+			rewards: [{ id: "7130000000000151", table_id: 4097L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010151"
+				item: { count: 1, id: "kubejs:soaked_hide" }
+				type: "item"
+			}]
+			x: 8.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["7100000000000151"]
+			id: "7100000000000152"
+			rewards: [{ id: "7130000000000152", table_id: 4097L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010152"
+				item: { count: 1, id: "kubejs:scraped_hide" }
+				type: "item"
+			}]
+			x: 10.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["7100000000000111"]
+			id: "7100000000000153"
+			rewards: [{ id: "7130000000000153", table_id: 4097L, type: "choice" }]
+			tasks: [{
+				count: 4L
+				id: "7100000000010153"
+				item: { count: 1, id: "kubejs:tree_bark" }
+				type: "item"
+			}]
+			x: 10.0d
+			y: 6.5d
+		}
+		{
+			dependencies: [
+				"7100000000000152"
+				"7100000000000153"
+			]
+			id: "7100000000000154"
+			rewards: [{ id: "7130000000000154", table_id: 4097L, type: "choice" }]
+			tasks: [
+				{
+					id: "7100000000010154"
+					item: { count: 1, id: "kubejs:tannin_soaked_hide" }
+					type: "item"
+				}
+				{
+					count: 3L
+					id: "7100000000010155"
+					item: { count: 1, id: "kubejs:tanned_leather" }
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["7100000000000154"]
+			id: "7100000000000155"
+			rewards: [{ id: "7130000000000155", table_id: 4098L, type: "choice" }]
+			tasks: [{
+				id: "7100000000010156"
+				item: { count: 1, id: "minecraft:white_bed" }
+				type: "item"
+			}]
+			x: 14.0d
+			y: 5.5d
+		}
+		{
+			dependencies: [
+				"7100000000000112"
+				"7100000000000113"
+				"7100000000000155"
+			]
+			id: "7100000000000114"
+			rewards: [{ id: "7130000000000114", table_id: 4097L, type: "choice" }]
+			tasks: [
+				{
+					count: 16L
+					id: "7100000000010116"
+					item: { count: 1, id: "minecraft:clay_ball" }
+					type: "item"
+				}
+				{
+					count: 16L
+					id: "7100000000010117"
+					item: { count: 1, id: "minecraft:sand" }
+					type: "item"
+				}
+			]
+			x: 14.0d
+			y: 0.0d
+		}
+	]
+}

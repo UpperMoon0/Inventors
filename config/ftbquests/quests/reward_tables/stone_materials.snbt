@@ -1,0 +1,31 @@
+{
+	id: "0000000000001001"
+	loot_size: 1
+	order_index: 12
+	rewards: [
+		{
+			count: 8
+			id: "7300000000001001"
+			item: {
+				count: 1
+				id: "minecraft:stick"
+			}
+		}
+		{
+			count: 8
+			id: "7300000000001002"
+			item: {
+				count: 1
+				id: "minecraft:torch"
+			}
+		}
+		{
+			count: 4
+			id: "7300000000001003"
+			item: {
+				count: 1
+				id: "minecraft:leather"
+			}
+		}
+	]
+}

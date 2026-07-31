@@ -1,0 +1,24 @@
+{
+	id: "0000000000001051"
+	loot_size: 1
+	order_index: 10
+	rewards: [
+		{
+			count: 8
+			id: "7300000000001101"
+			item: {
+				count: 1
+				id: "minecraft:cooked_beef"
+			}
+		}
+		{
+			count: 16
+			id: "7300000000001102"
+			item: {
+				count: 1
+				id: "minecraft:arrow"
+			}
+		}
+		{ id: "7300000000001103", item: { count: 1, id: "minecraft:golden_apple" } }
+	]
+}

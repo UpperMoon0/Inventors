@@ -1,0 +1,31 @@
+{
+	id: "0000000000001011"
+	loot_size: 1
+	order_index: 3
+	rewards: [
+		{
+			count: 4
+			id: "7300000000001021"
+			item: {
+				count: 1
+				id: "minecraft:clay_ball"
+			}
+		}
+		{
+			count: 8
+			id: "7300000000001022"
+			item: {
+				count: 1
+				id: "minecraft:sand"
+			}
+		}
+		{
+			count: 4
+			id: "7300000000001023"
+			item: {
+				count: 1
+				id: "minecraft:charcoal"
+			}
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	id: "0000000000001062"
+	loot_size: 1
+	order_index: 7
+	rewards: [
+		{
+			count: 2
+			id: "7300000000001131"
+			item: {
+				count: 1
+				id: "ftbmaterials:steel_ingot"
+			}
+		}
+		{ id: "7300000000001132", item: { count: 1, id: "ftbmaterials:titanium_ingot" } }
+		{
+			count: 4
+			id: "7300000000001133"
+			item: {
+				count: 1
+				id: "minecraft:blaze_rod"
+			}
+		}
+	]
+}

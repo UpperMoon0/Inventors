@@ -1,6 +1,11 @@
 // Tag modifications - add items to tags
 
 ServerEvents.tags('item', event => {
+    // Only processed hide counts as usable leather. Mob drops remain raw hide.
+    event.remove('c:leathers', 'minecraft:leather')
+    event.add('c:leathers', 'kubejs:tanned_leather')
+    event.add('kubejs:raw_hides', 'minecraft:leather')
+
     // Create unified tags for iron (dust or ingot)
     event.add('kubejs:iron_material', 'ftbmaterials:iron_dust')
     event.add('kubejs:iron_material', 'minecraft:iron_ingot')

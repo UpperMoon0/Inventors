@@ -1,0 +1,31 @@
+{
+	id: "0000000000001032"
+	loot_size: 1
+	order_index: 5
+	rewards: [
+		{
+			count: 8
+			id: "7300000000001071"
+			item: {
+				count: 1
+				id: "minecraft:iron_nugget"
+			}
+		}
+		{
+			count: 8
+			id: "7300000000001072"
+			item: {
+				count: 1
+				id: "minecraft:dried_kelp"
+			}
+		}
+		{
+			count: 8
+			id: "7300000000001073"
+			item: {
+				count: 1
+				id: "minecraft:oak_log"
+			}
+		}
+	]
+}

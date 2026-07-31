@@ -1,0 +1,24 @@
+{
+	id: "0000000000001061"
+	loot_size: 1
+	order_index: 6
+	rewards: [
+		{
+			count: 2
+			id: "7300000000001121"
+			item: {
+				count: 1
+				id: "minecraft:ender_pearl"
+			}
+		}
+		{
+			count: 16
+			id: "7300000000001122"
+			item: {
+				count: 1
+				id: "minecraft:arrow"
+			}
+		}
+		{ id: "7300000000001123", item: { count: 1, id: "minecraft:golden_apple" } }
+	]
+}

@@ -12,6 +12,7 @@ global.ITEMS = {
     raw_silver: 'ftbmaterials:silver_raw_ore',
     raw_uranium: 'ftbmaterials:uranium_raw_ore',
     raw_tin: 'ftbmaterials:tin_raw_ore',
+    raw_titanium: 'ftbmaterials:titanium_raw_ore',
     crushed_iron: 'create:crushed_raw_iron',
     crushed_copper: 'create:crushed_raw_copper',
     crushed_gold: 'create:crushed_raw_gold',
@@ -32,6 +33,8 @@ global.ITEMS = {
     invar_nugget: 'ftbmaterials:invar_nugget',
     lead_ingot: 'ftbmaterials:lead_ingot',
     uranium_ingot: 'ftbmaterials:uranium_ingot',
+    titanium_ingot: 'ftbmaterials:titanium_ingot',
+    titanium_plate: 'ftbmaterials:titanium_plate',
     bronze_ingot: 'ftbmaterials:bronze_ingot',
     brass_ingot: 'create:brass_ingot',
     iron_dust: 'ftbmaterials:iron_dust',
@@ -44,6 +47,7 @@ global.ITEMS = {
     lead_dust: 'ftbmaterials:lead_dust',
     zinc_dust: 'ftbmaterials:zinc_dust',
     bronze_dust: 'ftbmaterials:bronze_dust',
+    brass_dust: 'ftbmaterials:brass_dust',
     graphite_dust: 'ftbmaterials:graphite_dust',
     coal_dust: 'ftbmaterials:coal_dust',
     charcoal_dust: 'ftbmaterials:charcoal_dust',
@@ -51,3 +55,13 @@ global.ITEMS = {
     steel_nugget: 'ftbmaterials:steel_nugget',
     experience_nugget: 'create:experience_nugget'
 }
+
+// Primitive tanning materials. Vanilla leather drops are treated as raw hide;
+// these items represent the processing stages required for usable leather.
+StartupEvents.registry('item', event => {
+    event.create('tree_bark').displayName('Tree Bark')
+    event.create('soaked_hide').displayName('Soaked Hide')
+    event.create('scraped_hide').displayName('Scraped Hide')
+    event.create('tannin_soaked_hide').displayName('Tannin-Soaked Hide')
+    event.create('tanned_leather').displayName('Leather')
+})

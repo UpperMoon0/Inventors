@@ -1,0 +1,31 @@
+{
+	id: "0000000000001041"
+	loot_size: 1
+	order_index: 9
+	rewards: [
+		{
+			count: 4
+			id: "7300000000001081"
+			item: {
+				count: 1
+				id: "create:chute"
+			}
+		}
+		{
+			count: 4
+			id: "7300000000001082"
+			item: {
+				count: 1
+				id: "create:belt_connector"
+			}
+		}
+		{
+			count: 2
+			id: "7300000000001083"
+			item: {
+				count: 1
+				id: "create:andesite_funnel"
+			}
+		}
+	]
+}
