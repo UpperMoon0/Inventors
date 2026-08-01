@@ -73,7 +73,7 @@ ServerEvents.recipes(event => {
         '2x minecraft:charcoal',
         'kubejs:ceramic_basin'
     ], [
-        '8x kubejs:tree_bark',
+        '8x firstworks:tree_bark',
         'kubejs:ceramic_basin'
     ])
         .superheated()

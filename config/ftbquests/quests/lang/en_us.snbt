@@ -21,23 +21,29 @@
 	quest.7100000000000112.title: "Stored Heat"
 	quest.7100000000000112.quest_desc: ["Turn wood into charcoal and store a healthy reserve. Hotter fires and heavier work will consume fuel quickly."]
 	quest.7100000000000113.title: "The First Workshop"
-	quest.7100000000000113.quest_desc: ["Bind together a storage chest, then fire clay bricks over a campfire and build a proper masonry furnace."]
+	quest.7100000000000113.quest_desc: ["Fire clay bricks over a campfire and build a masonry furnace capable of concentrating heat around its fuel."]
 	quest.7100000000000114.title: "Gather the Refractory Materials"
 	quest.7100000000000114.quest_desc: ["Gather clay and sand. Together they can form a refractory material capable of containing molten metal."]
 	quest.7100000000000150.title: "Hide and Sinew"
-	quest.7100000000000150.quest_desc: ["Hunt carefully and recover raw hides. Fresh hide will rot and cannot yet serve as leather."]
-	quest.7100000000000151.title: "The First Soak"
-	quest.7100000000000151.quest_desc: ["Wash a raw hide thoroughly in water to loosen dirt, blood, and unwanted tissue."]
+	quest.7100000000000150.quest_desc: ["Hunt carefully and recover raw hides. Fresh hide cannot be used as leather until it has been washed, scraped, tanned, and dried."]
+	quest.7100000000000151.title: "The First Barrel"
+	quest.7100000000000151.quest_desc: ["Build a Firstworks Barrel from planks and slabs. It has no menu: ingredients and fluids are added directly in the world, and an empty hand toggles its lid."]
+	quest.7100000000000240.title: "Wash the Hide"
+	quest.7100000000000240.quest_desc: ["Open the Barrel, add a raw hide and 250 mB of water, then seal it. A water bottle supplies exactly one batch; after two minutes, open the Barrel and collect the soaked hide."]
 	quest.7100000000000152.title: "Scrape It Clean"
-	quest.7100000000000152.quest_desc: ["Use a sharp piece of flint to scrape the soaked hide clean and prepare its surface for tanning."]
+	quest.7100000000000152.quest_desc: ["Use any sword as a scraping blade to clean the soaked hide and prepare its surface for tanning. Each hide wears the blade by one durability."]
 	quest.7100000000000153.title: "Tannins from the Forest"
-	quest.7100000000000153.quest_desc: ["Strip bark from a log. The tannins held within the bark can preserve prepared hide."]
-	quest.7100000000000154.title: "From Hide to Leather"
-	quest.7100000000000154.quest_desc: ["Soak the scraped hide with bark, then dry it slowly over a campfire to produce durable leather."]
+	quest.7100000000000153.quest_desc: ["Strip wood to gather Tree Bark. Each block yields one to three pieces, and four pieces are enough to brew a bucket of preserving tannins."]
+	quest.7100000000000241.title: "Brew the Bark"
+	quest.7100000000000241.quest_desc: ["Put four Tree Bark and 1000 mB of water into an open Barrel, then seal it for five minutes. Opening the lid early cancels the current progress, but leaves the ingredients inside so you can seal it and begin again."]
+	quest.7100000000000154.title: "Vegetable Tanning"
+	quest.7100000000000154.quest_desc: ["Place a scraped hide into Tannin Solution and seal the Barrel. One bucket can tan four hides at once; after ten minutes, collect the preserved Tannin-Soaked Hide."]
+	quest.7100000000000242.title: "Dry, Supple Leather"
+	quest.7100000000000242.quest_desc: ["Dry the tanned hides over a campfire to finish them into leather. A furnace also works once your masonry workshop is ready, and mechanical pressing will make this step effortless in a later age."]
 	quest.7100000000000155.title: "A Safe Night's Rest"
 	quest.7100000000000155.quest_desc: ["Combine wool, finished leather, and wooden boards to make a bed worthy of a permanent shelter."]
 	quest.7100000000000156.title: "Earth and Fire"
-	quest.7100000000000156.quest_desc: ["Shape wet clay by hand, then fire it slowly over a campfire. A ceramic basin opens the way to tanning, while bricks make stronger hearths possible."]
+	quest.7100000000000156.quest_desc: ["Shape wet clay by hand, then fire it slowly over a campfire. Ceramic vessels provide sturdy storage now and become reusable containers for high-temperature workshop processes later."]
 	quest.7100000000000157.title: "Storage from Clay"
 	quest.7100000000000157.quest_desc: ["Fire a large clay vessel into a storage pot. It holds only one kind of supply, but keeps a young settlement organized before wooden chests become practical."]
 	quest.7100000000000158.title: "Food for Lean Days"
@@ -57,6 +63,10 @@
 	quest.7100000000000105.quest_desc: ["Use a pickaxe cast to form a metal head, then assemble it with a suitable rod and binding. Your new tool can be repaired and improved as you discover better materials."]
 	quest.7100000000000117.title: "Copper Utilities"
 	quest.7100000000000117.quest_desc: ["Craft a bucket and shears. Carrying fluids and gathering wool will make farming, construction and animal care much easier."]
+	quest.7100000000000243.title: "Tannins to Go"
+	quest.7100000000000243.quest_desc: ["Use an empty bucket on an open Barrel holding at least 1000 mB of Tannin Solution. The filled bucket carries tannin between Barrels without placing it in the world."]
+	quest.7100000000000219.title: "Copper-Bound Storage"
+	quest.7100000000000219.quest_desc: ["Strengthen wooden containers with copper fittings. Chests and barrels can finally hold mixed supplies in bulk, replacing the small pottery stores of your first shelter."]
 
 	quest.7100000000000118.title: "Search for Tin"
 	quest.7100000000000118.quest_desc: ["Search the Overworld for tin. It is less common than copper, but the two metals can be combined into a far stronger alloy."]
@@ -89,6 +99,8 @@
 	quest.7100000000000129.quest_desc: ["Turn a matched pair of Crushing Wheels against one another. Feed ore between them to prepare it for more efficient melting."]
 	quest.7100000000000130.title: "The First Mechanical Farm"
 	quest.7100000000000130.quest_desc: ["Mount Mechanical Harvesters on a moving contraption to gather mature crops while leaving the field ready to grow again."]
+	quest.7100000000000220.title: "The Mechanical Tannery"
+	quest.7100000000000220.quest_desc: ["A redstone pulse can seal or open a Firstworks Barrel for simple batch control. For continuous production, wash hides with an Encased Fan, scrape them on a Mechanical Saw, brew tannin in a Basin, then mix and press the hides dry. This line replaces every manual wait with powered processing."]
 	quest.7100000000000131.title: "Prepare for the Ironworks"
 	quest.7100000000000131.quest_desc: ["Stockpile crushed iron, charcoal, and calcite. Iron cannot simply be poured into a cast; it must be cleaned, reduced, and worked while hot."]
 

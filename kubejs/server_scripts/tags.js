@@ -1,10 +1,9 @@
 // Tag modifications - add items to tags
 
 ServerEvents.tags('item', event => {
-    // Only processed hide counts as usable leather. Mob drops remain raw hide.
-    event.remove('c:leathers', 'minecraft:leather')
-    event.add('c:leathers', 'kubejs:tanned_leather')
-    event.add('kubejs:raw_hides', 'minecraft:leather')
+    // Firstworks owns the hide chain; vanilla leather is the finished product.
+    event.add('c:leathers', 'minecraft:leather')
+    event.add('kubejs:raw_hides', 'firstworks:raw_hide')
     event.add('kubejs:dried_foods', 'kubejs:dried_meat')
     event.add('kubejs:dried_foods', 'kubejs:dried_fish')
     event.add('kubejs:dried_foods', 'kubejs:dried_berries')

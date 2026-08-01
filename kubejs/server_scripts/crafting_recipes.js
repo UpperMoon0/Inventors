@@ -2,10 +2,6 @@
 // For shaped/shapeless crafting recipes (not Create mod machines)
 
 ServerEvents.recipes(event => {
-    // Vanilla leather is raw hide in this pack. Existing equipment and utility
-    // recipes must use finished leather instead of fresh animal drops.
-    event.replaceInput({}, 'minecraft:leather', 'kubejs:tanned_leather')
-
     const bedColors = [
         'white', 'orange', 'magenta', 'light_blue', 'yellow', 'lime', 'pink',
         'gray', 'light_gray', 'cyan', 'purple', 'blue', 'brown', 'green',
@@ -15,11 +11,22 @@ ServerEvents.recipes(event => {
     bedColors.forEach(color => {
         // Remove the three-wool/three-plank recipe, but preserve bed-dyeing.
         event.remove({ id: `minecraft:${color}_bed` })
+
+        event.shaped(`minecraft:${color}_bed`, [
+            'WWW',
+            'LLL',
+            'PPP'
+        ], {
+            W: `minecraft:${color}_wool`,
+            L: 'minecraft:leather',
+            P: '#minecraft:planks'
+        }).id(`kubejs:primitive/leather_bound_${color}_bed`)
     })
 
     // Remove every competing recipe first; these blocks are progression gates.
     event.remove({ output: 'minecraft:crafting_table' })
     event.remove({ output: 'minecraft:chest' })
+    event.remove({ output: 'minecraft:barrel' })
     event.remove({ output: 'minecraft:furnace' })
 
     event.shaped('minecraft:crafting_table', [
@@ -33,12 +40,23 @@ ServerEvents.recipes(event => {
 
     event.shaped('minecraft:chest', [
         'PPP',
-        'PTP',
+        'PCP',
         'PPP'
     ], {
-        P: '#kubejs:primitive_planks',
-        T: '#c:strings'
-    }).id('kubejs:primitive/bound_chest')
+        P: '#minecraft:planks',
+        C: 'minecraft:copper_ingot'
+    }).id('kubejs:copper/copper_bound_chest')
+
+    // Barrels would otherwise bypass the intended pottery storage stage.
+    event.shaped('minecraft:barrel', [
+        'PSP',
+        'PCP',
+        'PSP'
+    ], {
+        P: '#minecraft:planks',
+        S: '#minecraft:wooden_slabs',
+        C: 'minecraft:copper_ingot'
+    }).id('kubejs:copper/copper_bound_barrel')
 
     // Clay can be fired at the campfire before the player owns a furnace.
     event.campfireCooking('minecraft:brick', 'minecraft:clay_ball', 0.1, 600)
@@ -111,43 +129,6 @@ ServerEvents.recipes(event => {
         'minecraft:sweet_berries',
         'minecraft:sweet_berries'
     ]).id('kubejs:primitive/dry_berries')
-
-    // Bark supplies tannins. Each stage is intentionally visible in JEI so
-    // leather is a small survival craft rather than an immediate mob drop.
-    event.shapeless(Item.of('kubejs:tree_bark', 2), [
-        '#minecraft:logs',
-        'minecraft:flint'
-    ]).id('kubejs:primitive/strip_tree_bark')
-
-    event.shapeless('kubejs:soaked_hide', [
-        '#kubejs:raw_hides',
-        'kubejs:ceramic_basin'
-    ]).id('kubejs:primitive/soak_raw_hide')
-
-    event.shapeless('kubejs:scraped_hide', [
-        'kubejs:soaked_hide',
-        'minecraft:flint'
-    ]).id('kubejs:primitive/scrape_hide')
-
-    event.shapeless('kubejs:tannin_soaked_hide', [
-        'kubejs:scraped_hide',
-        'kubejs:tree_bark',
-        'kubejs:tree_bark',
-        'kubejs:ceramic_basin'
-    ]).id('kubejs:primitive/tannin_soak_hide')
-
-    event.campfireCooking('kubejs:tanned_leather', 'kubejs:tannin_soaked_hide', 0.1, 600)
-        .id('kubejs:primitive/dry_tanned_leather')
-
-    event.shaped('minecraft:white_bed', [
-        'WWW',
-        'LLL',
-        'PPP'
-    ], {
-        W: 'minecraft:white_wool',
-        L: 'kubejs:tanned_leather',
-        P: '#minecraft:planks'
-    }).id('kubejs:primitive/leather_bound_bed')
 
     event.shaped('kubejs:bone_pickaxe', [
         'BBB',

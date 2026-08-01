@@ -145,5 +145,41 @@
 			x: 10.0d
 			y: 0.0d
 		}
+		{
+			dependencies: ["7100000000000104"]
+			id: "7100000000000219"
+			rewards: [{ id: "7130000000000219", table_id: 4114L, type: "choice" }]
+			tasks: [
+				{
+					count: 2L
+					id: "7100000000020219"
+					item: { count: 1, id: "minecraft:chest" }
+					type: "item"
+				}
+				{
+					id: "7100000000020220"
+					item: { count: 1, id: "minecraft:barrel" }
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["7100000000000117"]
+			id: "7100000000000243"
+			rewards: [{
+				id: "7130000000000243"
+				table_id: 4114L
+				type: "choice"
+			}]
+			tasks: [{
+				id: "7100000000010243"
+				item: { count: 1, id: "firstworks:tannin_solution_bucket" }
+				type: "item"
+			}]
+			x: 12.0d
+			y: 1.5d
+		}
 	]
 }

@@ -11,7 +11,11 @@
 		{
 			dependencies: ["7100000000000131"]
 			id: "7100000000000160"
-			rewards: [{ id: "7130000000000160", table_id: 4162L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000160"
+				table_id: 4162L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000010321"
@@ -24,7 +28,11 @@
 		{
 			dependencies: ["7100000000000160"]
 			id: "7100000000000161"
-			rewards: [{ id: "7130000000000161", table_id: 4162L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000161"
+				table_id: 4162L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 4L
 				id: "7100000000010322"
@@ -37,10 +45,22 @@
 		{
 			dependencies: ["7100000000000161"]
 			id: "7100000000000162"
-			rewards: [{ id: "7130000000000162", table_id: 4162L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000162"
+				table_id: 4162L
+				type: "choice"
+			}]
 			tasks: [
-				{ id: "7100000000010323", item: { count: 1, id: "kubejs:iron_bloom" }, type: "item" }
-				{ id: "7100000000010324", item: { count: 1, id: "kubejs:worked_iron_bloom" }, type: "item" }
+				{
+					id: "7100000000010323"
+					item: { count: 1, id: "kubejs:iron_bloom" }
+					type: "item"
+				}
+				{
+					id: "7100000000010324"
+					item: { count: 1, id: "kubejs:worked_iron_bloom" }
+					type: "item"
+				}
 			]
 			x: 4.0d
 			y: 0.0d
@@ -48,10 +68,23 @@
 		{
 			dependencies: ["7100000000000162"]
 			id: "7100000000000163"
-			rewards: [{ id: "7130000000000163", table_id: 4162L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000163"
+				table_id: 4162L
+				type: "choice"
+			}]
 			tasks: [
-				{ id: "7100000000010325", item: { count: 1, id: "kubejs:wrought_iron_billet" }, type: "item" }
-				{ count: 12L, id: "7100000000010326", item: { count: 1, id: "minecraft:iron_ingot" }, type: "item" }
+				{
+					id: "7100000000010325"
+					item: { count: 1, id: "kubejs:wrought_iron_billet" }
+					type: "item"
+				}
+				{
+					count: 12L
+					id: "7100000000010326"
+					item: { count: 1, id: "minecraft:iron_ingot" }
+					type: "item"
+				}
 			]
 			x: 6.0d
 			y: 0.0d

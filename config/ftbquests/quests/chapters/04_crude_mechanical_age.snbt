@@ -183,5 +183,22 @@
 			x: 8.0d
 			y: 0.0d
 		}
+		{
+			dependencies: [
+				"7100000000000126"
+				"7100000000000127"
+				"7100000000000128"
+			]
+			id: "7100000000000220"
+			rewards: [{ id: "7130000000000220", table_id: 4146L, type: "choice" }]
+			tasks: [{
+				count: 16L
+				id: "7100000000020221"
+				item: { count: 1, id: "minecraft:leather" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: 4.0d
+		}
 	]
 }

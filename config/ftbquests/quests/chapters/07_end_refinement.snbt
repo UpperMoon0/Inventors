@@ -105,7 +105,11 @@
 		{
 			dependencies: ["7100000000000205"]
 			id: "7100000000000212"
-			rewards: [{ id: "7130000000000212", table_id: 4194L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000212"
+				table_id: 4194L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 8L
 				id: "7100000000020212"
@@ -118,7 +122,11 @@
 		{
 			dependencies: ["7100000000000212"]
 			id: "7100000000000213"
-			rewards: [{ id: "7130000000000213", table_id: 4194L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000213"
+				table_id: 4194L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000020213"
@@ -131,7 +139,11 @@
 		{
 			dependencies: ["7100000000000213"]
 			id: "7100000000000214"
-			rewards: [{ id: "7130000000000214", table_id: 4194L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000214"
+				table_id: 4194L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000020214"
@@ -147,7 +159,11 @@
 				"7100000000000146"
 			]
 			id: "7100000000000215"
-			rewards: [{ id: "7130000000000215", table_id: 4194L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000215"
+				table_id: 4194L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 8L
 				id: "7100000000020215"
@@ -160,7 +176,11 @@
 		{
 			dependencies: ["7100000000000146"]
 			id: "7100000000000216"
-			rewards: [{ id: "7130000000000216", table_id: 4194L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000216"
+				table_id: 4194L
+				type: "choice"
+			}]
 			tasks: [{
 				id: "7100000000020216"
 				item: { count: 1, id: "kubejs:titanium_catalyst_mesh" }
@@ -172,7 +192,11 @@
 		{
 			dependencies: ["7100000000000216"]
 			id: "7100000000000217"
-			rewards: [{ id: "7130000000000217", table_id: 4194L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000217"
+				table_id: 4194L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 8L
 				id: "7100000000020217"
@@ -185,7 +209,11 @@
 		{
 			dependencies: ["7100000000000217"]
 			id: "7100000000000218"
-			rewards: [{ id: "7130000000000218", table_id: 4194L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000218"
+				table_id: 4194L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 8L
 				id: "7100000000020218"
