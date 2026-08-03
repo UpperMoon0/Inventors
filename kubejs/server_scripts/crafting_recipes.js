@@ -10,6 +10,7 @@ ServerEvents.recipes(event => {
     event.remove({ output: 'minecraft:chest' })
     event.remove({ output: 'minecraft:barrel' })
     event.remove({ output: 'minecraft:furnace' })
+    event.remove({ output: 'minecraft:torch' })
 
     // The single-use starter provides the first spark; charcoal is produced by
     // the campfire afterward instead of being required to craft the fire itself.
@@ -26,13 +27,25 @@ ServerEvents.recipes(event => {
     event.campfireCooking('minecraft:charcoal', '#minecraft:logs_that_burn', 0.15, 1200)
         .id('kubejs:primitive/campfire_charcoal')
 
+    // Twine and vanilla string are inexpensive enough for early bound torches;
+    // proper rope remains reserved for heavier construction.
+    event.shaped(Item.of('minecraft:torch', 4), [
+        'C',
+        'T',
+        'S'
+    ], {
+        C: '#minecraft:coals',
+        T: '#c:strings',
+        S: 'minecraft:stick'
+    }).id('kubejs:primitive/bound_torches')
+
     event.shaped('minecraft:crafting_table', [
         'PF',
         'TP'
     ], {
         P: '#kubejs:primitive_planks',
         F: 'minecraft:flint',
-        T: '#c:strings'
+        T: '#c:ropes'
     }).id('kubejs:primitive/crafting_table')
 
     event.shaped('minecraft:chest', [
@@ -55,17 +68,14 @@ ServerEvents.recipes(event => {
         C: 'minecraft:copper_ingot'
     }).id('kubejs:copper/copper_bound_barrel')
 
-    // Clay can be fired at the campfire before the player owns a furnace.
-    event.campfireCooking('minecraft:brick', 'minecraft:clay_ball', 0.1, 600)
-        .id('kubejs:primitive/campfire_fired_brick')
-
+    // The Masonry Furnace is constructed from Cobblestone, Brick Blocks (from Firstworks masonry), and finished Leather.
     event.shaped('minecraft:furnace', [
         'CBC',
         'BLB',
         'CBC'
     ], {
         C: '#c:cobblestones',
-        B: 'minecraft:brick',
+        B: 'minecraft:bricks',
         L: 'minecraft:leather'
     }).id('kubejs:primitive/masonry_furnace')
 
@@ -245,6 +255,11 @@ ServerEvents.recipes(event => {
     disabledVanillaTools.forEach(tool => {
         event.remove({ output: tool })
     })
+
+    // Farmer's Delight rope bypass fix: remove cheap straw recipe and convert 1:1 with Firstworks rope
+    event.remove({ id: 'farmersdelight:rope' })
+    event.shapeless('farmersdelight:rope', ['firstworks:rope']).id('kubejs:primitive/firstworks_to_fd_rope')
+    event.shapeless('firstworks:rope', ['farmersdelight:rope']).id('kubejs:primitive/fd_to_firstworks_rope')
 
     // Disable default Create shaft, cogwheel, and large_cogwheel recipes
     event.remove({ output: 'create:shaft' })

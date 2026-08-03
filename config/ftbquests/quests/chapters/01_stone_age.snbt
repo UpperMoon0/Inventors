@@ -209,14 +209,25 @@
 			}]
 			tasks: [
 				{
-					id: "7100000000010307"
-					item: { count: 1, id: "kubejs:ceramic_basin" }
+					id: "7100000000010306"
+					item: { count: 1, id: "firstworks:brick_mold" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "7100000000010309"
+					item: { count: 1, id: "firstworks:mortar" }
 					type: "item"
 				}
 				{
 					count: 4L
 					id: "7100000000010308"
-					item: { count: 1, id: "minecraft:brick" }
+					item: { count: 1, id: "minecraft:bricks" }
+					type: "item"
+				}
+				{
+					id: "7100000000010307"
+					item: { count: 1, id: "kubejs:ceramic_basin" }
 					type: "item"
 				}
 			]

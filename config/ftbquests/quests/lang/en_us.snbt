@@ -22,14 +22,18 @@
 	quest.7100000000000111.quest_desc: ["Use flint and cordage to assemble a firm work surface where more demanding crafts can begin."]
 	quest.7100000000000112.title: "Stored Heat"
 	quest.7100000000000112.quest_desc: ["Place burnable logs on a campfire to slowly turn them into charcoal. Four logs can cook at once, and each batch takes one minute; store a healthy reserve for hotter fires and heavier work."]
+	quest.7100000000000251.title: "Water Before Metal"
+	quest.7100000000000251.quest_desc: ["Shape three clay balls into an Unfired Clay Bucket, then fire it on a campfire. This early vessel carries water or Tannin Solution and works directly with a Firstworks Barrel, but it cannot hold lava or other hot fluids."]
+	quest.7100000000000252.title: "Bound Light"
+	quest.7100000000000252.quest_desc: ["Bind coal or charcoal to a stick with String or Twine to craft four torches. Proper Rope is intentionally unnecessary for this small, inexpensive binding."]
 	quest.7100000000000113.title: "A Masonry Furnace"
-	quest.7100000000000113.quest_desc: ["After relying on the campfire through the Stone Age, build its capstone furnace from cobblestone corners, brick sides, and finished leather in the center. The masonry chamber finally concentrates heat for faster cooking and smelting."]
+	quest.7100000000000113.quest_desc: ["After relying on the campfire through the Stone Age, build its capstone furnace from cobblestone corners, structural brick blocks, and finished leather in the center. The masonry chamber finally concentrates heat for faster cooking and smelting."]
 	quest.7100000000000114.title: "Gather the Refractory Materials"
 	quest.7100000000000114.quest_desc: ["The Copper Age begins with heat-resistant materials. Gather clay and sand; together they can form a refractory mixture capable of containing molten metal."]
 	quest.7100000000000150.title: "Hide and Sinew"
 	quest.7100000000000150.quest_desc: ["Hunt carefully and recover raw hides. Fresh hide cannot be used as leather until it has been washed, scraped, tanned, and dried."]
 	quest.7100000000000151.title: "The First Barrel"
-	quest.7100000000000151.quest_desc: ["Build a Firstworks Barrel from matching planks and slabs. It has no menu: add or remove items and fluids directly while it is open, then toggle the lid with an empty hand or a rising redstone pulse. A valid recipe progresses only while sealed; opening it early cancels that progress but leaves every ingredient inside. Hoppers and pipes can transfer contents while open, but all automated item and fluid access is locked while sealed. JEI lists available processes, and Jade shows the loaded recipe and progress in the world."]
+	quest.7100000000000151.quest_desc: ["Build a Firstworks Barrel from matching planks and slabs. Use the Clay Bucket to move early water or Tannin Solution, and interact directly to add or remove contents while the barrel is open. Toggle the lid with an empty hand or a rising redstone pulse: valid recipes progress only while sealed, and opening early cancels progress without consuming ingredients. Hoppers and pipes work only while open. JEI lists processes, while Jade shows contents and progress in the world."]
 	quest.7100000000000240.title: "Wash the Hide"
 	quest.7100000000000240.quest_desc: ["Wash one Raw Hide with 250 mB of water for two minutes to produce a Soaked Hide. A water bottle supplies exactly one batch."]
 	quest.7100000000000244.title: "Ret the Fibres"
@@ -57,7 +61,7 @@
 	quest.7100000000000155.title: "A Safe Night's Rest"
 	quest.7100000000000155.quest_desc: ["Complete the textile branch with the Firstworks bed recipe: three Cloth, three matching pieces of Clean Wool, and three planks. This permanent place to sleep is one of the Stone Age's three capstone crafts."]
 	quest.7100000000000156.title: "Earth and Fire"
-	quest.7100000000000156.quest_desc: ["Shape wet clay by hand, then fire it slowly over a campfire. Ceramic vessels provide sturdy storage now and become reusable containers for high-temperature workshop processes later."]
+	quest.7100000000000156.quest_desc: ["Load one clay ball into the Wooden Brick Mold and press it twice with an empty hand. Watch the clay spread farther across the cavity after each press, then collect the shaped unfired brick. Fire it over a campfire and bind fired bricks with Mortar mixed in a Barrel. Hoppers can load clay and remove completed bricks; an empty-handed Create Deployer can automate each press."]
 	quest.7100000000000157.title: "Storage from Clay"
 	quest.7100000000000157.quest_desc: ["Fire a large clay vessel into a storage pot. It holds only one kind of supply, but keeps a young settlement organized before wooden chests become practical."]
 
