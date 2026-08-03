@@ -243,7 +243,7 @@
 				type: "choice"
 			}]
 			tasks: [{
-				id: "7100000000010309"
+				id: "4F7277BFECAC81B8"
 				item: { count: 1, id: "minecraft:decorated_pot" }
 				type: "item"
 			}]

@@ -61,6 +61,7 @@
   },
   "firstworks": {
     "barrel_progress": true,
+    "brick_mold_progress": true,
     "loom_progress": true
   },
   "productivemetalworks": {

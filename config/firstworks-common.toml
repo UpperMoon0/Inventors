@@ -9,8 +9,7 @@ bindVanillaToolRecipes = true
 #Disable this to restore vanilla sheep, wool, and bed progression while keeping Firstworks textile items available.
 #Changing this option requires a datapack reload or game restart.
 enableTextileProgression = true
-
-#Require single-cavity unfired brick molding, campfire brick firing, barrel mortar, and mortar-bound brick blocks for masonry.
+#Require configurable-press unfired brick molding, brick firing, barrel mortar, and mortar-bound brick blocks for masonry.
 #Disable this to retain vanilla brick progression while keeping Firstworks masonry items available.
 #Changing this option requires a datapack reload or game restart.
 enableMasonryProgression = true
