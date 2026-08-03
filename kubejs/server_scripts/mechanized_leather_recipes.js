@@ -4,7 +4,7 @@
 ServerEvents.recipes(event => {
     event.recipes.create.splashing(
         'firstworks:soaked_hide',
-        '#kubejs:raw_hides'
+        Ingredient.of('#kubejs:raw_hides')
     ).id('kubejs:leather/mechanical_washing')
 
     event.recipes.create.cutting(

@@ -15,12 +15,20 @@
 				table_id: 4097L
 				type: "choice"
 			}]
-			tasks: [{
-				count: 4L
-				id: "7100000000010100"
-				item: { count: 1, id: "silentgear:flax_fiber" }
-				type: "item"
-			}]
+			tasks: [
+				{
+					count: 6L
+					id: "7100000000010100"
+					item: { count: 1, id: "firstworks:plant_fibre" }
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "7100000000010244"
+					item: { count: 1, id: "firstworks:crude_cordage" }
+					type: "item"
+				}
+			]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -101,11 +109,23 @@
 			y: 1.5d
 		}
 		{
-			dependencies: [
-				"7100000000000101"
-				"7100000000000159"
-			]
-			dependency_requirement: "one_completed"
+			dependencies: ["7100000000000100"]
+			id: "7100000000000250"
+			rewards: [{
+				id: "7130000000000250"
+				table_id: 4097L
+				type: "choice"
+			}]
+			tasks: [{
+				id: "7100000000010255"
+				item: { count: 1, id: "firstworks:fire_starter" }
+				type: "item"
+			}]
+			x: 2.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["7100000000000250"]
 			id: "7100000000000110"
 			rewards: [{
 				id: "7130000000000110"
@@ -118,7 +138,7 @@
 				type: "item"
 			}]
 			x: 4.0d
-			y: -1.5d
+			y: 8.0d
 		}
 		{
 			dependencies: [
@@ -138,7 +158,7 @@
 				type: "item"
 			}]
 			x: 4.0d
-			y: 1.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["7100000000000110"]
@@ -155,28 +175,32 @@
 				type: "item"
 			}]
 			x: 6.0d
-			y: -1.5d
+			y: 8.0d
 		}
 		{
-			dependencies: ["7100000000000111"]
+			dependencies: [
+				"7100000000000112"
+				"7100000000000156"
+				"7100000000000242"
+			]
 			id: "7100000000000113"
 			rewards: [{
 				id: "7130000000000113"
 				table_id: 4097L
 				type: "choice"
 			}]
-			tasks: [
-				{
-					id: "7100000000010115"
-					item: { count: 1, id: "minecraft:furnace" }
-					type: "item"
-				}
-			]
-			x: 6.0d
-			y: 1.5d
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "7100000000010115"
+				item: { count: 1, id: "minecraft:furnace" }
+				type: "item"
+			}]
+			x: 18.0d
+			y: 8.0d
 		}
 		{
-			dependencies: ["7100000000000110"]
+			dependencies: ["7100000000000112"]
 			id: "7100000000000156"
 			rewards: [{
 				id: "7130000000000156"
@@ -197,7 +221,7 @@
 				}
 			]
 			x: 6.0d
-			y: -4.5d
+			y: 10.0d
 		}
 		{
 			dependencies: ["7100000000000156"]
@@ -212,38 +236,11 @@
 				item: { count: 1, id: "minecraft:decorated_pot" }
 				type: "item"
 			}]
-			x: 8.0d
-			y: -4.5d
+			x: 18.0d
+			y: 11.0d
 		}
 		{
-			dependencies: [
-				"7100000000000110"
-				"7100000000000111"
-			]
-			id: "7100000000000158"
-			rewards: [{
-				id: "7130000000000158"
-				table_id: 4098L
-				type: "choice"
-			}]
-			tasks: [
-				{
-					id: "7100000000010310"
-					item: { count: 1, id: "kubejs:drying_frame" }
-					type: "item"
-				}
-				{
-					count: 4L
-					id: "7100000000010311"
-					item: { count: 1, id: "kubejs:dried_berries" }
-					type: "item"
-				}
-			]
-			x: 8.0d
-			y: -6.5d
-		}
-		{
-			dependencies: ["7100000000000110"]
+			dependencies: ["7100000000000111"]
 			id: "7100000000000150"
 			rewards: [{
 				id: "7130000000000150"
@@ -257,13 +254,10 @@
 				type: "item"
 			}]
 			x: 6.0d
-			y: 4.5d
+			y: 4.0d
 		}
 		{
-			dependencies: [
-				"7100000000000150"
-				"7100000000000111"
-			]
+			dependencies: ["7100000000000150"]
 			id: "7100000000000151"
 			rewards: [{
 				id: "7130000000000151"
@@ -276,7 +270,7 @@
 				type: "item"
 			}]
 			x: 8.0d
-			y: 4.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["7100000000000151"]
@@ -292,7 +286,7 @@
 				type: "item"
 			}]
 			x: 10.0d
-			y: 4.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["7100000000000240"]
@@ -308,10 +302,126 @@
 				type: "item"
 			}]
 			x: 12.0d
-			y: 4.5d
+			y: 4.0d
 		}
 		{
-			dependencies: ["7100000000000111"]
+			dependencies: ["7100000000000151"]
+			id: "7100000000000244"
+			rewards: [{
+				id: "7130000000000244"
+				table_id: 4097L
+				type: "choice"
+			}]
+			tasks: [{
+				count: 4L
+				id: "7100000000010245"
+				item: { count: 1, id: "firstworks:retted_fibre" }
+				type: "item"
+			}]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000244"]
+			id: "7100000000000245"
+			rewards: [{
+				id: "7130000000000245"
+				table_id: 4097L
+				type: "choice"
+			}]
+			tasks: [
+				{
+					id: "7100000000010246"
+					item: { count: 1, id: "firstworks:hand_spindle" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "7100000000010247"
+					item: { count: 1, id: "firstworks:twine" }
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000245"]
+			id: "7100000000000248"
+			rewards: [{
+				id: "7130000000000248"
+				table_id: 4097L
+				type: "choice"
+			}]
+			tasks: [
+				{
+					id: "7100000000010252"
+					item: { count: 1, id: "firstworks:loom" }
+					type: "item"
+				}
+				{
+					id: "7100000000010253"
+					item: { count: 1, id: "firstworks:cloth" }
+					type: "item"
+				}
+			]
+			x: 14.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["7100000000000245"]
+			id: "7100000000000249"
+			rewards: [{
+				id: "7130000000000249"
+				table_id: 4097L
+				type: "choice"
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "7100000000010254"
+				item: { count: 1, id: "firstworks:rope" }
+				type: "item"
+			}]
+			x: 18.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["7100000000000151"]
+			id: "7100000000000246"
+			rewards: [{
+				id: "7130000000000246"
+				table_id: 4097L
+				type: "choice"
+			}]
+			tasks: [{
+				count: 6L
+				id: "7100000000010250"
+				item: { count: 1, id: "firstworks:raw_fleece" }
+				type: "item"
+			}]
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7100000000000246"]
+			id: "7100000000000247"
+			rewards: [{
+				id: "7130000000000247"
+				table_id: 4097L
+				type: "choice"
+			}]
+			tasks: [{
+				count: 4L
+				id: "7100000000010251"
+				item: { count: 1, id: "firstworks:clean_wool" }
+				type: "item"
+			}]
+			x: 12.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7100000000000151"]
 			id: "7100000000000153"
 			rewards: [{
 				id: "7130000000000153"
@@ -325,7 +435,7 @@
 				type: "item"
 			}]
 			x: 10.0d
-			y: 6.5d
+			y: 7.0d
 		}
 		{
 			dependencies: [
@@ -343,7 +453,7 @@
 				type: "checkmark"
 			}]
 			x: 12.0d
-			y: 6.5d
+			y: 7.0d
 		}
 		{
 			dependencies: [
@@ -383,51 +493,26 @@
 			y: 5.5d
 		}
 		{
-			dependencies: ["7100000000000242"]
+			dependencies: [
+				"7100000000000242"
+				"7100000000000247"
+				"7100000000000248"
+			]
 			id: "7100000000000155"
 			rewards: [{
 				id: "7130000000000155"
 				table_id: 4098L
 				type: "choice"
 			}]
+			shape: "hexagon"
+			size: 2.0d
 			tasks: [{
 				id: "7100000000010156"
 				item: { count: 1, id: "minecraft:white_bed" }
 				type: "item"
 			}]
 			x: 18.0d
-			y: 5.5d
-		}
-		{
-			dependencies: [
-				"7100000000000112"
-				"7100000000000113"
-				"7100000000000155"
-				"7100000000000157"
-				"7100000000000158"
-			]
-			id: "7100000000000114"
-			rewards: [{
-				id: "7130000000000114"
-				table_id: 4097L
-				type: "choice"
-			}]
-			tasks: [
-				{
-					count: 16L
-					id: "7100000000010116"
-					item: { count: 1, id: "minecraft:clay_ball" }
-					type: "item"
-				}
-				{
-					count: 16L
-					id: "7100000000010117"
-					item: { count: 1, id: "minecraft:sand" }
-					type: "item"
-				}
-			]
-			x: 14.0d
-			y: 0.0d
+			y: 3.0d
 		}
 	]
 }

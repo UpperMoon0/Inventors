@@ -59,6 +59,10 @@
     "entity": true,
     "entity_variant": true
   },
+  "firstworks": {
+    "barrel_progress": true,
+    "loom_progress": true
+  },
   "productivemetalworks": {
     "casting": true
   },

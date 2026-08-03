@@ -190,7 +190,11 @@
 				"7100000000000128"
 			]
 			id: "7100000000000220"
-			rewards: [{ id: "7130000000000220", table_id: 4146L, type: "choice" }]
+			rewards: [{
+				id: "7130000000000220"
+				table_id: 4146L
+				type: "choice"
+			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000020221"

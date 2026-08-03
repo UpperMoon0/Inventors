@@ -2,32 +2,29 @@
 // For shaped/shapeless crafting recipes (not Create mod machines)
 
 ServerEvents.recipes(event => {
-    const bedColors = [
-        'white', 'orange', 'magenta', 'light_blue', 'yellow', 'lime', 'pink',
-        'gray', 'light_gray', 'cyan', 'purple', 'blue', 'brown', 'green',
-        'red', 'black'
-    ]
-
-    bedColors.forEach(color => {
-        // Remove the three-wool/three-plank recipe, but preserve bed-dyeing.
-        event.remove({ id: `minecraft:${color}_bed` })
-
-        event.shaped(`minecraft:${color}_bed`, [
-            'WWW',
-            'LLL',
-            'PPP'
-        ], {
-            W: `minecraft:${color}_wool`,
-            L: 'minecraft:leather',
-            P: '#minecraft:planks'
-        }).id(`kubejs:primitive/leather_bound_${color}_bed`)
-    })
+    // Firstworks owns bed progression: Cloth, matching Clean Wool, and planks.
 
     // Remove every competing recipe first; these blocks are progression gates.
+    event.remove({ output: 'minecraft:campfire' })
     event.remove({ output: 'minecraft:crafting_table' })
     event.remove({ output: 'minecraft:chest' })
     event.remove({ output: 'minecraft:barrel' })
     event.remove({ output: 'minecraft:furnace' })
+
+    // The single-use starter provides the first spark; charcoal is produced by
+    // the campfire afterward instead of being required to craft the fire itself.
+    event.shaped('minecraft:campfire', [
+        ' S ',
+        'SFS',
+        'LLL'
+    ], {
+        S: 'minecraft:stick',
+        F: 'firstworks:fire_starter',
+        L: '#minecraft:logs_that_burn'
+    }).id('kubejs:primitive/flint_lit_campfire')
+
+    event.campfireCooking('minecraft:charcoal', '#minecraft:logs_that_burn', 0.15, 1200)
+        .id('kubejs:primitive/campfire_charcoal')
 
     event.shaped('minecraft:crafting_table', [
         'PF',
@@ -64,12 +61,12 @@ ServerEvents.recipes(event => {
 
     event.shaped('minecraft:furnace', [
         'CBC',
-        'BFB',
+        'BLB',
         'CBC'
     ], {
         C: '#c:cobblestones',
         B: 'minecraft:brick',
-        F: 'minecraft:campfire'
+        L: 'minecraft:leather'
     }).id('kubejs:primitive/masonry_furnace')
 
     // Primitive pottery is shaped by hand and fired over a campfire. The
@@ -132,101 +129,101 @@ ServerEvents.recipes(event => {
 
     event.shaped('kubejs:bone_pickaxe', [
         'BBB',
-        ' T ',
+        'TS ',
         ' S '
     ], {
         B: 'minecraft:bone',
-        T: '#c:strings',
+        T: '#firstworks:primitive_bindings',
         S: 'minecraft:stick'
     }).id('kubejs:primitive/bone_pickaxe')
 
     event.shaped('kubejs:bone_axe', [
-        'BB',
-        'BS',
-        ' T'
+        'BB ',
+        'BST',
+        ' S '
     ], {
         B: 'minecraft:bone',
-        T: '#c:strings',
+        T: '#firstworks:primitive_bindings',
         S: 'minecraft:stick'
     }).id('kubejs:primitive/bone_axe')
 
     event.shaped('kubejs:bone_shovel', [
-        'B',
-        'T',
-        'S'
+        ' B ',
+        'TS ',
+        ' S '
     ], {
         B: 'minecraft:bone',
-        T: '#c:strings',
+        T: '#firstworks:primitive_bindings',
         S: 'minecraft:stick'
     }).id('kubejs:primitive/bone_shovel')
 
     event.shaped('kubejs:bone_sword', [
-        'B ',
-        'BT',
-        'S '
+        ' B ',
+        ' B ',
+        'TS '
     ], {
         B: 'minecraft:bone',
-        T: '#c:strings',
+        T: '#firstworks:primitive_bindings',
         S: 'minecraft:stick'
     }).id('kubejs:primitive/bone_sword')
 
     event.shaped('kubejs:bone_hoe', [
-        'BB',
-        ' T',
-        ' S'
+        'BB ',
+        'TS ',
+        ' S '
     ], {
         B: 'minecraft:bone',
-        T: '#c:strings',
+        T: '#firstworks:primitive_bindings',
         S: 'minecraft:stick'
     }).id('kubejs:primitive/bone_hoe')
 
     event.shaped('kubejs:flint_pickaxe', [
         'FFF',
-        ' T ',
+        'TS ',
         ' S '
     ], {
         F: 'minecraft:flint',
-        T: '#c:strings',
+        T: '#firstworks:primitive_bindings',
         S: 'minecraft:stick'
     }).id('kubejs:primitive/flint_pickaxe')
 
     event.shaped('kubejs:flint_axe', [
-        'FF',
-        'FS',
-        ' T'
+        'FF ',
+        'FST',
+        ' S '
     ], {
         F: 'minecraft:flint',
-        T: '#c:strings',
+        T: '#firstworks:primitive_bindings',
         S: 'minecraft:stick'
     }).id('kubejs:primitive/flint_axe')
 
     event.shaped('kubejs:flint_shovel', [
-        'F',
-        'T',
-        'S'
+        ' F ',
+        'TS ',
+        ' S '
     ], {
         F: 'minecraft:flint',
-        T: '#c:strings',
+        T: '#firstworks:primitive_bindings',
         S: 'minecraft:stick'
     }).id('kubejs:primitive/flint_shovel')
 
     event.shaped('kubejs:flint_sword', [
-        'F ',
-        'FT',
-        'S '
+        ' F ',
+        ' F ',
+        'TS '
     ], {
         F: 'minecraft:flint',
-        T: '#c:strings',
+        T: '#firstworks:primitive_bindings',
         S: 'minecraft:stick'
     }).id('kubejs:primitive/flint_sword')
 
     event.shaped('kubejs:flint_hoe', [
-        'FF',
-        ' T',
-        ' S'
+        'FF ',
+        'TS ',
+        ' S '
     ], {
         F: 'minecraft:flint',
-        T: '#c:strings',
+        T: '#firstworks:primitive_bindings',
         S: 'minecraft:stick'
     }).id('kubejs:primitive/flint_hoe')
 

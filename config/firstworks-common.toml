@@ -1,0 +1,11 @@
+#Replace leather dropped directly by vanilla animals with Firstworks raw hide.
+#Disable this when a modpack manages hide acquisition through KubeJS or loot tables.
+replaceAnimalLeatherDrops = true
+#Require fibre bindings in vanilla wooden and stone tools, and rope in vanilla metal and diamond tools.
+#Disable this to retain vanilla tool recipes while keeping the Firstworks cordage materials available.
+#Changing this option requires a datapack reload or game restart.
+bindVanillaToolRecipes = true
+#Replace sheep wool drops with colored fleece, remove String-to-Wool, and require Cloth and Clean Wool for beds.
+#Disable this to restore vanilla sheep, wool, and bed progression while keeping Firstworks textile items available.
+#Changing this option requires a datapack reload or game restart.
+enableTextileProgression = true
