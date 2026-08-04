@@ -3,6 +3,6 @@
 
 LootJS.modifiers((event) => {
     event
-        .addEntityLootModifier('#minecraft:animals')
+        .addEntityModifier('#minecraft:animals')
         .addLoot(LootEntry.of('minecraft:bone').limitCount(1, 2));
 });

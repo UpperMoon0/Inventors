@@ -138,63 +138,63 @@
 		# Default: true
 		entity_heads: true
 		entity_icon: {
+			"minecraft:parrot": true
+			"minecraft:spider": true
+			"minecraft:piglin": true
+			"minecraft:rabbit": true
+			"minecraft:pig": true
+			"minecraft:villager": true
+			"minecraft:sheep": true
+			"aquaculture:jellyfish": false
+			"minecraft:glow_squid": true
+			"minecraft:strider": true
+			"minecraft:fox": true
+			"minecraft:ghast": true
+			"minecraft:bee": true
+			"minecraft:wither_skeleton": true
+			"aquaculture:gar": false
+			"aquaculture:perch": false
+			"minecraft:zombified_piglin": true
+			"minecraft:skeleton": true
+			"aquaculture:smallmouth_bass": false
+			"minecraft:squid": true
+			"minecraft:horse": true
+			"minecraft:tropical_fish": false
+			"minecraft:cave_spider": true
+			"minecraft:cat": true
+			"minecraft:hoglin": true
+			"minecraft:magma_cube": true
+			"minecraft:bat": true
+			"minecraft:polar_bear": true
+			"minecraft:wolf": true
+			"minecraft:slime": true
+			"minecraft:iron_golem": true
+			"aquaculture:atlantic_halibut": false
+			"minecraft:drowned": true
+			"aquaculture:catfish": false
+			"minecraft:donkey": true
+			"minecraft:cow": true
+			"minecraft:witch": true
 			"aquaculture:red_shrooma": false
+			"minecraft:zombie": true
 			"aquaculture:muskellunge": false
 			"minecraft:panda": true
-			"minecraft:skeleton": true
-			"minecraft:parrot": true
-			"minecraft:cow": true
-			"minecraft:horse": true
-			"minecraft:cat": true
-			"minecraft:witch": true
-			"minecraft:slime": true
 			"aquaculture:atlantic_herring": false
-			"aquaculture:gar": false
-			"minecraft:axolotl": true
-			"minecraft:tropical_fish": false
-			"minecraft:sheep": true
-			"aquaculture:perch": false
-			"minecraft:piglin_brute": true
-			"minecraft:iron_golem": true
-			"minecraft:cave_spider": true
-			"minecraft:zombie": true
-			"minecraft:donkey": true
-			"minecraft:wither_skeleton": true
-			"minecraft:enderman": true
-			"minecraft:bat": true
-			"minecraft:rabbit": true
-			"aquaculture:catfish": false
-			"aquaculture:jellyfish": false
-			"minecraft:strider": true
-			"minecraft:spider": true
-			"aquaculture:atlantic_halibut": false
-			"minecraft:ghast": true
-			"minecraft:fox": true
-			"minecraft:zombified_piglin": true
-			"aquaculture:red_grouper": false
-			"minecraft:bee": true
 			"minecraft:zombie_villager": true
-			"minecraft:villager": true
-			"aquaculture:brown_trout": false
-			"minecraft:creeper": true
-			"minecraft:pig": true
-			"minecraft:cod": false
 			"aquaculture:carp": false
+			"minecraft:piglin_brute": true
+			"aquaculture:red_grouper": false
+			"minecraft:chicken": true
+			"minecraft:cod": false
+			"minecraft:enderman": true
+			"aquaculture:brown_trout": false
+			"aquaculture:tuna": false
 			"regions_unexplored:ashen": true
 			"minecraft:dolphin": true
-			"aquaculture:smallmouth_bass": false
-			"minecraft:piglin": true
-			"aquaculture:bluegill": false
-			"aquaculture:tuna": false
-			"minecraft:chicken": true
-			"minecraft:drowned": true
-			"minecraft:glow_squid": true
-			"minecraft:squid": true
-			"minecraft:wolf": true
 			"aquaculture:minnow": false
-			"minecraft:magma_cube": true
-			"minecraft:polar_bear": true
-			"minecraft:hoglin": true
+			"minecraft:creeper": true
+			"minecraft:axolotl": true
+			"aquaculture:bluegill": false
 		}
 		
 		# Minimap font scaling (values not a multiple of 0.5 may look bad)
