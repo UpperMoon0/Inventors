@@ -43,27 +43,27 @@
 			tasks: [
 				{
 					id: "7100000000010101"
-					item: { count: 1, id: "kubejs:bone_pickaxe" }
+					item: { count: 1, id: "firstworks:bone_pickaxe" }
 					type: "item"
 				}
 				{
 					id: "7100000000010313"
-					item: { count: 1, id: "kubejs:bone_axe" }
+					item: { count: 1, id: "firstworks:bone_axe" }
 					type: "item"
 				}
 				{
 					id: "7100000000010314"
-					item: { count: 1, id: "kubejs:bone_shovel" }
+					item: { count: 1, id: "firstworks:bone_shovel" }
 					type: "item"
 				}
 				{
 					id: "7100000000010315"
-					item: { count: 1, id: "kubejs:bone_hoe" }
+					item: { count: 1, id: "firstworks:bone_hoe" }
 					type: "item"
 				}
 				{
 					id: "7100000000010316"
-					item: { count: 1, id: "kubejs:bone_sword" }
+					item: { count: 1, id: "firstworks:bone_sword" }
 					type: "item"
 				}
 			]
@@ -81,27 +81,27 @@
 			tasks: [
 				{
 					id: "7100000000010312"
-					item: { count: 1, id: "kubejs:flint_pickaxe" }
+					item: { count: 1, id: "firstworks:flint_pickaxe" }
 					type: "item"
 				}
 				{
 					id: "7100000000010317"
-					item: { count: 1, id: "kubejs:flint_axe" }
+					item: { count: 1, id: "firstworks:flint_axe" }
 					type: "item"
 				}
 				{
 					id: "7100000000010318"
-					item: { count: 1, id: "kubejs:flint_shovel" }
+					item: { count: 1, id: "firstworks:flint_shovel" }
 					type: "item"
 				}
 				{
 					id: "7100000000010319"
-					item: { count: 1, id: "kubejs:flint_hoe" }
+					item: { count: 1, id: "firstworks:flint_hoe" }
 					type: "item"
 				}
 				{
 					id: "7100000000010320"
-					item: { count: 1, id: "kubejs:flint_sword" }
+					item: { count: 1, id: "firstworks:flint_sword" }
 					type: "item"
 				}
 			]

@@ -69,37 +69,7 @@ global.ITEMS = {
     experience_nugget: 'create:experience_nugget'
 }
 
-ItemEvents.toolTierRegistry(event => {
-    event.addBasedOnExisting('bone', 'stone', tier => {
-        tier.uses = 160
-        tier.speed = 3.0
-        tier.attackDamageBonus = 0.25
-        tier.enchantmentValue = 8
-        tier.repairIngredient = 'minecraft:bone'
-    })
-
-    event.addBasedOnExisting('flint', 'stone', tier => {
-        tier.uses = 72
-        tier.speed = 5.5
-        tier.attackDamageBonus = 1.25
-        tier.enchantmentValue = 5
-        tier.repairIngredient = 'minecraft:flint'
-    })
-})
-
-// Primitive tanning materials. Vanilla leather drops are treated as raw hide;
-// these items represent the processing stages required for usable leather.
 StartupEvents.registry('item', event => {
-    event.create('bone_pickaxe', 'pickaxe').displayName('Bone Pickaxe').tier('bone')
-    event.create('bone_axe', 'axe').displayName('Bone Axe').tier('bone')
-    event.create('bone_shovel', 'shovel').displayName('Bone Shovel').tier('bone')
-    event.create('bone_hoe', 'hoe').displayName('Bone Hoe').tier('bone')
-    event.create('bone_sword', 'sword').displayName('Bone Sword').tier('bone')
-    event.create('flint_pickaxe', 'pickaxe').displayName('Flint Pickaxe').tier('flint').texture('minecraft:item/stone_pickaxe')
-    event.create('flint_axe', 'axe').displayName('Flint Axe').tier('flint').texture('minecraft:item/stone_axe')
-    event.create('flint_shovel', 'shovel').displayName('Flint Shovel').tier('flint').texture('minecraft:item/stone_shovel')
-    event.create('flint_hoe', 'hoe').displayName('Flint Hoe').tier('flint').texture('minecraft:item/stone_hoe')
-    event.create('flint_sword', 'sword').displayName('Flint Sword').tier('flint').texture('minecraft:item/stone_sword')
     event.create('iron_concentrate').displayName('Washed Iron Concentrate').texture('create:item/crushed_raw_iron')
     event.create('bloomery_charge').displayName('Bloomery Charge').texture('minecraft:item/charcoal')
     event.create('iron_bloom').displayName('Iron Bloom').texture('minecraft:item/raw_iron')
