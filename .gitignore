@@ -1,6 +1,6 @@
 # Minecraft runtime files
 .curseclient
-minecraftinstance.json
+# minecraftinstance.json (tracked so CurseForge mod list is saved in Git)
 user-prefs.json
 options.txt
 servers.dat
@@ -33,8 +33,8 @@ simply_screens_cache/
 # Local/per-world data (overrides defaultconfigs)
 local/
 
-# Default configs (per-world overrides, copied to local/)
-defaultconfigs/
+# Default configs (tracked so new worlds get modpack defaults)
+# defaultconfigs/
 
 tacz_backup/
 
@@ -56,8 +56,9 @@ desktop.ini
 .mixin.out/
 command_history.txt
 
-# Mod JARs (launcher-managed, binary blobs)
-mods/
+# Mod JARs (third-party launcher-managed mods ignored, custom in-house mods tracked)
+mods/*
+!mods/createstarbound*.jar
 
 # Runtime cache
 /data/
