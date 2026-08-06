@@ -20,11 +20,11 @@
 			}
 		}
 		{
-			count: 4
+			count: 8
 			id: "7300000000001053"
 			item: {
 				count: 1
-				id: "minecraft:leather"
+				id: "minecraft:dried_kelp"
 			}
 		}
 	]

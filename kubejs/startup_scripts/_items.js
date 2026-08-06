@@ -80,8 +80,6 @@ StartupEvents.registry('item', event => {
     event.create('green_biocoke').displayName('Green Biocoke Briquette').texture('minecraft:item/charcoal')
     event.create('dense_biocoke').displayName('Dense Biocoke').texture('minecraft:item/coal')
     event.create('titanium_catalyst_mesh').displayName('Titanium Catalyst Mesh').texture('minecraft:block/iron_bars')
-    event.create('unfired_basin').displayName('Unfired Clay Basin')
-    event.create('ceramic_basin').displayName('Ceramic Basin')
     event.create('unfired_storage_pot').displayName('Unfired Storage Pot')
     event.create('drying_frame').displayName('Primitive Drying Frame')
     event.create('dried_meat').displayName('Dried Meat').food(5, 0.6)

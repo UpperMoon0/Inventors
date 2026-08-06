@@ -4,11 +4,11 @@
 	order_index: 2
 	rewards: [
 		{
-			count: 2
+			count: 4
 			id: "7300000000001031"
 			item: {
 				count: 1
-				id: "minecraft:copper_ingot"
+				id: "minecraft:raw_copper"
 			}
 		}
 		{
@@ -24,7 +24,7 @@
 			id: "7300000000001033"
 			item: {
 				count: 1
-				id: "minecraft:leather"
+				id: "minecraft:clay_ball"
 			}
 		}
 	]

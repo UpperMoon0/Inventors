@@ -24,7 +24,7 @@
 			id: "7300000000001003"
 			item: {
 				count: 1
-				id: "minecraft:leather"
+				id: "firstworks:plant_fibre"
 			}
 		}
 	]

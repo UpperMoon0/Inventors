@@ -140,6 +140,7 @@
 		entity_icon: {
 			"regions_unexplored:ashen": true
 			"minecraft:horse": true
+			"aquaculture:capitaine": false
 			"minecraft:axolotl": true
 			"minecraft:strider": true
 			"minecraft:hoglin": true
@@ -189,10 +190,12 @@
 			"minecraft:fox": true
 			"minecraft:piglin_brute": true
 			"minecraft:enderman": true
+			"minecraft:turtle": true
 			"aquaculture:jellyfish": false
 			"minecraft:chicken": true
 			"aquaculture:muskellunge": false
 			"minecraft:zombie": true
+			"minecraft:husk": true
 			"minecraft:magma_cube": true
 			"minecraft:cod": false
 			"minecraft:drowned": true

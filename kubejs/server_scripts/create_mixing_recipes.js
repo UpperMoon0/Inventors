@@ -58,10 +58,10 @@ ServerEvents.recipes(event => {
     ]).id('kubejs:iron/prepare_bloomery_charge')
 
     // Coke production is the superheated capstone of Nether processing. The
-    // ceramic basin is returned after the sealed charge has finished coking.
+    // clay bucket is returned after the sealed charge has finished coking.
     event.recipes.create.compacting([
         '8x kubejs:metallurgical_coke',
-        'kubejs:ceramic_basin'
+        'firstworks:clay_bucket'
     ], 'kubejs:sealed_coke_charge')
         .superheated()
         .id('kubejs:steel/coke_sealed_charge')
@@ -71,10 +71,10 @@ ServerEvents.recipes(event => {
     event.recipes.create.compacting([
         Fluid.of('kubejs:wood_tar', 250),
         '2x minecraft:charcoal',
-        'kubejs:ceramic_basin'
+        'firstworks:clay_bucket'
     ], [
         '8x firstworks:tree_bark',
-        'kubejs:ceramic_basin'
+        'firstworks:clay_bucket'
     ])
         .superheated()
         .id('kubejs:biocoke/distill_wood_tar')

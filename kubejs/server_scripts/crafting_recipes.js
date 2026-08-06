@@ -81,16 +81,6 @@ ServerEvents.recipes(event => {
 
     // Primitive pottery is shaped by hand and fired over a campfire. The
     // decorated pot is functional one-stack storage before bound chests.
-    event.shaped('kubejs:unfired_basin', [
-        'C C',
-        'CCC'
-    ], {
-        C: 'minecraft:clay_ball'
-    }).id('kubejs:primitive/unfired_basin')
-
-    event.campfireCooking('kubejs:ceramic_basin', 'kubejs:unfired_basin', 0.1, 600)
-        .id('kubejs:primitive/fire_ceramic_basin')
-
     event.shaped('kubejs:unfired_storage_pot', [
         'C C',
         'C C',
@@ -203,7 +193,7 @@ ServerEvents.recipes(event => {
         'DDD'
     ], {
         D: 'ftbmaterials:coal_dust',
-        B: 'kubejs:ceramic_basin'
+        B: 'firstworks:clay_bucket'
     }).id('kubejs:steel/pack_coke_charge')
 
     // A titanium mesh survives repeated high-temperature biocoke compression.
