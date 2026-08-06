@@ -50,7 +50,8 @@
   "serverTeleportLogging": false,
   "enableCrossPortalInteraction": true,
   "disabledWarnings": [
-    "create"
+    "create",
+    "many_mods"
   ],
   "dimStackPreset": {
     "loop": false,
