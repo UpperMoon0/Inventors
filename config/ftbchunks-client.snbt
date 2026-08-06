@@ -146,6 +146,7 @@
 			"minecraft:rabbit": true
 			"minecraft:bee": true
 			"aquaculture:red_shrooma": false
+			"aquaculture:boulti": false
 			"minecraft:squid": true
 			"minecraft:dolphin": true
 			"aquaculture:minnow": false
@@ -168,16 +169,19 @@
 			"aquaculture:atlantic_herring": false
 			"minecraft:skeleton": true
 			"minecraft:cat": true
+			"aquaculture:bayad": false
 			"minecraft:donkey": true
 			"aquaculture:gar": false
 			"minecraft:creeper": true
 			"aquaculture:atlantic_halibut": false
 			"aquaculture:perch": false
 			"minecraft:parrot": true
+			"aquaculture:synodontis": false
 			"minecraft:cave_spider": true
 			"aquaculture:bluegill": false
 			"minecraft:wolf": true
 			"aquaculture:carp": false
+			"minecraft:armadillo": true
 			"minecraft:slime": true
 			"minecraft:zombified_piglin": true
 			"minecraft:sheep": true
