@@ -58,7 +58,7 @@ command_history.txt
 
 # Mod JARs (third-party launcher-managed mods ignored, custom in-house mods tracked)
 mods/*
-!mods/createstarbound*.jar
+!mods/world-engine*.jar
 
 # Runtime cache
 /data/
