@@ -72,6 +72,8 @@
 	quest.7100000000000154.quest_desc: ["Preserve each Scraped Hide in 250 mB of Tannin Solution for ten minutes. One full bucket can tan four hides together, producing Tannin-Soaked Hide ready for drying."]
 	quest.7100000000000242.title: "Dry, Supple Leather"
 	quest.7100000000000242.quest_desc: ["Dry the tanned hides over a campfire to finish them into leather. A furnace also works once your masonry workshop is ready, and mechanical pressing will make this step effortless in a later age."]
+	quest.7100000000000253.title: "Tanned Protection"
+	quest.7100000000000253.quest_desc: ["Stitch finished leather into a complete suit of protective armor. While a leather cap, tunic, pants, and boots offer modest defense, they provide your first real layer of protection against hostility in the wilderness."]
 	quest.7100000000000155.title: "A Safe Night's Rest"
 	quest.7100000000000155.quest_desc: ["Complete the textile branch with the Firstworks bed recipe: three Cloth, three matching pieces of Clean Wool, and three planks. This permanent place to sleep is one of the Stone Age's three capstone crafts."]
 	quest.7100000000000156.title: "Earth and Fire"

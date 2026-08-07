@@ -228,7 +228,7 @@
 				}
 			]
 			x: 8.0d
-			y: 2.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["7100000000000112"]
@@ -244,7 +244,7 @@
 				item: { count: 1, id: "minecraft:torch" }
 				type: "item"
 			}]
-			x: 8.0d
+			x: 6.0d
 			y: 4.0d
 		}
 		{
@@ -260,8 +260,8 @@
 				item: { count: 1, id: "minecraft:decorated_pot" }
 				type: "item"
 			}]
-			x: 10.0d
-			y: 3.5d
+			x: 8.0d
+			y: 5.5d
 		}
 		{
 			dependencies: [
@@ -282,7 +282,7 @@
 				item: { count: 1, id: "minecraft:furnace" }
 				type: "item"
 			}]
-			x: 17.0d
+			x: 13.0d
 			y: 3.0d
 		}
 		{
@@ -335,7 +335,7 @@
 				type: "item"
 			}]
 			x: 10.0d
-			y: -0.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["7100000000000240"]
@@ -351,7 +351,7 @@
 				type: "item"
 			}]
 			x: 12.0d
-			y: -0.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["7100000000000151"]
@@ -564,6 +564,39 @@
 			}]
 			x: 17.0d
 			y: -2.5d
+		}
+		{
+			dependencies: ["7100000000000242"]
+			id: "7100000000000253"
+			rewards: [{
+				id: "7130000000000253"
+				table_id: 4097L
+				type: "choice"
+			}]
+			tasks: [
+				{
+					id: "7100000000010260"
+					item: { count: 1, id: "minecraft:leather_helmet" }
+					type: "item"
+				}
+				{
+					id: "7100000000010261"
+					item: { count: 1, id: "minecraft:leather_chestplate" }
+					type: "item"
+				}
+				{
+					id: "7100000000010262"
+					item: { count: 1, id: "minecraft:leather_leggings" }
+					type: "item"
+				}
+				{
+					id: "7100000000010263"
+					item: { count: 1, id: "minecraft:leather_boots" }
+					type: "item"
+				}
+			]
+			x: 18.0d
+			y: 0.25d
 		}
 	]
 }
