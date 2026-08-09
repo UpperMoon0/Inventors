@@ -7,23 +7,15 @@
 			count: 8
 			id: "7300000000001001"
 			item: {
-				count: 1
+				count: 4
 				id: "minecraft:stick"
-			}
-		}
-		{
-			count: 8
-			id: "7300000000001002"
-			item: {
-				count: 1
-				id: "minecraft:torch"
 			}
 		}
 		{
 			count: 4
 			id: "7300000000001003"
 			item: {
-				count: 1
+				count: 3
 				id: "firstworks:plant_fibre"
 			}
 		}

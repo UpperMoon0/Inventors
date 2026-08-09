@@ -11,11 +11,6 @@
 		{
 			dependencies: ["7100000000000139"]
 			id: "7100000000000200"
-			rewards: [{
-				id: "7130000000000200"
-				table_id: 4177L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000020200"
 				item: { count: 1, id: "create:blaze_burner" }
@@ -27,11 +22,6 @@
 		{
 			dependencies: ["7100000000000200"]
 			id: "7100000000000140"
-			rewards: [{
-				id: "7130000000000140"
-				table_id: 4177L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000010149"
@@ -44,11 +34,6 @@
 		{
 			dependencies: ["7100000000000140"]
 			id: "7100000000000201"
-			rewards: [{
-				id: "7130000000000201"
-				table_id: 4178L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000020201"
@@ -61,11 +46,6 @@
 		{
 			dependencies: ["7100000000000200"]
 			id: "7100000000000202"
-			rewards: [{
-				id: "7130000000000202"
-				table_id: 4178L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000020202"
@@ -81,11 +61,6 @@
 				"7100000000000202"
 			]
 			id: "7100000000000203"
-			rewards: [{
-				id: "7130000000000203"
-				table_id: 4178L
-				type: "choice"
-			}]
 			tasks: [
 				{
 					count: 8L
@@ -105,11 +80,6 @@
 		{
 			dependencies: ["7100000000000203"]
 			id: "7100000000000141"
-			rewards: [{
-				id: "7130000000000141"
-				table_id: 4178L
-				type: "choice"
-			}]
 			tasks: [
 				{
 					id: "3E103B07A0038CE3"
@@ -128,11 +98,6 @@
 		{
 			dependencies: ["7100000000000203"]
 			id: "7100000000000142"
-			rewards: [{
-				id: "7130000000000142"
-				table_id: 4178L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "467543899D8D56C7"
 				item: { count: 1, id: "create:mechanical_arm" }
@@ -147,11 +112,6 @@
 				"7100000000000142"
 			]
 			id: "7100000000000204"
-			rewards: [{
-				id: "7130000000000204"
-				table_id: 4178L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000020204"
@@ -164,11 +124,6 @@
 		{
 			dependencies: ["7100000000000204"]
 			id: "7100000000000210"
-			rewards: [{
-				id: "7130000000000210"
-				table_id: 4178L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 4L
 				id: "7100000000020210"
@@ -181,11 +136,6 @@
 		{
 			dependencies: ["7100000000000210"]
 			id: "7100000000000211"
-			rewards: [{
-				id: "7130000000000211"
-				table_id: 4178L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 32L
 				id: "7100000000020211"
@@ -198,11 +148,6 @@
 		{
 			dependencies: ["7100000000000211"]
 			id: "7100000000000145"
-			rewards: [{
-				id: "7130000000000145"
-				table_id: 4178L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 16L
 				id: "61FA3286F03EED1E"
@@ -215,11 +160,6 @@
 		{
 			dependencies: ["7100000000000145"]
 			id: "7100000000000147"
-			rewards: [{
-				id: "7130000000000147"
-				table_id: 4178L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 8L
 				id: "7100000000010157"

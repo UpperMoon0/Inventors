@@ -11,11 +11,6 @@
 		{
 			dependencies: ["7100000000000117"]
 			id: "7100000000000118"
-			rewards: [{
-				id: "7130000000000118"
-				table_id: 4129L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000010122"
@@ -28,11 +23,6 @@
 		{
 			dependencies: ["7100000000000118"]
 			id: "7100000000000106"
-			rewards: [{
-				id: "7130000000000106"
-				table_id: 4129L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000010108"
@@ -45,11 +35,6 @@
 		{
 			dependencies: ["7100000000000106"]
 			id: "7100000000000119"
-			rewards: [{
-				id: "7130000000000119"
-				table_id: 4129L
-				type: "choice"
-			}]
 			tasks: [
 				{
 					id: "7100000000010123"
@@ -73,11 +58,6 @@
 		{
 			dependencies: ["7100000000000106"]
 			id: "7100000000000120"
-			rewards: [{
-				id: "7130000000000120"
-				table_id: 4129L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010126"
 				item: { count: 1, id: "silentgear:hammer" }
@@ -89,11 +69,6 @@
 		{
 			dependencies: ["7100000000000119"]
 			id: "7100000000000121"
-			rewards: [{
-				id: "7130000000000121"
-				table_id: 4130L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010127"
 				item: { count: 1, id: "farmersdelight:cooking_pot" }
@@ -105,11 +80,6 @@
 		{
 			dependencies: ["7100000000000120"]
 			id: "7100000000000122"
-			rewards: [{
-				id: "7130000000000122"
-				table_id: 4130L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010128"
 				item: { count: 1, id: "sophisticatedbackpacks:backpack" }
@@ -124,11 +94,6 @@
 				"7100000000000122"
 			]
 			id: "7100000000000123"
-			rewards: [{
-				id: "7130000000000123"
-				table_id: 4129L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 8L
 				id: "7100000000010129"

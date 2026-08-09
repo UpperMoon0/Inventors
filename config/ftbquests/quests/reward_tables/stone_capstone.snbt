@@ -1,0 +1,39 @@
+{
+	id: "0000000000001005"
+	loot_size: 1
+	order_index: 16
+	rewards: [
+		{
+			count: 4
+			id: "7300000000002021"
+			item: {
+				count: 16
+				id: "minecraft:oak_log"
+			}
+		}
+		{
+			count: 4
+			id: "7300000000002022"
+			item: {
+				count: 32
+				id: "minecraft:cobblestone"
+			}
+		}
+		{
+			count: 4
+			id: "7300000000002023"
+			item: {
+				count: 8
+				id: "minecraft:cooked_beef"
+			}
+		}
+		{
+			count: 3
+			id: "7300000000002024"
+			item: {
+				count: 16
+				id: "minecraft:bone_meal"
+			}
+		}
+	]
+}

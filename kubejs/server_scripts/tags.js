@@ -55,3 +55,49 @@ ServerEvents.tags('item', event => {
     event.add('kubejs:large_cogwheel', 'createtiers:large_cogwheel_basic')
     event.add('kubejs:large_cogwheel', 'createtiers:large_cogwheel_refined')
 })
+
+// Vanilla passive animals that should leave bones when killed.
+// A dedicated tag is used because Minecraft does not provide #minecraft:animals.
+ServerEvents.tags('entity_type', event => {
+    event.add('inventors:animals', [
+        'minecraft:allay',
+        'minecraft:armadillo',
+        'minecraft:axolotl',
+        'minecraft:bat',
+        'minecraft:bee',
+        'minecraft:camel',
+        'minecraft:cat',
+        'minecraft:chicken',
+        'minecraft:cod',
+        'minecraft:cow',
+        'minecraft:dolphin',
+        'minecraft:donkey',
+        'minecraft:fox',
+        'minecraft:frog',
+        'minecraft:glow_squid',
+        'minecraft:goat',
+        'minecraft:horse',
+        'minecraft:llama',
+        'minecraft:mooshroom',
+        'minecraft:mule',
+        'minecraft:ocelot',
+        'minecraft:panda',
+        'minecraft:parrot',
+        'minecraft:pig',
+        'minecraft:polar_bear',
+        'minecraft:pufferfish',
+        'minecraft:rabbit',
+        'minecraft:salmon',
+        'minecraft:sheep',
+        'minecraft:skeleton_horse',
+        'minecraft:sniffer',
+        'minecraft:squid',
+        'minecraft:strider',
+        'minecraft:tadpole',
+        'minecraft:trader_llama',
+        'minecraft:tropical_fish',
+        'minecraft:turtle',
+        'minecraft:wolf',
+        'minecraft:zombie_horse'
+    ])
+})

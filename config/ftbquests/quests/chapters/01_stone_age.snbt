@@ -10,11 +10,6 @@
 	quests: [
 		{
 			id: "7100000000000100"
-			rewards: [{
-				id: "7130000000000100"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [
 				{
 					count: 6L
@@ -33,13 +28,8 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["7100000000000100"]
+			dependencies: ["7100000000000111"]
 			id: "7100000000000101"
-			rewards: [{
-				id: "7130000000000101"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [
 				{
 					id: "7100000000010101"
@@ -67,17 +57,12 @@
 					type: "item"
 				}
 			]
-			x: 2.0d
+			x: 4.0d
 			y: -2.0d
 		}
 		{
-			dependencies: ["7100000000000100"]
+			dependencies: ["7100000000000111"]
 			id: "7100000000000159"
-			rewards: [{
-				id: "7130000000000159"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [
 				{
 					id: "7100000000010312"
@@ -105,17 +90,12 @@
 					type: "item"
 				}
 			]
-			x: 2.0d
+			x: 4.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["7100000000000100"]
 			id: "7100000000000250"
-			rewards: [{
-				id: "7130000000000250"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010255"
 				item: { count: 1, id: "firstworks:fire_starter" }
@@ -127,11 +107,6 @@
 		{
 			dependencies: ["7100000000000250"]
 			id: "7100000000000110"
-			rewards: [{
-				id: "7130000000000110"
-				table_id: 4098L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010111"
 				item: { count: 1, id: "minecraft:campfire" }
@@ -141,33 +116,19 @@
 			y: 2.5d
 		}
 		{
-			dependencies: [
-				"7100000000000101"
-				"7100000000000159"
-			]
-			dependency_requirement: "one_completed"
+			dependencies: ["7100000000000100"]
 			id: "7100000000000111"
-			rewards: [{
-				id: "7130000000000111"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010112"
 				item: { count: 1, id: "minecraft:crafting_table" }
 				type: "item"
 			}]
-			x: 4.0d
+			x: 2.0d
 			y: -1.0d
 		}
 		{
 			dependencies: ["7100000000000110"]
 			id: "7100000000000251"
-			rewards: [{
-				id: "7130000000000251"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [
 				{
 					id: "7100000000010256"
@@ -186,11 +147,6 @@
 		{
 			dependencies: ["7100000000000110"]
 			id: "7100000000000112"
-			rewards: [{
-				id: "7130000000000112"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000010113"
@@ -203,11 +159,6 @@
 		{
 			dependencies: ["7100000000000112"]
 			id: "7100000000000156"
-			rewards: [{
-				id: "7130000000000156"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [
 				{
 					id: "7100000000010306"
@@ -233,11 +184,6 @@
 		{
 			dependencies: ["7100000000000112"]
 			id: "7100000000000252"
-			rewards: [{
-				id: "7130000000000252"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 4L
 				id: "7100000000010258"
@@ -250,11 +196,6 @@
 		{
 			dependencies: ["7100000000000156"]
 			id: "7100000000000157"
-			rewards: [{
-				id: "7130000000000157"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "4F7277BFECAC81B8"
 				item: { count: 1, id: "minecraft:decorated_pot" }
@@ -270,11 +211,6 @@
 				"7100000000000242"
 			]
 			id: "7100000000000113"
-			rewards: [{
-				id: "7130000000000113"
-				table_id: 4097L
-				type: "choice"
-			}]
 			shape: "hexagon"
 			size: 2.0d
 			tasks: [{
@@ -288,11 +224,6 @@
 		{
 			dependencies: ["7100000000000111"]
 			id: "7100000000000150"
-			rewards: [{
-				id: "7130000000000150"
-				table_id: 4098L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 3L
 				id: "7100000000010150"
@@ -308,11 +239,6 @@
 				"7100000000000251"
 			]
 			id: "7100000000000151"
-			rewards: [{
-				id: "7130000000000151"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010151"
 				item: { count: 1, id: "firstworks:barrel" }
@@ -324,11 +250,6 @@
 		{
 			dependencies: ["7100000000000151"]
 			id: "7100000000000240"
-			rewards: [{
-				id: "7130000000000240"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010240"
 				item: { count: 1, id: "firstworks:soaked_hide" }
@@ -340,11 +261,6 @@
 		{
 			dependencies: ["7100000000000240"]
 			id: "7100000000000152"
-			rewards: [{
-				id: "7130000000000152"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010152"
 				item: { count: 1, id: "firstworks:scraped_hide" }
@@ -356,11 +272,6 @@
 		{
 			dependencies: ["7100000000000151"]
 			id: "7100000000000244"
-			rewards: [{
-				id: "7130000000000244"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 4L
 				id: "7100000000010245"
@@ -373,11 +284,6 @@
 		{
 			dependencies: ["7100000000000244"]
 			id: "7100000000000245"
-			rewards: [{
-				id: "7130000000000245"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [
 				{
 					id: "7100000000010246"
@@ -397,11 +303,6 @@
 		{
 			dependencies: ["7100000000000245"]
 			id: "7100000000000248"
-			rewards: [{
-				id: "7130000000000248"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [
 				{
 					id: "7100000000010252"
@@ -420,11 +321,6 @@
 		{
 			dependencies: ["7100000000000245"]
 			id: "7100000000000249"
-			rewards: [{
-				id: "7130000000000249"
-				table_id: 4097L
-				type: "choice"
-			}]
 			shape: "hexagon"
 			size: 2.0d
 			tasks: [{
@@ -438,11 +334,6 @@
 		{
 			dependencies: ["7100000000000151"]
 			id: "7100000000000246"
-			rewards: [{
-				id: "7130000000000246"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 6L
 				id: "7100000000010250"
@@ -455,11 +346,6 @@
 		{
 			dependencies: ["7100000000000246"]
 			id: "7100000000000247"
-			rewards: [{
-				id: "7130000000000247"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 4L
 				id: "7100000000010251"
@@ -472,11 +358,6 @@
 		{
 			dependencies: ["7100000000000151"]
 			id: "7100000000000153"
-			rewards: [{
-				id: "7130000000000153"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 4L
 				id: "7100000000010153"
@@ -493,11 +374,6 @@
 				"7100000000000251"
 			]
 			id: "7100000000000241"
-			rewards: [{
-				id: "7130000000000241"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010241"
 				item: { count: 1, id: "firstworks:tannin_clay_bucket" }
@@ -512,11 +388,6 @@
 				"7100000000000241"
 			]
 			id: "7100000000000154"
-			rewards: [{
-				id: "7130000000000154"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 3L
 				id: "7100000000010154"
@@ -529,11 +400,6 @@
 		{
 			dependencies: ["7100000000000154"]
 			id: "7100000000000242"
-			rewards: [{
-				id: "7130000000000242"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 3L
 				id: "7100000000010242"
@@ -545,16 +411,10 @@
 		}
 		{
 			dependencies: [
-				"7100000000000242"
 				"7100000000000247"
 				"7100000000000248"
 			]
 			id: "7100000000000155"
-			rewards: [{
-				id: "7130000000000155"
-				table_id: 4098L
-				type: "choice"
-			}]
 			shape: "hexagon"
 			size: 2.0d
 			tasks: [{
@@ -568,11 +428,6 @@
 		{
 			dependencies: ["7100000000000242"]
 			id: "7100000000000253"
-			rewards: [{
-				id: "7130000000000253"
-				table_id: 4097L
-				type: "choice"
-			}]
 			tasks: [
 				{
 					id: "7100000000010260"

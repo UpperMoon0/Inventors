@@ -1,0 +1,39 @@
+{
+	id: "0000000000001003"
+	loot_size: 1
+	order_index: 14
+	rewards: [
+		{
+			count: 4
+			id: "7300000000002001"
+			item: {
+				count: 6
+				id: "minecraft:oak_log"
+			}
+		}
+		{
+			count: 4
+			id: "7300000000002002"
+			item: {
+				count: 12
+				id: "minecraft:cobblestone"
+			}
+		}
+		{
+			count: 4
+			id: "7300000000002003"
+			item: {
+				count: 4
+				id: "minecraft:bread"
+			}
+		}
+		{
+			count: 3
+			id: "7300000000002004"
+			item: {
+				count: 6
+				id: "minecraft:bone_meal"
+			}
+		}
+	]
+}

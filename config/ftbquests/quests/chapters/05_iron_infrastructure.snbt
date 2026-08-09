@@ -11,11 +11,6 @@
 		{
 			dependencies: ["7100000000000131"]
 			id: "7100000000000160"
-			rewards: [{
-				id: "7130000000000160"
-				table_id: 4162L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 16L
 				id: "7100000000010321"
@@ -28,11 +23,6 @@
 		{
 			dependencies: ["7100000000000160"]
 			id: "7100000000000161"
-			rewards: [{
-				id: "7130000000000161"
-				table_id: 4162L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 4L
 				id: "7100000000010322"
@@ -45,11 +35,6 @@
 		{
 			dependencies: ["7100000000000161"]
 			id: "7100000000000162"
-			rewards: [{
-				id: "7130000000000162"
-				table_id: 4162L
-				type: "choice"
-			}]
 			tasks: [
 				{
 					id: "7100000000010323"
@@ -68,11 +53,6 @@
 		{
 			dependencies: ["7100000000000162"]
 			id: "7100000000000163"
-			rewards: [{
-				id: "7130000000000163"
-				table_id: 4162L
-				type: "choice"
-			}]
 			tasks: [
 				{
 					id: "7100000000010325"
@@ -92,11 +72,6 @@
 		{
 			dependencies: ["7100000000000163"]
 			id: "7100000000000132"
-			rewards: [{
-				id: "7130000000000132"
-				table_id: 4162L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010139"
 				item: { count: 1, id: "create:large_water_wheel" }
@@ -108,11 +83,6 @@
 		{
 			dependencies: ["7100000000000132"]
 			id: "7100000000000133"
-			rewards: [{
-				id: "7130000000000133"
-				table_id: 4162L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010140"
 				item: { count: 1, id: "create:windmill_bearing" }
@@ -124,11 +94,6 @@
 		{
 			dependencies: ["7100000000000132"]
 			id: "7100000000000134"
-			rewards: [{
-				id: "7130000000000134"
-				table_id: 4161L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010141"
 				item: { count: 1, id: "create:mechanical_drill" }
@@ -140,11 +105,6 @@
 		{
 			dependencies: ["7100000000000133"]
 			id: "7100000000000135"
-			rewards: [{
-				id: "7130000000000135"
-				table_id: 4161L
-				type: "choice"
-			}]
 			tasks: [{
 				count: 2L
 				id: "7100000000010142"
@@ -157,11 +117,6 @@
 		{
 			dependencies: ["7100000000000134"]
 			id: "7100000000000136"
-			rewards: [{
-				id: "7130000000000136"
-				table_id: 4161L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010143"
 				item: { count: 1, id: "create:item_vault" }
@@ -176,11 +131,6 @@
 				"7100000000000136"
 			]
 			id: "7100000000000137"
-			rewards: [{
-				id: "7130000000000137"
-				table_id: 4161L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010144"
 				item: { count: 1, id: "sophisticatedstorage:copper_chest" }
@@ -192,11 +142,6 @@
 		{
 			dependencies: ["7100000000000137"]
 			id: "7100000000000138"
-			rewards: [{
-				id: "7130000000000138"
-				table_id: 4161L
-				type: "choice"
-			}]
 			tasks: [{
 				id: "7100000000010145"
 				item: { count: 1, id: "sophisticatedstorage:storage_tool" }
@@ -208,11 +153,6 @@
 		{
 			dependencies: ["7100000000000138"]
 			id: "7100000000000139"
-			rewards: [{
-				id: "7130000000000139"
-				table_id: 4162L
-				type: "choice"
-			}]
 			tasks: [
 				{
 					count: 64L
