@@ -9,10 +9,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: [
-				"7100000000000113"
-				"7100000000000249"
-			]
+			dependencies: ["7100000000000113"]
 			id: "7100000000000114"
 			tasks: [
 				{

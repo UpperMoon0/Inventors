@@ -21,7 +21,7 @@
 	quest.7100000000000111.title: "A Place to Work"
 	quest.7100000000000111.quest_desc: ["Use flint and cordage to assemble a firm work surface where more demanding crafts can begin."]
 	quest.7100000000000112.title: "Fire Without Flame"
-	quest.7100000000000112.quest_desc: ["Build a Charcoal Clamp and load it with up to sixteen burnable logs. Cover it with earth, mud, or clay, ignite it with a Fire Starter, and keep the charge sealed for five minutes. A full sixteen-log charge returns twelve charcoal. Once the glow dies, uncover the clamp and collect the finished fuel."]
+	quest.7100000000000112.quest_desc: ["Build a mound from four to sixty-four connected burnable logs and surround every exposed side with earth, leaving one face open. Ignite a log through the opening with a Fire Starter, then seal the opening within one minute. After five minutes the smoke stops; uncover the finished mound to recover roughly three quarters of the wood as charcoal. Opening it early greatly reduces the yield."]
 	quest.7100000000000251.title: "Water Before Metal"
 	quest.7100000000000251.quest_desc: ["Shape three clay balls into an Unfired Clay Bucket, then fire it on a campfire. This early vessel carries water or Tannin Solution and works directly with a Firstworks Barrel, but it cannot hold lava or other hot fluids."]
 	quest.7100000000000252.title: "Bound Light"
@@ -93,7 +93,7 @@
 	quest.7100000000000262.title: "Keep the Harvest"
 	quest.7100000000000262.quest_desc: ["Build a Primitive Drying Frame from sticks and Twine, then preserve meat, fish, or berries. The frame is consumed by a batch as its bindings wear out."]
 	quest.7100000000000263.title: "Grind It Fine"
-	quest.7100000000000263.quest_desc: ["Hold the Mortar & Pestle in your main hand and the material to grind in your offhand, then hold use. Use it to crush bone into meal, raw ochre into pigment, and later charcoal into powder. Hand grinding opens the first fine-material processing methods."]
+	quest.7100000000000263.quest_desc: ["Place the Mortar & Pestle, then right-click it with a material to load it. Use an empty hand to begin grinding; interact again when the process finishes to collect the result. Grind bone into meal, ochre into pigment, and later charcoal into powder."]
 
 	quest.7100000000000102.title: "Refractory Thinking"
 	quest.7100000000000102.quest_desc: ["Combine clay and sand into fire clay, a material that survives temperatures ordinary stonework cannot withstand."]
@@ -106,7 +106,7 @@
 	quest.7100000000000104.title: "The First Copper Batch"
 	quest.7100000000000104.quest_desc: ["Feed raw copper into the foundry and pour sixteen ingots. Your first metal stockpile opens the way to stronger tools and useful vessels."]
 	quest.7100000000000105.title: "Cast, Then Assemble"
-	quest.7100000000000105.quest_desc: ["Craft Blueprint Paper with paper and blue dye (or lapis), then combine it with a pickaxe to make a Pickaxe Blueprint. Cast molten copper into a metal head, shape a wooden rod, and bind them with Rope on a crafting table. Your new tool can be repaired and upgraded as you discover better materials."]
+	quest.7100000000000105.quest_desc: ["Craft Blueprint Paper from four paper and blue dye (or lapis), then arrange three Blueprint Paper and two wooden rods in the shape of a pickaxe on a crafting table to make a Pickaxe Blueprint. Cast or shape a Copper Pickaxe Head, then assemble it with a wooden rod on a crafting table. Your new tool can be repaired and upgraded as you discover better materials."]
 	quest.7100000000000117.title: "Copper Utilities"
 	quest.7100000000000117.quest_desc: ["Craft a bucket and shears. Carrying fluids and gathering wool will make farming, construction and animal care much easier."]
 	quest.7100000000000243.title: "Tannins to Go"
