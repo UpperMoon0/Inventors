@@ -80,3 +80,6 @@ fabricloader.log
 config/*.bak
 ponders_watched.json
 config/spark/activity.json
+thread_dump*.txt
+.pg-native/
+
