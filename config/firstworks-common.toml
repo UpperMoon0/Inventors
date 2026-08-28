@@ -42,9 +42,9 @@ charcoalCarbonizeDuration = 6000
 charcoalMaxLogs = 64
 #Fraction of logs converted to charcoal upon undisturbed carbonization completion.
 # Default: 0.75
-# Range: 0.0 ~ 1.0
+# Range: 0.05 ~ 1.0
 charcoalNormalYield = 0.75
 #Fraction of logs converted to charcoal if the mound is breached or extinguished prematurely.
 # Default: 0.25
-# Range: 0.0 ~ 1.0
+# Range: 0.05 ~ 1.0
 charcoalBreachedYield = 0.25
