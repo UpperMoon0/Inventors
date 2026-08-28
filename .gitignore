@@ -11,6 +11,9 @@ usernamecache.json
 # Logs and crash reports
 logs/
 crash-reports/
+hs_err_pid*.log
+.codex-backups/
+.worldengine/
 
 # Save files
 saves/
@@ -59,6 +62,7 @@ command_history.txt
 # Mod JARs (third-party launcher-managed mods ignored, custom in-house mods tracked)
 mods/*
 !mods/world-engine*.jar
+!mods/immersive_portals*.jar
 
 # Runtime cache
 /data/

@@ -2,3 +2,5 @@
 # Default: 2
 # Range: 1 ~ 10
 sub_level_substeps_per_tick = 2
+#Prunes and deletes empty sub-level storage files. Experimental.
+sub_level_storage_pruning = false

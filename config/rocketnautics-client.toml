@@ -1,3 +1,6 @@
+#Has the world border warning been shown to the player?
+hasShownWorldBorderWarning = true
+
 [Visuals]
 	#Intensity multiplier for camera shake near engines
 	# Default: 0.5
@@ -26,3 +29,11 @@
 	# Default: 1000
 	# Range: 0 ~ 10000
 	orbitPredictionSteps = 1000
+	#Enable custom sky rendering (nebula, stars, planet beneath, custom sun/moon etc). Disable to return to standard Minecraft sky.
+	enableCustomSky = false
+	#Enable merging of adjacent thruster plumes into a single larger plume cluster
+	enablePlumeMerging = true
+	#Distance threshold in blocks within which adjacent engine plumes are clustered and merged
+	# Default: 4.0
+	# Range: 1.0 ~ 16.0
+	plumeMergeRadius = 4.0
