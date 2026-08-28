@@ -27,7 +27,7 @@ ServerEvents.recipes(event => {
     // Progression invariant: an ordinary campfire must never turn logs into charcoal.
     event.remove({ id: 'kubejs:primitive/campfire_charcoal' })
 
-    // Twine and vanilla string are inexpensive enough for early bound torches;
+    // Crude Cordage, String, and Twine are inexpensive enough for early bound torches;
     // proper rope remains reserved for heavier construction.
     event.shaped(Item.of('minecraft:torch', 4), [
         'C',
@@ -35,7 +35,7 @@ ServerEvents.recipes(event => {
         'S'
     ], {
         C: '#minecraft:coals',
-        T: '#c:strings',
+        T: ['#c:strings', 'firstworks:crude_cordage'],
         S: 'minecraft:stick'
     }).id('kubejs:primitive/bound_torches')
 

@@ -156,7 +156,7 @@
 			id: "7100000000000218"
 			tasks: [{
 				count: 8L
-				id: "7100000000020218"
+				id: "2B27EDED836F45B5"
 				item: { count: 1, id: "kubejs:dense_biocoke" }
 				type: "item"
 			}]
