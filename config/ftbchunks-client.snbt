@@ -138,74 +138,74 @@
 		# Default: true
 		entity_heads: true
 		entity_icon: {
-			"minecraft:wither_skeleton": true
-			"minecraft:skeleton": true
-			"aquaculture:brown_trout": false
-			"aquaculture:smallmouth_bass": false
-			"minecraft:cow": true
-			"minecraft:husk": true
+			"minecraft:salmon": false
+			"aquaculture:catfish": false
+			"minecraft:axolotl": true
+			"minecraft:enderman": true
 			"minecraft:tropical_fish": false
-			"minecraft:panda": true
-			"minecraft:iron_golem": true
-			"aquaculture:capitaine": false
-			"minecraft:cat": true
-			"aquaculture:muskellunge": false
-			"minecraft:donkey": true
-			"aquaculture:tuna": false
-			"minecraft:squid": true
+			"minecraft:creeper": true
+			"minecraft:sheep": true
+			"minecraft:husk": true
+			"aquaculture:carp": false
+			"minecraft:villager": true
+			"minecraft:magma_cube": true
+			"minecraft:ghast": true
+			"aquaculture:rainbow_trout": false
+			"minecraft:zombie_villager": true
 			"minecraft:piglin": true
-			"aquaculture:bluegill": false
-			"minecraft:spider": true
-			"minecraft:fox": true
-			"aquaculture:gar": false
-			"minecraft:zombie": true
+			"minecraft:donkey": true
+			"aquaculture:red_shrooma": false
 			"minecraft:turtle": true
+			"minecraft:slime": true
 			"minecraft:pig": true
-			"minecraft:witch": true
+			"aquaculture:atlantic_herring": false
+			"aquaculture:tuna": false
+			"minecraft:piglin_brute": true
+			"minecraft:polar_bear": true
 			"minecraft:horse": true
 			"aquaculture:perch": false
-			"minecraft:rabbit": true
-			"minecraft:zombie_villager": true
-			"minecraft:villager": true
-			"aquaculture:jellyfish": false
-			"minecraft:parrot": true
-			"aquaculture:red_shrooma": false
-			"regions_unexplored:ashen": true
-			"minecraft:axolotl": true
-			"aquaculture:atlantic_halibut": false
-			"minecraft:piglin_brute": true
-			"minecraft:dolphin": true
-			"minecraft:slime": true
-			"minecraft:cod": false
-			"minecraft:armadillo": true
-			"minecraft:creeper": true
-			"aquaculture:synodontis": false
-			"minecraft:pillager": true
-			"minecraft:ghast": true
-			"minecraft:sheep": true
-			"minecraft:glow_squid": true
-			"minecraft:magma_cube": true
-			"minecraft:bat": true
-			"minecraft:polar_bear": true
-			"minecraft:salmon": false
-			"aquaculture:atlantic_herring": false
-			"minecraft:enderman": true
-			"minecraft:hoglin": true
-			"aquaculture:bayad": false
-			"minecraft:zombified_piglin": true
-			"minecraft:chicken": true
-			"aquaculture:rainbow_trout": false
 			"minecraft:wolf": true
-			"minecraft:cave_spider": true
+			"minecraft:squid": true
+			"minecraft:iron_golem": true
+			"minecraft:pillager": true
+			"aquaculture:atlantic_halibut": false
 			"aquaculture:boulti": false
-			"aquaculture:catfish": false
-			"aquaculture:minnow": false
-			"minecraft:skeleton_horse": true
+			"minecraft:dolphin": true
+			"minecraft:hoglin": true
+			"minecraft:wither_skeleton": true
+			"aquaculture:bayad": false
+			"minecraft:cod": false
+			"minecraft:panda": true
+			"minecraft:cow": true
+			"minecraft:rabbit": true
+			"aquaculture:brown_trout": false
+			"minecraft:cat": true
+			"aquaculture:bluegill": false
+			"regions_unexplored:ashen": true
 			"minecraft:strider": true
-			"aquaculture:carp": false
-			"aquaculture:red_grouper": false
+			"minecraft:fox": true
+			"minecraft:armadillo": true
+			"aquaculture:jellyfish": false
+			"minecraft:glow_squid": true
 			"minecraft:bee": true
+			"aquaculture:capitaine": false
+			"minecraft:skeleton": true
+			"minecraft:zombified_piglin": true
+			"aquaculture:gar": false
+			"aquaculture:red_grouper": false
+			"minecraft:bat": true
+			"minecraft:chicken": true
+			"minecraft:parrot": true
+			"minecraft:witch": true
+			"minecraft:spider": true
+			"aquaculture:synodontis": false
+			"minecraft:skeleton_horse": true
+			"aquaculture:smallmouth_bass": false
+			"aquaculture:minnow": false
 			"minecraft:drowned": true
+			"minecraft:zombie": true
+			"minecraft:cave_spider": true
+			"aquaculture:muskellunge": false
 		}
 		
 		# Minimap font scaling (values not a multiple of 0.5 may look bad)
