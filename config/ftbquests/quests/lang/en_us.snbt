@@ -29,7 +29,7 @@
 	quest.7100000000000113.title: "A Masonry Furnace"
 	quest.7100000000000113.quest_desc: ["After relying on the campfire through the Stone Age, build its capstone furnace from cobblestone corners, structural brick blocks, and finished leather in the center. The masonry chamber finally concentrates heat for faster cooking and smelting."]
 	quest.7100000000000114.title: "Copper in the Stone"
-	quest.7100000000000114.quest_desc: ["Mine your first Raw Copper and bring Charcoal and Clay from your Stone Age workshops. Copper provides the metal, charcoal provides concentrated fuel, and clay leads into the refractory materials needed to contain foundry heat."]
+	quest.7100000000000114.quest_desc: ["Mine your first Raw Copper and bring Clay from your Stone Age workshops. Copper provides the metal, while clay leads into the refractory materials needed to build and contain your foundry's heat."]
 	quest.7100000000000150.title: "Hide and Seek"
 	quest.7100000000000150.quest_desc: ["Hunt carefully and recover raw hides. Fresh hide cannot be used as leather until it has been washed, scraped, tanned, and dried."]
 	quest.7100000000000151.title: "The First Barrel"
@@ -93,7 +93,7 @@
 	quest.7100000000000262.title: "Keep the Harvest"
 	quest.7100000000000262.quest_desc: ["Build a Primitive Drying Frame from sticks and Twine, then preserve meat, fish, or berries. The frame is consumed by a batch as its bindings wear out."]
 	quest.7100000000000263.title: "Grind It Fine"
-	quest.7100000000000263.quest_desc: ["Hold the Mortar & Pestle in your main hand and the material to grind in your offhand, then hold use. Crush charcoal into powder, bone into meal, and ochre into pigment. Hand grinding is slow, but it opens the first fine-material processing methods."]
+	quest.7100000000000263.quest_desc: ["Hold the Mortar & Pestle in your main hand and the material to grind in your offhand, then hold use. Use it to crush bone into meal, raw ochre into pigment, and later charcoal into powder. Hand grinding opens the first fine-material processing methods."]
 
 	quest.7100000000000102.title: "Refractory Thinking"
 	quest.7100000000000102.quest_desc: ["Combine clay and sand into fire clay, a material that survives temperatures ordinary stonework cannot withstand."]
@@ -106,7 +106,7 @@
 	quest.7100000000000104.title: "The First Copper Batch"
 	quest.7100000000000104.quest_desc: ["Feed raw copper into the foundry and pour sixteen ingots. Your first metal stockpile opens the way to stronger tools and useful vessels."]
 	quest.7100000000000105.title: "Cast, Then Assemble"
-	quest.7100000000000105.quest_desc: ["Use a pickaxe cast to form a metal head, then assemble it with a suitable rod and binding. Your new tool can be repaired and improved as you discover better materials."]
+	quest.7100000000000105.quest_desc: ["Craft Blueprint Paper with paper and blue dye (or lapis), then combine it with a pickaxe to make a Pickaxe Blueprint. Cast molten copper into a metal head, shape a wooden rod, and bind them with Rope on a crafting table. Your new tool can be repaired and upgraded as you discover better materials."]
 	quest.7100000000000117.title: "Copper Utilities"
 	quest.7100000000000117.quest_desc: ["Craft a bucket and shears. Carrying fluids and gathering wool will make farming, construction and animal care much easier."]
 	quest.7100000000000243.title: "Tannins to Go"
