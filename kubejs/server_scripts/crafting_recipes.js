@@ -13,7 +13,7 @@ ServerEvents.recipes(event => {
     event.remove({ output: 'minecraft:torch' })
 
     // The single-use starter provides the first spark. Bulk charcoal is reserved
-    // for the late-Stone Firstworks Charcoal Clamp.
+    // for the late-Stone Firstworks Charcoal Mound.
     event.shaped('minecraft:campfire', [
         ' S ',
         'SFS',

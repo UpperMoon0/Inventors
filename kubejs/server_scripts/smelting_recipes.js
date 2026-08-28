@@ -29,7 +29,7 @@ ServerEvents.recipes(event => {
         event.remove({ type: 'minecraft:blasting', output: ingot })
     })
 
-    // Firstworks owns early charcoal production via the Charcoal Clamp.
+    // Firstworks owns early charcoal production via the Charcoal Mound.
     // Smelting logs into charcoal in furnaces is disabled.
     event.remove({ type: 'minecraft:smelting', output: 'minecraft:charcoal' })
     event.remove({ type: 'minecraft:blasting', output: 'minecraft:charcoal' })

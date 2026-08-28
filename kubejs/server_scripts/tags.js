@@ -117,6 +117,8 @@ ServerEvents.tags('entity_type', event => {
         'naturalist:deer',
         'naturalist:duck',
         'naturalist:elephant',
+        'naturalist:forest_fox',
+        'naturalist:forest_rabbit',
         'naturalist:giraffe',
         'naturalist:great_white_shark',
         'naturalist:hedgehog',
@@ -153,7 +155,8 @@ ServerEvents.tags('entity_type', event => {
         'naturalist:jellyfish',
         'naturalist:jungle_scorpion',
         'naturalist:lizard_tail',
-        'naturalist:snail'
+        'naturalist:snail',
+        'naturalist:starfish'
     ])
 
     // Deer and zebra drop vanilla leather, which Firstworks replaces with raw
@@ -187,6 +190,8 @@ ServerEvents.tags('entity_type', event => {
         'naturalist:dragonfly',
         'naturalist:duck',
         'naturalist:firefly',
+        'naturalist:forest_fox',
+        'naturalist:forest_rabbit',
         'naturalist:giant_isopod',
         'naturalist:giraffe',
         'naturalist:great_white_shark',
@@ -205,6 +210,7 @@ ServerEvents.tags('entity_type', event => {
         'naturalist:ray',
         'naturalist:snail',
         'naturalist:snake',
+        'naturalist:starfish',
         'naturalist:tiger',
         'naturalist:tortoise',
         'naturalist:turkey',
