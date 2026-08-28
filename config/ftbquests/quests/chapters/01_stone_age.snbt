@@ -134,8 +134,8 @@
 				item: { count: 1, id: "firstworks:mortar_and_pestle" }
 				type: "item"
 			}]
-			x: 5.0d
-			y: -0.5d
+			x: 3.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["7100000000000250"]
@@ -227,7 +227,7 @@
 				type: "item"
 			}]
 			x: 7.5d
-			y: 5.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["7100000000000251"]
@@ -361,8 +361,8 @@
 				item: { count: 1, id: "minecraft:decorated_pot" }
 				type: "item"
 			}]
-			x: 15.0d
-			y: 4.5d
+			x: 10.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["7100000000000245"]
@@ -379,8 +379,8 @@
 					type: "item"
 				}
 			]
-			x: 17.5d
-			y: -4.5d
+			x: 16.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["7100000000000245"]
@@ -447,11 +447,11 @@
 			id: "7100000000000155"
 			tasks: [{
 				id: "7100000000010156"
-				item: { count: 1, id: "#minecraft:beds" }
+				item: { count: 1, id: "minecraft:white_bed" }
 				type: "item"
 			}]
 			x: 20.0d
-			y: -4.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["7100000000000154"]
@@ -490,8 +490,8 @@
 					type: "item"
 				}
 			]
-			x: 22.5d
-			y: 1.0d
+			x: 19.0d
+			y: 2.0d
 		}
 		{
 			dependencies: [

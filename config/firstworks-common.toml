@@ -6,6 +6,10 @@ replaceAnimalLeatherDrops = true
 #Disable this to retain vanilla tool recipes while keeping the Firstworks cordage materials available.
 #Changing this option requires a datapack reload or game restart.
 bindVanillaToolRecipes = true
+#Require #firstworks:primitive_bindings for vanilla wooden and stone tools.
+bindPrimitiveVanillaTools = true
+#Require #firstworks:strong_bindings for vanilla iron, gold, and diamond tools.
+bindMetalVanillaTools = true
 #Replace sheep wool drops with colored fleece, remove String-to-Wool, and require Cloth and Clean Wool for beds.
 #Disable this to restore vanilla sheep, wool, and bed progression while keeping Firstworks textile items available.
 #Changing this option requires a datapack reload or game restart.
@@ -15,10 +19,10 @@ enableTextileProgression = true
 #Changing this option requires a datapack reload or game restart.
 enableMasonryProgression = true
 #Allow rain to naturally fill open Barrels whose input store holds no fluid or only water.
-#Disabled by default to avoid changing existing-world behaviour.
+#Enabled by default; disable to keep open Barrels dry unless filled manually.
 #Rain does not fill Barrels whose input store already contains a non-water fluid.
 #Existing output fluid is never modified. Cover or enclose a Barrel to keep it dry.
-rainFillsBarrels = false
+rainFillsBarrels = true
 #Water (in millibuckets) gathered from rain per precipitation event.
 #Only used when rainFillsBarrels is enabled.
 # Default: 100
