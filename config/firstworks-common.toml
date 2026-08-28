@@ -32,3 +32,19 @@ rainFillAmount = 100
 ##firstworks:no_bone_drops takes priority, allowing datapacks to exclude entries without replacing the default tag.
 #The default list contains vertebrate animals and deliberately excludes squid, bees, allays, and undead horses.
 addAnimalBoneDrops = true
+#Duration of charcoal mound carbonization in ticks (6000 ticks = 5 minutes).
+# Default: 6000
+# Range: 20 ~ 72000
+charcoalCarbonizeDuration = 6000
+#Maximum number of connected logs supported in a single charcoal mound charge.
+# Default: 64
+# Range: 4 ~ 256
+charcoalMaxLogs = 64
+#Fraction of logs converted to charcoal upon undisturbed carbonization completion.
+# Default: 0.75
+# Range: 0.0 ~ 1.0
+charcoalNormalYield = 0.75
+#Fraction of logs converted to charcoal if the mound is breached or extinguished prematurely.
+# Default: 0.25
+# Range: 0.0 ~ 1.0
+charcoalBreachedYield = 0.25

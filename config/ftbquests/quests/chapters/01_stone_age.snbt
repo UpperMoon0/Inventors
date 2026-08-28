@@ -429,10 +429,61 @@
 		{
 			dependencies: ["7100000000000245"]
 			id: "7100000000000248"
+			min_required_tasks: 1
 			tasks: [
 				{
 					id: "7100000000010252"
 					item: { count: 1, id: "firstworks:loom" }
+					type: "item"
+				}
+				{
+					id: "7100000000010371"
+					item: { count: 1, id: "firstworks:spruce_loom" }
+					type: "item"
+				}
+				{
+					id: "7100000000010372"
+					item: { count: 1, id: "firstworks:birch_loom" }
+					type: "item"
+				}
+				{
+					id: "7100000000010373"
+					item: { count: 1, id: "firstworks:jungle_loom" }
+					type: "item"
+				}
+				{
+					id: "7100000000010374"
+					item: { count: 1, id: "firstworks:acacia_loom" }
+					type: "item"
+				}
+				{
+					id: "7100000000010375"
+					item: { count: 1, id: "firstworks:dark_oak_loom" }
+					type: "item"
+				}
+				{
+					id: "7100000000010376"
+					item: { count: 1, id: "firstworks:mangrove_loom" }
+					type: "item"
+				}
+				{
+					id: "7100000000010377"
+					item: { count: 1, id: "firstworks:cherry_loom" }
+					type: "item"
+				}
+				{
+					id: "7100000000010378"
+					item: { count: 1, id: "firstworks:bamboo_loom" }
+					type: "item"
+				}
+				{
+					id: "7100000000010379"
+					item: { count: 1, id: "firstworks:crimson_loom" }
+					type: "item"
+				}
+				{
+					id: "7100000000010380"
+					item: { count: 1, id: "firstworks:warped_loom" }
 					type: "item"
 				}
 				{
