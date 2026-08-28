@@ -3,6 +3,7 @@
 ServerEvents.tags('item', event => {
     // Firstworks owns the hide chain; vanilla leather is the finished product.
     event.add('c:leathers', 'minecraft:leather')
+    event.add('firstworks:raw_hides', 'naturalist:hide')
     event.add('kubejs:raw_hides', 'firstworks:raw_hide')
     // Naturalist's hide is an untanned hide, so it enters the Firstworks
     // tanning chain instead of being smelted straight into finished leather.

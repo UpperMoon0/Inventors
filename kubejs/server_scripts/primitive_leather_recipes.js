@@ -7,16 +7,6 @@ ServerEvents.recipes(event => {
     event.remove({ id: 'naturalist:leather_from_smelting_hide' })
 
     event.custom({
-        type: 'firstworks:barrel_processing',
-        ingredient: { item: 'naturalist:hide' },
-        fluid: 'minecraft:water',
-        fluid_amount: 250,
-        result: { id: 'firstworks:soaked_hide' },
-        duration: 2400,
-        sealed: true
-    }).id('kubejs:leather/soak_naturalist_hide')
-
-    event.custom({
         type: 'minecraft:campfire_cooking',
         category: 'misc',
         ingredient: { item: 'firstworks:tannin_soaked_hide' },
