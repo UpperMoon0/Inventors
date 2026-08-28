@@ -4,6 +4,9 @@ ServerEvents.tags('item', event => {
     // Firstworks owns the hide chain; vanilla leather is the finished product.
     event.add('c:leathers', 'minecraft:leather')
     event.add('kubejs:raw_hides', 'firstworks:raw_hide')
+    // Naturalist's hide is an untanned hide, so it enters the Firstworks
+    // tanning chain instead of being smelted straight into finished leather.
+    event.add('kubejs:raw_hides', 'naturalist:hide')
     event.add('kubejs:dried_foods', 'kubejs:dried_meat')
     event.add('kubejs:dried_foods', 'kubejs:dried_fish')
     event.add('kubejs:dried_foods', 'kubejs:dried_berries')
@@ -58,8 +61,8 @@ ServerEvents.tags('item', event => {
 })
 
 // Pack-owned extensions to Firstworks' generic animal-material rules.
-// Aquaculture is the only installed mod that registers living animal entities.
-// Its fish and turtles are vertebrates; jellyfish are explicitly excluded.
+// Lists are explicit so new or changed modded mobs do not silently acquire
+// anatomically inappropriate bones or hides.
 ServerEvents.tags('entity_type', event => {
     event.add('firstworks:drops_bones', [
         'aquaculture:arapaima',
@@ -97,6 +100,114 @@ ServerEvents.tags('entity_type', event => {
 
     event.add('firstworks:no_bone_drops', 'aquaculture:jellyfish')
 
-    // No installed mod adds a leather-bearing animal. Aquaculture fish and
-    // shelled turtles intentionally do not receive raw-hide entries.
+    // Naturalist vertebrates. This deliberately includes fish, reptiles and
+    // birds, but excludes every invertebrate and the detachable lizard tail.
+    event.add('firstworks:drops_bones', [
+        'naturalist:alligator',
+        'naturalist:anglerfish',
+        'naturalist:bass',
+        'naturalist:bear',
+        'naturalist:bird',
+        'naturalist:black_bear',
+        'naturalist:blobfish',
+        'naturalist:boar',
+        'naturalist:capybara',
+        'naturalist:catfish',
+        'naturalist:deer',
+        'naturalist:duck',
+        'naturalist:elephant',
+        'naturalist:giraffe',
+        'naturalist:great_white_shark',
+        'naturalist:hedgehog',
+        'naturalist:hippo',
+        'naturalist:komodo_dragon',
+        'naturalist:lion',
+        'naturalist:lizard',
+        'naturalist:mammoth',
+        'naturalist:mole',
+        'naturalist:ostrich',
+        'naturalist:piranha',
+        'naturalist:rat',
+        'naturalist:ray',
+        'naturalist:rhino',
+        'naturalist:snake',
+        'naturalist:tiger',
+        'naturalist:tortoise',
+        'naturalist:turkey',
+        'naturalist:vulture',
+        'naturalist:whale',
+        'naturalist:zebra'
+    ])
+
+    event.add('firstworks:no_bone_drops', [
+        'naturalist:ant',
+        'naturalist:butterfly',
+        'naturalist:caterpillar',
+        'naturalist:clam',
+        'naturalist:crab',
+        'naturalist:desert_scorpion',
+        'naturalist:dragonfly',
+        'naturalist:firefly',
+        'naturalist:giant_isopod',
+        'naturalist:jellyfish',
+        'naturalist:jungle_scorpion',
+        'naturalist:lizard_tail',
+        'naturalist:snail'
+    ])
+
+    // Deer and zebra drop vanilla leather, which Firstworks replaces with raw
+    // hide. The other entries already drop naturalist:hide; tagging them keeps
+    // the intended classification explicit if their upstream loot changes.
+    event.add('firstworks:leather_drops_as_raw_hide', [
+        'naturalist:boar',
+        'naturalist:deer',
+        'naturalist:elephant',
+        'naturalist:komodo_dragon',
+        'naturalist:rhino',
+        'naturalist:zebra'
+    ])
+
+    event.add('firstworks:no_raw_hide_drops', [
+        'naturalist:alligator',
+        'naturalist:anglerfish',
+        'naturalist:ant',
+        'naturalist:bass',
+        'naturalist:bear',
+        'naturalist:bird',
+        'naturalist:black_bear',
+        'naturalist:blobfish',
+        'naturalist:butterfly',
+        'naturalist:capybara',
+        'naturalist:caterpillar',
+        'naturalist:catfish',
+        'naturalist:clam',
+        'naturalist:crab',
+        'naturalist:desert_scorpion',
+        'naturalist:dragonfly',
+        'naturalist:duck',
+        'naturalist:firefly',
+        'naturalist:giant_isopod',
+        'naturalist:giraffe',
+        'naturalist:great_white_shark',
+        'naturalist:hedgehog',
+        'naturalist:hippo',
+        'naturalist:jellyfish',
+        'naturalist:jungle_scorpion',
+        'naturalist:lion',
+        'naturalist:lizard',
+        'naturalist:lizard_tail',
+        'naturalist:mammoth',
+        'naturalist:mole',
+        'naturalist:ostrich',
+        'naturalist:piranha',
+        'naturalist:rat',
+        'naturalist:ray',
+        'naturalist:snail',
+        'naturalist:snake',
+        'naturalist:tiger',
+        'naturalist:tortoise',
+        'naturalist:turkey',
+        'naturalist:vulture',
+        'naturalist:whale'
+    ])
 })
