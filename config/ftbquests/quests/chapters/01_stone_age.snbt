@@ -127,6 +127,35 @@
 			y: -1.0d
 		}
 		{
+			dependencies: ["7100000000000111"]
+			id: "7100000000000260"
+			tasks: [{
+				id: "7100000000010350"
+				item: { count: 1, id: "firstworks:flint_knife" }
+				type: "item"
+			}]
+			x: 4.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["7100000000000111"]
+			id: "7100000000000263"
+			tasks: [
+				{
+					id: "7100000000010356"
+					item: { count: 1, id: "firstworks:mortar_and_pestle" }
+					type: "item"
+				}
+				{
+					id: "7100000000010357"
+					item: { count: 1, id: "firstworks:charcoal_powder" }
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -6.5d
+		}
+		{
 			dependencies: ["7100000000000110"]
 			id: "7100000000000251"
 			tasks: [
@@ -145,14 +174,24 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["7100000000000110"]
+			dependencies: [
+				"7100000000000110"
+				"7100000000000111"
+			]
 			id: "7100000000000112"
-			tasks: [{
-				count: 16L
-				id: "7100000000010113"
-				item: { count: 1, id: "minecraft:charcoal" }
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "7100000000010113"
+					item: { count: 1, id: "firstworks:charcoal_pit" }
+					type: "item"
+				}
+				{
+					count: 16L
+					id: "7100000000010351"
+					item: { count: 1, id: "minecraft:charcoal" }
+					type: "item"
+				}
+			]
 			x: 6.0d
 			y: 2.5d
 		}
@@ -182,7 +221,10 @@
 			y: 4.0d
 		}
 		{
-			dependencies: ["7100000000000112"]
+			dependencies: [
+				"7100000000000111"
+				"7100000000000245"
+			]
 			id: "7100000000000252"
 			tasks: [{
 				count: 4L
@@ -302,6 +344,38 @@
 		}
 		{
 			dependencies: ["7100000000000245"]
+			id: "7100000000000261"
+			tasks: [{
+				id: "7100000000010352"
+				item: { count: 1, id: "firstworks:basket" }
+				type: "item"
+			}]
+			x: 14.0d
+			y: -6.5d
+		}
+		{
+			dependencies: [
+				"7100000000000110"
+				"7100000000000245"
+			]
+			id: "7100000000000262"
+			tasks: [
+				{
+					id: "7100000000010353"
+					item: { count: 1, id: "kubejs:drying_frame" }
+					type: "item"
+				}
+				{
+					id: "7100000000010354"
+					item: { count: 1, id: "kubejs:dried_meat" }
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: -6.5d
+		}
+		{
+			dependencies: ["7100000000000245"]
 			id: "7100000000000248"
 			tasks: [
 				{
@@ -332,7 +406,7 @@
 			y: -4.5d
 		}
 		{
-			dependencies: ["7100000000000151"]
+			dependencies: ["7100000000000260"]
 			id: "7100000000000246"
 			tasks: [{
 				count: 6L
