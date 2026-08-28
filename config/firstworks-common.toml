@@ -48,3 +48,8 @@ charcoalNormalYield = 0.75
 # Default: 0.25
 # Range: 0.05 ~ 1.0
 charcoalBreachedYield = 0.25
+#Chance (0.0 to 1.0) to gather Plant Fibre with an empty hand or non-knife tool.
+# Default: 0.30
+# Range: 0.0 ~ 1.0
+plantFibreHandChance = 0.3
+

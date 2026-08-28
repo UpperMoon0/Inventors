@@ -215,3 +215,23 @@ ServerEvents.tags('entity_type', event => {
         'naturalist:whale'
     ])
 })
+
+ServerEvents.tags('block', event => {
+    event.add('firstworks:plant_fibre_sources', [
+        'regions_unexplored:bladed_grass',
+        'regions_unexplored:sandy_grass',
+        'regions_unexplored:steppe_grass',
+        'regions_unexplored:frozen_grass',
+        'regions_unexplored:medium_grass',
+        'regions_unexplored:grass_sprouts',
+        'regions_unexplored:glistering_fern',
+        'regions_unexplored:windswept_grass',
+        'regions_unexplored:ashen_grass'
+    ])
+
+    event.add('firstworks:double_plant_fibre_sources', [
+        'regions_unexplored:bladed_tall_grass',
+        'regions_unexplored:sandy_tall_grass',
+        'regions_unexplored:steppe_tall_grass'
+    ])
+})
