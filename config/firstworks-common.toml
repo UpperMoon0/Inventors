@@ -36,10 +36,18 @@ addAnimalBoneDrops = true
 # Default: 6000
 # Range: 20 ~ 72000
 charcoalCarbonizeDuration = 6000
+#Minimum number of connected logs required for a valid charcoal mound.
+# Default: 4
+# Range: 4 ~ 64
+charcoalMinLogs = 4
 #Maximum number of connected logs supported in a single charcoal mound charge.
 # Default: 64
 # Range: 4 ~ 256
 charcoalMaxLogs = 64
+#Ticks allowed to seal the opening after ignition before the charge fails (default: 1200 ticks / 60 seconds).
+# Default: 1200
+# Range: 20 ~ 6000
+charcoalSealWindow = 1200
 #Fraction of logs converted to charcoal upon undisturbed carbonization completion.
 # Default: 0.75
 # Range: 0.05 ~ 1.0
@@ -52,4 +60,9 @@ charcoalBreachedYield = 0.25
 # Default: 0.30
 # Range: 0.0 ~ 1.0
 plantFibreHandChance = 0.3
+#Chance (0.0 to 1.0) to gather Raw Ochre from ochre sources without a primitive knife.
+# Default: 0.20
+# Range: 0.0 ~ 1.0
+rawOchreGatherChance = 0.2
+
 
