@@ -2,9 +2,14 @@
 // For shaped/shapeless crafting recipes (not Create mod machines)
 
 ServerEvents.recipes(event => {
+    // Farmer's Delight dough recipes bypassed the quern milling progression.
+    // Explicitly remove both water and egg dough routes.
+    event.remove({ id: 'farmersdelight:wheat_dough_from_water' })
+    event.remove({ id: 'farmersdelight:wheat_dough_from_eggs' })
+
     event.shapeless('farmersdelight:wheat_dough', [
-        '3x #c:flours',
-        '#c:water_buckets'
+        '3x #c:flours/wheat',
+        '#c:buckets/water'
     ]).id('kubejs:primitive/quern_flour_dough')
     // Firstworks owns bed progression: Cloth, matching Clean Wool, and planks.
 

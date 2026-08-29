@@ -2,6 +2,7 @@
 
 ServerEvents.tags('item', event => {
     event.add('c:flours', 'firstworks:flour')
+    event.add('c:flours/wheat', 'firstworks:flour')
     // Firstworks owns the hide chain; vanilla leather is the finished product.
     event.add('c:leathers', 'minecraft:leather')
     event.add('firstworks:raw_hides', 'naturalist:hide')
