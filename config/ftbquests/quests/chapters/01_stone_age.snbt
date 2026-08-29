@@ -702,16 +702,5 @@
 			x: 22.5d
 			y: 3.0d
 		}
-		{
-			dependencies: ["7100000000000263"]
-			id: "7100000000000265"
-			tasks: [{
-				id: "7100000000010400"
-				item: { count: 1, id: "firstworks:saddle_quern" }
-				type: "item"
-			}]
-			x: 8.0d
-			y: -1.0d
-		}
 	]
 }

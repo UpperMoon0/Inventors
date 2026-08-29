@@ -171,13 +171,13 @@
 		}
 		{
 			dependencies: [
-				"7100000000000265"
+				"7100000000000263"
 				"7100000000000219"
 			]
 			id: "7100000000000266"
 			tasks: [{
 				id: "7100000000010401"
-				item: { count: 1, id: "firstworks:rotary_quern" }
+				item: { count: 1, id: "firstworks:quern" }
 				type: "item"
 			}]
 			x: 11.0d

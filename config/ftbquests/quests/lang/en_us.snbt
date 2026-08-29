@@ -233,8 +233,6 @@
 	quest.7100000000000147.quest_desc: ["Cast steel gears for machinery that must survive greater forces. With steel and precision mechanisms mastered, you can construct stable Eyes and seek the End portal."]
 	quest.7100000000000206.title: "The Refined Drivetrain"
 	quest.7100000000000206.quest_desc: ["Combine titanium, steel and Precision Mechanisms with your Basic drivetrain. Refined components reach 512 RPM and carry 8192 SU, providing the power needed for aerospace engineering."]
-	quest.7100000000000265.title: "Grinding in Earnest"
-	quest.7100000000000265.quest_desc: ["Build a Saddle Quern for larger batches than the Mortar can handle. Load a complete batch, then work the upper stone repeatedly with an empty hand. The visible grain, stone movement, and changing sound tell you the batch is progressing."]
-	quest.7100000000000266.title: "Turn the Stone"
-	quest.7100000000000266.quest_desc: ["Upgrade the Saddle Quern with Copper Fasteners. Load a batch and engage the Rotary Quern's crank with an empty hand; it turns continuously and finishes bulk flour, pigment, and mineral work faster. Interact again to pause it safely."]
+	quest.7100000000000266.title: "Bulk Milling"
+	quest.7100000000000266.quest_desc: ["Combine stone, wooden slabs, and Copper Fasteners to craft a Quern. Insert a complete batch of grain or minerals, then crank the upper runner stone with an empty hand (+5 work per crank). In later stages, connect animal power or mechanical drive to automate continuous milling."]
 }
