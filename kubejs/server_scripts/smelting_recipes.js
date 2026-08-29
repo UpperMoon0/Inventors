@@ -29,6 +29,11 @@ ServerEvents.recipes(event => {
         event.remove({ type: 'minecraft:blasting', output: ingot })
     })
 
+    // Firstworks owns early charcoal production via the Charcoal Mound.
+    // Smelting logs into charcoal in furnaces is disabled.
+    event.remove({ type: 'minecraft:smelting', output: 'minecraft:charcoal' })
+    event.remove({ type: 'minecraft:blasting', output: 'minecraft:charcoal' })
+
     // The masonry furnace reduces a prepared bloomery charge, but does not
     // smelt ore directly into usable metal.
     event.smelting('kubejs:iron_bloom', 'kubejs:bloomery_charge')

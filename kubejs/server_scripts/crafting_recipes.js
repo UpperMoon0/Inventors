@@ -12,8 +12,8 @@ ServerEvents.recipes(event => {
     event.remove({ output: 'minecraft:furnace' })
     event.remove({ output: 'minecraft:torch' })
 
-    // The single-use starter provides the first spark; charcoal is produced by
-    // the campfire afterward instead of being required to craft the fire itself.
+    // The single-use starter provides the first spark. Bulk charcoal is reserved
+    // for the late-Stone Firstworks Charcoal Mound.
     event.shaped('minecraft:campfire', [
         ' S ',
         'SFS',
@@ -24,10 +24,10 @@ ServerEvents.recipes(event => {
         L: '#minecraft:logs_that_burn'
     }).id('kubejs:primitive/flint_lit_campfire')
 
-    event.campfireCooking('minecraft:charcoal', '#minecraft:logs_that_burn', 0.15, 1200)
-        .id('kubejs:primitive/campfire_charcoal')
+    // Progression invariant: an ordinary campfire must never turn logs into charcoal.
+    event.remove({ id: 'kubejs:primitive/campfire_charcoal' })
 
-    // Twine and vanilla string are inexpensive enough for early bound torches;
+    // Crude Cordage, String, and Twine are inexpensive enough for early bound torches;
     // proper rope remains reserved for heavier construction.
     event.shaped(Item.of('minecraft:torch', 4), [
         'C',
@@ -35,7 +35,7 @@ ServerEvents.recipes(event => {
         'S'
     ], {
         C: '#minecraft:coals',
-        T: '#c:strings',
+        T: ['#c:strings', 'firstworks:crude_cordage'],
         S: 'minecraft:stick'
     }).id('kubejs:primitive/bound_torches')
 
@@ -54,7 +54,7 @@ ServerEvents.recipes(event => {
         'PPP'
     ], {
         P: '#minecraft:planks',
-        C: 'minecraft:copper_ingot'
+        C: 'firstworks:copper_fasteners'
     }).id('kubejs:copper/copper_bound_chest')
 
     // Barrels would otherwise bypass the intended pottery storage stage.
@@ -65,8 +65,25 @@ ServerEvents.recipes(event => {
     ], {
         P: '#minecraft:planks',
         S: '#minecraft:wooden_slabs',
-        C: 'minecraft:copper_ingot'
+        C: 'firstworks:copper_fasteners'
     }).id('kubejs:copper/copper_bound_barrel')
+
+    // The vanilla utility items represent early copper sheetwork in this pack.
+    // Their default iron recipes remain harmless because iron is a later age, but
+    // these recipes make the intended Copper route explicit.
+    event.shaped('minecraft:shears', [
+        ' C',
+        'C '
+    ], {
+        C: 'minecraft:copper_ingot'
+    }).id('kubejs:copper/copper_shears')
+
+    event.shaped('minecraft:bucket', [
+        'C C',
+        ' C '
+    ], {
+        C: 'minecraft:copper_ingot'
+    }).id('kubejs:copper/copper_bucket')
 
     // The Masonry Furnace is constructed from Cobblestone, Brick Blocks (from Firstworks masonry), and finished Leather.
     event.shaped('minecraft:furnace', [

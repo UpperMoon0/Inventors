@@ -9,7 +9,7 @@
 	chapter.7100000000000070.title: "VII - End Refinement"
 
 	quest.7100000000000100.title: "Fibres of Survival"
-	quest.7100000000000100.quest_desc: ["Break grass and ferns to gather Plant Fibre, then twist three fibres into Crude Cordage in your inventory. Gathering by hand only succeeds sometimes; once you have a sword, cutting plants always recovers their fibre."]
+	quest.7100000000000100.quest_desc: ["Break grass and ferns to gather Plant Fibre, then twist three fibres into Crude Cordage in your inventory. Gathering by hand only succeeds sometimes; once you have a primitive knife, cutting plants always recovers their fibre."]
 	quest.7100000000000101.title: "The Patient Path — Bone Tools"
 	quest.7100000000000101.quest_desc: ["Build a complete set of bound bone tools. They work deliberately, but endure far longer than their flint counterparts."]
 	quest.7100000000000159.title: "The Sharp Path — Flint Tools"
@@ -20,16 +20,16 @@
 	quest.7100000000000110.quest_desc: ["Use one Fire Starter with three sticks and three burnable logs to build a campfire without coal or charcoal. Its four cooking places provide the settlement's first dependable source of heat, and another Fire Starter can relight it if it is extinguished."]
 	quest.7100000000000111.title: "A Place to Work"
 	quest.7100000000000111.quest_desc: ["Use flint and cordage to assemble a firm work surface where more demanding crafts can begin."]
-	quest.7100000000000112.title: "Stored Heat"
-	quest.7100000000000112.quest_desc: ["Place burnable logs on a campfire to slowly turn them into charcoal. Four logs can cook at once, and each batch takes one minute; store a healthy reserve for hotter fires and heavier work."]
+	quest.7100000000000112.title: "Fire Without Flame"
+	quest.7100000000000112.quest_desc: ["Build a mound from four to sixty-four connected burnable logs and surround every exposed side with earth, leaving one face open. Ignite a log through the opening with a Fire Starter, then seal the opening within one minute. After five minutes the smoke stops; uncover the finished mound to recover roughly three quarters of the wood as charcoal. Opening it early greatly reduces the yield."]
 	quest.7100000000000251.title: "Water Before Metal"
 	quest.7100000000000251.quest_desc: ["Shape three clay balls into an Unfired Clay Bucket, then fire it on a campfire. This early vessel carries water or Tannin Solution and works directly with a Firstworks Barrel, but it cannot hold lava or other hot fluids."]
 	quest.7100000000000252.title: "Bound Light"
-	quest.7100000000000252.quest_desc: ["Bind coal or charcoal to a stick with String or Twine to craft four torches. Proper Rope is intentionally unnecessary for this small, inexpensive binding."]
+	quest.7100000000000252.quest_desc: ["Bind coal or charcoal to a stick with Crude Cordage, String, or Twine to craft four torches. Proper Rope is intentionally unnecessary for this small, inexpensive binding."]
 	quest.7100000000000113.title: "A Masonry Furnace"
 	quest.7100000000000113.quest_desc: ["After relying on the campfire through the Stone Age, build its capstone furnace from cobblestone corners, structural brick blocks, and finished leather in the center. The masonry chamber finally concentrates heat for faster cooking and smelting."]
-	quest.7100000000000114.title: "Gather the Refractory Materials"
-	quest.7100000000000114.quest_desc: ["The Copper Age begins with heat-resistant materials. Gather clay and sand; together they can form a refractory mixture capable of containing molten metal."]
+	quest.7100000000000114.title: "Copper in the Stone"
+	quest.7100000000000114.quest_desc: ["Mine your first Raw Copper and bring Clay from your Stone Age workshops. Copper provides the metal, while clay leads into the refractory materials needed to build and contain your foundry's heat."]
 	quest.7100000000000150.title: "Hide and Seek"
 	quest.7100000000000150.quest_desc: ["Hunt carefully and recover raw hides. Fresh hide cannot be used as leather until it has been washed, scraped, tanned, and dried."]
 	quest.7100000000000151.title: "The First Barrel"
@@ -48,22 +48,24 @@
 	quest.7100000000000244.quest_desc: ["Ret four Plant Fibre in 250 mB of water for one minute. Retting loosens the fibres so they can be spun evenly instead of twisted into wasteful emergency cordage."]
 	quest.7100000000000245.title: "Spin the Thread"
 	quest.7100000000000245.quest_desc: ["Craft a durable Hand Spindle from a stick, flint, and either Crude Cordage or Rope. Hold it in your main hand with at least two Retted Fibre in your offhand, then hold use until the batch becomes Twine. Releasing early cancels safely; each completed batch wears the spindle slightly."]
-	quest.7100000000000248.title: "Work the Loom"
-	quest.7100000000000248.quest_desc: [
-		"Build a Firstworks Loom and load four Twine or String directly onto its frame."
+	quest.7100000000000248.title: "Frame the Loom"
+	quest.7100000000000248.quest_desc: ["Build a Firstworks Loom from planks and slabs. It forms the sturdy wooden frame needed to weave spun thread into usable textile cloth."]
+	quest.7100000000000264.title: "Work the Loom"
+	quest.7100000000000264.quest_desc: [
+		"Load four Twine or String directly onto the Loom's frame."
 		""
 		"Use an empty hand sixteen times to work the shuttle as the weave grows, then collect the finished Cloth."
 		""
 		"Hoppers can load thread and remove output, while an empty-handed Create Deployer can automate the strokes."
 	]
 	quest.7100000000000249.title: "Rope for Harder Work"
-	quest.7100000000000249.quest_desc: ["Combine three Twine into proper Rope. Crude Cordage and Rope are both bindings, but only Rope is strong enough for metal and diamond tool assembly."]
+	quest.7100000000000249.quest_desc: ["Combine three Twine into proper Rope. Proper Rope is strong enough for heavier construction and marks the final binding technology needed before metalworking."]
 	quest.7100000000000246.title: "Fleece from the Flock"
-	quest.7100000000000246.quest_desc: ["Shear sheep to gather Raw Fleece. Each sheep keeps its natural color, and a little patience lets the flock grow its coat again."]
+	quest.7100000000000246.quest_desc: ["Use a Bone or Flint Knife on a shearable sheep to gather exactly one Raw Fleece renewably. This costs eight durability and the sheep must regrow its coat. Hunting yields one or two fleece immediately, while proper Shears later harvest three to five without killing the flock."]
 	quest.7100000000000247.title: "Wash the Wool"
 	quest.7100000000000247.quest_desc: ["Wash Raw Fleece with water to remove dirt and grease while preserving its color. Four pieces of matching Clean Wool can be packed into a wool block; dye can recolor a batch before or after washing."]
 	quest.7100000000000152.title: "Scrape It Clean"
-	quest.7100000000000152.quest_desc: ["Use any sword as a scraping blade to clean the soaked hide and prepare its surface for tanning. Each hide wears the blade by one durability."]
+	quest.7100000000000152.quest_desc: ["Use a Bone or Flint Knife to scrape the soaked hide clean and prepare its surface for tanning. Each hide wears the knife by one durability; combat swords no longer substitute for this precision tool."]
 	quest.7100000000000153.title: "Tannins from the Forest"
 	quest.7100000000000153.quest_desc: ["Strip wood to gather Tree Bark. Each block yields one to three pieces, and four pieces are enough to brew a bucket of preserving tannins."]
 	quest.7100000000000241.title: "Brew Tannin Solution"
@@ -75,7 +77,7 @@
 	quest.7100000000000253.title: "Tanned Protection"
 	quest.7100000000000253.quest_desc: ["Stitch finished leather into a complete suit of protective armor. While a leather cap, tunic, pants, and boots offer modest defense, they provide your first real layer of protection against hostility in the wilderness."]
 	quest.7100000000000155.title: "A Safe Night's Rest"
-	quest.7100000000000155.quest_desc: ["Complete the textile branch with the Firstworks bed recipe: three Cloth, three matching pieces of Clean Wool, and three planks. This permanent place to sleep is one of the Stone Age's three capstone crafts."]
+	quest.7100000000000155.quest_desc: ["Complete the textile branch with the Firstworks bed recipe: three Cloth, three matching pieces of Clean Wool, and three planks. This permanent place to sleep provides an optional comfort milestone to set your spawn point and pass the night safely."]
 	quest.7100000000000156.title: "Earth and Fire"
 	quest.7100000000000156.quest_desc: [
 		"Load one clay ball into the Wooden Brick Mold and press it twice with an empty hand. Watch the clay spread farther across the cavity after each press, then collect the shaped unfired brick."
@@ -85,7 +87,15 @@
 		"Hoppers can load clay and remove completed bricks; an empty-handed Create Deployer can automate each press."
 	]
 	quest.7100000000000157.title: "Storage from Clay"
-	quest.7100000000000157.quest_desc: ["Fire a large clay vessel into a storage pot. It holds only one kind of supply, but keeps a young settlement organized before wooden chests become practical."]
+	quest.7100000000000157.quest_desc: ["Fire a large clay vessel into a storage pot. It remains a useful primitive cache, but the woven basket is the practical general-purpose Stone Age container."]
+	quest.7100000000000260.title: "A Precise Edge"
+	quest.7100000000000260.quest_desc: ["Bind a flint edge to a stick with primitive cordage to shape your first precision knife. It excels at harvesting plant fibres cleanly, scraping soaked hides, and carefully shearing fleece from sheep."]
+	quest.7100000000000261.title: "A Place for Everything"
+	quest.7100000000000261.quest_desc: ["Weave Twine around a light stick frame to make a nine-slot Basket. It accepts hoppers, pipes, funnels, and chutes, so it remains valuable later as a compact workshop buffer."]
+	quest.7100000000000262.title: "Keep the Harvest"
+	quest.7100000000000262.quest_desc: ["Build a Primitive Drying Frame from sticks and Twine, then preserve meat, fish, or berries. The frame is consumed by a batch as its bindings wear out."]
+	quest.7100000000000263.title: "Grind It Fine"
+	quest.7100000000000263.quest_desc: ["Place the Mortar & Pestle, then right-click it with a material to load it. Use an empty hand to begin grinding; interact again when the process finishes to collect the result. Grind bone into meal, ochre into pigment, and later charcoal into powder."]
 
 	quest.7100000000000102.title: "Refractory Thinking"
 	quest.7100000000000102.quest_desc: ["Combine clay and sand into fire clay, a material that survives temperatures ordinary stonework cannot withstand."]
@@ -98,13 +108,13 @@
 	quest.7100000000000104.title: "The First Copper Batch"
 	quest.7100000000000104.quest_desc: ["Feed raw copper into the foundry and pour sixteen ingots. Your first metal stockpile opens the way to stronger tools and useful vessels."]
 	quest.7100000000000105.title: "Cast, Then Assemble"
-	quest.7100000000000105.quest_desc: ["Use a pickaxe cast to form a metal head, then assemble it with a suitable rod and binding. Your new tool can be repaired and improved as you discover better materials."]
+	quest.7100000000000105.quest_desc: ["Craft Blueprint Paper from four paper and blue dye (or lapis), then arrange three Blueprint Paper and two wooden rods in the shape of a pickaxe on a crafting table to make a Pickaxe Blueprint. Cast or shape a Copper Pickaxe Head, then assemble it with a wooden rod on a crafting table. Your new tool can be repaired and upgraded as you discover better materials."]
 	quest.7100000000000117.title: "Copper Utilities"
 	quest.7100000000000117.quest_desc: ["Craft a bucket and shears. Carrying fluids and gathering wool will make farming, construction and animal care much easier."]
 	quest.7100000000000243.title: "Tannins to Go"
 	quest.7100000000000243.quest_desc: ["Use an empty bucket on an open Barrel holding at least 1000 mB of Tannin Solution. The filled bucket carries tannin between Barrels without placing it in the world."]
 	quest.7100000000000219.title: "Copper-Bound Storage"
-	quest.7100000000000219.quest_desc: ["Strengthen wooden containers with copper fittings. Chests and barrels can finally hold mixed supplies in bulk, replacing the small pottery stores of your first shelter."]
+	quest.7100000000000219.quest_desc: ["Work a copper ingot into Fasteners, then use them to reinforce wooden chests and barrels. Chests and barrels hold bulk supplies while Baskets remain the compact automation buffer."]
 
 	quest.7100000000000118.title: "Search for Tin"
 	quest.7100000000000118.quest_desc: ["Search the Overworld for tin. It is less common than copper, but the two metals can be combined into a far stronger alloy."]
