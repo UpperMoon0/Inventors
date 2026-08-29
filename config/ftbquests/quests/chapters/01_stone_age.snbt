@@ -163,7 +163,6 @@
 		{
 			dependencies: ["7100000000000111"]
 			id: "7100000000000150"
-			min_required_tasks: 1
 			tasks: [
 				{
 					count: 3L
@@ -241,7 +240,6 @@
 		{
 			dependencies: ["7100000000000251"]
 			id: "7100000000000151"
-			min_required_tasks: 1
 			tasks: [
 				{
 					id: "7100000000010151"
@@ -429,7 +427,6 @@
 		{
 			dependencies: ["7100000000000245"]
 			id: "7100000000000248"
-			min_required_tasks: 1
 			tasks: [
 				{
 					id: "7100000000010252"
@@ -564,24 +561,87 @@
 				"7100000000000264"
 			]
 			id: "7100000000000155"
-			min_required_tasks: 1
 			tasks: [
-				{ id: "7100000000010156", item: { count: 1, id: "minecraft:white_bed" }, type: "item" }
-				{ id: "7100000000010381", item: { count: 1, id: "minecraft:orange_bed" }, type: "item" }
-				{ id: "7100000000010382", item: { count: 1, id: "minecraft:magenta_bed" }, type: "item" }
-				{ id: "7100000000010383", item: { count: 1, id: "minecraft:light_blue_bed" }, type: "item" }
-				{ id: "7100000000010384", item: { count: 1, id: "minecraft:yellow_bed" }, type: "item" }
-				{ id: "7100000000010385", item: { count: 1, id: "minecraft:lime_bed" }, type: "item" }
-				{ id: "7100000000010386", item: { count: 1, id: "minecraft:pink_bed" }, type: "item" }
-				{ id: "7100000000010387", item: { count: 1, id: "minecraft:gray_bed" }, type: "item" }
-				{ id: "7100000000010388", item: { count: 1, id: "minecraft:light_gray_bed" }, type: "item" }
-				{ id: "7100000000010389", item: { count: 1, id: "minecraft:cyan_bed" }, type: "item" }
-				{ id: "7100000000010390", item: { count: 1, id: "minecraft:purple_bed" }, type: "item" }
-				{ id: "7100000000010391", item: { count: 1, id: "minecraft:blue_bed" }, type: "item" }
-				{ id: "7100000000010392", item: { count: 1, id: "minecraft:brown_bed" }, type: "item" }
-				{ id: "7100000000010393", item: { count: 1, id: "minecraft:green_bed" }, type: "item" }
-				{ id: "7100000000010394", item: { count: 1, id: "minecraft:red_bed" }, type: "item" }
-				{ id: "7100000000010395", item: { count: 1, id: "minecraft:black_bed" }, type: "item" }
+				{
+					id: "7100000000010156"
+					item: { count: 1, id: "minecraft:white_bed" }
+					type: "item"
+				}
+				{
+					id: "7100000000010381"
+					item: { count: 1, id: "minecraft:orange_bed" }
+					type: "item"
+				}
+				{
+					id: "7100000000010382"
+					item: { count: 1, id: "minecraft:magenta_bed" }
+					type: "item"
+				}
+				{
+					id: "7100000000010383"
+					item: { count: 1, id: "minecraft:light_blue_bed" }
+					type: "item"
+				}
+				{
+					id: "7100000000010384"
+					item: { count: 1, id: "minecraft:yellow_bed" }
+					type: "item"
+				}
+				{
+					id: "7100000000010385"
+					item: { count: 1, id: "minecraft:lime_bed" }
+					type: "item"
+				}
+				{
+					id: "7100000000010386"
+					item: { count: 1, id: "minecraft:pink_bed" }
+					type: "item"
+				}
+				{
+					id: "7100000000010387"
+					item: { count: 1, id: "minecraft:gray_bed" }
+					type: "item"
+				}
+				{
+					id: "7100000000010388"
+					item: { count: 1, id: "minecraft:light_gray_bed" }
+					type: "item"
+				}
+				{
+					id: "7100000000010389"
+					item: { count: 1, id: "minecraft:cyan_bed" }
+					type: "item"
+				}
+				{
+					id: "7100000000010390"
+					item: { count: 1, id: "minecraft:purple_bed" }
+					type: "item"
+				}
+				{
+					id: "7100000000010391"
+					item: { count: 1, id: "minecraft:blue_bed" }
+					type: "item"
+				}
+				{
+					id: "7100000000010392"
+					item: { count: 1, id: "minecraft:brown_bed" }
+					type: "item"
+				}
+				{
+					id: "7100000000010393"
+					item: { count: 1, id: "minecraft:green_bed" }
+					type: "item"
+				}
+				{
+					id: "7100000000010394"
+					item: { count: 1, id: "minecraft:red_bed" }
+					type: "item"
+				}
+				{
+					id: "7100000000010395"
+					item: { count: 1, id: "minecraft:black_bed" }
+					type: "item"
+				}
 			]
 			x: 20.0d
 			y: -5.0d
