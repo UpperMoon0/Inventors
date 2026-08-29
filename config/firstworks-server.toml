@@ -1,0 +1,71 @@
+#Replace leather from entity types in #firstworks:leather_drops_as_raw_hide with Firstworks raw hide,
+#and rewrite vanilla's 4-rabbit-hide crafting recipe to yield raw hide instead of finished leather.
+##firstworks:no_raw_hide_drops takes priority, allowing datapacks to exclude entries without replacing the default tag.
+#Disable this when a modpack manages hide acquisition entirely through loot tables.
+replaceAnimalLeatherDrops = true
+#Add 1-2 bones to entities in #firstworks:drops_bones.
+##firstworks:no_bone_drops takes priority, allowing datapacks to exclude entries without replacing the default tag.
+#The default list contains vertebrate animals and deliberately excludes squid, bees, allays, and undead horses.
+addAnimalBoneDrops = true
+#Require fibre bindings in vanilla wooden and stone tools, and rope in vanilla metal and diamond tools.
+#Disable this to retain vanilla tool recipes while keeping the Firstworks cordage materials available.
+#Changing this option requires a datapack reload or game restart.
+bindVanillaToolRecipes = true
+#Require #firstworks:primitive_bindings for vanilla wooden and stone tools.
+bindPrimitiveVanillaTools = true
+#Require #firstworks:strong_bindings for vanilla iron, gold, and diamond tools.
+bindMetalVanillaTools = true
+#Replace sheep wool drops with colored fleece, remove String-to-Wool, and require Cloth and Clean Wool for beds.
+#Disable this to restore vanilla sheep, wool, and bed progression while keeping Firstworks textile items available.
+#Changing this option requires a datapack reload or game restart.
+enableTextileProgression = true
+#Require configurable-press unfired brick molding, brick firing, barrel mortar, and mortar-bound brick blocks for masonry.
+#Disable this to retain vanilla brick progression while keeping Firstworks masonry items available.
+#Changing this option requires a datapack reload or game restart.
+enableMasonryProgression = true
+#Allow rain to naturally fill open Barrels whose input store holds no fluid or only water.
+#Enabled by default; disable to keep open Barrels dry unless filled manually.
+#Rain does not fill Barrels whose input store already contains a non-water fluid.
+#Existing output fluid is never modified. Cover or enclose a Barrel to keep it dry.
+rainFillsBarrels = true
+#Water (in millibuckets) gathered from rain per precipitation event.
+#Only used when rainFillsBarrels is enabled.
+# Default: 100
+# Range: 1 ~ 4000
+rainFillAmount = 100
+#Ticks required for an earthen charcoal mound to carbonize (default: 6000 ticks / 5 minutes).
+# Default: 6000
+# Range: 20 ~ 72000
+charcoalCarbonizeDuration = 6000
+#Minimum number of connected logs required for a valid charcoal mound.
+# Default: 4
+# Range: 4 ~ 64
+charcoalMinLogs = 4
+#Maximum number of connected logs permitted in a single charcoal mound.
+# Default: 64
+# Range: 4 ~ 256
+charcoalMaxLogs = 64
+#Ticks allowed to seal the opening after ignition before the charge fails (default: 1200 ticks / 60 seconds).
+# Default: 1200
+# Range: 20 ~ 6000
+charcoalSealWindow = 1200
+#Charcoal yield multiplier when the mound carbonizes without being breached.
+# Default: 0.75
+# Range: 0.05 ~ 1.0
+charcoalNormalYield = 0.75
+#Charcoal yield multiplier if the mound is opened before carbonization completes.
+# Default: 0.25
+# Range: 0.0 ~ 1.0
+charcoalBreachedYield = 0.25
+#Chance (0.0 to 1.0) to gather Plant Fibre with an empty hand or non-knife tool.
+#Default: 0.30
+#Range: 0.0 ~ 1.0
+# Default: 0.3
+# Range: 0.0 ~ 1.0
+plantFibreHandChance = 0.3
+#Chance (0.0 to 1.0) to gather Raw Ochre from ochre sources without a primitive knife.
+#Default: 0.20
+#Range: 0.0 ~ 1.0
+# Default: 0.2
+# Range: 0.0 ~ 1.0
+rawOchreGatherChance = 0.2

@@ -138,77 +138,77 @@
 		# Default: true
 		entity_heads: true
 		entity_icon: {
-			"minecraft:bee": true
-			"aquaculture:synodontis": false
-			"minecraft:glow_squid": true
-			"aquaculture:catfish": false
-			"minecraft:witch": true
-			"minecraft:creeper": true
-			"minecraft:panda": true
-			"aquaculture:muskellunge": false
-			"minecraft:parrot": true
-			"minecraft:cod": false
-			"minecraft:fox": true
-			"minecraft:piglin": true
-			"minecraft:husk": true
-			"minecraft:rabbit": true
-			"aquaculture:brown_trout": false
-			"minecraft:cow": true
-			"minecraft:strider": true
-			"minecraft:donkey": true
-			"aquaculture:bayad": false
-			"minecraft:polar_bear": true
-			"naturalist:bear": true
-			"minecraft:magma_cube": true
+			"minecraft:tropical_fish": false
 			"minecraft:wither_skeleton": true
-			"aquaculture:capitaine": false
-			"minecraft:skeleton_horse": true
-			"aquaculture:tuna": false
-			"minecraft:piglin_brute": true
-			"aquaculture:smallmouth_bass": false
-			"minecraft:slime": true
-			"minecraft:iron_golem": true
+			"naturalist:butterfly": true
+			"minecraft:drowned": true
+			"minecraft:cod": false
+			"minecraft:villager": true
+			"aquaculture:atlantic_herring": false
 			"naturalist:firefly": true
 			"aquaculture:rainbow_trout": false
-			"minecraft:drowned": true
-			"minecraft:ghast": true
-			"minecraft:horse": true
-			"minecraft:villager": true
-			"aquaculture:red_shrooma": false
-			"minecraft:sheep": true
-			"aquaculture:bluegill": false
-			"minecraft:armadillo": true
-			"aquaculture:atlantic_halibut": false
-			"minecraft:salmon": false
-			"minecraft:pig": true
-			"aquaculture:gar": false
-			"aquaculture:red_grouper": false
-			"minecraft:tropical_fish": false
-			"minecraft:cat": true
-			"minecraft:spider": true
-			"aquaculture:jellyfish": false
-			"minecraft:wolf": true
-			"minecraft:skeleton": true
-			"minecraft:zombie_villager": true
-			"minecraft:hoglin": true
-			"naturalist:butterfly": true
-			"minecraft:zombie": true
-			"minecraft:cave_spider": true
-			"minecraft:bat": true
-			"aquaculture:atlantic_herring": false
-			"minecraft:dolphin": true
+			"minecraft:piglin_brute": true
 			"minecraft:chicken": true
-			"aquaculture:carp": false
 			"aquaculture:boulti": false
-			"minecraft:pillager": true
-			"aquaculture:minnow": false
+			"minecraft:slime": true
+			"minecraft:pig": true
+			"minecraft:piglin": true
+			"aquaculture:bluegill": false
+			"minecraft:panda": true
+			"aquaculture:jellyfish": false
+			"aquaculture:red_shrooma": false
+			"minecraft:bat": true
+			"minecraft:polar_bear": true
 			"minecraft:zombified_piglin": true
 			"minecraft:squid": true
-			"regions_unexplored:ashen": true
-			"minecraft:turtle": true
-			"minecraft:axolotl": true
-			"minecraft:enderman": true
+			"aquaculture:tuna": false
+			"minecraft:spider": true
 			"aquaculture:perch": false
+			"minecraft:dolphin": true
+			"regions_unexplored:ashen": true
+			"minecraft:fox": true
+			"minecraft:axolotl": true
+			"minecraft:bee": true
+			"aquaculture:muskellunge": false
+			"minecraft:iron_golem": true
+			"aquaculture:carp": false
+			"aquaculture:catfish": false
+			"minecraft:creeper": true
+			"minecraft:strider": true
+			"minecraft:zombie": true
+			"minecraft:pillager": true
+			"minecraft:rabbit": true
+			"minecraft:skeleton_horse": true
+			"aquaculture:capitaine": false
+			"minecraft:turtle": true
+			"minecraft:donkey": true
+			"minecraft:salmon": false
+			"minecraft:glow_squid": true
+			"minecraft:cat": true
+			"minecraft:cow": true
+			"naturalist:bear": true
+			"minecraft:armadillo": true
+			"minecraft:sheep": true
+			"minecraft:ghast": true
+			"minecraft:parrot": true
+			"minecraft:skeleton": true
+			"minecraft:horse": true
+			"aquaculture:smallmouth_bass": false
+			"aquaculture:brown_trout": false
+			"minecraft:wolf": true
+			"aquaculture:bayad": false
+			"minecraft:magma_cube": true
+			"minecraft:witch": true
+			"minecraft:hoglin": true
+			"aquaculture:synodontis": false
+			"minecraft:cave_spider": true
+			"aquaculture:gar": false
+			"minecraft:zombie_villager": true
+			"aquaculture:minnow": false
+			"minecraft:husk": true
+			"minecraft:enderman": true
+			"aquaculture:atlantic_halibut": false
+			"aquaculture:red_grouper": false
 		}
 		
 		# Minimap font scaling (values not a multiple of 0.5 may look bad)
