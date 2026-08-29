@@ -234,5 +234,5 @@
 	quest.7100000000000206.title: "The Refined Drivetrain"
 	quest.7100000000000206.quest_desc: ["Combine titanium, steel and Precision Mechanisms with your Basic drivetrain. Refined components reach 512 RPM and carry 8192 SU, providing the power needed for aerospace engineering."]
 	quest.7100000000000266.title: "Bulk Milling"
-	quest.7100000000000266.quest_desc: ["Combine stone, wooden slabs, and Copper Fasteners to craft a Quern. Insert a complete batch of grain or minerals, then crank the upper runner stone with an empty hand (+5 work per crank). In later stages, connect animal power or mechanical drive to automate continuous milling."]
+	quest.7100000000000266.quest_desc: ["Combine stone, wooden slabs, and Copper Fasteners to craft a Quern. Insert a complete batch of grain or minerals, then crank the upper runner stone with an empty hand (+5 work per crank by default, configurable). In later stages, connect animal power or mechanical drive to automate continuous milling."]
 }

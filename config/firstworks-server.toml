@@ -57,6 +57,15 @@ charcoalNormalYield = 0.75
 # Default: 0.25
 # Range: 0.0 ~ 1.0
 charcoalBreachedYield = 0.25
+#Work progress added by each empty-hand Quern crank.
+# Default: 5
+# Range: 1 ~ 100
+quernManualWorkPerCrank = 5
+#Work progress added per tick when an external provider uses setDriven(true).
+#External providers using setDriveRate(int) supply their own rate instead.
+# Default: 1
+# Range: 1 ~ 100
+quernDefaultDrivenWorkPerTick = 1
 #Chance (0.0 to 1.0) to gather Plant Fibre with an empty hand or non-knife tool.
 #Default: 0.30
 #Range: 0.0 ~ 1.0
