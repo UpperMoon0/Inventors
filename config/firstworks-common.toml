@@ -46,7 +46,7 @@ charcoalMaxLogs = 64
 charcoalNormalYield = 0.75
 #Fraction of logs converted to charcoal if the mound is breached or extinguished prematurely.
 # Default: 0.25
-# Range: 0.05 ~ 1.0
+# Range: 0.0 ~ 1.0
 charcoalBreachedYield = 0.25
 #Chance (0.0 to 1.0) to gather Plant Fibre with an empty hand or non-knife tool.
 # Default: 0.30

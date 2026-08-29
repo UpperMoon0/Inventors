@@ -48,9 +48,11 @@
 	quest.7100000000000244.quest_desc: ["Ret four Plant Fibre in 250 mB of water for one minute. Retting loosens the fibres so they can be spun evenly instead of twisted into wasteful emergency cordage."]
 	quest.7100000000000245.title: "Spin the Thread"
 	quest.7100000000000245.quest_desc: ["Craft a durable Hand Spindle from a stick, flint, and either Crude Cordage or Rope. Hold it in your main hand with at least two Retted Fibre in your offhand, then hold use until the batch becomes Twine. Releasing early cancels safely; each completed batch wears the spindle slightly."]
-	quest.7100000000000248.title: "Work the Loom"
-	quest.7100000000000248.quest_desc: [
-		"Build a Firstworks Loom and load four Twine or String directly onto its frame."
+	quest.7100000000000248.title: "Frame the Loom"
+	quest.7100000000000248.quest_desc: ["Build a Firstworks Loom from planks and slabs. It forms the sturdy wooden frame needed to weave spun thread into usable textile cloth."]
+	quest.7100000000000264.title: "Work the Loom"
+	quest.7100000000000264.quest_desc: [
+		"Load four Twine or String directly onto the Loom's frame."
 		""
 		"Use an empty hand sixteen times to work the shuttle as the weave grows, then collect the finished Cloth."
 		""
