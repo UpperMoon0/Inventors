@@ -2,6 +2,10 @@ name: Release Modpack
 
 on:
   push:
+    branches:
+      - main
+    paths:
+      - 'pack/pack.json'
     tags:
       - 'v*'
   workflow_dispatch:
@@ -35,6 +39,28 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure Git tag exists
+        id: ensure_tag
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $pack = Get-Content pack/pack.json -Raw | ConvertFrom-Json
+          $version = $pack.version
+          $tag = "v$version"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          $exists = git ls-remote --tags origin "$tag"
+          if ($exists) {
+            Write-Host "Tag $tag already exists."
+          } else {
+            Write-Host "Creating tag $tag..."
+            git tag -a "$tag" -m "Inventors $version"
+            git push origin "$tag"
+          }
 
       - name: Resolve version
         id: version
