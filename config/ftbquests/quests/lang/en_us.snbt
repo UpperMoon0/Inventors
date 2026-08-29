@@ -89,13 +89,13 @@
 	quest.7100000000000157.title: "Storage from Clay"
 	quest.7100000000000157.quest_desc: ["Fire a large clay vessel into a storage pot. It remains a useful primitive cache, but the woven basket is the practical general-purpose Stone Age container."]
 	quest.7100000000000260.title: "A Precise Edge"
-	quest.7100000000000260.quest_desc: ["Bind a flint edge to a stick with primitive cordage to shape your first precision knife. It excels at harvesting plant fibres cleanly, scraping soaked hides, and carefully shearing fleece from sheep."]
+	quest.7100000000000260.quest_desc: ["Craft either a Bone Knife or Flint Knife for your first precision cutting tool. Either knife harvests plant fibres cleanly, scrapes soaked hides, and carefully shears fleece from sheep."]
 	quest.7100000000000261.title: "A Place for Everything"
 	quest.7100000000000261.quest_desc: ["Weave Twine around a light stick frame to make a nine-slot Basket. It accepts hoppers, pipes, funnels, and chutes, so it remains valuable later as a compact workshop buffer."]
 	quest.7100000000000262.title: "Keep the Harvest"
 	quest.7100000000000262.quest_desc: ["Build a Primitive Drying Frame from sticks and Twine, then preserve meat, fish, or berries. The frame is consumed by a batch as its bindings wear out."]
 	quest.7100000000000263.title: "Grind It Fine"
-	quest.7100000000000263.quest_desc: ["Place the Mortar & Pestle, then right-click it with a material to load it. Use an empty hand to begin grinding; interact again when the process finishes to collect the result. Grind bone into meal, ochre into pigment, and later charcoal into powder."]
+	quest.7100000000000263.quest_desc: ["Place the Mortar and Pestle, then right-click it with a material to load it. Use an empty hand to begin grinding; interact again when the process finishes to collect the result. Grind bone into meal, ochre into pigment, and later charcoal into powder."]
 
 	quest.7100000000000102.title: "Refractory Thinking"
 	quest.7100000000000102.quest_desc: ["Combine clay and sand into fire clay, a material that survives temperatures ordinary stonework cannot withstand."]
@@ -234,5 +234,5 @@
 	quest.7100000000000206.title: "The Refined Drivetrain"
 	quest.7100000000000206.quest_desc: ["Combine titanium, steel and Precision Mechanisms with your Basic drivetrain. Refined components reach 512 RPM and carry 8192 SU, providing the power needed for aerospace engineering."]
 	quest.7100000000000266.title: "Bulk Milling"
-	quest.7100000000000266.quest_desc: ["Combine stone, wooden slabs, and Copper Fasteners to craft a Quern. Insert a complete batch of grain or minerals, then crank the upper runner stone with an empty hand (+5 work per crank by default, configurable). In later stages, connect animal power or mechanical drive to automate continuous milling."]
+	quest.7100000000000266.quest_desc: ["Combine stone, wooden slabs, and Copper Fasteners to craft a Quern. Insert a complete batch of grain or minerals, then crank the upper runner stone with an empty hand (+5 work per crank by default, configurable). The Quern remains hand-operated; later, use a Horse Crank with a Create Millstone to unlock animal-powered bulk milling."]
 }

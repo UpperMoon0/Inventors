@@ -52,11 +52,20 @@
 		{
 			dependencies: ["7100000000000111"]
 			id: "7100000000000260"
-			tasks: [{
-				id: "7100000000010350"
-				item: { count: 1, id: "firstworks:flint_knife" }
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "7100000000010350"
+					item: { count: 1, id: "firstworks:flint_knife" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "7100000000010357"
+					item: { count: 1, id: "firstworks:bone_knife" }
+					optional_task: true
+					type: "item"
+				}
+			]
 			x: 5.0d
 			y: -5.0d
 		}
