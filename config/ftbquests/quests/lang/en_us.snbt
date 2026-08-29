@@ -59,7 +59,7 @@
 		"Hoppers can load thread and remove output, while an empty-handed Create Deployer can automate the strokes."
 	]
 	quest.7100000000000249.title: "Rope for Harder Work"
-	quest.7100000000000249.quest_desc: ["Combine three Twine into proper Rope. Crude Cordage and Rope are both bindings, but only Rope is strong enough for metal and diamond tool assembly."]
+	quest.7100000000000249.quest_desc: ["Combine three Twine into proper Rope. Proper Rope is strong enough for heavier construction and marks the final binding technology needed before metalworking."]
 	quest.7100000000000246.title: "Fleece from the Flock"
 	quest.7100000000000246.quest_desc: ["Use a Bone or Flint Knife on a shearable sheep to gather exactly one Raw Fleece renewably. This costs eight durability and the sheep must regrow its coat. Hunting yields one or two fleece immediately, while proper Shears later harvest three to five without killing the flock."]
 	quest.7100000000000247.title: "Wash the Wool"
