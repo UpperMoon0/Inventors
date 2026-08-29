@@ -23,7 +23,7 @@ on:
         type: boolean
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   package:
@@ -36,10 +36,14 @@ jobs:
         id: version
         shell: pwsh
         run: |
-          $configured = (Get-Content pack/pack.json -Raw | ConvertFrom-Json).version
+          $pack = Get-Content pack/pack.json -Raw | ConvertFrom-Json
+          $configured = $pack.version
           $requested = '${{ inputs.version }}'
           $version = if ([string]::IsNullOrWhiteSpace($requested)) { $configured } else { $requested }
+          $requestedReleaseType = '${{ inputs.release_type }}'
+          $releaseType = if ([string]::IsNullOrWhiteSpace($requestedReleaseType)) { $pack.releaseType } else { $requestedReleaseType }
           "value=$version" >> $env:GITHUB_OUTPUT
+          "release_type=$releaseType" >> $env:GITHUB_OUTPUT
 
       - name: Build client and server archives
         shell: pwsh
@@ -52,9 +56,23 @@ jobs:
           path: dist/*.zip
           if-no-files-found: error
 
+      - name: Publish GitHub Release
+        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.publish)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.value }}
+          name: Inventors v${{ steps.version.outputs.value }}
+          body_path: changelog/${{ steps.version.outputs.value }}.md
+          fail_on_unmatched_files: true
+          files: dist/*.zip
+          draft: false
+          prerelease: ${{ steps.version.outputs.release_type != 'release' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Publish to CurseForge
-        if: github.event_name == 'workflow_dispatch' && inputs.publish
+        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.publish)
         shell: pwsh
         env:
           CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
-        run: ./scripts/publish_curseforge.ps1 -Version '${{ steps.version.outputs.value }}' -ReleaseType '${{ inputs.release_type }}' -SkipBuild
+        run: ./scripts/publish_curseforge.ps1 -Version '${{ steps.version.outputs.value }}' -ReleaseType '${{ steps.version.outputs.release_type }}' -SkipBuild
