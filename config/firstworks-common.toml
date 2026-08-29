@@ -1,4 +1,5 @@
-#Replace leather from entity types in #firstworks:leather_drops_as_raw_hide with Firstworks raw hide.
+#Replace leather from entity types in #firstworks:leather_drops_as_raw_hide with Firstworks raw hide,
+#and rewrite vanilla's 4-rabbit-hide crafting recipe to yield raw hide instead of finished leather.
 ##firstworks:no_raw_hide_drops takes priority, allowing datapacks to exclude entries without replacing the default tag.
 #Disable this when a modpack manages hide acquisition entirely through loot tables.
 replaceAnimalLeatherDrops = true
@@ -32,7 +33,7 @@ rainFillAmount = 100
 ##firstworks:no_bone_drops takes priority, allowing datapacks to exclude entries without replacing the default tag.
 #The default list contains vertebrate animals and deliberately excludes squid, bees, allays, and undead horses.
 addAnimalBoneDrops = true
-#Duration of charcoal mound carbonization in ticks (6000 ticks = 5 minutes).
+#Ticks required for an earthen charcoal mound to carbonize (default: 6000 ticks / 5 minutes).
 # Default: 6000
 # Range: 20 ~ 72000
 charcoalCarbonizeDuration = 6000
@@ -40,7 +41,7 @@ charcoalCarbonizeDuration = 6000
 # Default: 4
 # Range: 4 ~ 64
 charcoalMinLogs = 4
-#Maximum number of connected logs supported in a single charcoal mound charge.
+#Maximum number of connected logs permitted in a single charcoal mound.
 # Default: 64
 # Range: 4 ~ 256
 charcoalMaxLogs = 64
@@ -48,21 +49,23 @@ charcoalMaxLogs = 64
 # Default: 1200
 # Range: 20 ~ 6000
 charcoalSealWindow = 1200
-#Fraction of logs converted to charcoal upon undisturbed carbonization completion.
+#Charcoal yield multiplier when the mound carbonizes without being breached.
 # Default: 0.75
 # Range: 0.05 ~ 1.0
 charcoalNormalYield = 0.75
-#Fraction of logs converted to charcoal if the mound is breached or extinguished prematurely.
+#Charcoal yield multiplier if the mound is opened before carbonization completes.
 # Default: 0.25
 # Range: 0.0 ~ 1.0
 charcoalBreachedYield = 0.25
 #Chance (0.0 to 1.0) to gather Plant Fibre with an empty hand or non-knife tool.
-# Default: 0.30
+#Default: 0.30
+#Range: 0.0 ~ 1.0
+# Default: 0.3
 # Range: 0.0 ~ 1.0
 plantFibreHandChance = 0.3
 #Chance (0.0 to 1.0) to gather Raw Ochre from ochre sources without a primitive knife.
-# Default: 0.20
+#Default: 0.20
+#Range: 0.0 ~ 1.0
+# Default: 0.2
 # Range: 0.0 ~ 1.0
 rawOchreGatherChance = 0.2
-
-
