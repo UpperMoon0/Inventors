@@ -60,6 +60,7 @@
     "entity_variant": true
   },
   "firstworks": {
+    "quern_progress": true,
     "mortar_progress": true,
     "charcoal_pile": true,
     "barrel_progress": true,

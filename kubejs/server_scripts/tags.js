@@ -1,6 +1,7 @@
 // Tag modifications - add items to tags
 
 ServerEvents.tags('item', event => {
+    event.add('c:flours', 'firstworks:flour')
     // Firstworks owns the hide chain; vanilla leather is the finished product.
     event.add('c:leathers', 'minecraft:leather')
     event.add('firstworks:raw_hides', 'naturalist:hide')

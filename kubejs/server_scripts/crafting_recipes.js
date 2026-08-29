@@ -2,6 +2,10 @@
 // For shaped/shapeless crafting recipes (not Create mod machines)
 
 ServerEvents.recipes(event => {
+    event.shapeless('farmersdelight:wheat_dough', [
+        '3x #c:flours',
+        '#c:water_buckets'
+    ]).id('kubejs:primitive/quern_flour_dough')
     // Firstworks owns bed progression: Cloth, matching Clean Wool, and planks.
 
     // Remove every competing recipe first; these blocks are progression gates.
