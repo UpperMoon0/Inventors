@@ -63,6 +63,11 @@ command_history.txt
 mods/*
 !mods/world-engine*.jar
 !mods/immersive_portals*.jar
+!mods/firstworks*.jar
+
+# Reproducible modpack build output
+dist/
+.pack-build/
 
 # Runtime cache
 /data/

@@ -1,0 +1,60 @@
+name: Build and Publish Modpack
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version override (defaults to pack/pack.json)
+        required: false
+        type: string
+      release_type:
+        description: CurseForge release channel
+        required: true
+        default: beta
+        type: choice
+        options: [alpha, beta, release]
+      publish:
+        description: Publish client and server files to CurseForge
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve version
+        id: version
+        shell: pwsh
+        run: |
+          $configured = (Get-Content pack/pack.json -Raw | ConvertFrom-Json).version
+          $requested = '${{ inputs.version }}'
+          $version = if ([string]::IsNullOrWhiteSpace($requested)) { $configured } else { $requested }
+          "value=$version" >> $env:GITHUB_OUTPUT
+
+      - name: Build client and server archives
+        shell: pwsh
+        run: ./scripts/build_modpack.ps1 -Version '${{ steps.version.outputs.value }}'
+
+      - name: Upload workflow artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Inventors-${{ steps.version.outputs.value }}
+          path: dist/*.zip
+          if-no-files-found: error
+
+      - name: Publish to CurseForge
+        if: github.event_name == 'workflow_dispatch' && inputs.publish
+        shell: pwsh
+        env:
+          CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
+        run: ./scripts/publish_curseforge.ps1 -Version '${{ steps.version.outputs.value }}' -ReleaseType '${{ inputs.release_type }}' -SkipBuild
