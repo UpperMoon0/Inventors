@@ -7,7 +7,7 @@ ServerEvents.recipes(event => {
     event.remove({ id: 'farmersdelight:wheat_dough_from_water' })
     event.remove({ id: 'farmersdelight:wheat_dough_from_eggs' })
 
-    event.shapeless('farmersdelight:wheat_dough', [
+    event.shapeless('firstworks:dough', [
         '3x #c:flours/wheat',
         '#c:buckets/water'
     ]).id('kubejs:primitive/quern_flour_dough')
