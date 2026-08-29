@@ -51,27 +51,60 @@ if ([string]::IsNullOrWhiteSpace($token)) {
     throw 'CURSEFORGE_API_TOKEN is required for publishing.'
 }
 $headers = @{ 'X-Api-Token' = $token }
-$mainResponse = Invoke-RestMethod -Uri $endpoint -Method Post -Headers $headers -Form @{
-    metadata = ($mainMetadata | ConvertTo-Json -Compress -Depth 5)
-    file = Get-Item -LiteralPath $clientArchive
+
+function Get-UploadErrorBody($ErrorRecord) {
+    if ($ErrorRecord.ErrorDetails -and $ErrorRecord.ErrorDetails.Message) {
+        return [string]$ErrorRecord.ErrorDetails.Message
+    }
+    $response = $ErrorRecord.Exception.Response
+    if (-not $response) { return [string]$ErrorRecord.Exception.Message }
+    try {
+        $stream = $response.GetResponseStream()
+        if (-not $stream) { return [string]$ErrorRecord.Exception.Message }
+        $reader = New-Object System.IO.StreamReader($stream)
+        try { return $reader.ReadToEnd() } finally { $reader.Dispose() }
+    } catch {
+        return [string]$ErrorRecord.Exception.Message
+    }
 }
-if (-not $mainResponse.id) {
-    throw 'CurseForge did not return an ID for the client file.'
+
+function Publish-File($Metadata, $Archive) {
+    try {
+        $response = Invoke-RestMethod -Uri $endpoint -Method Post -Headers $headers -Form @{
+            metadata = ($Metadata | ConvertTo-Json -Compress -Depth 5)
+            file = Get-Item -LiteralPath $Archive
+        }
+        if (-not $response.id) {
+            throw "CurseForge did not return an ID for $Archive."
+        }
+        return [string]$response.id
+    } catch {
+        $body = Get-UploadErrorBody $_
+        if ($body -match 'already|duplicate') {
+            Write-Host "CurseForge already has $(Split-Path -Leaf $Archive); treating this rerun as successful."
+            return $null
+        }
+        throw "CurseForge upload failed for ${Archive}: $body"
+    }
+}
+
+$clientFileId = Publish-File $mainMetadata $clientArchive
+if ($null -eq $clientFileId) {
+    Write-Host 'Client file already published; assuming its server child file exists too and skipping upload.'
+    exit 0
 }
 
 $serverMetadata = [ordered]@{
     changelog = $changelog
     changelogType = 'markdown'
     displayName = "$($pack.name) $Version Server Pack"
-    parentFileID = [long]$mainResponse.id
+    parentFileID = [long]$clientFileId
     releaseType = $ReleaseType
 }
-$serverResponse = Invoke-RestMethod -Uri $endpoint -Method Post -Headers $headers -Form @{
-    metadata = ($serverMetadata | ConvertTo-Json -Compress -Depth 5)
-    file = Get-Item -LiteralPath $serverArchive
-}
-if (-not $serverResponse.id) {
-    throw 'CurseForge did not return an ID for the server file.'
-}
+$serverFileId = Publish-File $serverMetadata $serverArchive
 
-Write-Host "Published client file ID $($mainResponse.id) and server child file ID $($serverResponse.id)."
+if ($null -eq $serverFileId) {
+    Write-Host "Published client file ID $clientFileId; server child file already exists."
+} else {
+    Write-Host "Published client file ID $clientFileId and server child file ID $serverFileId."
+}

@@ -1,15 +1,13 @@
 {
   "name": "Inventors",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "UpperMoon0",
   "curseForgeProjectId": 1480135,
   "minecraftVersion": "1.21.1",
   "neoForgeVersion": "21.1.247",
   "javaVersion": 21,
   "releaseType": "beta",
-  "embeddedProjectIds": [
-    1635133
-  ],
+  "embeddedProjectIds": [],
   "clientOnlyProjectIds": [
     248787,
     1637623,

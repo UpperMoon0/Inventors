@@ -163,7 +163,6 @@
 		{
 			dependencies: ["7100000000000111"]
 			id: "7100000000000150"
-			min_required_tasks: 1
 			tasks: [
 				{
 					count: 3L
@@ -241,7 +240,6 @@
 		{
 			dependencies: ["7100000000000251"]
 			id: "7100000000000151"
-			min_required_tasks: 1
 			tasks: [
 				{
 					id: "7100000000010151"
@@ -429,7 +427,6 @@
 		{
 			dependencies: ["7100000000000245"]
 			id: "7100000000000248"
-			min_required_tasks: 1
 			tasks: [
 				{
 					id: "7100000000010252"
@@ -564,7 +561,6 @@
 				"7100000000000264"
 			]
 			id: "7100000000000155"
-			min_required_tasks: 1
 			tasks: [
 				{
 					id: "7100000000010156"

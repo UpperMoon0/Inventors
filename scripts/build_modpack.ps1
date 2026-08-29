@@ -6,6 +6,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+$ProgressPreference = 'SilentlyContinue'
 Set-StrictMode -Version Latest
 
 $repoRoot = Split-Path -Parent $PSScriptRoot

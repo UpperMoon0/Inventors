@@ -61,9 +61,7 @@ command_history.txt
 
 # Mod JARs (third-party launcher-managed mods ignored, custom in-house mods tracked)
 mods/*
-!mods/world-engine*.jar
 !mods/immersive_portals*.jar
-!mods/firstworks*.jar
 
 # Reproducible modpack build output
 dist/
@@ -87,4 +85,3 @@ ponders_watched.json
 config/spark/activity.json
 thread_dump*.txt
 .pg-native/
-
