@@ -24,4 +24,4 @@ $env:CURSEFORGE_API_TOKEN = "..."
 ./scripts/publish_curseforge.ps1 -ReleaseType beta
 ```
 
-GitHub Actions uses the repository secret with the same name. Pull requests build and verify both archives without publishing. Merging to `main` automatically creates the matching GitHub Release, uploads both ZIPs, publishes the client pack to CurseForge, and attaches the server pack to that file. The workflow's manual `publish` input can perform the same release deliberately when needed.
+GitHub Actions uses the repository secret with the same name. Pull requests and pushes to `main` build and verify both archives without publishing. Publishing to GitHub Releases and CurseForge requires triggering the workflow manually via `workflow_dispatch` with `publish: true`.
