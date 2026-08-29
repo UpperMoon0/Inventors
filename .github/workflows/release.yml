@@ -1,9 +1,9 @@
-name: Build and Publish Modpack
+name: Release Modpack
 
 on:
-  pull_request:
   push:
-    branches: [main]
+    tags:
+      - 'v*'
   workflow_dispatch:
     inputs:
       version:
@@ -19,18 +19,22 @@ on:
       publish:
         description: Publish client and server files to CurseForge
         required: true
-        default: false
+        default: true
         type: boolean
+
+concurrency:
+  group: release-modpack
+  cancel-in-progress: false
 
 permissions:
   contents: write
 
 jobs:
-  package:
+  release:
     runs-on: windows-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
 
       - name: Resolve version
         id: version
@@ -50,14 +54,13 @@ jobs:
         run: ./scripts/build_modpack.ps1 -Version '${{ steps.version.outputs.value }}'
 
       - name: Upload workflow artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v4
         with:
           name: Inventors-${{ steps.version.outputs.value }}
           path: dist/*.zip
           if-no-files-found: error
 
       - name: Publish GitHub Release
-        if: github.event_name == 'workflow_dispatch' && inputs.publish
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.version.outputs.value }}
@@ -71,7 +74,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to CurseForge
-        if: github.event_name == 'workflow_dispatch' && inputs.publish
+        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.publish)
         shell: pwsh
         env:
           CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
