@@ -180,7 +180,7 @@
 				item: { count: 1, id: "firstworks:quern" }
 				type: "item"
 			}]
-			x: 11.0d
+			x: 12.0d
 			y: 4.5d
 		}
 	]
