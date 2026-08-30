@@ -105,54 +105,6 @@ ServerEvents.recipes(event => {
         L: 'minecraft:leather'
     }).id('kubejs:primitive/masonry_furnace')
 
-    // Primitive pottery is shaped by hand and fired over a campfire. The
-    // decorated pot is functional one-stack storage before bound chests.
-    event.shaped('kubejs:unfired_storage_pot', [
-        'C C',
-        'C C',
-        'CCC'
-    ], {
-        C: 'minecraft:clay_ball'
-    }).id('kubejs:primitive/unfired_storage_pot')
-
-    event.campfireCooking('minecraft:decorated_pot', 'kubejs:unfired_storage_pot', 0.1, 800)
-        .id('kubejs:primitive/fire_storage_pot')
-
-    // A frame is consumed after drying a batch, representing worn cordage and
-    // keeping preserved food useful without making it free.
-    event.shaped('kubejs:drying_frame', [
-        'STS',
-        'T T',
-        'STS'
-    ], {
-        S: 'minecraft:stick',
-        T: '#c:strings'
-    }).id('kubejs:primitive/drying_frame')
-
-    event.shapeless(Item.of('kubejs:dried_meat', 4), [
-        'kubejs:drying_frame',
-        '#c:foods/raw_meat',
-        '#c:foods/raw_meat',
-        '#c:foods/raw_meat',
-        '#c:foods/raw_meat'
-    ]).id('kubejs:primitive/dry_meat')
-
-    event.shapeless(Item.of('kubejs:dried_fish', 4), [
-        'kubejs:drying_frame',
-        '#c:foods/raw_fish',
-        '#c:foods/raw_fish',
-        '#c:foods/raw_fish',
-        '#c:foods/raw_fish'
-    ]).id('kubejs:primitive/dry_fish')
-
-    event.shapeless(Item.of('kubejs:dried_berries', 4), [
-        'kubejs:drying_frame',
-        'minecraft:sweet_berries',
-        'minecraft:sweet_berries',
-        'minecraft:sweet_berries',
-        'minecraft:sweet_berries'
-    ]).id('kubejs:primitive/dry_berries')
-
     // Vanilla wood and stone tools bypass the parallel bone/flint tool lines.
     // Keep the items registered for loot and compatibility, but remove recipes.
     const disabledVanillaTools = [

@@ -57,7 +57,9 @@ charcoalNormalYield = 0.75
 # Default: 0.25
 # Range: 0.0 ~ 1.0
 charcoalBreachedYield = 0.25
-#Work progress added by each empty-hand Quern crank.
+#Work progress added per manual empty-hand crank of the Quern.
+#Default: 5
+#Range: 1 ~ 100
 # Default: 5
 # Range: 1 ~ 100
 quernManualWorkPerCrank = 5

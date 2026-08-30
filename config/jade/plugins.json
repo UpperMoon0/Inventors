@@ -85,6 +85,9 @@
   "gravestone": {
     "grave": true
   },
+  "createhorsepower": {
+    "horse_crank_info": true
+  },
   "balm": {
     "jade": true
   }

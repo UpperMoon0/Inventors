@@ -12,10 +12,6 @@ ServerEvents.tags('item', event => {
     // Naturalist's hide is an untanned hide, so it enters the Firstworks
     // tanning chain instead of being smelted straight into finished leather.
     event.add('kubejs:raw_hides', 'naturalist:hide')
-    event.add('kubejs:dried_foods', 'kubejs:dried_meat')
-    event.add('kubejs:dried_foods', 'kubejs:dried_fish')
-    event.add('kubejs:dried_foods', 'kubejs:dried_berries')
-
     // Early wooden structures accept any conventional vanilla or modded plank.
     event.add('kubejs:primitive_planks', '#minecraft:planks')
 
