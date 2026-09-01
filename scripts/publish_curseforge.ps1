@@ -91,7 +91,7 @@ as a repository secret and rerun the release.
     }
 }
 
-function Get-ExistingFileId($DisplayName) {
+function Get-ExistingFileId($DisplayName, $ExpectedParentFileId) {
     $coreHeaders = Get-CoreApiHeaders
     $pageSize = 50
     $index = 0
@@ -114,12 +114,18 @@ function Get-ExistingFileId($DisplayName) {
         }
 
         foreach ($file in @($page.data)) {
-            if (
-                $file.displayName -eq $DisplayName -and
-                $file.id
-            ) {
-                return [string]$file.id
+            if (-not $file.id) { continue }
+            if ($file.displayName -ne $DisplayName) { continue }
+            # For server-child recovery, require the existing file to be
+            # attached to the recovered client file. Prevents a stale or
+            # manually uploaded server pack with the same display name from
+            # being accepted as the recovered child of a different parent.
+            if ($null -ne $ExpectedParentFileId) {
+                if ([int]$file.parentProjectFileId -ne [int]$ExpectedParentFileId) {
+                    continue
+                }
             }
+            return [string]$file.id
         }
 
         if (-not $page.pagination) {
@@ -143,7 +149,7 @@ function Get-ExistingFileId($DisplayName) {
     return $null
 }
 
-function Publish-File($Metadata, $Archive) {
+function Publish-File($Metadata, $Archive, $ExpectedParentFileId) {
     $archiveName = Split-Path -Leaf $Archive
     try {
         $response = Invoke-RestMethod `
@@ -161,7 +167,7 @@ function Publish-File($Metadata, $Archive) {
     } catch {
         $body = Get-UploadErrorBody $_
         if ($body -match 'already|duplicate') {
-            $existing = Get-ExistingFileId $Metadata.displayName
+            $existing = Get-ExistingFileId $Metadata.displayName $ExpectedParentFileId
             if ($existing) {
                 Write-Host (
                     "CurseForge already has $archiveName " +
@@ -178,7 +184,7 @@ function Publish-File($Metadata, $Archive) {
     }
 }
 
-$clientFileId = Publish-File $mainMetadata $clientArchive
+$clientFileId = Publish-File $mainMetadata $clientArchive $null
 if ($null -eq $clientFileId) {
     # Publish-File only returns $null on a catastrophic code path; the duplicate
     # branch above now returns the existing ID instead. Guard anyway so the
@@ -193,7 +199,7 @@ $serverMetadata = [ordered]@{
     parentFileID = [long]$clientFileId
     releaseType = $ReleaseType
 }
-$serverFileId = Publish-File $serverMetadata $serverArchive
+$serverFileId = Publish-File $serverMetadata $serverArchive $clientFileId
 if ($null -eq $serverFileId) {
     Write-Host "Client file id $clientFileId and its server child file are both present on CurseForge."
 } else {
