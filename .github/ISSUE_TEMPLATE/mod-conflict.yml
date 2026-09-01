@@ -1,0 +1,37 @@
+name: Mod conflict
+description: Two or more mods misbehave together (duplicates, broken recipes, crashes only in combination)
+labels: ["bug", "mod-conflict"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Inventors version
+      placeholder: "0.3.2"
+    validations:
+      required: true
+  - type: textarea
+    id: mods
+    attributes:
+      label: Mods involved
+      description: Exact mod names and versions from the mods list (or the mods folder file names).
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What goes wrong?
+      description: What happens, and what should happen instead.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Logs
+      description: Link the relevant section of `logs/debug.log` or a crash report if any.
+  - type: checkboxes
+    id: verified
+    attributes:
+      label: Verification
+      options:
+        - label: This happens with the unmodified pack (no mods added or removed by me)
+          required: false

@@ -20,16 +20,10 @@ if ([string]::IsNullOrWhiteSpace($ChangelogFile)) {
 
 $clientArchive = Join-Path $repoRoot "dist/$($pack.name)-$Version.zip"
 $serverArchive = Join-Path $repoRoot "dist/$($pack.name)-$Version-server.zip"
-if (-not $SkipBuild) {
-    & (Join-Path $PSScriptRoot 'build_modpack.ps1') -Version $Version
-}
-foreach ($archive in @($clientArchive, $serverArchive)) {
-    if (-not (Test-Path -LiteralPath $archive -PathType Leaf)) {
-        throw "Missing release archive: $archive"
-    }
-}
-
-$changelog = Get-Content -LiteralPath $ChangelogFile -Raw
+# [string] cast and -Encoding utf8 matter: on Windows PowerShell 5.1 the raw string keeps
+# PSObject note properties that ConvertTo-Json serializes as garbage, and ANSI decoding
+# would mangle non-ASCII characters in the changelog.
+$changelog = [string](Get-Content -LiteralPath $ChangelogFile -Raw -Encoding utf8)
 $endpoint = "https://minecraft.curseforge.com/api/projects/$($pack.curseForgeProjectId)/upload-file"
 $mainMetadata = [ordered]@{
     changelog = $changelog
@@ -46,11 +40,24 @@ if ($DryRun) {
     exit 0
 }
 
-$token = [Environment]::GetEnvironmentVariable('CURSEFORGE_API_TOKEN')
-if ([string]::IsNullOrWhiteSpace($token)) {
+if (-not $SkipBuild) {
+    & (Join-Path $PSScriptRoot 'build_modpack.ps1') -Version $Version
+}
+foreach ($archive in @($clientArchive, $serverArchive)) {
+    if (-not (Test-Path -LiteralPath $archive -PathType Leaf)) {
+        throw "Missing release archive: $archive"
+    }
+}
+
+$uploadToken = [Environment]::GetEnvironmentVariable('CURSEFORGE_API_TOKEN')
+if ([string]::IsNullOrWhiteSpace($uploadToken)) {
     throw 'CURSEFORGE_API_TOKEN is required for publishing.'
 }
-$headers = @{ 'X-Api-Token' = $token }
+$uploadHeaders = @{
+    'X-Api-Token' = $uploadToken
+}
+$projectId = [long]$pack.curseForgeProjectId
+$filesEndpoint = "https://api.curseforge.com/v1/mods/$projectId/files"
 
 function Get-UploadErrorBody($ErrorRecord) {
     if ($ErrorRecord.ErrorDetails -and $ErrorRecord.ErrorDetails.Message) {
@@ -68,12 +75,112 @@ function Get-UploadErrorBody($ErrorRecord) {
     }
 }
 
-function Publish-File($Metadata, $Archive) {
-    try {
-        $response = Invoke-RestMethod -Uri $endpoint -Method Post -Headers $headers -Form @{
-            metadata = ($Metadata | ConvertTo-Json -Compress -Depth 5)
-            file = Get-Item -LiteralPath $Archive
+function Get-CoreApiHeaders {
+    $coreApiKey = [Environment]::GetEnvironmentVariable('CURSEFORGE_API_KEY')
+
+    if ([string]::IsNullOrWhiteSpace($coreApiKey)) {
+        throw @'
+CURSEFORGE_API_KEY is required to recover an existing CurseForge file
+after a duplicate upload response. Configure the CurseForge Core API key
+as a repository secret and rerun the release.
+'@
+    }
+
+    return @{
+        'x-api-key' = $coreApiKey
+    }
+}
+
+function Get-ExistingFileId($ExpectedFileName, $ExpectedSha1, $ExpectedParentFileId) {
+    $coreHeaders = Get-CoreApiHeaders
+    $pageSize = 50
+    $index = 0
+
+    while ($index -lt 10000) {
+        $uri = "$filesEndpoint`?index=$index&pageSize=$pageSize"
+
+        try {
+            $page = Invoke-RestMethod `
+                -Uri $uri `
+                -Method Get `
+                -Headers $coreHeaders
+        } catch {
+            $body = Get-UploadErrorBody $_
+            throw "CurseForge Core API file lookup failed: $body"
         }
+
+        if (-not $page) {
+            throw 'CurseForge Core API returned an empty response.'
+        }
+
+        foreach ($file in @($page.data)) {
+            if (-not $file.id) { continue }
+            if ([string]$file.fileName -ne $ExpectedFileName) { continue }
+
+            # CurseForge Core API HashAlgo 1 is SHA-1. A duplicate recovery is only
+            # safe when the existing file is byte-identical to the archive that was
+            # just rejected; displayName is intentionally not used as an identity.
+            $sha1Matches = $false
+            foreach ($hash in @($file.hashes)) {
+                if ($null -eq $hash) { continue }
+                if (
+                    [int]$hash.algo -eq 1 -and
+                    [string]$hash.value -ieq $ExpectedSha1
+                ) {
+                    $sha1Matches = $true
+                    break
+                }
+            }
+            if (-not $sha1Matches) { continue }
+
+            # For server-child recovery, also require the existing file to be
+            # attached to the recovered client file. This prevents an identical
+            # server archive attached to another parent from being reused here.
+            if ($null -ne $ExpectedParentFileId) {
+                if ([int]$file.parentProjectFileId -ne [int]$ExpectedParentFileId) {
+                    continue
+                }
+            }
+            return [string]$file.id
+        }
+
+        if (-not $page.pagination) {
+            throw 'CurseForge Core API response did not contain pagination metadata.'
+        }
+
+        $resultCount = [int]$page.pagination.resultCount
+        $totalCount = [int]$page.pagination.totalCount
+
+        if ($resultCount -le 0) {
+            break
+        }
+
+        $index += $resultCount
+
+        if ($index -ge $totalCount) {
+            break
+        }
+    }
+
+    return $null
+}
+
+function Publish-File($Metadata, $Archive, $ExpectedParentFileId) {
+    $archiveName = Split-Path -Leaf $Archive
+    $archiveSha1 = [string](Get-FileHash -LiteralPath $Archive -Algorithm SHA1).Hash
+    if ([string]::IsNullOrWhiteSpace($archiveSha1)) {
+        throw "Unable to compute SHA-1 for $Archive."
+    }
+
+    try {
+        $response = Invoke-RestMethod `
+            -Uri $endpoint `
+            -Method Post `
+            -Headers $uploadHeaders `
+            -Form @{
+                metadata = ($Metadata | ConvertTo-Json -Compress -Depth 5)
+                file = Get-Item -LiteralPath $Archive
+            }
         if (-not $response.id) {
             throw "CurseForge did not return an ID for $Archive."
         }
@@ -81,17 +188,29 @@ function Publish-File($Metadata, $Archive) {
     } catch {
         $body = Get-UploadErrorBody $_
         if ($body -match 'already|duplicate') {
-            Write-Host "CurseForge already has $(Split-Path -Leaf $Archive); treating this rerun as successful."
-            return $null
+            $existing = Get-ExistingFileId $archiveName $archiveSha1 $ExpectedParentFileId
+            if ($existing) {
+                Write-Host (
+                    "CurseForge already has byte-identical $archiveName " +
+                    "(file id $existing); reusing it for this rerun."
+                )
+                return $existing
+            }
+            throw (
+                "CurseForge reported $archiveName as a duplicate, but no existing file " +
+                "with the same file name, SHA-1, and expected parent could be located."
+            )
         }
         throw "CurseForge upload failed for ${Archive}: $body"
     }
 }
 
-$clientFileId = Publish-File $mainMetadata $clientArchive
+$clientFileId = Publish-File $mainMetadata $clientArchive $null
 if ($null -eq $clientFileId) {
-    Write-Host 'Client file already published; assuming its server child file exists too and skipping upload.'
-    exit 0
+    # Publish-File only returns $null on a catastrophic code path; the duplicate
+    # branch above now returns the existing ID instead. Guard anyway so the
+    # server-child step is never skipped because of a silent null.
+    throw "Internal: client upload returned no file id for $clientArchive."
 }
 
 $serverMetadata = [ordered]@{
@@ -101,10 +220,9 @@ $serverMetadata = [ordered]@{
     parentFileID = [long]$clientFileId
     releaseType = $ReleaseType
 }
-$serverFileId = Publish-File $serverMetadata $serverArchive
-
+$serverFileId = Publish-File $serverMetadata $serverArchive $clientFileId
 if ($null -eq $serverFileId) {
-    Write-Host "Published client file ID $clientFileId; server child file already exists."
+    Write-Host "Client file id $clientFileId and its server child file are both present on CurseForge."
 } else {
-    Write-Host "Published client file ID $clientFileId and server child file ID $serverFileId."
+    Write-Host "Published client file id $clientFileId and server child file id $serverFileId."
 }

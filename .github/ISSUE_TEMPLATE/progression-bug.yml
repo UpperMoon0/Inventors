@@ -1,0 +1,49 @@
+name: Progression or recipe bug
+description: Quests, recipes, or progression steps that are wrong, impossible, or inconsistent
+labels: ["bug", "progression"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Inventors version
+      description: From the CurseForge file name or pack/pack.json
+      placeholder: "0.3.2"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Quest text or progression
+        - Recipe (crafting, smelting, Quern, machine)
+        - Tags or item unification
+        - Loot or drops
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened?
+      description: Include the quest/task name, the item, and the recipe or JEI view that is wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: From a fresh world if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots or logs
+      description: Screenshots of the quest screen or JEI view are ideal.

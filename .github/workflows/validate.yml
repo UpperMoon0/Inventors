@@ -20,3 +20,6 @@ jobs:
 
       - name: Validate FTB Quest IDs and Dependencies
         run: python scripts/validate_quests.py
+
+      - name: Validate public metadata against pack/pack.json
+        run: python scripts/validate_metadata.py

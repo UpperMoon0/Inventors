@@ -21,9 +21,9 @@ on:
         type: choice
         options: [alpha, beta, release]
       publish:
-        description: Publish client and server files to CurseForge
+        description: Publish to GitHub Releases and CurseForge (build-only when false)
         required: true
-        default: true
+        default: false
         type: boolean
 
 concurrency:
@@ -31,54 +31,168 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  release:
-    runs-on: windows-latest
-    timeout-minutes: 30
+  release-gate:
+    name: Check release trigger
+    runs-on: ubuntu-latest
+    outputs:
+      should_release: ${{ steps.check.outputs.should_release }}
+      version: ${{ steps.check.outputs.version }}
+      release_type: ${{ steps.check.outputs.release_type }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Resolve version
-        id: version
+      - name: Check for version bump
+        id: check
         shell: pwsh
+        env:
+          BEFORE: ${{ github.event.before }}
+          MANUAL_PUBLISH: ${{ inputs.publish || false }}
+          REQUESTED_VERSION: ${{ inputs.version }}
+          REQUESTED_RELEASE_TYPE: ${{ inputs.release_type }}
         run: |
+          $ErrorActionPreference = 'Stop'
           $pack = Get-Content pack/pack.json -Raw | ConvertFrom-Json
-          $configured = $pack.version
-          $requested = '${{ inputs.version }}'
-          $version = if ([string]::IsNullOrWhiteSpace($requested)) { $configured } else { $requested }
-          $requestedReleaseType = '${{ inputs.release_type }}'
-          $releaseType = if ([string]::IsNullOrWhiteSpace($requestedReleaseType)) { $pack.releaseType } else { $requestedReleaseType }
-          "value=$version" >> $env:GITHUB_OUTPUT
+          $version = [string]$pack.version
+          if ([string]::IsNullOrWhiteSpace($version)) { throw 'pack/pack.json has no version.' }
+          $releaseType = [string]$pack.releaseType
+          $shouldRelease = $false
+
+          if ($env:GITHUB_EVENT_NAME -eq 'workflow_dispatch') {
+            if (-not [string]::IsNullOrWhiteSpace($env:REQUESTED_VERSION)) { $version = $env:REQUESTED_VERSION }
+            $shouldRelease = ($env:GITHUB_REF -eq 'refs/heads/main') -and ($env:MANUAL_PUBLISH -eq 'true')
+            if ($shouldRelease) {
+              # releaseType is not overridable for publishing: pack/pack.json is the
+              # single source of truth. An override is still allowed for build-only
+              # verification runs (publish=false) so it can be exercised locally.
+              if (-not [string]::IsNullOrWhiteSpace($env:REQUESTED_RELEASE_TYPE) -and $env:REQUESTED_RELEASE_TYPE -ne $releaseType) {
+                throw "Publishing is only allowed for the pack/pack.json releaseType ($releaseType); remove the release_type override or set publish=false."
+              }
+              Write-Host "Publishing: manual dispatch with publish=true for $version ($releaseType)."
+            } else {
+              if (-not [string]::IsNullOrWhiteSpace($env:REQUESTED_RELEASE_TYPE)) { $releaseType = $env:REQUESTED_RELEASE_TYPE }
+              Write-Host 'No release: manual dispatch without publish=true (build only).'
+            }
+          }
+          elseif ($env:GITHUB_REF -like 'refs/tags/*') {
+            $tag = $env:GITHUB_REF.Substring('refs/tags/'.Length)
+            if ($tag -ne "v$version") {
+              throw "Tag $tag does not match pack/pack.json version v$version."
+            }
+            $shouldRelease = $true
+            Write-Host "Publishing: tag $tag matches pack version v$version."
+          }
+          elseif ($env:GITHUB_EVENT_NAME -eq 'push' -and $env:GITHUB_REF -eq 'refs/heads/main') {
+            $before = $env:BEFORE
+            if ([string]::IsNullOrWhiteSpace($before) -or $before -eq '0000000000000000000000000000000000000000') {
+              Write-Host 'No release: cannot resolve the previous commit; automatic release skipped.'
+            } else {
+              $ErrorActionPreference = 'Continue'
+              $previousJson = & git show "${before}:pack/pack.json" 2>$null
+              $gitExit = $LASTEXITCODE
+              $ErrorActionPreference = 'Stop'
+              if ($gitExit -ne 0 -or -not $previousJson) {
+                # Fail closed: an unresolvable previous commit must never enable publishing.
+                Write-Host 'No release: unable to read pack/pack.json from the previous commit.'
+              } else {
+                $previousVersion = [string](($previousJson | ConvertFrom-Json).version)
+                if ($previousVersion -ne $version) {
+                  $shouldRelease = $true
+                  Write-Host "Publishing: pack version changed ($previousVersion -> $version)."
+                } else {
+                  Write-Host "No release: pack version unchanged ($version)."
+                }
+              }
+            }
+          }
+
+          # Publishing must come from pack/pack.json itself: the version override
+          # input is for build-only verification. A tag whose source commit says a
+          # different version would break release reproducibility.
+          if ($shouldRelease -and $version -ne [string]$pack.version) {
+            throw "Publishing is only allowed for the pack/pack.json version ($($pack.version)); remove the version override."
+          }
+          if ($shouldRelease -and $releaseType -ne [string]$pack.releaseType) {
+            throw "Publishing is only allowed for the pack/pack.json releaseType ($($pack.releaseType)); remove the release_type override."
+          }
+
+          if ($shouldRelease -and -not (Test-Path "changelog/$version.md")) {
+            throw "Missing release changelog: changelog/$version.md."
+          }
+
+          "should_release=$shouldRelease" >> $env:GITHUB_OUTPUT
+          "version=$version" >> $env:GITHUB_OUTPUT
           "release_type=$releaseType" >> $env:GITHUB_OUTPUT
+          Write-Host "Release trigger: $shouldRelease"
+
+  build:
+    name: Build client and server archives
+    needs: release-gate
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
 
       - name: Build client and server archives
         shell: pwsh
-        run: ./scripts/build_modpack.ps1 -Version '${{ steps.version.outputs.value }}'
+        run: ./scripts/build_modpack.ps1 -Version '${{ needs.release-gate.outputs.version }}'
 
       - name: Upload workflow artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: Inventors-${{ steps.version.outputs.value }}
+          name: Inventors-${{ needs.release-gate.outputs.version }}
           path: dist/*.zip
           if-no-files-found: error
 
-      - name: Ensure Git tag exists
-        id: ensure_tag
+  publish:
+    name: Publish GitHub Release and CurseForge
+    if: needs.release-gate.outputs.should_release == 'true'
+    needs: [release-gate, build]
+    runs-on: windows-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download built archives
+        uses: actions/download-artifact@v4
+        with:
+          name: Inventors-${{ needs.release-gate.outputs.version }}
+          path: dist
+
+      - name: Ensure release tag points at this commit
         shell: pwsh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          $version = '${{ steps.version.outputs.value }}'
+          $version = '${{ needs.release-gate.outputs.version }}'
           $tag = "v$version"
+          $head = git rev-parse HEAD
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          $exists = git ls-remote --tags origin "$tag"
-          if ($exists) {
-            Write-Host "Tag $tag already exists."
+          $refs = & git ls-remote --tags origin "refs/tags/$tag" "refs/tags/$tag^{}"
+          if ($LASTEXITCODE -ne 0) { throw "git ls-remote failed for tag $tag." }
+          if ($refs) {
+            # Annotated tags list the tag object plus a separate peeled ^{} entry
+            # pointing at the commit; the ^{} pseudo-ref must be requested explicitly.
+            $taggedCommit = $null
+            foreach ($line in @($refs)) {
+              $parts = $line -split '\s+'
+              if ($parts[1] -eq "refs/tags/$tag^{}") { $taggedCommit = $parts[0] }
+            }
+            if (-not $taggedCommit) {
+              # Lightweight tag: the ref itself points at the commit.
+              $taggedCommit = (@($refs)[0] -split '\s+')[0]
+            }
+            if ($taggedCommit -ne $head) {
+              throw "Tag $tag already exists and points at $taggedCommit, not this commit ($head). Bump the version in pack/pack.json instead of republishing an existing release."
+            }
+            Write-Host "Tag $tag already exists and points at this commit; continuing."
           } else {
             Write-Host "Creating tag $tag..."
             git tag -a "$tag" -m "Inventors $version"
@@ -86,21 +200,21 @@ jobs:
           }
 
       - name: Publish GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3.0.2
         with:
-          tag_name: v${{ steps.version.outputs.value }}
-          name: Inventors v${{ steps.version.outputs.value }}
-          body_path: changelog/${{ steps.version.outputs.value }}.md
+          tag_name: v${{ needs.release-gate.outputs.version }}
+          name: Inventors v${{ needs.release-gate.outputs.version }}
+          body_path: changelog/${{ needs.release-gate.outputs.version }}.md
           fail_on_unmatched_files: true
           files: dist/*.zip
           draft: false
-          prerelease: ${{ steps.version.outputs.release_type != 'release' }}
+          prerelease: ${{ needs.release-gate.outputs.release_type != 'release' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to CurseForge
-        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.publish)
         shell: pwsh
         env:
           CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
-        run: ./scripts/publish_curseforge.ps1 -Version '${{ steps.version.outputs.value }}' -ReleaseType '${{ steps.version.outputs.release_type }}' -SkipBuild
+          CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+        run: ./scripts/publish_curseforge.ps1 -Version '${{ needs.release-gate.outputs.version }}' -ReleaseType '${{ needs.release-gate.outputs.release_type }}' -SkipBuild
