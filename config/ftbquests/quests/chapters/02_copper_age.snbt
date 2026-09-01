@@ -15,173 +15,193 @@
 				"7100000000000249"
 			]
 			id: "7100000000000114"
+			title: "Copper in Stone"
+			description: ["Copper begins only after the Stone-age material loops are complete. Bring raw copper, clay, and proven strong hafting before building a hotter workshop."]
 			tasks: [
-				{
-					id: "7100000000010116"
-					item: { count: 1, id: "minecraft:raw_copper" }
-					type: "item"
-				}
-				{
-					count: 4L
-					id: "7100000000010355"
-					item: { count: 1, id: "minecraft:clay_ball" }
-					type: "item"
-				}
+				{ id: "7100000000010116", item: { count: 1, id: "minecraft:raw_copper" }, type: "item" }
+				{ count: 4L, id: "7100000000010355", item: { count: 1, id: "minecraft:clay_ball" }, type: "item" }
+				{ id: "7100000000010270", item: { count: 1, id: "firstworks:hafting_compound" }, type: "item" }
 			]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["7100000000000114"]
-			id: "7100000000000102"
-			tasks: [{
-				count: 16L
-				id: "7100000000010102"
-				item: { count: 1, id: "productivemetalworks:fire_clay" }
-				type: "item"
-			}]
+			id: "7100000000000270"
+			title: "Refractory Body"
+			description: ["Crush fired brick back into grog, then temper clay with it. Refractory clay is the material boundary between ordinary pottery and metalworking ceramics."]
+			tasks: [
+				{ count: 4L, id: "7100000000010271", item: { count: 1, id: "firstworks:grog" }, type: "item" }
+				{ count: 8L, id: "7100000000010272", item: { count: 1, id: "firstworks:refractory_clay" }, type: "item" }
+			]
 			x: 2.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["7100000000000102"]
-			id: "7100000000000115"
-			tasks: [{
-				count: 16L
-				id: "7100000000010118"
-				item: { count: 1, id: "productivemetalworks:black_fire_bricks" }
-				type: "item"
-			}]
+			dependencies: ["7100000000000270"]
+			id: "7100000000000271"
+			title: "Shape the Heat"
+			description: ["Use the pottery wheel to form the crucible, tuyere, and reusable casting mold before they are fired."]
+			tasks: [
+				{ id: "7100000000010273", item: { count: 1, id: "firstworks:pottery_wheel" }, type: "item" }
+				{ id: "7100000000010274", item: { count: 1, id: "firstworks:unfired_crucible" }, type: "item" }
+				{ id: "7100000000010275", item: { count: 1, id: "firstworks:unfired_tuyere" }, type: "item" }
+				{ id: "7100000000010276", item: { count: 1, id: "firstworks:unfired_casting_mold" }, type: "item" }
+			]
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["7100000000000115"]
-			id: "7100000000000103"
+			dependencies: ["7100000000000271"]
+			id: "7100000000000272"
+			title: "Controlled Firing"
+			description: ["Build a kiln and fire refractory parts deliberately instead of relying on vanilla furnace shortcuts."]
 			tasks: [
-				{
-					id: "7100000000010103"
-					item: { count: 1, id: "productivemetalworks:black_foundry_controller" }
-					type: "item"
-				}
-				{
-					id: "7100000000010104"
-					item: { count: 1, id: "productivemetalworks:casting_table" }
-					type: "item"
-				}
-				{
-					id: "7100000000010105"
-					item: { count: 1, id: "productivemetalworks:foundry_tap" }
-					type: "item"
-				}
+				{ id: "7100000000010277", item: { count: 1, id: "firstworks:kiln" }, type: "item" }
+				{ count: 8L, id: "7100000000010278", item: { count: 1, id: "firstworks:refractory_brick" }, type: "item" }
+				{ id: "7100000000010279", item: { count: 1, id: "firstworks:crucible" }, type: "item" }
+				{ id: "7100000000010280", item: { count: 1, id: "firstworks:tuyere" }, type: "item" }
+				{ id: "7100000000010281", item: { count: 1, id: "firstworks:casting_mold" }, type: "item" }
 			]
 			x: 6.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["7100000000000103"]
-			id: "7100000000000116"
-			tasks: [{
-				id: "7100000000010119"
-				item: { count: 1, id: "productivemetalworks:ingot_cast" }
-				type: "item"
-			}]
-			x: 8.0d
-			y: -1.5d
-		}
-		{
-			dependencies: ["7100000000000103"]
-			id: "7100000000000104"
-			tasks: [{
-				count: 16L
-				id: "7100000000010106"
-				item: { count: 1, id: "minecraft:copper_ingot" }
-				type: "item"
-			}]
-			x: 8.0d
-			y: 1.5d
-		}
-		{
-			dependencies: [
-				"7100000000000116"
-				"7100000000000104"
-			]
-			id: "7100000000000105"
-			tasks: [{
-				id: "7100000000010107"
-				item: { count: 1, id: "silentgear:pickaxe" }
-				type: "item"
-			}]
-			x: 10.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["7100000000000105"]
-			id: "7100000000000117"
-			tasks: [
-				{
-					id: "7100000000010120"
-					item: { count: 1, id: "minecraft:bucket" }
-					type: "item"
-				}
-				{
-					id: "7100000000010121"
-					item: { count: 1, id: "minecraft:shears" }
-					type: "item"
-				}
-			]
-			x: 12.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["7100000000000104"]
-			id: "7100000000000219"
-			tasks: [
-				{
-					count: 4L
-					id: "7100000000020218"
-					item: { count: 1, id: "firstworks:copper_fasteners" }
-					type: "item"
-				}
-				{
-					count: 2L
-					id: "7100000000020219"
-					item: { count: 1, id: "minecraft:chest" }
-					type: "item"
-				}
-				{
-					id: "7100000000020220"
-					item: { count: 1, id: "minecraft:barrel" }
-					type: "item"
-				}
-			]
-			x: 10.0d
+			dependencies: ["7100000000000272"]
+			id: "7100000000000243"
+			title: "Leather II"
+			description: ["A bellows needs leather that can survive repeated flexing. Rework finished leather in tannin into a heavier industrial grade."]
+			tasks: [{ count: 4L, id: "7100000000010243", item: { count: 1, id: "firstworks:heavy_leather" }, type: "item" }]
+			x: 6.0d
 			y: 3.0d
 		}
 		{
-			dependencies: ["7100000000000117"]
-			id: "7100000000000243"
-			tasks: [{
-				id: "7100000000010243"
-				item: { count: 1, id: "firstworks:tannin_solution_bucket" }
-				type: "item"
-			}]
+			dependencies: ["7100000000000243"]
+			id: "7100000000000273"
+			title: "Forced Air"
+			description: ["The bellows is not decoration: the crucible furnace stops processing when its air reserve runs out."]
+			tasks: [{ id: "7100000000010282", item: { count: 1, id: "firstworks:bellows" }, type: "item" }]
+			x: 8.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"7100000000000272"
+				"7100000000000273"
+			]
+			id: "7100000000000274"
+			title: "Primitive Crucible Furnace"
+			description: ["Combine fired refractory hardware into a crucible furnace. Keep a bellows beside it and pump air while the metal is hot."]
+			tasks: [{ id: "7100000000010283", item: { count: 1, id: "firstworks:crucible_furnace" }, type: "item" }]
+			x: 10.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7100000000000274"]
+			id: "7100000000000104"
+			title: "First Cast Copper"
+			description: ["Melt raw copper in the air-stoked crucible furnace and cast primitive billets. Productive Metalworks does not belong here yet."]
+			tasks: [{ count: 4L, id: "7100000000010106", item: { count: 1, id: "firstworks:cast_copper_billet" }, type: "item" }]
+			x: 12.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7100000000000104"]
+			id: "7100000000000275"
+			title: "Anneal and Work"
+			description: ["A cast billet is only a shape. Anneal it in the kiln, then hammer it on the stone anvil into useful worked copper."]
+			tasks: [
+				{ count: 2L, id: "7100000000010284", item: { count: 1, id: "firstworks:annealed_copper_billet" }, type: "item" }
+				{ count: 2L, id: "7100000000010285", item: { count: 1, id: "firstworks:worked_copper_billet" }, type: "item" }
+			]
 			x: 14.0d
 			y: 1.5d
 		}
 		{
+			dependencies: ["7100000000000275"]
+			id: "7100000000000105"
+			title: "A Real Copper Tool"
+			description: ["Prove the primitive copper chain with a dedicated Firstworks copper tool rather than a generic Silent Gear material substitution."]
+			tasks: [{ id: "7100000000010107", item: { count: 1, id: "firstworks:copper_pickaxe" }, type: "item" }]
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000275"]
+			id: "7100000000000219"
+			title: "Wire and Fasteners"
+			description: ["Turn worked copper into the two small components that make Copper-age machines worth building."]
+			tasks: [
+				{ count: 8L, id: "7100000000020218", item: { count: 1, id: "firstworks:copper_fasteners" }, type: "item" }
+				{ count: 8L, id: "7100000000020219", item: { count: 1, id: "firstworks:copper_wire" }, type: "item" }
+			]
+			x: 16.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["7100000000000219"]
+			id: "7100000000000276"
+			title: "Copper Utilities"
+			description: ["Copper should improve ordinary work too: make proper copper shears and a reusable copper bucket."]
+			tasks: [
+				{ id: "7100000000010286", item: { count: 1, id: "firstworks:copper_shears" }, type: "item" }
+				{ id: "7100000000010287", item: { count: 1, id: "firstworks:copper_bucket" }, type: "item" }
+			]
+			x: 18.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["7100000000000219"]
+			id: "7100000000000277"
+			title: "Copper Textile Workshop"
+			description: ["Upgrade rather than replace the Stone-age textile chain: a copper spindle spins faster and a copper loom halves the manual strokes."]
+			tasks: [
+				{ id: "7100000000010288", item: { count: 1, id: "firstworks:copper_hand_spindle" }, type: "item" }
+				{ id: "7100000000010289", item: { count: 1, id: "firstworks:copper_loom" }, type: "item" }
+			]
+			x: 18.0d
+			y: 5.0d
+		}
+		{
 			dependencies: [
-				"7100000000000263"
+				"7100000000000272"
 				"7100000000000219"
 			]
 			id: "7100000000000266"
-			tasks: [{
-				id: "7100000000010401"
-				item: { count: 1, id: "firstworks:quern" }
-				type: "item"
-			}]
-			x: 12.0d
-			y: 4.5d
+			title: "Rotary Grinding and Plaster"
+			description: ["Copper fasteners improve the quern while kiln-burned lime opens a plaster construction loop. These are parallel industries, not dead-end collectibles."]
+			tasks: [
+				{ id: "7100000000010401", item: { count: 1, id: "firstworks:rotary_quern" }, type: "item" }
+				{ count: 4L, id: "7100000000010290", item: { count: 1, id: "firstworks:plaster" }, type: "item" }
+			]
+			x: 18.0d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"7100000000000105"
+				"7100000000000276"
+				"7100000000000277"
+				"7100000000000266"
+			]
+			id: "7100000000000117"
+			shape: "hexagon"
+			size: 1.5d
+			title: "Copper Age Complete"
+			description: ["This is the Tin boundary. You have proved casting, annealing, hammer-working, airflow, heavy leather, wire, fasteners, utilities, textile upgrades, rotary grinding, and plaster. Tin can now matter because the Bronze foundry is finally reachable."]
+			tasks: [
+				{ count: 4L, id: "7100000000010120", item: { count: 1, id: "firstworks:cast_copper_billet" }, type: "item" }
+				{ count: 4L, id: "7100000000010121", item: { count: 1, id: "firstworks:copper_wire" }, type: "item" }
+				{ id: "7100000000010291", item: { count: 1, id: "firstworks:bellows" }, type: "item" }
+				{ count: 4L, id: "7100000000010292", item: { count: 1, id: "firstworks:copper_fasteners" }, type: "item" }
+				{ id: "7100000000010293", item: { count: 1, id: "firstworks:copper_shears" }, type: "item" }
+				{ id: "7100000000010294", item: { count: 1, id: "firstworks:kiln" }, type: "item" }
+				{ id: "7100000000010295", item: { count: 1, id: "firstworks:heavy_leather" }, type: "item" }
+				{ id: "7100000000010296", item: { count: 1, id: "firstworks:plaster" }, type: "item" }
+				{ id: "7100000000010297", item: { count: 1, id: "firstworks:rotary_quern" }, type: "item" }
+			]
+			x: 21.0d
+			y: 3.0d
 		}
 	]
 }
