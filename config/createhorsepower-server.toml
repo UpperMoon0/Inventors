@@ -1,40 +1,94 @@
-#Base rpm creatures can spin the horse crank.
+#Base rpm creatures can spin the horse crank (fallback when not defined by Data Maps).
 # Default: 4
 # Range: > 1
 creatureRPMRange = 4
-#How much stress small creatures can produce for the horse crank.
+#How much stress small creatures can produce for the horse crank (fallback when not defined by Data Maps).
 # Default: 128
 # Range: > 1
 smallCreatureStressRange = 128
-#How much stress medium creatures can produce for the horse crank.
+#How much stress medium creatures can produce for the horse crank (fallback when not defined by Data Maps).
 # Default: 256
 # Range: > 1
 mediumCreatureStressRange = 256
-#How much stress large creatures can produce for the horse crank.
+#How much stress large creatures can produce for the horse crank (fallback when not defined by Data Maps).
 # Default: 512
 # Range: > 1
 largeCreatureStressRange = 512
-#The multiplier for "Poor" paths
+#The multiplier for "Poor" paths.
 # Default: 0.5
 # Range: 0.0 ~ 1.7976931348623157E308
 poorMultiplier = 0.5
-#The multiplier for "Normal" paths
+#The multiplier for "Normal" paths.
 # Default: 1.0
 # Range: 0.0 ~ 1.7976931348623157E308
 normalMultiplier = 1.0
-#The multiplier for "Great" paths
+#The multiplier for "Great" paths.
 # Default: 2.0
 # Range: 0.0 ~ 1.7976931348623157E308
 greatMultiplier = 2.0
-#Types of blocks valid as "Poor" quality
+#Types of blocks valid as "Poor" quality (legacy fallback list).
 poorPathBlock = ["minecraft:dirt", "minecraft:grass_block"]
-#Types of blocks valid as "Normal" quality
+#Types of blocks valid as "Normal" quality (legacy fallback list).
 normalPathBlock = ["minecraft:dirt_path", "minecraft:gravel"]
-#Types of blocks valid as "Great" quality
+#Types of blocks valid as "Great" quality (legacy fallback list).
 greatPathBlock = ["minecraft:ice", "minecraft:packed_ice", "minecraft:blue_ice"]
-#Valid "Small" creatures
+#Valid "Small" creatures (legacy fallback list).
 smallCreatures = ["minecraft:wolf"]
-#Valid "Medium" creatures
+#Valid "Medium" creatures (legacy fallback list).
 mediumCreatures = ["minecraft:cow"]
-#Valid "Large" creatures
+#Valid "Large" creatures (legacy fallback list).
 largeCreatures = ["minecraft:horse"]
+
+[balance]
+	#Global multiplier applied to all crank RPM output.
+	# Default: 1.0
+	# Range: 0.0 ~ 100.0
+	globalRpmMultiplier = 1.0
+	#Global multiplier applied to all crank stress capacity.
+	# Default: 1.0
+	# Range: 0.0 ~ 100.0
+	globalStressMultiplier = 1.0
+	#Whether animal attributes (movement speed -> RPM, max health -> Stress) scale power output.
+	enableIndividualAnimalStats = true
+	#Minimum speed scaling multiplier clamp.
+	# Default: 0.5
+	# Range: 0.01 ~ 10.0
+	minSpeedScalingClamp = 0.5
+	#Maximum speed scaling multiplier clamp.
+	# Default: 2.5
+	# Range: 0.1 ~ 100.0
+	maxSpeedScalingClamp = 2.5
+	#Minimum health scaling multiplier clamp.
+	# Default: 0.5
+	# Range: 0.01 ~ 10.0
+	minHealthScalingClamp = 0.5
+	#Maximum health scaling multiplier clamp.
+	# Default: 3.0
+	# Range: 0.1 ~ 100.0
+	maxHealthScalingClamp = 3.0
+
+[workers]
+	#Allow baby animals to be attached to the horse crank.
+	allowBabies = false
+	#Require horses/tamable mobs to be tamed before attaching.
+	requireTamedHorse = false
+	#Allow undead/skeleton horses and mobs as workers.
+	allowUndeadWorkers = true
+
+[path]
+	#Path calculation mode: WEIGHTED_AVERAGE (averages all track blocks), WORST_BLOCK (limited by slowest block), LEGACY (all great = great, any poor = poor).
+	#Allowed Values: WEIGHTED_AVERAGE, WORST_BLOCK, LEGACY
+	evaluationMode = "WEIGHTED_AVERAGE"
+	#Required fraction of valid path blocks required (0.0 to 1.0). Default 1.0 means full circle required.
+	# Default: 1.0
+	# Range: 0.0 ~ 1.0
+	minimumCoverage = 1.0
+	#Interval in ticks between path condition checks.
+	# Default: 40
+	# Range: 1 ~ 1200
+	checkIntervalTicks = 40
+
+[automation]
+	#Default redstone mode for new Horse Cranks: IGNORE, HIGH_STOPS (redstone signal stops crank), HIGH_RUNS (redstone signal required to run).
+	#Allowed Values: IGNORE, HIGH_STOPS, HIGH_RUNS
+	defaultRedstoneMode = "HIGH_STOPS"

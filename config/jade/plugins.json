@@ -60,8 +60,12 @@
     "entity_variant": true
   },
   "firstworks": {
+    "quern_progress": true,
+    "mortar_progress": true,
+    "charcoal_pile": true,
     "barrel_progress": true,
     "brick_mold_progress": true,
+    "charcoal_mound": true,
     "loom_progress": true
   },
   "productivemetalworks": {
@@ -80,6 +84,9 @@
   },
   "gravestone": {
     "grave": true
+  },
+  "createhorsepower": {
+    "horse_crank_info": true
   },
   "balm": {
     "jade": true

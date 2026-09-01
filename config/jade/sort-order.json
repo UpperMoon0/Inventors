@@ -1,8 +1,13 @@
 {
   "balm:jade": null,
+  "createhorsepower:horse_crank_info": null,
   "firstworks:barrel_progress": null,
   "firstworks:brick_mold_progress": null,
+  "firstworks:charcoal_mound": null,
+  "firstworks:charcoal_pile": null,
   "firstworks:loom_progress": null,
+  "firstworks:mortar_progress": null,
+  "firstworks:quern_progress": null,
   "fluidlogistics:connected_fluid_source": null,
   "fluidlogistics:contraption_multi_fluid_tank": null,
   "fluidlogistics:multi_fluid_tank": null,

@@ -1,0 +1,38 @@
+{
+  "name": "Inventors",
+  "version": "0.3.2",
+  "author": "UpperMoon0",
+  "curseForgeProjectId": 1480135,
+  "minecraftVersion": "1.21.1",
+  "neoForgeVersion": "21.1.247",
+  "javaVersion": 21,
+  "releaseType": "beta",
+  "embeddedProjectIds": [],
+  "clientOnlyProjectIds": [
+    248787,
+    1637623,
+    250419,
+    659897,
+    455508,
+    238222,
+    60089,
+    394468
+  ],
+  "serverExcludedPaths": [
+    "kubejs/assets/*",
+    "kubejs/client_scripts/*",
+    "kubejs/config/client.json",
+    "kubejs/config/client.properties",
+    "config/*-client.toml",
+    "config/*-client.snbt",
+    "config/DistantHorizons.toml",
+    "config/enchdesc.json",
+    "config/iris-*",
+    "config/iris.properties",
+    "config/jei*",
+    "config/MouseTweaks.cfg",
+    "config/ponder-client.toml",
+    "config/sodium-*",
+    "config/jade/*"
+  ]
+}
