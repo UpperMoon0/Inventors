@@ -8,6 +8,7 @@ Pack identity (versions, loader, status) comes from [`pack/pack.json`](pack/pack
 
 | Version | Date | Notes |
 | --- | --- | --- |
+| [0.3.3](changelog/0.3.3.md) | 2026-09-02 | Complete Stone/Copper progression, primitive Firstworks metallurgy, Productive Metalworks moved to Bronze |
 | [0.3.2](changelog/0.3.2.md) | 2026-09-01 | Quern progression, Firstworks 0.0.12, automated packaging and CurseForge publishing |
 | [Quern progression (dated log)](changelog/2026-08-29-quern-progression.md) | 2026-08-29 | Quest alignment for the unified Early Copper Age Quern |
 
