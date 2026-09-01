@@ -20,16 +20,10 @@ if ([string]::IsNullOrWhiteSpace($ChangelogFile)) {
 
 $clientArchive = Join-Path $repoRoot "dist/$($pack.name)-$Version.zip"
 $serverArchive = Join-Path $repoRoot "dist/$($pack.name)-$Version-server.zip"
-if (-not $SkipBuild) {
-    & (Join-Path $PSScriptRoot 'build_modpack.ps1') -Version $Version
-}
-foreach ($archive in @($clientArchive, $serverArchive)) {
-    if (-not (Test-Path -LiteralPath $archive -PathType Leaf)) {
-        throw "Missing release archive: $archive"
-    }
-}
-
-$changelog = Get-Content -LiteralPath $ChangelogFile -Raw
+# [string] cast and -Encoding utf8 matter: on Windows PowerShell 5.1 the raw string keeps
+# PSObject note properties that ConvertTo-Json serializes as garbage, and ANSI decoding
+# would mangle non-ASCII characters in the changelog.
+$changelog = [string](Get-Content -LiteralPath $ChangelogFile -Raw -Encoding utf8)
 $endpoint = "https://minecraft.curseforge.com/api/projects/$($pack.curseForgeProjectId)/upload-file"
 $mainMetadata = [ordered]@{
     changelog = $changelog
@@ -44,6 +38,15 @@ if ($DryRun) {
     Write-Host ($mainMetadata | ConvertTo-Json -Depth 5)
     Write-Host "DRY RUN: would attach $serverArchive as the server child file"
     exit 0
+}
+
+if (-not $SkipBuild) {
+    & (Join-Path $PSScriptRoot 'build_modpack.ps1') -Version $Version
+}
+foreach ($archive in @($clientArchive, $serverArchive)) {
+    if (-not (Test-Path -LiteralPath $archive -PathType Leaf)) {
+        throw "Missing release archive: $archive"
+    }
 }
 
 $token = [Environment]::GetEnvironmentVariable('CURSEFORGE_API_TOKEN')

@@ -27,6 +27,7 @@ $env:CURSEFORGE_API_TOKEN = "..."
 GitHub Actions uses the repository secret with the same name. See `docs/releasing.md` for the full pipeline description; the short version:
 
 - **Push to `main` touching `pack/pack.json`** always builds and verifies both archives, but only **publishes** to GitHub Releases and CurseForge when the `version` field in `pack/pack.json` actually changed. Editing any other part of `pack.json` (e.g. `serverExcludedPaths`) results in a build-only run.
-- **Pushing a `v*` tag** matching `v<version>` publishes. Tags pushed by the workflow itself are ignored to prevent re-entrant double publishes.
-- **Manual `workflow_dispatch`** builds and verifies by default; it publishes only when run from `main` with the `publish` input set to `true`.
+- **Pushing a `v*` tag** matching `v<version>` publishes. An existing tag pointing at a different commit fails the run instead of silently republishing.
+- **Manual `workflow_dispatch`** builds and verifies by default; it publishes only when run from `main` with the `publish` input set to `true`. The `version` input is for build-only testing; publishing rejects a version that differs from `pack/pack.json`.
 - The release workflow fails if `changelog/<version>.md` is missing for the version being published.
+- The tag is pushed with the repository `GITHUB_TOKEN`, so its push event does not re-trigger the workflow.

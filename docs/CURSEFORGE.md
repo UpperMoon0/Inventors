@@ -11,7 +11,7 @@ This file is the canonical source for the [Inventors CurseForge project](https:/
 - Update the version/status line against `pack/pack.json` (the source of truth).
 - Update or re-attach screenshots from `docs/assets/`.
 - CurseForge dependency lists are generated from the manifest — never paste a full mod list here.
-- Set the CurseForge project license to match `LICENSE` (CC BY-NC-SA 4.0) in the project editor.
+- Set the CurseForge project license to match the repository licenses (CC BY-NC-SA 4.0 for content, PolyForm Noncommercial 1.0.0 for scripts/tooling) in the project editor.
 
 ---
 
@@ -61,3 +61,5 @@ Every release ships a dedicated server pack with pre-tuned configs and start scr
 ### Credits
 
 Created and maintained by **NsTut** (UpperMoon0) — author of Firstworks, Simply Screens, OpenUI MC, and NsTut Economy. Built on Create and its addon ecosystem, Horse Power CE, Farmer's Delight and its addons, Silent Gear, the FTB suite, KubeJS, and many other excellent mods — all third-party mods remain the property of their respective authors.
+
+Pack content is licensed CC BY-NC-SA 4.0 and pack scripts/tooling under PolyForm Noncommercial 1.0.0 (see the repository `LICENSE` and `LICENSE-CODE`).

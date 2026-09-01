@@ -73,16 +73,12 @@ jobs:
             }
           }
           elseif ($env:GITHUB_REF -like 'refs/tags/*') {
-            if ($env:GITHUB_ACTOR -eq 'github-actions[bot]') {
-              Write-Host 'No release: tag was pushed by the release workflow itself; skipping the re-triggered run.'
-            } else {
-              $tag = $env:GITHUB_REF.Substring('refs/tags/'.Length)
-              if ($tag -ne "v$version") {
-                throw "Tag $tag does not match pack/pack.json version v$version."
-              }
-              $shouldRelease = $true
-              Write-Host "Publishing: tag $tag matches pack version v$version."
+            $tag = $env:GITHUB_REF.Substring('refs/tags/'.Length)
+            if ($tag -ne "v$version") {
+              throw "Tag $tag does not match pack/pack.json version v$version."
             }
+            $shouldRelease = $true
+            Write-Host "Publishing: tag $tag matches pack version v$version."
           }
           elseif ($env:GITHUB_EVENT_NAME -eq 'push' -and $env:GITHUB_REF -eq 'refs/heads/main') {
             $before = $env:BEFORE
@@ -104,6 +100,13 @@ jobs:
                 Write-Host "No release: pack version unchanged ($version)."
               }
             }
+          }
+
+          # Publishing must come from pack/pack.json itself: the version override
+          # input is for build-only verification. A tag whose source commit says a
+          # different version would break release reproducibility.
+          if ($shouldRelease -and $version -ne [string]$pack.version) {
+            throw "Publishing is only allowed for the pack/pack.json version ($($pack.version)); remove the version override."
           }
 
           if ($shouldRelease -and -not (Test-Path "changelog/$version.md")) {
@@ -151,18 +154,31 @@ jobs:
           name: Inventors-${{ needs.release-gate.outputs.version }}
           path: dist
 
-      - name: Ensure Git tag exists
+      - name: Ensure release tag points at this commit
         shell: pwsh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           $version = '${{ needs.release-gate.outputs.version }}'
           $tag = "v$version"
+          $head = git rev-parse HEAD
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          $exists = git ls-remote --tags origin "$tag"
-          if ($exists) {
-            Write-Host "Tag $tag already exists."
+          $refs = & git ls-remote --tags origin "refs/tags/$tag"
+          if ($refs) {
+            # Annotated tags list the tag object plus a peeled ^{} entry pointing at the commit.
+            $taggedCommit = $null
+            foreach ($line in @($refs)) {
+              $parts = $line -split '\s+'
+              if ($parts[1] -eq "refs/tags/$tag^{}") { $taggedCommit = $parts[0] }
+            }
+            if (-not $taggedCommit) {
+              $taggedCommit = (@($refs)[0] -split '\s+')[0]
+            }
+            if ($taggedCommit -ne $head) {
+              throw "Tag $tag already exists and points at $taggedCommit, not this commit ($head). Bump the version in pack/pack.json instead of republishing an existing release."
+            }
+            Write-Host "Tag $tag already exists and points at this commit; continuing."
           } else {
             Write-Host "Creating tag $tag..."
             git tag -a "$tag" -m "Inventors $version"

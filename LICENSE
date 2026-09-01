@@ -1,6 +1,7 @@
-Applies to repository-original content of the Inventors modpack: KubeJS scripts, quest files,
-pack configuration authored here, documentation, and build/publish tooling. Bundled third-party
-mods remain under their own respective licenses and redistribution terms.
+Applies to the non-software content of the Inventors modpack: quest files, pack configuration
+authored here, documentation, and other creative material. KubeJS scripts and build/publish
+tooling are covered separately by `LICENSE-CODE` (PolyForm Noncommercial 1.0.0). Bundled
+third-party mods remain under their own respective licenses and redistribution terms.
 
 Copyright (c) 2026 NsTut (UpperMoon0)
 

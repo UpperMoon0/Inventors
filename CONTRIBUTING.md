@@ -26,4 +26,4 @@ python scripts/validate_quests.py   # quest ID/dependency check
 
 ## License
 
-By contributing you agree your contributions are licensed under the repository license (CC BY-NC-SA 4.0, see `LICENSE`).
+By contributing you agree your contributions are licensed under the repository licenses: CC BY-NC-SA 4.0 for content (`LICENSE`) and PolyForm Noncommercial 1.0.0 for scripts and tooling (`LICENSE-CODE`).
