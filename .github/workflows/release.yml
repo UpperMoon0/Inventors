@@ -64,11 +64,17 @@ jobs:
 
           if ($env:GITHUB_EVENT_NAME -eq 'workflow_dispatch') {
             if (-not [string]::IsNullOrWhiteSpace($env:REQUESTED_VERSION)) { $version = $env:REQUESTED_VERSION }
-            if (-not [string]::IsNullOrWhiteSpace($env:REQUESTED_RELEASE_TYPE)) { $releaseType = $env:REQUESTED_RELEASE_TYPE }
             $shouldRelease = ($env:GITHUB_REF -eq 'refs/heads/main') -and ($env:MANUAL_PUBLISH -eq 'true')
             if ($shouldRelease) {
+              # releaseType is not overridable for publishing: pack/pack.json is the
+              # single source of truth. An override is still allowed for build-only
+              # verification runs (publish=false) so it can be exercised locally.
+              if (-not [string]::IsNullOrWhiteSpace($env:REQUESTED_RELEASE_TYPE) -and $env:REQUESTED_RELEASE_TYPE -ne $releaseType) {
+                throw "Publishing is only allowed for the pack/pack.json releaseType ($releaseType); remove the release_type override or set publish=false."
+              }
               Write-Host "Publishing: manual dispatch with publish=true for $version ($releaseType)."
             } else {
+              if (-not [string]::IsNullOrWhiteSpace($env:REQUESTED_RELEASE_TYPE)) { $releaseType = $env:REQUESTED_RELEASE_TYPE }
               Write-Host 'No release: manual dispatch without publish=true (build only).'
             }
           }
@@ -109,6 +115,9 @@ jobs:
           # different version would break release reproducibility.
           if ($shouldRelease -and $version -ne [string]$pack.version) {
             throw "Publishing is only allowed for the pack/pack.json version ($($pack.version)); remove the version override."
+          }
+          if ($shouldRelease -and $releaseType -ne [string]$pack.releaseType) {
+            throw "Publishing is only allowed for the pack/pack.json releaseType ($($pack.releaseType)); remove the release_type override."
           }
 
           if ($shouldRelease -and -not (Test-Path "changelog/$version.md")) {

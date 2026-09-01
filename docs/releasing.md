@@ -10,7 +10,7 @@ The workflow has three triggers, but publishing is decided by the `release-gate`
 | --- | --- | --- |
 | Push to `main` touching `pack/pack.json` | Always | Only when `version` changed versus the previous commit (fails closed: unreadable previous pack.json never enables publishing) |
 | Push of a `v*` tag | Yes | Only when the tag equals `v<version>`; the publish job also requires an existing tag to point at the exact commit being released |
-| `workflow_dispatch` from `main` | Always | Only with the `publish` input set to `true`; the `version` input is build-only and must equal `pack/pack.json` when publishing |
+| `workflow_dispatch` from `main` | Always | Only with the `publish` input set to `true`; the `version` and `release_type` inputs are build-only and must equal `pack/pack.json` when publishing |
 
 Any other push to `main` (docs, configs, scripts) does not trigger the release workflow at all. The gate also refuses to publish if `changelog/<version>.md` is missing.
 
@@ -19,7 +19,7 @@ Notes:
 - Pushing a version-bumped `pack/pack.json` to `main` is the normal release path. The workflow builds both archives, creates the `v<version>` tag if missing, publishes a GitHub Release with the changelog body, and uploads the client archive to CurseForge with the server archive attached as its child file.
 - The tag is pushed with the repository `GITHUB_TOKEN`; GitHub suppresses workflow triggers from `GITHUB_TOKEN` push events, so creating the tag never re-runs the release workflow.
 - An existing `v<version>` tag pointing at a different commit fails the publish (e.g. after an accidental version downgrade) instead of silently republishing over an old release. Re-releases are made by bumping the version, or by manual dispatch on the exact commit that already carries the tag.
-- Manual dispatch defaults to `publish: false` (build-only verification); the `version` input may differ from `pack/pack.json` for build testing, but publishing is rejected when it does.
+- Manual dispatch defaults to `publish: false` (build-only verification); the `version` and `release_type` inputs may differ from `pack/pack.json` for build testing, but publishing is rejected when they do.
 
 ## Cutting a release
 

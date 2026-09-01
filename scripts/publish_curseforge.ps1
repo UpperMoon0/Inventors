@@ -54,6 +54,8 @@ if ([string]::IsNullOrWhiteSpace($token)) {
     throw 'CURSEFORGE_API_TOKEN is required for publishing.'
 }
 $headers = @{ 'X-Api-Token' = $token }
+$projectId = [long]$pack.curseForgeProjectId
+$filesEndpoint = "https://api.curseforge.com/v1/mods/$projectId/files"
 
 function Get-UploadErrorBody($ErrorRecord) {
     if ($ErrorRecord.ErrorDetails -and $ErrorRecord.ErrorDetails.Message) {
@@ -71,7 +73,29 @@ function Get-UploadErrorBody($ErrorRecord) {
     }
 }
 
+function Get-ExistingFileId($DisplayName) {
+    # Page through the project's files to find one whose displayName matches the
+    # archive we are about to upload. Used to recover from a partial-release
+    # failure: if the client archive uploaded but the server child failed, the
+    # next run will see a "duplicate" error on the client and must continue with
+    # the existing parent file ID instead of skipping the server child upload.
+    $pageSize = 50
+    for ($index = 0; $index -lt 50; $index += $pageSize) {
+        $uri = "$filesEndpoint`?index=$index&pageSize=$pageSize"
+        $page = Invoke-RestMethod -Uri $uri -Method Get -Headers $headers
+        if (-not $page -or -not $page.data) { break }
+        foreach ($file in @($page.data)) {
+            if ($file.displayName -eq $DisplayName -and $file.id) {
+                return [string]$file.id
+            }
+        }
+        if ($page.data.Count -lt $pageSize) { break }
+    }
+    return $null
+}
+
 function Publish-File($Metadata, $Archive) {
+    $archiveName = Split-Path -Leaf $Archive
     try {
         $response = Invoke-RestMethod -Uri $endpoint -Method Post -Headers $headers -Form @{
             metadata = ($Metadata | ConvertTo-Json -Compress -Depth 5)
@@ -84,8 +108,12 @@ function Publish-File($Metadata, $Archive) {
     } catch {
         $body = Get-UploadErrorBody $_
         if ($body -match 'already|duplicate') {
-            Write-Host "CurseForge already has $(Split-Path -Leaf $Archive); treating this rerun as successful."
-            return $null
+            $existing = Get-ExistingFileId $Metadata.displayName
+            if ($existing) {
+                Write-Host "CurseForge already has $archiveName (file id $existing); reusing it for this rerun."
+                return $existing
+            }
+            throw "CurseForge reported $archiveName as a duplicate but the file could not be located via $filesEndpoint. Aborting so a stale partial release is not silently accepted."
         }
         throw "CurseForge upload failed for ${Archive}: $body"
     }
@@ -93,8 +121,10 @@ function Publish-File($Metadata, $Archive) {
 
 $clientFileId = Publish-File $mainMetadata $clientArchive
 if ($null -eq $clientFileId) {
-    Write-Host 'Client file already published; assuming its server child file exists too and skipping upload.'
-    exit 0
+    # Publish-File only returns $null on a catastrophic code path; the duplicate
+    # branch above now returns the existing ID instead. Guard anyway so the
+    # server-child step is never skipped because of a silent null.
+    throw "Internal: client upload returned no file id for $clientArchive."
 }
 
 $serverMetadata = [ordered]@{
@@ -105,9 +135,8 @@ $serverMetadata = [ordered]@{
     releaseType = $ReleaseType
 }
 $serverFileId = Publish-File $serverMetadata $serverArchive
-
 if ($null -eq $serverFileId) {
-    Write-Host "Published client file ID $clientFileId; server child file already exists."
+    Write-Host "Client file id $clientFileId and its server child file are both present on CurseForge."
 } else {
-    Write-Host "Published client file ID $clientFileId and server child file ID $serverFileId."
+    Write-Host "Published client file id $clientFileId and server child file id $serverFileId."
 }
