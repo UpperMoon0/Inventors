@@ -31,7 +31,10 @@ Notes:
 
 ## Secrets
 
-- `CURSEFORGE_API_TOKEN` — CurseForge API token, used by `publish_curseforge.ps1` only. Never logged or written to disk.
+- `CURSEFORGE_API_TOKEN` — CurseForge author/upload token. Used by the legacy upload endpoint through `X-Api-Token`.
+- `CURSEFORGE_API_KEY` — CurseForge Core API key. Used only for duplicate-file recovery through `x-api-key`, allowing a failed partial release to locate an already-uploaded client/server file and resume safely.
+
+A normal first-time upload only uses the upload token. The Core API key is needed when a rerun must recover the ID of an already-uploaded file after a partial release failure. The two credentials are not interchangeable.
 
 ## Local dry run
 

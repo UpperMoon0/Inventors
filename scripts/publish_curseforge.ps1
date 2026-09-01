@@ -49,11 +49,13 @@ foreach ($archive in @($clientArchive, $serverArchive)) {
     }
 }
 
-$token = [Environment]::GetEnvironmentVariable('CURSEFORGE_API_TOKEN')
-if ([string]::IsNullOrWhiteSpace($token)) {
+$uploadToken = [Environment]::GetEnvironmentVariable('CURSEFORGE_API_TOKEN')
+if ([string]::IsNullOrWhiteSpace($uploadToken)) {
     throw 'CURSEFORGE_API_TOKEN is required for publishing.'
 }
-$headers = @{ 'X-Api-Token' = $token }
+$uploadHeaders = @{
+    'X-Api-Token' = $uploadToken
+}
 $projectId = [long]$pack.curseForgeProjectId
 $filesEndpoint = "https://api.curseforge.com/v1/mods/$projectId/files"
 
@@ -73,34 +75,85 @@ function Get-UploadErrorBody($ErrorRecord) {
     }
 }
 
+function Get-CoreApiHeaders {
+    $coreApiKey = [Environment]::GetEnvironmentVariable('CURSEFORGE_API_KEY')
+
+    if ([string]::IsNullOrWhiteSpace($coreApiKey)) {
+        throw @'
+CURSEFORGE_API_KEY is required to recover an existing CurseForge file
+after a duplicate upload response. Configure the CurseForge Core API key
+as a repository secret and rerun the release.
+'@
+    }
+
+    return @{
+        'x-api-key' = $coreApiKey
+    }
+}
+
 function Get-ExistingFileId($DisplayName) {
-    # Page through the project's files to find one whose displayName matches the
-    # archive we are about to upload. Used to recover from a partial-release
-    # failure: if the client archive uploaded but the server child failed, the
-    # next run will see a "duplicate" error on the client and must continue with
-    # the existing parent file ID instead of skipping the server child upload.
+    $coreHeaders = Get-CoreApiHeaders
     $pageSize = 50
-    for ($index = 0; $index -lt 50; $index += $pageSize) {
+    $index = 0
+
+    while ($index -lt 10000) {
         $uri = "$filesEndpoint`?index=$index&pageSize=$pageSize"
-        $page = Invoke-RestMethod -Uri $uri -Method Get -Headers $headers
-        if (-not $page -or -not $page.data) { break }
+
+        try {
+            $page = Invoke-RestMethod `
+                -Uri $uri `
+                -Method Get `
+                -Headers $coreHeaders
+        } catch {
+            $body = Get-UploadErrorBody $_
+            throw "CurseForge Core API file lookup failed: $body"
+        }
+
+        if (-not $page) {
+            throw 'CurseForge Core API returned an empty response.'
+        }
+
         foreach ($file in @($page.data)) {
-            if ($file.displayName -eq $DisplayName -and $file.id) {
+            if (
+                $file.displayName -eq $DisplayName -and
+                $file.id
+            ) {
                 return [string]$file.id
             }
         }
-        if ($page.data.Count -lt $pageSize) { break }
+
+        if (-not $page.pagination) {
+            throw 'CurseForge Core API response did not contain pagination metadata.'
+        }
+
+        $resultCount = [int]$page.pagination.resultCount
+        $totalCount = [int]$page.pagination.totalCount
+
+        if ($resultCount -le 0) {
+            break
+        }
+
+        $index += $resultCount
+
+        if ($index -ge $totalCount) {
+            break
+        }
     }
+
     return $null
 }
 
 function Publish-File($Metadata, $Archive) {
     $archiveName = Split-Path -Leaf $Archive
     try {
-        $response = Invoke-RestMethod -Uri $endpoint -Method Post -Headers $headers -Form @{
-            metadata = ($Metadata | ConvertTo-Json -Compress -Depth 5)
-            file = Get-Item -LiteralPath $Archive
-        }
+        $response = Invoke-RestMethod `
+            -Uri $endpoint `
+            -Method Post `
+            -Headers $uploadHeaders `
+            -Form @{
+                metadata = ($Metadata | ConvertTo-Json -Compress -Depth 5)
+                file = Get-Item -LiteralPath $Archive
+            }
         if (-not $response.id) {
             throw "CurseForge did not return an ID for $Archive."
         }
@@ -110,10 +163,16 @@ function Publish-File($Metadata, $Archive) {
         if ($body -match 'already|duplicate') {
             $existing = Get-ExistingFileId $Metadata.displayName
             if ($existing) {
-                Write-Host "CurseForge already has $archiveName (file id $existing); reusing it for this rerun."
+                Write-Host (
+                    "CurseForge already has $archiveName " +
+                    "(file id $existing); reusing it for this rerun."
+                )
                 return $existing
             }
-            throw "CurseForge reported $archiveName as a duplicate but the file could not be located via $filesEndpoint. Aborting so a stale partial release is not silently accepted."
+            throw (
+                "CurseForge reported $archiveName as a duplicate " +
+                "but the existing file could not be located."
+            )
         }
         throw "CurseForge upload failed for ${Archive}: $body"
     }

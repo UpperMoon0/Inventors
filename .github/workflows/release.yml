@@ -216,4 +216,5 @@ jobs:
         shell: pwsh
         env:
           CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
+          CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
         run: ./scripts/publish_curseforge.ps1 -Version '${{ needs.release-gate.outputs.version }}' -ReleaseType '${{ needs.release-gate.outputs.release_type }}' -SkipBuild
