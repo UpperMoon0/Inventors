@@ -24,4 +24,9 @@ $env:CURSEFORGE_API_TOKEN = "..."
 ./scripts/publish_curseforge.ps1 -ReleaseType beta
 ```
 
-GitHub Actions uses the repository secret with the same name. Pull requests and pushes to `main` build and verify both archives without publishing. Publishing to GitHub Releases and CurseForge requires triggering the workflow manually via `workflow_dispatch` with `publish: true`.
+GitHub Actions uses the repository secret with the same name. See `docs/releasing.md` for the full pipeline description; the short version:
+
+- **Push to `main` touching `pack/pack.json`** always builds and verifies both archives, but only **publishes** to GitHub Releases and CurseForge when the `version` field in `pack/pack.json` actually changed. Editing any other part of `pack.json` (e.g. `serverExcludedPaths`) results in a build-only run.
+- **Pushing a `v*` tag** matching `v<version>` publishes. Tags pushed by the workflow itself are ignored to prevent re-entrant double publishes.
+- **Manual `workflow_dispatch`** builds and verifies by default; it publishes only when run from `main` with the `publish` input set to `true`.
+- The release workflow fails if `changelog/<version>.md` is missing for the version being published.

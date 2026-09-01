@@ -1,0 +1,50 @@
+name: Crash report
+description: The game crashed, on startup or during play
+labels: ["bug", "crash"]
+body:
+  - type: markdown
+    attributes:
+      value: Crash reports need the actual crash file. Text descriptions of crashes cannot be diagnosed.
+  - type: input
+    id: version
+    attributes:
+      label: Inventors version
+      description: From the CurseForge file name or pack/pack.json
+      placeholder: "0.3.2"
+    validations:
+      required: true
+  - type: dropdown
+    id: when
+    attributes:
+      label: When does it crash?
+      options:
+        - Game launch / loading screen
+        - During world creation
+        - During play (please describe below)
+        - On a dedicated server
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What were you doing right before the crash? A reproducible sequence is far more useful than a log alone.
+    validations:
+      required: true
+  - type: textarea
+    id: crash-report
+    attributes:
+      label: Crash report
+      description: Paste the contents of the relevant file from `crash-reports/`, or a link to a paste site (GitHub Gist, pastebin). Do not paste the full `debug.log` here.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: debug.log excerpt
+      description: The last ~100 lines of `logs/debug.log` around the crash, or a link to the full file.
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
