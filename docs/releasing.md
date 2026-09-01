@@ -8,7 +8,7 @@ The workflow has three triggers, but publishing is decided by the `release-gate`
 
 | Trigger | Build | Publishes |
 | --- | --- | --- |
-| Push to `main` touching `pack/pack.json` | Always | Only when `version` changed versus the previous commit |
+| Push to `main` touching `pack/pack.json` | Always | Only when `version` changed versus the previous commit (fails closed: unreadable previous pack.json never enables publishing) |
 | Push of a `v*` tag | Yes | Only when the tag equals `v<version>`; the publish job also requires an existing tag to point at the exact commit being released |
 | `workflow_dispatch` from `main` | Always | Only with the `publish` input set to `true`; the `version` input is build-only and must equal `pack/pack.json` when publishing |
 

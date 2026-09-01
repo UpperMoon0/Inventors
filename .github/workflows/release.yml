@@ -89,15 +89,17 @@ jobs:
               $previousJson = & git show "${before}:pack/pack.json" 2>$null
               $gitExit = $LASTEXITCODE
               $ErrorActionPreference = 'Stop'
-              $previousVersion = ''
-              if ($gitExit -eq 0 -and $previousJson) {
-                $previousVersion = [string](($previousJson | ConvertFrom-Json).version)
-              }
-              if ($previousVersion -ne $version) {
-                $shouldRelease = $true
-                Write-Host "Publishing: pack version changed ($previousVersion -> $version)."
+              if ($gitExit -ne 0 -or -not $previousJson) {
+                # Fail closed: an unresolvable previous commit must never enable publishing.
+                Write-Host 'No release: unable to read pack/pack.json from the previous commit.'
               } else {
-                Write-Host "No release: pack version unchanged ($version)."
+                $previousVersion = [string](($previousJson | ConvertFrom-Json).version)
+                if ($previousVersion -ne $version) {
+                  $shouldRelease = $true
+                  Write-Host "Publishing: pack version changed ($previousVersion -> $version)."
+                } else {
+                  Write-Host "No release: pack version unchanged ($version)."
+                }
               }
             }
           }
@@ -164,15 +166,18 @@ jobs:
           $head = git rev-parse HEAD
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          $refs = & git ls-remote --tags origin "refs/tags/$tag"
+          $refs = & git ls-remote --tags origin "refs/tags/$tag" "refs/tags/$tag^{}"
+          if ($LASTEXITCODE -ne 0) { throw "git ls-remote failed for tag $tag." }
           if ($refs) {
-            # Annotated tags list the tag object plus a peeled ^{} entry pointing at the commit.
+            # Annotated tags list the tag object plus a separate peeled ^{} entry
+            # pointing at the commit; the ^{} pseudo-ref must be requested explicitly.
             $taggedCommit = $null
             foreach ($line in @($refs)) {
               $parts = $line -split '\s+'
               if ($parts[1] -eq "refs/tags/$tag^{}") { $taggedCommit = $parts[0] }
             }
             if (-not $taggedCommit) {
+              # Lightweight tag: the ref itself points at the commit.
               $taggedCommit = (@($refs)[0] -split '\s+')[0]
             }
             if ($taggedCommit -ne $head) {

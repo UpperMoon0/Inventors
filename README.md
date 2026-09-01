@@ -33,7 +33,7 @@ Server-specific configs (view distance, JVM args, etc.) are pre-tuned and docume
 
 ## Updating existing worlds
 
-Versions are in beta and recipes/quests change between releases. Keep a world backup before updating; quest progress is stored per world in `config/ftbquests/quests`.
+Versions are in beta and recipes/quests change between releases. Keep a full world backup before updating. FTB Quests progression is stored with the world save; `config/ftbquests/quests` contains the quest definitions shipped by the pack.
 
 ## Reporting problems
 
@@ -42,6 +42,7 @@ Open a GitHub issue using the matching template:
 - [Crash report](../../issues/new?template=crash.yml)
 - [Progression or recipe bug](../../issues/new?template=progression-bug.yml)
 - [Mod conflict](../../issues/new?template=mod-conflict.yml)
+- [Other problem or feedback](../../issues/new?template=other.yml) — server packs, performance, docs, or general beta feedback
 
 Include your `debug.log`/`crash-reports` file and the Inventors version you are playing.
 
@@ -59,4 +60,4 @@ Inventors is maintained by NsTut (UpperMoon0), who also develops the defining mo
 
 ## License
 
-Repository-original content — KubeJS scripts, quest files, pack configs, documentation, and build tooling — is licensed under [CC BY-NC-SA 4.0](LICENSE). Bundled third-party mods keep their own licenses and redistribution terms.
+Repository-original quests, configs, documentation, and other non-software content are licensed under [CC BY-NC-SA 4.0](LICENSE). KubeJS scripts and build/publish tooling are licensed under [PolyForm Noncommercial 1.0.0](LICENSE-CODE). Bundled third-party mods retain their respective licenses.
