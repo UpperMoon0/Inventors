@@ -17,14 +17,15 @@ The server exclusion lists are deliberately explicit and live in `pack.json`. Ad
 
 ## Publishing
 
-`publish_curseforge.ps1` uploads the client archive to project `1480135`, then uploads the server archive as its additional child file. It reads the token only from `CURSEFORGE_API_TOKEN`.
+`publish_curseforge.ps1` uploads the client archive to project `1480135`, then uploads the server archive as its additional child file. Uploads use `CURSEFORGE_API_TOKEN`. If CurseForge reports a duplicate, deterministic recovery queries the Core API by file name and SHA-1 (plus the client parent id for the server pack), which additionally requires `CURSEFORGE_API_KEY`. The two credentials are not interchangeable.
 
 ```powershell
 $env:CURSEFORGE_API_TOKEN = "..."
+$env:CURSEFORGE_API_KEY = "..." # required for safe duplicate/retry recovery
 ./scripts/publish_curseforge.ps1 -ReleaseType beta
 ```
 
-GitHub Actions uses the repository secret with the same name. See `docs/releasing.md` for the full pipeline description; the short version:
+GitHub Actions provides both repository secrets. A first-time upload normally only consumes `CURSEFORGE_API_TOKEN`; `CURSEFORGE_API_KEY` is used lazily if duplicate recovery is needed. See `docs/releasing.md` for the full pipeline description; the short version:
 
 - **Push to `main` touching `pack/pack.json`** always builds and verifies both archives, but only **publishes** to GitHub Releases and CurseForge when the `version` field in `pack/pack.json` actually changed. Editing any other part of `pack.json` (e.g. `serverExcludedPaths`) results in a build-only run.
 - **Pushing a `v*` tag** matching `v<version>` publishes. An existing tag pointing at a different commit fails the run instead of silently republishing.

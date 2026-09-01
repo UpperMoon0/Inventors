@@ -91,7 +91,7 @@ as a repository secret and rerun the release.
     }
 }
 
-function Get-ExistingFileId($DisplayName, $ExpectedParentFileId) {
+function Get-ExistingFileId($ExpectedFileName, $ExpectedSha1, $ExpectedParentFileId) {
     $coreHeaders = Get-CoreApiHeaders
     $pageSize = 50
     $index = 0
@@ -115,11 +115,27 @@ function Get-ExistingFileId($DisplayName, $ExpectedParentFileId) {
 
         foreach ($file in @($page.data)) {
             if (-not $file.id) { continue }
-            if ($file.displayName -ne $DisplayName) { continue }
-            # For server-child recovery, require the existing file to be
-            # attached to the recovered client file. Prevents a stale or
-            # manually uploaded server pack with the same display name from
-            # being accepted as the recovered child of a different parent.
+            if ([string]$file.fileName -ne $ExpectedFileName) { continue }
+
+            # CurseForge Core API HashAlgo 1 is SHA-1. A duplicate recovery is only
+            # safe when the existing file is byte-identical to the archive that was
+            # just rejected; displayName is intentionally not used as an identity.
+            $sha1Matches = $false
+            foreach ($hash in @($file.hashes)) {
+                if ($null -eq $hash) { continue }
+                if (
+                    [int]$hash.algo -eq 1 -and
+                    [string]$hash.value -ieq $ExpectedSha1
+                ) {
+                    $sha1Matches = $true
+                    break
+                }
+            }
+            if (-not $sha1Matches) { continue }
+
+            # For server-child recovery, also require the existing file to be
+            # attached to the recovered client file. This prevents an identical
+            # server archive attached to another parent from being reused here.
             if ($null -ne $ExpectedParentFileId) {
                 if ([int]$file.parentProjectFileId -ne [int]$ExpectedParentFileId) {
                     continue
@@ -151,6 +167,11 @@ function Get-ExistingFileId($DisplayName, $ExpectedParentFileId) {
 
 function Publish-File($Metadata, $Archive, $ExpectedParentFileId) {
     $archiveName = Split-Path -Leaf $Archive
+    $archiveSha1 = [string](Get-FileHash -LiteralPath $Archive -Algorithm SHA1).Hash
+    if ([string]::IsNullOrWhiteSpace($archiveSha1)) {
+        throw "Unable to compute SHA-1 for $Archive."
+    }
+
     try {
         $response = Invoke-RestMethod `
             -Uri $endpoint `
@@ -167,17 +188,17 @@ function Publish-File($Metadata, $Archive, $ExpectedParentFileId) {
     } catch {
         $body = Get-UploadErrorBody $_
         if ($body -match 'already|duplicate') {
-            $existing = Get-ExistingFileId $Metadata.displayName $ExpectedParentFileId
+            $existing = Get-ExistingFileId $archiveName $archiveSha1 $ExpectedParentFileId
             if ($existing) {
                 Write-Host (
-                    "CurseForge already has $archiveName " +
+                    "CurseForge already has byte-identical $archiveName " +
                     "(file id $existing); reusing it for this rerun."
                 )
                 return $existing
             }
             throw (
-                "CurseForge reported $archiveName as a duplicate " +
-                "but the existing file could not be located."
+                "CurseForge reported $archiveName as a duplicate, but no existing file " +
+                "with the same file name, SHA-1, and expected parent could be located."
             )
         }
         throw "CurseForge upload failed for ${Archive}: $body"
